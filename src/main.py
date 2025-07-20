@@ -8,7 +8,7 @@ from datetime import date, datetime, timedelta
 # 这通常在运行脚本时自动处理，或者可以通过设置 PYTHONPATH
 # 或者更好的方式是使用相对导入（如果结构允许）或将项目作为包安装
 from scraper import fetch_cv_papers
-from filter import filter_papers_by_topic, rate_papers
+from filter import categorize_papers, rate_papers
 from html_generator import generate_html_from_json
 
 # 配置日志
@@ -24,7 +24,7 @@ DEFAULT_TEMPLATE_DIR = os.path.join(PROJECT_ROOT, 'templates')
 DEFAULT_TEMPLATE_NAME = 'paper_template.html' # 确保此模板存在
 
 def main(target_date: date):
-    """主执行流程：抓取、过滤、保存、生成HTML。"""
+    """主执行流程：抓取、分类、保存、生成HTML。"""
     logging.info(f"开始处理日期: {target_date.isoformat()}")
 
     # --- 确定 JSON 文件路径 ---
@@ -34,10 +34,10 @@ def main(target_date: date):
 
     # --- 检查 JSON 文件是否存在 ---
     if os.path.exists(json_filepath):
-        logging.info(f"找到已存在的 JSON 文件: {json_filepath}。跳过抓取和过滤步骤。")
+        logging.info(f"找到已存在的 JSON 文件: {json_filepath}。跳过抓取和分类步骤。")
         # 不需要加载数据，generate_html_from_json 会直接读取文件
     else:
-        logging.info(f"未找到 JSON 文件: {json_filepath}。执行抓取和过滤。")
+        logging.info(f"未找到 JSON 文件: {json_filepath}。执行抓取和分类。")
         # --- 1. 抓取论文 --- #
         logging.info("步骤 1: 抓取 ArXiv cs.CV 论文...")
         # 注意：fetch_cv_papers 内部默认使用 UTC 日期
@@ -48,27 +48,33 @@ def main(target_date: date):
             return
         logging.info(f"抓取到 {len(raw_papers)} 篇原始论文。")
 
-        # --- 2. 过滤论文、论文打分 --- #
-        logging.info("步骤 2: 使用 AI 过滤论文并打分 (主题: image/video/multimodal generation)...")
-        # Note: filter_papers_by_topic requires OPENAI_API_KEY environment variable
-        filtered_papers = filter_papers_by_topic(raw_papers, topic="general image/video/multimodal generation")
-        filtered_papers = rate_papers(filtered_papers)
-        # 将filtered_papers按照overall_priority_score降序排序
-        filtered_papers.sort(key=lambda x: x.get('overall_priority_score', 0), reverse=True)
-        if not filtered_papers:
-            logging.warning("没有论文通过过滤。将创建空的 JSON 文件。")
-            # 创建一个空列表，以便后续保存为空 JSON
-            filtered_papers = []
-            # 即使没有过滤后的论文，也可能需要生成一个空的报告，或者在这里停止
-            # 这里我们选择继续，生成一个可能为空的报告
-        logging.info(f"过滤后剩余 {len(filtered_papers)} 篇论文。")
+        # --- 2. 论文分类与打分 --- #
+        logging.info("步骤 2: 使用 AI 对论文进行分类并打分...")
+        categories = [
+            "AIGC",
+            "Multimodality",
+            "LoRA",
+            "Diffusion",
+            "Transformer",
+            "GAN",
+            "Dataset",
+            "Other",
+        ]
+        classified_papers = categorize_papers(raw_papers, categories)
+        classified_papers = rate_papers(classified_papers)
+        # 将论文按照overall_priority_score降序排序
+        classified_papers.sort(key=lambda x: x.get('overall_priority_score', 0), reverse=True)
+        if not classified_papers:
+            logging.warning("分类后没有论文。将创建空的 JSON 文件。")
+            classified_papers = []
+        logging.info(f"分类并评分后的论文数量: {len(classified_papers)}")
 
         # --- 3. 保存为 JSON --- #
-        logging.info("步骤 3: 将过滤后的论文保存为 JSON 文件...")
+        logging.info("步骤 3: 将分类后的论文保存为 JSON 文件...")
 
         # --- 3.1 转换日期为字符串 --- #
         logging.info("步骤 3.1: 转换日期时间对象为 ISO 格式字符串以便 JSON 序列化...")
-        for paper in filtered_papers:
+        for paper in classified_papers:
             if isinstance(paper.get('published_date'), datetime):
                 paper['published_date'] = paper['published_date'].isoformat()
             if isinstance(paper.get('updated_date'), datetime):
@@ -77,8 +83,8 @@ def main(target_date: date):
         os.makedirs(DEFAULT_JSON_DIR, exist_ok=True) # 确保目录存在
         try:
             with open(json_filepath, 'w', encoding='utf-8') as f:
-                json.dump(filtered_papers, f, indent=4, ensure_ascii=False)
-            logging.info(f"过滤后的论文已保存到: {json_filepath}")
+                json.dump(classified_papers, f, indent=4, ensure_ascii=False)
+            logging.info(f"分类后的论文已保存到: {json_filepath}")
         except IOError as e:
             logging.error(f"保存 JSON 文件失败: {e}")
             return # 保存失败则无法继续
@@ -130,7 +136,7 @@ def main(target_date: date):
     logging.info(f"日期 {target_date.isoformat()} 的处理流程完成。")
 
 if __name__ == '__main__':
-    parser = argparse.ArgumentParser(description='抓取、过滤并生成 arXiv cs.CV 论文的每日报告。')
+    parser = argparse.ArgumentParser(description='抓取、分类并生成 arXiv cs.CV 论文的每日报告。')
     parser.add_argument(
         '--date',
         type=str,

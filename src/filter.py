@@ -89,6 +89,52 @@ def filter_papers_by_topic(papers: list, topic: str = "image or video or multimo
     return filtered_papers
 
 
+def categorize_papers(papers: list, categories: list[str]) -> list:
+    """Assign one or more categories to each paper using the OpenAI API.
+
+    Adds a new field ``ai_categories`` (list of strings) to each paper.
+
+    Args:
+        papers: List of paper dictionaries with ``title`` and ``summary``.
+        categories: List of allowed category names.
+
+    Returns:
+        The list of papers with the ``ai_categories`` field populated.
+    """
+    if not OPENAI_API_KEY:
+        logging.error("OPENAI_API_KEY is not set. Skipping categorization.")
+        return papers
+
+    cat_list = ", ".join(categories)
+    logging.info(f"Categorizing {len(papers)} papers into: {cat_list}...")
+
+    for i, paper in enumerate(papers):
+        title = paper.get('title', 'N/A')
+        summary = paper.get('summary', 'N/A')
+        prompt = (
+            "You are a helpful assistant that assigns one or more categories to a research paper. "
+            f"Choose from the following categories: {cat_list}. "
+            "Respond only in JSON like {\"categories\": [\"AIGC\"]}.\n\n"
+            f"Title: {title}\nAbstract: {summary}"
+        )
+        ai_response = call_openai_api(prompt, max_tokens=50)
+        cats: list[str] = []
+        if ai_response is not None:
+            try:
+                if '```json' in ai_response:
+                    ai_response = ai_response.split('```json')[1].split('```')[0]
+                resp = json.loads(ai_response)
+                if isinstance(resp.get('categories'), list):
+                    cats = resp['categories']
+            except Exception as e:
+                logging.warning(f"Paper {i+1}: failed to parse categories: {e}")
+        else:
+            logging.warning(f"Paper {i+1}: categorization API returned None")
+        paper['ai_categories'] = cats
+
+    return papers
+
+
 # Template used for rating prompts
 rating_prompt_template = """
 # Role Setting

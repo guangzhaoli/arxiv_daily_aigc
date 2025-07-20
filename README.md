@@ -1,14 +1,14 @@
 # Arxiv Daily AIGC
 
-This is an automated project designed to fetch the latest papers from the Computer Vision (cs.CV) field on arXiv daily, use AI (via the OpenAI API) to filter papers related to image/video/multimodal generation, generate structured JSON data and aesthetically pleasing HTML pages, and finally automatically deploy the results to GitHub Pages via GitHub Actions.
+This is an automated project designed to fetch the latest papers from the Computer Vision (cs.CV) field on arXiv daily, use AI (via the OpenAI API) to classify papers into predefined topics, generate structured JSON data and aesthetically pleasing HTML pages, and finally automatically deploy the results to GitHub Pages via GitHub Actions.
 
 ## Features
 
 1.  **Data Fetching**: Automatically fetches the latest papers from the `cs.CV` field on arXiv daily.
-2.  **AI Filtering**: Uses LLM to intelligently filter papers related to image/video/multimodal generation themes and scores the value of the papers across different dimensions.
-3.  **Data Storage**: Saves the filtered paper information (title, abstract, link, etc.) as date-named JSON files (stored in the `daily_json/` directory).
+2.  **AI Classification & Rating**: Uses LLM to assign each paper to one or more predefined topics (e.g. AIGC, Multimodality, LoRA, Diffusion) and score the value of the papers across different dimensions.
+3.  **Data Storage**: Saves the classified paper information (title, abstract, link, etc.) as date-named JSON files (stored in the `daily_json/` directory).
 4.  **Web Page Generation**: Generates daily HTML reports based on the JSON data using a preset template (stored in the `daily_html/` directory) and updates the main entry page `index.html`.
-5.  **Automated Deployment**: Implements the complete process of daily scheduled fetching, filtering, generation, and deployment to GitHub Pages via GitHub Actions.
+5.  **Automated Deployment**: Implements the complete process of daily scheduled fetching, classification, generation, and deployment to GitHub Pages via GitHub Actions.
 
 ## Tech Stack
 
@@ -37,13 +37,13 @@ This is an automated project designed to fetch the latest papers from the Comput
     pip install -r requirements.txt
     ```
 
-4.  **Configure API Key**: This project requires an OpenAI API key for AI filtering. You can change `src/filter.py` to use other LLM APIs if desired. For security, do not hardcode the key in the code. Set it as an environment variable when running locally. In GitHub Actions, set it as a Secret named `OPENAI_API_KEY` and optionally `OPENAI_BASE_URL`.
+4.  **Configure API Key**: This project requires an OpenAI API key for AI classification and rating. You can change `src/filter.py` to use other LLM APIs if desired. For security, do not hardcode the key in the code. Set it as an environment variable when running locally. In GitHub Actions, set it as a Secret named `OPENAI_API_KEY` and optionally `OPENAI_BASE_URL`.
 
 ## Usage
 
 ### Local Run
 
-You can directly run the main script `main.py` to manually trigger a complete process (fetch, filter, generate).
+You can directly run the main script `main.py` to manually trigger a complete process (fetch, classify, generate).
 
 ```bash
 # Ensure the OPENAI_API_KEY environment variable is set
@@ -86,7 +86,7 @@ The project is configured to display results via GitHub Pages. Please visit your
 ├── src/                     # Python script directory
 │   ├── main.py              # Main execution script
 │   ├── scraper.py           # ArXiv scraper module
-│   ├── filter.py            # Filtering module using the OpenAI API
+│   ├── filter.py            # LLM-based classification and scoring utilities
 │   └── html_generator.py    # HTML generator module
 ├── templates/               # HTML template directory
 │   └── paper_template.html
