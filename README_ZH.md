@@ -1,14 +1,14 @@
 # Arxiv Daily AIGC
 
-这是一个自动化项目，旨在每日从 arXiv 获取计算机视觉（cs.CV）领域的最新论文，使用 AI（默认通过 OpenAI API）筛选出与图像/视频/多模态生成相关的论文，并将结果生成为结构化的 JSON 数据和美观的 HTML 页面，最终通过 GitHub Actions 自动部署到 GitHub Pages。
+这是一个自动化项目，旨在每日从 arXiv 获取计算机视觉（cs.CV）领域的最新论文，使用 AI（默认通过 OpenAI API）对论文进行预定义主题分类，并将结果生成为结构化的 JSON 数据和美观的 HTML 页面，最终通过 GitHub Actions 自动部署到 GitHub Pages。
 
 ## 功能
 
 1.  **数据抓取**: 每日自动从 arXiv 获取 `cs.CV` 领域的最新论文。
-2.  **AI 筛选**: 利用 LLM 智能筛选与图像/视频/多模态生成主题相关的论文，并分维度对论文价值进行打分。
-3.  **数据存储**: 将筛选后的论文信息（标题、摘要、链接等）保存为日期命名的 JSON 文件（存放于 `daily_json/` 目录）。
+2.  **AI 分类与评分**: 利用 LLM 将论文归入预定义的主题（如 AIGC、Multimodality、LoRA、Diffusion 等），并分维度对论文价值进行打分。
+3.  **数据存储**: 将分类后的论文信息（标题、摘要、链接等）保存为日期命名的 JSON 文件（存放于 `daily_json/` 目录）。
 4.  **网页生成**: 根据 JSON 数据，使用预设模板生成每日的 HTML 报告（存放于 `daily_html/` 目录），并更新主入口页面 `index.html`。
-5.  **自动化部署**: 通过 GitHub Actions 实现每日定时执行抓取、筛选、生成和部署到 GitHub Pages 的完整流程。
+5.  **自动化部署**: 通过 GitHub Actions 实现每日定时执行抓取、分类、生成和部署到 GitHub Pages 的完整流程。
 
 ## 技术栈
 
@@ -37,13 +37,13 @@
     pip install -r requirements.txt
     ```
 
-4.  **配置 API Key**: 此项目需要 OpenAI API Key 来进行 AI 筛选，你也可以通过修改 `src/filter.py` 调用其他 LLM API。为安全起见，请不要在代码中硬编码 Key。在本地运行时通过环境变量设置；在 GitHub Actions 中，将其设置为名为 `OPENAI_API_KEY`（以及可选的 `OPENAI_BASE_URL`）的 Secret。
+4.  **配置 API Key**: 此项目需要 OpenAI API Key 来进行 AI 分类和评分，你也可以通过修改 `src/filter.py` 调用其他 LLM API。为安全起见，请不要在代码中硬编码 Key。在本地运行时通过环境变量设置；在 GitHub Actions 中，将其设置为名为 `OPENAI_API_KEY`（以及可选的 `OPENAI_BASE_URL`）的 Secret。
 
 ## 使用
 
 ### 本地运行
 
-可以直接运行主脚本 `main.py` 来手动触发一次完整的流程（抓取、筛选、生成）。
+可以直接运行主脚本 `main.py` 来手动触发一次完整的流程（抓取、分类、生成）。
 
 ```bash
 # 确保设置了 OPENAI_API_KEY 环境变量
@@ -86,7 +86,7 @@ python src/main.py
 ├── src/                     # Python 脚本目录
 │   ├── main.py              # 主执行脚本
 │   ├── scraper.py           # ArXiv 爬虫模块
-│   ├── filter.py            # 使用 OpenAI API 的过滤模块
+│   ├── filter.py            # LLM 分类与评分工具模块
 │   └── html_generator.py    # HTML 生成模块
 ├── templates/               # HTML 模板目录
 │   └── paper_template.html
