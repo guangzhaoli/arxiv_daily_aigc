@@ -1,6 +1,6 @@
 # Arxiv Daily AIGC
 
-This is an automated project designed to fetch the latest papers from the Computer Vision (cs.CV) field on arXiv daily, use AI (currently via OpenRouter API) to filter papers related to image/video/multimodal generation, generate structured JSON data and aesthetically pleasing HTML pages, and finally automatically deploy the results to GitHub Pages via GitHub Actions.
+This is an automated project designed to fetch the latest papers from the Computer Vision (cs.CV) field on arXiv daily, use AI (via the OpenAI API) to filter papers related to image/video/multimodal generation, generate structured JSON data and aesthetically pleasing HTML pages, and finally automatically deploy the results to GitHub Pages via GitHub Actions.
 
 ## Features
 
@@ -12,7 +12,7 @@ This is an automated project designed to fetch the latest papers from the Comput
 
 ## Tech Stack
 
-*   **Backend/Script**: Python 3.x (`arxiv`, `requests`, `jinja2`)
+*   **Backend/Script**: Python 3.x (`arxiv`, `requests`, `jinja2`, `openai`)
 *   **Frontend**: HTML5, TailwindCSS (CDN), JavaScript, Framer Motion (CDN)
 *   **Automation**: GitHub Actions
 *   **Deployment**: GitHub Pages
@@ -37,7 +37,7 @@ This is an automated project designed to fetch the latest papers from the Comput
     pip install -r requirements.txt
     ```
 
-4.  **Configure API Key**: This project requires an OpenRouter API Key for AI filtering. You can also modify `src/filter.py` to use other LLM APIs. For security, do not hardcode the key in the code. Set it as an environment variable when running locally. In GitHub Actions, set it as a Secret named `OPENROUTER_API_KEY`.
+4.  **Configure API Key**: This project requires an OpenAI API key for AI filtering. You can change `src/filter.py` to use other LLM APIs if desired. For security, do not hardcode the key in the code. Set it as an environment variable when running locally. In GitHub Actions, set it as a Secret named `OPENAI_API_KEY` and optionally `OPENAI_BASE_URL`.
 
 ## Usage
 
@@ -46,8 +46,10 @@ This is an automated project designed to fetch the latest papers from the Comput
 You can directly run the main script `main.py` to manually trigger a complete process (fetch, filter, generate).
 
 ```bash
-# Ensure the OPENROUTER_API_KEY environment variable is set
-export OPENROUTER_API_KEY='your_openrouter_api_key'
+# Ensure the OPENAI_API_KEY environment variable is set
+export OPENAI_API_KEY='your_openai_api_key'
+# Optionally set a custom base URL, e.g. for Azure/OpenRouter proxies
+# export OPENAI_BASE_URL='https://your-openai-proxy/v1'
 
 # Run the main script (processes today's papers by default)
 python src/main.py
@@ -84,7 +86,7 @@ The project is configured to display results via GitHub Pages. Please visit your
 ├── src/                     # Python script directory
 │   ├── main.py              # Main execution script
 │   ├── scraper.py           # ArXiv scraper module
-│   ├── filter.py            # OpenRouter filter module
+│   ├── filter.py            # Filtering module using the OpenAI API
 │   └── html_generator.py    # HTML generator module
 ├── templates/               # HTML template directory
 │   └── paper_template.html

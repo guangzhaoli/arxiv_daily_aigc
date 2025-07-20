@@ -1,6 +1,6 @@
 # Arxiv Daily AIGC
 
-这是一个自动化项目，旨在每日从 arXiv 获取计算机视觉（cs.CV）领域的最新论文，使用 AI (目前通过 OpenRouter API) 筛选出与图像/视频/多模态生成相关的论文，并将结果生成为结构化的 JSON 数据和美观的 HTML 页面，最终通过 GitHub Actions 自动部署到 GitHub Pages。
+这是一个自动化项目，旨在每日从 arXiv 获取计算机视觉（cs.CV）领域的最新论文，使用 AI（默认通过 OpenAI API）筛选出与图像/视频/多模态生成相关的论文，并将结果生成为结构化的 JSON 数据和美观的 HTML 页面，最终通过 GitHub Actions 自动部署到 GitHub Pages。
 
 ## 功能
 
@@ -12,7 +12,7 @@
 
 ## 技术栈
 
-*   **后端/脚本**: Python 3.x (`arxiv`, `requests`, `jinja2`)
+*   **后端/脚本**: Python 3.x (`arxiv`, `requests`, `jinja2`, `openai`)
 *   **前端**: HTML5, TailwindCSS (CDN), JavaScript, Framer Motion (CDN)
 *   **自动化**: GitHub Actions
 *   **部署**: GitHub Pages
@@ -37,7 +37,7 @@
     pip install -r requirements.txt
     ```
 
-4.  **配置 API Key**: 此项目需要 OpenRouter API Key 来进行 AI 筛选，当然你也可以通过修改 `src/filter.py` 调用其他LLM API。为了安全起见，请勿将 Key 硬编码在代码中。在本地运行时，可以通过环境变量设置；在 GitHub Actions 中，请将其设置为名为 `OPENROUTER_API_KEY` 的 Secret。
+4.  **配置 API Key**: 此项目需要 OpenAI API Key 来进行 AI 筛选，你也可以通过修改 `src/filter.py` 调用其他 LLM API。为安全起见，请不要在代码中硬编码 Key。在本地运行时通过环境变量设置；在 GitHub Actions 中，将其设置为名为 `OPENAI_API_KEY`（以及可选的 `OPENAI_BASE_URL`）的 Secret。
 
 ## 使用
 
@@ -46,8 +46,10 @@
 可以直接运行主脚本 `main.py` 来手动触发一次完整的流程（抓取、筛选、生成）。
 
 ```bash
-# 确保设置了 OPENROUTER_API_KEY 环境变量
-export OPENROUTER_API_KEY='your_openrouter_api_key'
+# 确保设置了 OPENAI_API_KEY 环境变量
+export OPENAI_API_KEY='your_openai_api_key'
+# 如有需要，可设置自定义的 base URL，例如代理地址
+# export OPENAI_BASE_URL='https://your-openai-proxy/v1'
 
 # 运行主脚本 (默认处理当天的论文)
 python src/main.py
@@ -84,7 +86,7 @@ python src/main.py
 ├── src/                     # Python 脚本目录
 │   ├── main.py              # 主执行脚本
 │   ├── scraper.py           # ArXiv 爬虫模块
-│   ├── filter.py            # OpenRouter 过滤模块
+│   ├── filter.py            # 使用 OpenAI API 的过滤模块
 │   └── html_generator.py    # HTML 生成模块
 ├── templates/               # HTML 模板目录
 │   └── paper_template.html
