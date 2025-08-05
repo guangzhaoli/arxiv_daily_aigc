@@ -1,0 +1,2233 @@
+[
+    {
+        "title": "Video-based Vehicle Surveillance in the Wild: License Plate, Make, and Model Recognition with Self Reflective Vision-Language Models",
+        "summary": "Automatic license plate recognition (ALPR) and vehicle make and model\nrecognition underpin intelligent transportation systems, supporting law\nenforcement, toll collection, and post-incident investigation. Applying these\nmethods to videos captured by handheld smartphones or non-static\nvehicle-mounted cameras presents unique challenges compared to fixed\ninstallations, including frequent camera motion, varying viewpoints,\nocclusions, and unknown road geometry. Traditional ALPR solutions, dependent on\nspecialized hardware and handcrafted OCR pipelines, often degrade under these\nconditions. Recent advances in large vision-language models (VLMs) enable\ndirect recognition of textual and semantic attributes from arbitrary imagery.\nThis study evaluates the potential of VLMs for ALPR and makes and models\nrecognition using monocular videos captured with handheld smartphones and\nnon-static mounted cameras. The proposed license plate recognition pipeline\nfilters to sharp frames, then sends a multimodal prompt to a VLM using several\nprompt strategies. Make and model recognition pipeline runs the same VLM with a\nrevised prompt and an optional self-reflection module. In the self-reflection\nmodule, the model contrasts the query image with a reference from a 134-class\ndataset, correcting mismatches. Experiments on a smartphone dataset collected\non the campus of the University of Texas at Austin, achieve top-1 accuracies of\n91.67% for ALPR and 66.67% for make and model recognition. On the public\nUFPR-ALPR dataset, the approach attains 83.05% and 61.07%, respectively. The\nself-reflection module further improves results by 5.72% on average for make\nand model recognition. These findings demonstrate that VLMs provide a\ncost-effective solution for scalable, in-motion traffic video analysis.",
+        "url": "http://arxiv.org/abs/2508.01387v1",
+        "published_date": "2025-08-02T14:34:19+00:00",
+        "updated_date": "2025-08-02T14:34:19+00:00",
+        "categories": [
+            "cs.CV",
+            "cs.AI"
+        ],
+        "authors": [
+            "Pouya Parsa",
+            "Keya Li",
+            "Kara M. Kockelman",
+            "Seongjin Choi"
+        ],
+        "ai_categories": [
+            "Transformer",
+            "Dataset"
+        ],
+        "tldr": "The paper explores using vision-language models for license plate, make, and model recognition in videos captured by handheld smartphones and non-static cameras, achieving high accuracy and demonstrating cost-effective solutions for traffic video analysis.",
+        "tldr_zh": "本文探讨了在由手持智能手机和非静态摄像机捕捉的视频中使用视觉语言模型进行车牌、制造和型号识别，取得了较高的准确性，并展示了在交通视频分析方面的成本效益解决方案。",
+        "relevance_score": 9,
+        "novelty_claim_score": 8,
+        "clarity_score": 9,
+        "potential_impact_score": 9,
+        "overall_priority_score": 8.75
+    },
+    {
+        "title": "Eigen Neural Network: Unlocking Generalizable Vision with Eigenbasis",
+        "summary": "The remarkable success of Deep Neural Networks(DNN) is driven by\ngradient-based optimization, yet this process is often undermined by its\ntendency to produce disordered weight structures, which harms feature clarity\nand degrades learning dynamics. To address this fundamental representational\nflaw, we introduced the Eigen Neural Network (ENN), a novel architecture that\nreparameterizes each layer's weights in a layer-shared, learned orthonormal\neigenbasis. This design enforces decorrelated, well-aligned weight dynamics\naxiomatically, rather than through regularization, leading to more structured\nand discriminative feature representations. When integrated with standard BP,\nENN consistently outperforms state-of-the-art methods on large-scale image\nclassification benchmarks, including ImageNet, and its superior representations\ngeneralize to set a new benchmark in cross-modal image-text retrieval.\nFurthermore, ENN's principled structure enables a highly efficient,\nbackpropagation-free(BP-free) local learning variant, ENN-$\\ell$. This variant\nnot only resolves BP's procedural bottlenecks to achieve over 2$\\times$\ntraining speedup via parallelism, but also, remarkably, surpasses the accuracy\nof end-to-end backpropagation. ENN thus presents a new architectural paradigm\nthat directly remedies the representational deficiencies of BP, leading to\nenhanced performance and enabling a more efficient, parallelizable training\nregime.",
+        "url": "http://arxiv.org/abs/2508.01219v1",
+        "published_date": "2025-08-02T06:33:58+00:00",
+        "updated_date": "2025-08-02T06:33:58+00:00",
+        "categories": [
+            "cs.CV",
+            "cs.LG"
+        ],
+        "authors": [
+            "Anzhe Cheng",
+            "Chenzhong Yin",
+            "Mingxi Cheng",
+            "Shukai Duan",
+            "Shahin Nazarian",
+            "Paul Bogdan"
+        ],
+        "ai_categories": [
+            "Transformer",
+            "GAN"
+        ],
+        "tldr": "The Eigen Neural Network (ENN) is a novel architecture that reparameterizes weights to improve feature clarity and learning dynamics, outperforming state-of-the-art methods on image classification and cross-modal image-text retrieval.",
+        "tldr_zh": "Eigen神经网络(ENN)是一种新颖的架构，重新参数化权重以提高特征清晰度和学习动态，在图像分类和跨模态图像-文本检索方面胜过现有方法。",
+        "relevance_score": 8,
+        "novelty_claim_score": 9,
+        "clarity_score": 9,
+        "potential_impact_score": 9,
+        "overall_priority_score": 8.75
+    },
+    {
+        "title": "SGCap: Decoding Semantic Group for Zero-shot Video Captioning",
+        "summary": "Zero-shot video captioning aims to generate sentences for describing videos\nwithout training the model on video-text pairs, which remains underexplored.\nExisting zero-shot image captioning methods typically adopt a text-only\ntraining paradigm, where a language decoder reconstructs single-sentence\nembeddings obtained from CLIP. However, directly extending them to the video\ndomain is suboptimal, as applying average pooling over all frames neglects\ntemporal dynamics. To address this challenge, we propose a Semantic Group\nCaptioning (SGCap) method for zero-shot video captioning. In particular, it\ndevelops the Semantic Group Decoding (SGD) strategy to employ multi-frame\ninformation while explicitly modeling inter-frame temporal relationships.\nFurthermore, existing zero-shot captioning methods that rely on cosine\nsimilarity for sentence retrieval and reconstruct the description supervised by\na single frame-level caption, fail to provide sufficient video-level\nsupervision. To alleviate this, we introduce two key components, including the\nKey Sentences Selection (KSS) module and the Probability Sampling Supervision\n(PSS) module. The two modules construct semantically-diverse sentence groups\nthat models temporal dynamics and guide the model to capture inter-sentence\ncausal relationships, thereby enhancing its generalization ability to video\ncaptioning. Experimental results on several benchmarks demonstrate that SGCap\nsignificantly outperforms previous state-of-the-art zero-shot alternatives and\neven achieves performance competitive with fully supervised ones. Code is\navailable at https://github.com/mlvccn/SGCap_Video.",
+        "url": "http://arxiv.org/abs/2508.01270v1",
+        "published_date": "2025-08-02T09:05:45+00:00",
+        "updated_date": "2025-08-02T09:05:45+00:00",
+        "categories": [
+            "cs.CV"
+        ],
+        "authors": [
+            "Zeyu Pan",
+            "Ping Li",
+            "Wenxiao Wang"
+        ],
+        "ai_categories": [
+            "Transformer",
+            "Dataset"
+        ],
+        "tldr": "The paper introduces SGCap, a method for zero-shot video captioning that outperforms previous state-of-the-art alternatives by explicitly modeling inter-frame temporal relationships and enhancing video-level supervision.",
+        "tldr_zh": "该论文介绍了SGCap，一种用于零样本视频字幕生成的方法，通过明确建模帧间时间关系和增强视频级监督，优于先前的最先进替代品。",
+        "relevance_score": 8,
+        "novelty_claim_score": 9,
+        "clarity_score": 8,
+        "potential_impact_score": 9,
+        "overall_priority_score": 8.5
+    },
+    {
+        "title": "UniEgoMotion: A Unified Model for Egocentric Motion Reconstruction, Forecasting, and Generation",
+        "summary": "Egocentric human motion generation and forecasting with scene-context is\ncrucial for enhancing AR/VR experiences, improving human-robot interaction,\nadvancing assistive technologies, and enabling adaptive healthcare solutions by\naccurately predicting and simulating movement from a first-person perspective.\nHowever, existing methods primarily focus on third-person motion synthesis with\nstructured 3D scene contexts, limiting their effectiveness in real-world\negocentric settings where limited field of view, frequent occlusions, and\ndynamic cameras hinder scene perception. To bridge this gap, we introduce\nEgocentric Motion Generation and Egocentric Motion Forecasting, two novel tasks\nthat utilize first-person images for scene-aware motion synthesis without\nrelying on explicit 3D scene. We propose UniEgoMotion, a unified conditional\nmotion diffusion model with a novel head-centric motion representation tailored\nfor egocentric devices. UniEgoMotion's simple yet effective design supports\negocentric motion reconstruction, forecasting, and generation from first-person\nvisual inputs in a unified framework. Unlike previous works that overlook scene\nsemantics, our model effectively extracts image-based scene context to infer\nplausible 3D motion. To facilitate training, we introduce EE4D-Motion, a\nlarge-scale dataset derived from EgoExo4D, augmented with pseudo-ground-truth\n3D motion annotations. UniEgoMotion achieves state-of-the-art performance in\negocentric motion reconstruction and is the first to generate motion from a\nsingle egocentric image. Extensive evaluations demonstrate the effectiveness of\nour unified framework, setting a new benchmark for egocentric motion modeling\nand unlocking new possibilities for egocentric applications.",
+        "url": "http://arxiv.org/abs/2508.01126v1",
+        "published_date": "2025-08-02T00:41:20+00:00",
+        "updated_date": "2025-08-02T00:41:20+00:00",
+        "categories": [
+            "cs.CV"
+        ],
+        "authors": [
+            "Chaitanya Patel",
+            "Hiroki Nakamura",
+            "Yuta Kyuragi",
+            "Kazuki Kozuka",
+            "Juan Carlos Niebles",
+            "Ehsan Adeli"
+        ],
+        "ai_categories": [
+            "Transformer",
+            "Dataset"
+        ],
+        "tldr": "The paper introduces UniEgoMotion, a unified model for egocentric motion reconstruction, forecasting, and generation using first-person images without explicit 3D scene context.",
+        "tldr_zh": "该论文介绍了UniEgoMotion，一个统一模型，用于利用第一人称图像进行自我中心运动重建、预测和生成，而无需明确的三维场景。",
+        "relevance_score": 8,
+        "novelty_claim_score": 9,
+        "clarity_score": 9,
+        "potential_impact_score": 8,
+        "overall_priority_score": 8.5
+    },
+    {
+        "title": "SWAN: Synergistic Wavelet-Attention Network for Infrared Small Target Detection",
+        "summary": "Infrared small target detection (IRSTD) is thus critical in both civilian and\nmilitary applications. This study addresses the challenge of precisely IRSTD in\ncomplex backgrounds. Recent methods focus fundamental reliance on conventional\nconvolution operations, which primarily capture local spatial patterns and\nstruggle to distinguish the unique frequency-domain characteristics of small\ntargets from intricate background clutter. To overcome these limitations, we\nproposed the Synergistic Wavelet-Attention Network (SWAN), a novel framework\ndesigned to perceive targets from both spatial and frequency domains. SWAN\nleverages a Haar Wavelet Convolution (HWConv) for a deep, cross-domain fusion\nof the frequency energy and spatial details of small target. Furthermore, a\nShifted Spatial Attention (SSA) mechanism efficiently models long-range spatial\ndependencies with linear computational complexity, enhancing contextual\nawareness. Finally, a Residual Dual-Channel Attention (RDCA) module adaptively\ncalibrates channel-wise feature responses to suppress background interference\nwhile amplifying target-pertinent signals. Extensive experiments on benchmark\ndatasets demonstrate that SWAN surpasses existing state-of-the-art methods,\nshowing significant improvements in detection accuracy and robustness,\nparticularly in complex challenging scenarios.",
+        "url": "http://arxiv.org/abs/2508.01322v1",
+        "published_date": "2025-08-02T11:26:58+00:00",
+        "updated_date": "2025-08-02T11:26:58+00:00",
+        "categories": [
+            "eess.IV",
+            "cs.CV"
+        ],
+        "authors": [
+            "Yuxin Jing",
+            "Jufeng Zhao",
+            "Tianpei Zhang",
+            "Yiming Zhu"
+        ],
+        "ai_categories": [
+            "Transformer",
+            "Dataset"
+        ],
+        "tldr": "The paper introduces SWAN, a novel network for infrared small target detection that leverages wavelet and attention mechanisms to improve detection accuracy and robustness.",
+        "tldr_zh": "该论文介绍了SWAN，一种新颖的网络，用于红外小目标检测，利用了小波和注意力机制来提高检测准确性和鲁棒性。",
+        "relevance_score": 8,
+        "novelty_claim_score": 9,
+        "clarity_score": 7,
+        "potential_impact_score": 9,
+        "overall_priority_score": 8.25
+    },
+    {
+        "title": "Self-Enhanced Image Clustering with Cross-Modal Semantic Consistency",
+        "summary": "While large language-image pre-trained models like CLIP offer powerful\ngeneric features for image clustering, existing methods typically freeze the\nencoder. This creates a fundamental mismatch between the model's task-agnostic\nrepresentations and the demands of a specific clustering task, imposing a\nceiling on performance. To break this ceiling, we propose a self-enhanced\nframework based on cross-modal semantic consistency for efficient image\nclustering. Our framework first builds a strong foundation via Cross-Modal\nSemantic Consistency and then specializes the encoder through Self-Enhancement.\nIn the first stage, we focus on Cross-Modal Semantic Consistency. By mining\nconsistency between generated image-text pairs at the instance, cluster\nassignment, and cluster center levels, we train lightweight clustering heads to\nalign with the rich semantics of the pre-trained model. This alignment process\nis bolstered by a novel method for generating higher-quality cluster centers\nand a dynamic balancing regularizer to ensure well-distributed assignments. In\nthe second stage, we introduce a Self-Enhanced fine-tuning strategy. The\nwell-aligned model from the first stage acts as a reliable pseudo-label\ngenerator. These self-generated supervisory signals are then used to feed back\nthe efficient, joint optimization of the vision encoder and clustering heads,\nunlocking their full potential. Extensive experiments on six mainstream\ndatasets show that our method outperforms existing deep clustering methods by\nsignificant margins. Notably, our ViT-B/32 model already matches or even\nsurpasses the accuracy of state-of-the-art methods built upon the far larger\nViT-L/14.",
+        "url": "http://arxiv.org/abs/2508.01254v1",
+        "published_date": "2025-08-02T08:12:57+00:00",
+        "updated_date": "2025-08-02T08:12:57+00:00",
+        "categories": [
+            "cs.CV"
+        ],
+        "authors": [
+            "Zihan Li",
+            "Wei Sun",
+            "Jing Hu",
+            "Jianhua Yin",
+            "Jianlong Wu",
+            "Liqiang Nie"
+        ],
+        "ai_categories": [
+            "Transformer",
+            "GAN",
+            "Dataset"
+        ],
+        "tldr": "The paper proposes a self-enhanced framework for efficient image clustering by leveraging cross-modal semantic consistency and self-enhancement.",
+        "tldr_zh": "本文提出了一种自我增强的框架，通过利用跨模态语义一致性和自我增强来实现高效的图像聚类。",
+        "relevance_score": 8,
+        "novelty_claim_score": 9,
+        "clarity_score": 7,
+        "potential_impact_score": 9,
+        "overall_priority_score": 8.25
+    },
+    {
+        "title": "ForenX: Towards Explainable AI-Generated Image Detection with Multimodal Large Language Models",
+        "summary": "Advances in generative models have led to AI-generated images visually\nindistinguishable from authentic ones. Despite numerous studies on detecting\nAI-generated images with classifiers, a gap persists between such methods and\nhuman cognitive forensic analysis. We present ForenX, a novel method that not\nonly identifies the authenticity of images but also provides explanations that\nresonate with human thoughts. ForenX employs the powerful multimodal large\nlanguage models (MLLMs) to analyze and interpret forensic cues. Furthermore, we\novercome the limitations of standard MLLMs in detecting forgeries by\nincorporating a specialized forensic prompt that directs the MLLMs attention to\nforgery-indicative attributes. This approach not only enhance the\ngeneralization of forgery detection but also empowers the MLLMs to provide\nexplanations that are accurate, relevant, and comprehensive. Additionally, we\nintroduce ForgReason, a dataset dedicated to descriptions of forgery evidences\nin AI-generated images. Curated through collaboration between an LLM-based\nagent and a team of human annotators, this process provides refined data that\nfurther enhances our model's performance. We demonstrate that even limited\nmanual annotations significantly improve explanation quality. We evaluate the\neffectiveness of ForenX on two major benchmarks. The model's explainability is\nverified by comprehensive subjective evaluations.",
+        "url": "http://arxiv.org/abs/2508.01402v1",
+        "published_date": "2025-08-02T15:21:26+00:00",
+        "updated_date": "2025-08-02T15:21:26+00:00",
+        "categories": [
+            "cs.CV"
+        ],
+        "authors": [
+            "Chuangchuang Tan",
+            "Jinglu Wang",
+            "Xiang Ming",
+            "Renshuai Tao",
+            "Yunchao Wei",
+            "Yao Zhao",
+            "Yan Lu"
+        ],
+        "ai_categories": [
+            "AIGC",
+            "Multimodality",
+            "Dataset"
+        ],
+        "tldr": "ForenX introduces a method using multimodal large language models to detect AI-generated image forgeries and provide human-understandable explanations.",
+        "tldr_zh": "ForenX引入了一种使用多模态大型语言模型来检测AI生成图像伪造并提供人类可理解解释的方法。",
+        "relevance_score": 8,
+        "novelty_claim_score": 9,
+        "clarity_score": 7,
+        "potential_impact_score": 8,
+        "overall_priority_score": 8
+    },
+    {
+        "title": "Construction of Digital Terrain Maps from Multi-view Satellite Imagery using Neural Volume Rendering",
+        "summary": "Digital terrain maps (DTMs) are an important part of planetary exploration,\nenabling operations such as terrain relative navigation during entry, descent,\nand landing for spacecraft and aiding in navigation on the ground. As robotic\nexploration missions become more ambitious, the need for high quality DTMs will\nonly increase. However, producing DTMs via multi-view stereo pipelines for\nsatellite imagery, the current state-of-the-art, can be cumbersome and require\nsignificant manual image preprocessing to produce satisfactory results. In this\nwork, we seek to address these shortcomings by adapting neural volume rendering\ntechniques to learn textured digital terrain maps directly from satellite\nimagery. Our method, neural terrain maps (NTM), only requires the locus for\neach image pixel and does not rely on depth or any other structural priors. We\ndemonstrate our method on both synthetic and real satellite data from Earth and\nMars encompassing scenes on the order of $100 \\textrm{km}^2$. We evaluate the\naccuracy of our output terrain maps by comparing with existing high-quality\nDTMs produced using traditional multi-view stereo pipelines. Our method shows\npromising results, with the precision of terrain prediction almost equal to the\nresolution of the satellite images even in the presence of imperfect camera\nintrinsics and extrinsics.",
+        "url": "http://arxiv.org/abs/2508.01386v1",
+        "published_date": "2025-08-02T14:29:20+00:00",
+        "updated_date": "2025-08-02T14:29:20+00:00",
+        "categories": [
+            "cs.CV"
+        ],
+        "authors": [
+            "Josef X. Biberstein",
+            "Guilherme Cavalheiro",
+            "Juyeop Han",
+            "Sertac Karaman"
+        ],
+        "ai_categories": [
+            "Transformer",
+            "Dataset"
+        ],
+        "tldr": "The paper introduces a method, neural terrain maps (NTM), to generate digital terrain maps directly from satellite imagery using neural volume rendering, achieving high accuracy even with imperfect camera settings.",
+        "tldr_zh": "该论文介绍了一种新方法，神经地形图（NTM），通过神经体积渲染直接从卫星图像生成数字地形图，即使在相机设置不完美的情况下也能获得高精度。",
+        "relevance_score": 7,
+        "novelty_claim_score": 8,
+        "clarity_score": 9,
+        "potential_impact_score": 8,
+        "overall_priority_score": 8
+    },
+    {
+        "title": "Lightweight Backbone Networks Only Require Adaptive Lightweight Self-Attention Mechanisms",
+        "summary": "Currently, lightweight hybrid backbone networks have partially alleviated the\nissue of computational saturation, but the imbalance in computational\nefficiencys between convolutional neural networks (CNNs) and attention\nmechanisms is becoming increasingly apparent. Specifically, although linear\nattention mechanisms and their variants have made progress in lightweight\ndesign, they still fail to meet the demands of hybrid models for long-sequence\nmodeling. On the other hand, existing lightweight SoftMax attention\ncomputations typically reduce the feature map to a fixed size to decrease the\nnumber of sequences, thereby compressing the computational scale. However, the\nprocess of determining the feature map reduction ratio is cumbersome, and\ncomputational saturation issues still persist. To address this issue, this\npaper proposes a lightweight SoftMax attention mechanism with adaptive feature\nmap sizes, named Fast Window Attention (FWA), which generates a small number of\nkey sequences (Key and Value) through window aggregation for attention\ncomputation. Additionally, it explains the rationality of using ReLU to\nsimulate SoftMax operations in lightweight global attention mechanisms.\nFinally, the paper designs a global-local feature fusion mechanism and combines\nit with GhostNet to propose a lightweight hybrid backbone network, LOLViT.\nThrough visual tasks such as classification (ImageNet 1K), detection (COCO\n2017), and segmentation (BDD100K), along with extensive ablation studies, it is\ndemonstrated that LOLViT outperforms CNN models of the same level in both\ninference speed and model accuracy. Notably, the inference speed of LOLViT-X is\n5x that of MobileViT-X.",
+        "url": "http://arxiv.org/abs/2508.01385v1",
+        "published_date": "2025-08-02T14:28:57+00:00",
+        "updated_date": "2025-08-02T14:28:57+00:00",
+        "categories": [
+            "cs.CV"
+        ],
+        "authors": [
+            "Fengyun Li",
+            "Chao Zheng",
+            "Yangyang Fang",
+            "Jialiang Lan",
+            "Jianhua Liang",
+            "Luhao Zhang",
+            "Fa Si"
+        ],
+        "ai_categories": [
+            "Transformer",
+            "GAN"
+        ],
+        "tldr": "The paper proposes a lightweight SoftMax attention mechanism with adaptive feature map sizes for hybrid models, outperforming CNN models in both speed and accuracy.",
+        "tldr_zh": "本文提出了一种自适应特征图大小的轻量级SoftMax注意力机制，适用于混合模型，在速度和准确性上优于CNN模型。",
+        "relevance_score": 5,
+        "novelty_claim_score": 8,
+        "clarity_score": 10,
+        "potential_impact_score": 9,
+        "overall_priority_score": 8
+    },
+    {
+        "title": "A Full-Stage Refined Proposal Algorithm for Suppressing False Positives in Two-Stage CNN-Based Detection Methods",
+        "summary": "False positives in pedestrian detection remain a challenge that has yet to be\neffectively resolved. To address this issue, this paper proposes a Full-stage\nRefined Proposal (FRP) algorithm aimed at eliminating these false positives\nwithin a two-stage CNN-based pedestrian detection framework. The main\ninnovation of this work lies in employing various pedestrian feature\nre-evaluation strategies to filter out low-quality pedestrian proposals during\nboth the training and testing stages. Specifically, in the training phase, the\nTraining mode FRP algorithm (TFRP) introduces a novel approach for validating\npedestrian proposals to effectively guide the model training process, thereby\nconstructing a model with strong capabilities for false positive suppression.\nDuring the inference phase, two innovative strategies are implemented: the\nClassifier-guided FRP (CFRP) algorithm integrates a pedestrian classifier into\nthe proposal generation pipeline to yield high-quality proposals through\npedestrian feature evaluation, and the Split-proposal FRP (SFRP) algorithm\nvertically divides all proposals, sending both the original and the sub-region\nproposals to the subsequent subnetwork to evaluate their confidence scores,\nfiltering out those with lower sub-region pedestrian confidence scores. As a\nresult, the proposed algorithm enhances the model's ability to suppress\npedestrian false positives across all stages. Various experiments conducted on\nmultiple benchmarks and the SY-Metro datasets demonstrate that the model,\nsupported by different combinations of the FRP algorithm, can effectively\neliminate false positives to varying extents. Furthermore, experiments\nconducted on embedded platforms underscore the algorithm's effectiveness in\nenhancing the comprehensive pedestrian detection capabilities of the small\npedestrian detector in resource-constrained edge devices.",
+        "url": "http://arxiv.org/abs/2508.01382v1",
+        "published_date": "2025-08-02T14:25:37+00:00",
+        "updated_date": "2025-08-02T14:25:37+00:00",
+        "categories": [
+            "cs.CV",
+            "cs.AI"
+        ],
+        "authors": [
+            "Qiang Guo",
+            "Rubo Zhang",
+            "Bingbing Zhang",
+            "Junjie Liu",
+            "Jianqing Liu"
+        ],
+        "ai_categories": [
+            "Dataset",
+            "LoRA"
+        ],
+        "tldr": "The paper proposes a Full-stage Refined Proposal (FRP) algorithm to suppress false positives in pedestrian detection methods using a two-stage CNN-based framework.",
+        "tldr_zh": "该论文提出了一种全阶段改进的提议（FRP）算法，以消除两阶段CNN基于框架的行人检测方法中的假阳性。",
+        "relevance_score": 1,
+        "novelty_claim_score": 8,
+        "clarity_score": 9,
+        "potential_impact_score": 7,
+        "overall_priority_score": 8
+    },
+    {
+        "title": "Effective Damage Data Generation by Fusing Imagery with Human Knowledge Using Vision-Language Models",
+        "summary": "It is of crucial importance to assess damages promptly and accurately in\nhumanitarian assistance and disaster response (HADR). Current deep learning\napproaches struggle to generalize effectively due to the imbalance of data\nclasses, scarcity of moderate damage examples, and human inaccuracy in pixel\nlabeling during HADR situations. To accommodate for these limitations and\nexploit state-of-the-art techniques in vision-language models (VLMs) to fuse\nimagery with human knowledge understanding, there is an opportunity to generate\na diversified set of image-based damage data effectively. Our initial\nexperimental results suggest encouraging data generation quality, which\ndemonstrates an improvement in classifying scenes with different levels of\nstructural damage to buildings, roads, and infrastructures.",
+        "url": "http://arxiv.org/abs/2508.01380v1",
+        "published_date": "2025-08-02T14:22:25+00:00",
+        "updated_date": "2025-08-02T14:22:25+00:00",
+        "categories": [
+            "cs.CV",
+            "cs.AI"
+        ],
+        "authors": [
+            "Jie Wei",
+            "Erika Ardiles-Cruz",
+            "Aleksey Panasyuk",
+            "Erik Blasch"
+        ],
+        "ai_categories": [
+            "Transformer",
+            "Dataset"
+        ],
+        "tldr": "The paper proposes a method to generate diverse image-based damage data by combining imagery with human knowledge using vision-language models, showing promising results in classifying different levels of structural damage.",
+        "tldr_zh": "本文提出一种通过视觉语言模型将图像与人类知识相结合的方法来生成多样化的基于图像的损坏数据，在分类不同水平的结构损坏方面取得了令人鼓舞的结果。",
+        "relevance_score": 8,
+        "novelty_claim_score": 7,
+        "clarity_score": 9,
+        "potential_impact_score": 8,
+        "overall_priority_score": 8
+    },
+    {
+        "title": "Predicting Video Slot Attention Queries from Random Slot-Feature Pairs",
+        "summary": "Unsupervised video Object-Centric Learning (OCL) is promising as it enables\nobject-level scene representation and dynamics modeling as we humans do.\nMainstream video OCL methods adopt a recurrent architecture: An aggregator\naggregates current video frame into object features, termed slots, under some\nqueries; A transitioner transits current slots to queries for the next frame.\nThis is an effective architecture but all existing implementations both\n(\\textit{i1}) neglect to incorporate next frame features, the most informative\nsource for query prediction, and (\\textit{i2}) fail to learn transition\ndynamics, the knowledge essential for query prediction. To address these\nissues, we propose Random Slot-Feature pair for learning Query prediction\n(RandSF.Q): (\\textit{t1}) We design a new transitioner to incorporate both\nslots and features, which provides more information for query prediction;\n(\\textit{t2}) We train the transitioner to predict queries from slot-feature\npairs randomly sampled from available recurrences, which drives it to learn\ntransition dynamics. Experiments on scene representation demonstrate that our\nmethod surpass existing video OCL methods significantly, e.g., up to 10 points\non object discovery, setting new state-of-the-art. Such superiority also\nbenefits downstream tasks like dynamics modeling. Our core source code and\ntraining logs are available as the supplement.",
+        "url": "http://arxiv.org/abs/2508.01345v1",
+        "published_date": "2025-08-02T12:48:04+00:00",
+        "updated_date": "2025-08-02T12:48:04+00:00",
+        "categories": [
+            "cs.CV"
+        ],
+        "authors": [
+            "Rongzhen Zhao",
+            "Jian Li",
+            "Juho Kannala",
+            "Joni Pajarinen"
+        ],
+        "ai_categories": [
+            "Transformer",
+            "Dataset"
+        ],
+        "tldr": "The paper introduces a new method, RandSF.Q, for predicting video slot attention queries in Object-Centric Learning, showing significant improvement in object discovery and setting a new state-of-the-art.",
+        "tldr_zh": "该论文介绍了一种新的方法，RandSF.Q，用于预测视频槽关注查询在对象中心学习中，显示出在对象发现方面的显着改进，并树立了一个新的技术标准。",
+        "relevance_score": 7,
+        "novelty_claim_score": 8,
+        "clarity_score": 9,
+        "potential_impact_score": 8,
+        "overall_priority_score": 8
+    },
+    {
+        "title": "Weakly-Supervised Image Forgery Localization via Vision-Language Collaborative Reasoning Framework",
+        "summary": "Image forgery localization aims to precisely identify tampered regions within\nimages, but it commonly depends on costly pixel-level annotations. To alleviate\nthis annotation burden, weakly supervised image forgery localization (WSIFL)\nhas emerged, yet existing methods still achieve limited localization\nperformance as they mainly exploit intra-image consistency clues and lack\nexternal semantic guidance to compensate for weak supervision. In this paper,\nwe propose ViLaCo, a vision-language collaborative reasoning framework that\nintroduces auxiliary semantic supervision distilled from pre-trained\nvision-language models (VLMs), enabling accurate pixel-level localization using\nonly image-level labels. Specifically, ViLaCo first incorporates semantic\nknowledge through a vision-language feature modeling network, which jointly\nextracts textual and visual priors using pre-trained VLMs. Next, an adaptive\nvision-language reasoning network aligns textual semantics and visual features\nthrough mutual interactions, producing semantically aligned representations.\nSubsequently, these representations are passed into dual prediction heads,\nwhere the coarse head performs image-level classification and the fine head\ngenerates pixel-level localization masks, thereby bridging the gap between weak\nsupervision and fine-grained localization. Moreover, a contrastive patch\nconsistency module is introduced to cluster tampered features while separating\nauthentic ones, facilitating more reliable forgery discrimination. Extensive\nexperiments on multiple public datasets demonstrate that ViLaCo substantially\noutperforms existing WSIFL methods, achieving state-of-the-art performance in\nboth detection and localization accuracy.",
+        "url": "http://arxiv.org/abs/2508.01338v1",
+        "published_date": "2025-08-02T12:14:29+00:00",
+        "updated_date": "2025-08-02T12:14:29+00:00",
+        "categories": [
+            "cs.CV",
+            "cs.AI"
+        ],
+        "authors": [
+            "Ziqi Sheng",
+            "Junyan Wu",
+            "Wei Lu",
+            "Jiantao Zhou"
+        ],
+        "ai_categories": [
+            "AIGC",
+            "Dataset"
+        ],
+        "tldr": "The paper introduces ViLaCo, a framework for image forgery localization using weak supervision and vision-language collaboration, achieving state-of-the-art performance in detection and localization accuracy.",
+        "tldr_zh": "本文提出了ViLaCo，一种利用弱监督和视觉-语言协作的图像伪造定位框架，实现了在检测和定位准确性方面的最新性能。",
+        "relevance_score": 7,
+        "novelty_claim_score": 8,
+        "clarity_score": 9,
+        "potential_impact_score": 8,
+        "overall_priority_score": 8
+    },
+    {
+        "title": "StyleSentinel: Reliable Artistic Copyright Verification via Stylistic Fingerprints",
+        "summary": "The versatility of diffusion models in generating customized images has led\nto unauthorized usage of personal artwork, which poses a significant threat to\nthe intellectual property of artists. Existing approaches relying on embedding\nadditional information, such as perturbations, watermarks, and backdoors,\nsuffer from limited defensive capabilities and fail to protect artwork\npublished online. In this paper, we propose StyleSentinel, an approach for\ncopyright protection of artwork by verifying an inherent stylistic fingerprint\nin the artist's artwork. Specifically, we employ a semantic self-reconstruction\nprocess to enhance stylistic expressiveness within the artwork, which\nestablishes a dense and style-consistent manifold foundation for feature\nlearning. Subsequently, we adaptively fuse multi-layer image features to encode\nabstract artistic style into a compact stylistic fingerprint. Finally, we model\nthe target artist's style as a minimal enclosing hypersphere boundary in the\nfeature space, transforming complex copyright verification into a robust\none-class learning task. Extensive experiments demonstrate that compared with\nthe state-of-the-art, StyleSentinel achieves superior performance on the\none-sample verification task. We also demonstrate the effectiveness through\nonline platforms.",
+        "url": "http://arxiv.org/abs/2508.01335v1",
+        "published_date": "2025-08-02T12:04:52+00:00",
+        "updated_date": "2025-08-02T12:04:52+00:00",
+        "categories": [
+            "cs.CV"
+        ],
+        "authors": [
+            "Lingxiao Chen",
+            "Liqin Wang",
+            "Wei Lu"
+        ],
+        "ai_categories": [
+            "GAN",
+            "AIGC"
+        ],
+        "tldr": "StyleSentinel proposes a method for copyright protection of artwork by verifying a stylistic fingerprint in the artist's work, achieving superior performance in one-sample verification tasks.",
+        "tldr_zh": "StyleSentinel提出了一种通过验证艺术家作品中的风格指纹来保护版权的方法，在一样本验证任务中表现出优越性能。",
+        "relevance_score": 7,
+        "novelty_claim_score": 8,
+        "clarity_score": 9,
+        "potential_impact_score": 8,
+        "overall_priority_score": 8
+    },
+    {
+        "title": "Zero-shot Segmentation of Skin Conditions: Erythema with Edit-Friendly Inversion",
+        "summary": "This study proposes a zero-shot image segmentation framework for detecting\nerythema (redness of the skin) using edit-friendly inversion in diffusion\nmodels. The method synthesizes reference images of the same patient that are\nfree from erythema via generative editing and then accurately aligns these\nreferences with the original images. Color-space analysis is performed with\nminimal user intervention to identify erythematous regions. This approach\nsignificantly reduces the reliance on labeled dermatological datasets while\nproviding a scalable and flexible diagnostic support tool by avoiding the need\nfor any annotated training masks. In our initial qualitative experiments, the\npipeline successfully isolated facial erythema in diverse cases, demonstrating\nperformance improvements over baseline threshold-based techniques. These\nresults highlight the potential of combining generative diffusion models and\nstatistical color segmentation for computer-aided dermatology, enabling\nefficient erythema detection without prior training data.",
+        "url": "http://arxiv.org/abs/2508.01334v1",
+        "published_date": "2025-08-02T12:00:35+00:00",
+        "updated_date": "2025-08-02T12:00:35+00:00",
+        "categories": [
+            "cs.CV"
+        ],
+        "authors": [
+            "Konstantinos Moutselos",
+            "Ilias Maglogiannis"
+        ],
+        "ai_categories": [
+            "GAN",
+            "Diffusion",
+            "Dataset",
+            "Other"
+        ],
+        "tldr": "The paper proposes a novel zero-shot image segmentation framework for detecting erythema using generative editing and color-space analysis.",
+        "tldr_zh": "本文提出了一种新颖的零样本图像分割框架，使用生成编辑和颜色空间分析来检测红斑。",
+        "relevance_score": 7,
+        "novelty_claim_score": 8,
+        "clarity_score": 9,
+        "potential_impact_score": 8,
+        "overall_priority_score": 8
+    },
+    {
+        "title": "Referring Remote Sensing Image Segmentation with Cross-view Semantics Interaction Network",
+        "summary": "Recently, Referring Remote Sensing Image Segmentation (RRSIS) has aroused\nwide attention. To handle drastic scale variation of remote targets, existing\nmethods only use the full image as input and nest the saliency-preferring\ntechniques of cross-scale information interaction into traditional single-view\nstructure. Although effective for visually salient targets, they still struggle\nin handling tiny, ambiguous ones in lots of real scenarios. In this work, we\ninstead propose a paralleled yet unified segmentation framework Cross-view\nSemantics Interaction Network (CSINet) to solve the limitations. Motivated by\nhuman behavior in observing targets of interest, the network orchestrates\nvisual cues from remote and close distances to conduct synergistic prediction.\nIn its every encoding stage, a Cross-View Window-attention module (CVWin) is\nutilized to supplement global and local semantics into close-view and\nremote-view branch features, finally promoting the unified representation of\nfeature in every encoding stage. In addition, we develop a Collaboratively\nDilated Attention enhanced Decoder (CDAD) to mine the orientation property of\ntarget and meanwhile integrate cross-view multiscale features. The proposed\nnetwork seamlessly enhances the exploitation of global and local semantics,\nachieving significant improvements over others while maintaining satisfactory\nspeed.",
+        "url": "http://arxiv.org/abs/2508.01331v1",
+        "published_date": "2025-08-02T11:57:56+00:00",
+        "updated_date": "2025-08-02T11:57:56+00:00",
+        "categories": [
+            "cs.CV",
+            "cs.AI"
+        ],
+        "authors": [
+            "Jiaxing Yang",
+            "Lihe Zhang",
+            "Huchuan Lu"
+        ],
+        "ai_categories": [
+            "Transformer",
+            "Multimodality",
+            "GAN"
+        ],
+        "tldr": "The paper introduces a new framework called CSINet for referring remote sensing image segmentation, which improves segmentation performance by incorporating cross-view semantics interactions.",
+        "tldr_zh": "本文提出了一种名为CSINet的新框架，用于指代远程感知图像分割，通过整合跨视图语义交互来提高分割性能。",
+        "relevance_score": 1,
+        "novelty_claim_score": 8,
+        "clarity_score": 9,
+        "potential_impact_score": 7,
+        "overall_priority_score": 8
+    },
+    {
+        "title": "Multimodal Attention-Aware Fusion for Diagnosing Distal Myopathy: Evaluating Model Interpretability and Clinician Trust",
+        "summary": "Distal myopathy represents a genetically heterogeneous group of skeletal\nmuscle disorders with broad clinical manifestations, posing diagnostic\nchallenges in radiology. To address this, we propose a novel multimodal\nattention-aware fusion architecture that combines features extracted from two\ndistinct deep learning models, one capturing global contextual information and\nthe other focusing on local details, representing complementary aspects of the\ninput data. Uniquely, our approach integrates these features through an\nattention gate mechanism, enhancing both predictive performance and\ninterpretability. Our method achieves a high classification accuracy on the\nBUSI benchmark and a proprietary distal myopathy dataset, while also generating\nclinically relevant saliency maps that support transparent decision-making in\nmedical diagnosis. We rigorously evaluated interpretability through (1)\nfunctionally grounded metrics, coherence scoring against reference masks and\nincremental deletion analysis, and (2) application-grounded validation with\nseven expert radiologists. While our fusion strategy boosts predictive\nperformance relative to single-stream and alternative fusion strategies, both\nquantitative and qualitative evaluations reveal persistent gaps in anatomical\nspecificity and clinical usefulness of the interpretability. These findings\nhighlight the need for richer, context-aware interpretability methods and\nhuman-in-the-loop feedback to meet clinicians' expectations in real-world\ndiagnostic settings.",
+        "url": "http://arxiv.org/abs/2508.01316v1",
+        "published_date": "2025-08-02T11:08:55+00:00",
+        "updated_date": "2025-08-02T11:08:55+00:00",
+        "categories": [
+            "cs.CV",
+            "cs.HC"
+        ],
+        "authors": [
+            "Mohsen Abbaspour Onari",
+            "Lucie Charlotte Magister",
+            "Yaoxin Wu",
+            "Amalia Lupi",
+            "Dario Creazzo",
+            "Mattia Tordin",
+            "Luigi Di Donatantonio",
+            "Emilio Quaia",
+            "Chao Zhang",
+            "Isel Grau",
+            "Marco S. Nobile",
+            "Yingqian Zhang",
+            "Pietro Liò"
+        ],
+        "ai_categories": [
+            "Multimodality",
+            "Dataset",
+            "Other"
+        ],
+        "tldr": "The paper proposes a novel multimodal fusion architecture for diagnosing distal myopathy, achieving high classification accuracy and generating clinically relevant saliency maps but reveals gaps in interpretability.",
+        "tldr_zh": "本文提出了一种新颖的多模态融合架构，用于诊断远端肌病，取得了高分类准确率并生成具有临床相关性的显著图，但发现了解释性方面的差距。",
+        "relevance_score": 7,
+        "novelty_claim_score": 8,
+        "clarity_score": 9,
+        "potential_impact_score": 8,
+        "overall_priority_score": 8
+    },
+    {
+        "title": "CoCoLIT: ControlNet-Conditioned Latent Image Translation for MRI to Amyloid PET Synthesis",
+        "summary": "Synthesizing amyloid PET scans from the more widely available and accessible\nstructural MRI modality offers a promising, cost-effective approach for\nlarge-scale Alzheimer's Disease (AD) screening. This is motivated by evidence\nthat, while MRI does not directly detect amyloid pathology, it may nonetheless\nencode information correlated with amyloid deposition that can be uncovered\nthrough advanced modeling. However, the high dimensionality and structural\ncomplexity of 3D neuroimaging data pose significant challenges for existing\nMRI-to-PET translation methods. Modeling the cross-modality relationship in a\nlower-dimensional latent space can simplify the learning task and enable more\neffective translation. As such, we present CoCoLIT (ControlNet-Conditioned\nLatent Image Translation), a diffusion-based latent generative framework that\nincorporates three main innovations: (1) a novel Weighted Image Space Loss\n(WISL) that improves latent representation learning and synthesis quality; (2)\na theoretical and empirical analysis of Latent Average Stabilization (LAS), an\nexisting technique used in similar generative models to enhance inference\nconsistency; and (3) the introduction of ControlNet-based conditioning for\nMRI-to-PET translation. We evaluate CoCoLIT's performance on publicly available\ndatasets and find that our model significantly outperforms state-of-the-art\nmethods on both image-based and amyloid-related metrics. Notably, in\namyloid-positivity classification, CoCoLIT outperforms the second-best method\nwith improvements of +10.5% on the internal dataset and +23.7% on the external\ndataset. The code and models of our approach are available at\nhttps://github.com/brAIn-science/CoCoLIT.",
+        "url": "http://arxiv.org/abs/2508.01292v1",
+        "published_date": "2025-08-02T09:58:30+00:00",
+        "updated_date": "2025-08-02T09:58:30+00:00",
+        "categories": [
+            "eess.IV",
+            "cs.AI",
+            "cs.CV"
+        ],
+        "authors": [
+            "Alec Sargood",
+            "Lemuel Puglisi",
+            "James H. Cole",
+            "Neil P. Oxtoby",
+            "Daniele Ravì",
+            "Daniel C. Alexander"
+        ],
+        "ai_categories": [
+            "Transformer",
+            "Dataset"
+        ],
+        "tldr": "CoCoLIT introduces a diffusion-based generative framework for synthesizing amyloid PET scans from MRI data for Alzheimer's Disease screening, outperforming state-of-the-art methods.",
+        "tldr_zh": "CoCoLIT引入了一种基于扩散的生成框架，用于从MRI数据合成淀粉样PET扫描，以进行阿尔茨海默病筛查，并优于现有的方法。",
+        "relevance_score": 7,
+        "novelty_claim_score": 8,
+        "clarity_score": 9,
+        "potential_impact_score": 9,
+        "overall_priority_score": 8
+    },
+    {
+        "title": "PromptSafe: Gated Prompt Tuning for Safe Text-to-Image Generation",
+        "summary": "Text-to-image (T2I) models have demonstrated remarkable generative\ncapabilities but remain vulnerable to producing not-safe-for-work (NSFW)\ncontent, such as violent or explicit imagery. While recent moderation efforts\nhave introduced soft prompt-guided tuning by appending defensive tokens to the\ninput, these approaches often rely on large-scale curated image-text datasets\nand apply static, one-size-fits-all defenses at inference time. However, this\nresults not only in high computational cost and degraded benign image quality,\nbut also in limited adaptability to the diverse and nuanced safety requirements\nof real-world prompts. To address these challenges, we propose PromptSafe, a\ngated prompt tuning framework that combines a lightweight, text-only supervised\nsoft embedding with an inference-time gated control network. Instead of\ntraining on expensive image-text datasets, we first rewrite unsafe prompts into\nsemantically aligned but safe alternatives using an LLM, constructing an\nefficient text-only training corpus. Based on this, we optimize a universal\nsoft prompt that repels unsafe and attracts safe embeddings during the\ndiffusion denoising process. To avoid over-suppressing benign prompts, we\nintroduce a gated mechanism that adaptively adjusts the defensive strength\nbased on estimated prompt toxicity, thereby aligning defense intensity with\nprompt risk and ensuring strong protection for harmful inputs while preserving\nbenign generation quality. Extensive experiments across multiple benchmarks and\nT2I models show that PromptSafe achieves a SOTA unsafe generation rate (2.36%),\nwhile preserving high benign fidelity. Furthermore, PromptSafe demonstrates\nstrong generalization to unseen harmful categories, robust transferability\nacross diffusion model architectures, and resilience under adaptive adversarial\nattacks, highlighting its practical value for safe and scalable deployment.",
+        "url": "http://arxiv.org/abs/2508.01272v1",
+        "published_date": "2025-08-02T09:09:40+00:00",
+        "updated_date": "2025-08-02T09:09:40+00:00",
+        "categories": [
+            "cs.CV"
+        ],
+        "authors": [
+            "Zonglei Jing",
+            "Xiao Yang",
+            "Xiaoqian Li",
+            "Siyuan Liang",
+            "Aishan Liu",
+            "Mingchuan Zhang",
+            "Xianglong Liu"
+        ],
+        "ai_categories": [
+            "GAN",
+            "Transformer",
+            "Dataset",
+            "Diffusion"
+        ],
+        "tldr": "The paper introduces PromptSafe, a framework for safe text-to-image generation that adapts defensively based on prompt toxicity, achieving state-of-the-art unsafe generation rate with high benign fidelity.",
+        "tldr_zh": "本文介绍了PromptSafe，这是一个安全文本到图像生成框架，根据提示毒性进行防御性调整，实现了高 benign 保真度的最先进不安全生成率。",
+        "relevance_score": 7,
+        "novelty_claim_score": 8,
+        "clarity_score": 9,
+        "potential_impact_score": 8,
+        "overall_priority_score": 8
+    },
+    {
+        "title": "Enhancing Diffusion-based Dataset Distillation via Adversary-Guided Curriculum Sampling",
+        "summary": "Dataset distillation aims to encapsulate the rich information contained in\ndataset into a compact distilled dataset but it faces performance degradation\nas the image-per-class (IPC) setting or image resolution grows larger. Recent\nadvancements demonstrate that integrating diffusion generative models can\neffectively facilitate the compression of large-scale datasets while\nmaintaining efficiency due to their superiority in matching data distribution\nand summarizing representative patterns. However, images sampled from diffusion\nmodels are always blamed for lack of diversity which may lead to information\nredundancy when multiple independent sampled images are aggregated as a\ndistilled dataset. To address this issue, we propose Adversary-guided\nCurriculum Sampling (ACS), which partitions the distilled dataset into multiple\ncurricula. For generating each curriculum, ACS guides diffusion sampling\nprocess by an adversarial loss to challenge a discriminator trained on sampled\nimages, thus mitigating information overlap between curricula and fostering a\nmore diverse distilled dataset. Additionally, as the discriminator evolves with\nthe progression of curricula, ACS generates images from simpler to more\ncomplex, ensuring efficient and systematic coverage of target data\ninformational spectrum. Extensive experiments demonstrate the effectiveness of\nACS, which achieves substantial improvements of 4.1\\% on Imagewoof and 2.1\\% on\nImageNet-1k over the state-of-the-art.",
+        "url": "http://arxiv.org/abs/2508.01264v1",
+        "published_date": "2025-08-02T08:48:32+00:00",
+        "updated_date": "2025-08-02T08:48:32+00:00",
+        "categories": [
+            "cs.CV"
+        ],
+        "authors": [
+            "Lexiao Zou",
+            "Gongwei Chen",
+            "Yanda Chen",
+            "Miao Zhang"
+        ],
+        "ai_categories": [
+            "Diffusion",
+            "GAN",
+            "Dataset"
+        ],
+        "tldr": "The paper proposes a method called Adversary-guided Curriculum Sampling (ACS) to enhance dataset distillation by generating a more diverse distilled dataset through partitioning and adversarial training.",
+        "tldr_zh": "本文提出了一种名为Adversary-guided Curriculum Sampling（ACS）的方法，通过分区和对抗训练，生成更多样化的压缩数据集，从而增强数据集蒸馏的性能。",
+        "relevance_score": 7,
+        "novelty_claim_score": 8,
+        "clarity_score": 9,
+        "potential_impact_score": 8,
+        "overall_priority_score": 8
+    },
+    {
+        "title": "SpatioTemporal Difference Network for Video Depth Super-Resolution",
+        "summary": "Depth super-resolution has achieved impressive performance, and the\nincorporation of multi-frame information further enhances reconstruction\nquality. Nevertheless, statistical analyses reveal that video depth\nsuper-resolution remains affected by pronounced long-tailed distributions, with\nthe long-tailed effects primarily manifesting in spatial non-smooth regions and\ntemporal variation zones. To address these challenges, we propose a novel\nSpatioTemporal Difference Network (STDNet) comprising two core branches: a\nspatial difference branch and a temporal difference branch. In the spatial\ndifference branch, we introduce a spatial difference mechanism to mitigate the\nlong-tailed issues in spatial non-smooth regions. This mechanism dynamically\naligns RGB features with learned spatial difference representations, enabling\nintra-frame RGB-D aggregation for depth calibration. In the temporal difference\nbranch, we further design a temporal difference strategy that preferentially\npropagates temporal variation information from adjacent RGB and depth frames to\nthe current depth frame, leveraging temporal difference representations to\nachieve precise motion compensation in temporal long-tailed areas. Extensive\nexperimental results across multiple datasets demonstrate the effectiveness of\nour STDNet, outperforming existing approaches.",
+        "url": "http://arxiv.org/abs/2508.01259v1",
+        "published_date": "2025-08-02T08:18:38+00:00",
+        "updated_date": "2025-08-02T08:18:38+00:00",
+        "categories": [
+            "cs.CV"
+        ],
+        "authors": [
+            "Zhengxue Wang",
+            "Yuan Wu",
+            "Xiang Li",
+            "Zhiqiang Yan",
+            "Jian Yang"
+        ],
+        "ai_categories": [
+            "Transformer",
+            "GAN",
+            "Dataset"
+        ],
+        "tldr": "The paper proposes a SpatioTemporal Difference Network for video depth super-resolution, addressing long-tailed distributions in spatial and temporal regions to enhance reconstruction quality.",
+        "tldr_zh": "本文提出了一个用于视频深度超分辨率的时空差异网络，旨在解决空间和时间区域的长尾分布问题，以提高重建质量。",
+        "relevance_score": 7,
+        "novelty_claim_score": 8,
+        "clarity_score": 9,
+        "potential_impact_score": 8,
+        "overall_priority_score": 8
+    },
+    {
+        "title": "NS-Net: Decoupling CLIP Semantic Information through NULL-Space for Generalizable AI-Generated Image Detection",
+        "summary": "The rapid progress of generative models, such as GANs and diffusion models,\nhas facilitated the creation of highly realistic images, raising growing\nconcerns over their misuse in security-sensitive domains. While existing\ndetectors perform well under known generative settings, they often fail to\ngeneralize to unknown generative models, especially when semantic content\nbetween real and fake images is closely aligned. In this paper, we revisit the\nuse of CLIP features for AI-generated image detection and uncover a critical\nlimitation: the high-level semantic information embedded in CLIP's visual\nfeatures hinders effective discrimination. To address this, we propose NS-Net,\na novel detection framework that leverages NULL-Space projection to decouple\nsemantic information from CLIP's visual features, followed by contrastive\nlearning to capture intrinsic distributional differences between real and\ngenerated images. Furthermore, we design a Patch Selection strategy to preserve\nfine-grained artifacts by mitigating semantic bias caused by global image\nstructures. Extensive experiments on an open-world benchmark comprising images\ngenerated by 40 diverse generative models show that NS-Net outperforms existing\nstate-of-the-art methods, achieving a 7.4\\% improvement in detection accuracy,\nthereby demonstrating strong generalization across both GAN- and\ndiffusion-based image generation techniques.",
+        "url": "http://arxiv.org/abs/2508.01248v1",
+        "published_date": "2025-08-02T07:58:15+00:00",
+        "updated_date": "2025-08-02T07:58:15+00:00",
+        "categories": [
+            "cs.CV"
+        ],
+        "authors": [
+            "Jiazhen Yan",
+            "Fan Wang",
+            "Weiwei Jiang",
+            "Ziqiang Li",
+            "Zhangjie Fu"
+        ],
+        "ai_categories": [
+            "GAN",
+            "AIGC",
+            "Transformer"
+        ],
+        "tldr": "NS-Net is a novel framework for AI-generated image detection that decouples semantic information from visual features to improve detection accuracy across diverse generative models.",
+        "tldr_zh": "NS-Net是一种新颖的框架，用于在各种生成模型中提高AI生成图像检测的准确性，通过解耦语义信息和视觉特征来实现。",
+        "relevance_score": 8,
+        "novelty_claim_score": 9,
+        "clarity_score": 7,
+        "potential_impact_score": 8,
+        "overall_priority_score": 8
+    },
+    {
+        "title": "MeshLLM: Empowering Large Language Models to Progressively Understand and Generate 3D Mesh",
+        "summary": "We present MeshLLM, a novel framework that leverages large language models\n(LLMs) to understand and generate text-serialized 3D meshes. Our approach\naddresses key limitations in existing methods, including the limited dataset\nscale when catering to LLMs' token length and the loss of 3D structural\ninformation during mesh serialization. We introduce a Primitive-Mesh\ndecomposition strategy, which divides 3D meshes into structurally meaningful\nsubunits. This enables the creation of a large-scale dataset with 1500k+\nsamples, almost 50 times larger than previous methods, which aligns better with\nthe LLM scaling law principles. Furthermore, we propose inferring face\nconnectivity from vertices and local mesh assembly training strategies,\nsignificantly enhancing the LLMs' ability to capture mesh topology and spatial\nstructures. Experiments show that MeshLLM outperforms the state-of-the-art\nLLaMA-Mesh in both mesh generation quality and shape understanding,\nhighlighting its great potential in processing text-serialized 3D meshes.",
+        "url": "http://arxiv.org/abs/2508.01242v1",
+        "published_date": "2025-08-02T07:37:37+00:00",
+        "updated_date": "2025-08-02T07:37:37+00:00",
+        "categories": [
+            "cs.GR",
+            "cs.CV"
+        ],
+        "authors": [
+            "Shuangkang Fang",
+            "I-Chao Shen",
+            "Yufeng Wang",
+            "Yi-Hsuan Tsai",
+            "Yi Yang",
+            "Shuchang Zhou",
+            "Wenrui Ding",
+            "Takeo Igarashi",
+            "Ming-Hsuan Yang"
+        ],
+        "ai_categories": [
+            "Transformer",
+            "Dataset"
+        ],
+        "tldr": "MeshLLM is a novel framework that uses large language models to generate text-serialized 3D meshes, outperforming existing methods in both quality and understanding of shape.",
+        "tldr_zh": "MeshLLM是一个新颖的框架，利用大型语言模型生成文本序列化的3D网格，优于现有方法在网格生成质量和形状理解方面。",
+        "relevance_score": 7,
+        "novelty_claim_score": 9,
+        "clarity_score": 8,
+        "potential_impact_score": 8,
+        "overall_priority_score": 8
+    },
+    {
+        "title": "Mitigating Information Loss under High Pruning Rates for Efficient Large Vision Language Models",
+        "summary": "Despite the great success of Large Vision Language Models (LVLMs), their high\ncomputational cost severely limits their broad applications. The computational\ncost of LVLMs mainly stems from the visual sequence of the input, which\nconsists of hundreds or even thousands of tokens. Although existing methods\nhave made progress by removing redundant tokens, they suffer from severe\nperformance degradation with high pruning rates due to the loss of visual\ninformation. In this paper, we propose an Adaptive Content Compensation Method\n(ACCM), which can effectively mitigate the visual information loss via an image\ncaption. Specifically, ACCM comprises two key components: a lightweight caption\nmodel and a selector. Firstly the caption model generates question-related\ndescriptions under the guidance of the user instruction. Then the selector\nfurther identifies a contextually appropriate caption from multiple candidates.\nLeveraging self-supervised learning, our modules could be learned efficiently\nwithout any human or automated labeling. We conduct extensive experiments\nacross seven benchmarks and the results show that ACCM significantly\noutperforms existing methods with lower FLOPs (e.g., surpassing SOTA by 20.6%\nwith 6.5% fewer FLOPs).",
+        "url": "http://arxiv.org/abs/2508.01236v1",
+        "published_date": "2025-08-02T07:22:08+00:00",
+        "updated_date": "2025-08-02T07:22:08+00:00",
+        "categories": [
+            "cs.CV"
+        ],
+        "authors": [
+            "Mingyu Fu",
+            "Wei Suo",
+            "Ji Ma",
+            "Lin Yuanbo Wu",
+            "Peng Wang",
+            "Yanning Zhang"
+        ],
+        "ai_categories": [
+            "Transformer",
+            "Multimodality",
+            "GAN"
+        ],
+        "tldr": "The paper proposes a method, ACCM, to mitigate visual information loss in Large Vision Language Models by using image captions, achieving better performance with lower computational cost compared to existing methods.",
+        "tldr_zh": "本文提出了一种通过使用图像标题来减少大型视觉语言模型中的视觉信息损失的方法，与现有方法相比，性能更好，计算成本更低。",
+        "relevance_score": 8,
+        "novelty_claim_score": 7,
+        "clarity_score": 9,
+        "potential_impact_score": 8,
+        "overall_priority_score": 8
+    },
+    {
+        "title": "Point-wise Diffusion Models for Physical Systems with Shape Variations: Application to Spatio-temporal and Large-scale system",
+        "summary": "This study introduces a novel point-wise diffusion model that processes\nspatio-temporal points independently to efficiently predict complex physical\nsystems with shape variations. This methodological contribution lies in\napplying forward and backward diffusion processes at individual spatio-temporal\npoints, coupled with a point-wise diffusion transformer architecture for\ndenoising. Unlike conventional image-based diffusion models that operate on\nstructured data representations, this framework enables direct processing of\nany data formats including meshes and point clouds while preserving geometric\nfidelity. We validate our approach across three distinct physical domains with\ncomplex geometric configurations: 2D spatio-temporal systems including cylinder\nfluid flow and OLED drop impact test, and 3D large-scale system for road-car\nexternal aerodynamics. To justify the necessity of our point-wise approach for\nreal-time prediction applications, we employ denoising diffusion implicit\nmodels (DDIM) for efficient deterministic sampling, requiring only 5-10 steps\ncompared to traditional 1000-step and providing computational speedup of 100 to\n200 times during inference without compromising accuracy. In addition, our\nproposed model achieves superior performance compared to image-based diffusion\nmodel: reducing training time by 94.4% and requiring 89.0% fewer parameters\nwhile achieving over 28% improvement in prediction accuracy. Comprehensive\ncomparisons against data-flexible surrogate models including DeepONet and\nMeshgraphnet demonstrate consistent superiority of our approach across all\nthree physical systems. To further refine the proposed model, we investigate\ntwo key aspects: 1) comparison of final physical states prediction or\nincremental change prediction, and 2) computational efficiency evaluation\nacross varying subsampling ratios (10%-100%).",
+        "url": "http://arxiv.org/abs/2508.01230v1",
+        "published_date": "2025-08-02T06:55:59+00:00",
+        "updated_date": "2025-08-02T06:55:59+00:00",
+        "categories": [
+            "physics.comp-ph",
+            "cs.CV"
+        ],
+        "authors": [
+            "Jiyong Kim",
+            "Sunwoong Yang",
+            "Namwoo Kang"
+        ],
+        "ai_categories": [
+            "Diffusion",
+            "Transformer"
+        ],
+        "tldr": "The paper introduces a novel point-wise diffusion model for predicting complex physical systems with shape variations, showcasing superior performance compared to image-based diffusion models.",
+        "tldr_zh": "该论文引入了一种新颖的逐点扩散模型，用于预测具有形状变化的复杂物理系统，表现出比基于图像的扩散模型更优越的性能。",
+        "relevance_score": 7,
+        "novelty_claim_score": 8,
+        "clarity_score": 9,
+        "potential_impact_score": 8,
+        "overall_priority_score": 8
+    },
+    {
+        "title": "Multi-Cache Enhanced Prototype Learning for Test-Time Generalization of Vision-Language Models",
+        "summary": "In zero-shot setting, test-time adaptation adjusts pre-trained models using\nunlabeled data from the test phase to enhance performance on unknown test\ndistributions. Existing cache-enhanced TTA methods rely on a low-entropy\ncriterion to select samples for prototype construction, assuming intra-class\ncompactness. However, low-entropy samples may be unreliable under distribution\nshifts, and the resulting prototypes may not ensure compact intra-class\ndistributions. This study identifies a positive correlation between\ncache-enhanced performance and intra-class compactness. Based on this\nobservation, we propose a Multi-Cache enhanced Prototype-based Test-Time\nAdaptation (MCP) featuring three caches: an entropy cache for initializing\nprototype representations with low-entropy samples, an align cache for\nintegrating visual and textual information to achieve compact intra-class\ndistributions, and a negative cache for prediction calibration using\nhigh-entropy samples. We further developed MCP++, a framework incorporating\ncross-modal prototype alignment and residual learning, introducing prototype\nresidual fine-tuning. Comparative and ablation experiments across 15 downstream\ntasks demonstrate that the proposed method and framework achieve\nstate-of-the-art generalization performance.",
+        "url": "http://arxiv.org/abs/2508.01225v1",
+        "published_date": "2025-08-02T06:43:43+00:00",
+        "updated_date": "2025-08-02T06:43:43+00:00",
+        "categories": [
+            "cs.CV",
+            "cs.AI"
+        ],
+        "authors": [
+            "Xinyu Chen",
+            "Haotian Zhai",
+            "Can Zhang",
+            "Xiupeng Shi",
+            "Ruirui Li"
+        ],
+        "ai_categories": [
+            "Transformer"
+        ],
+        "tldr": "The paper introduces a Multi-Cache enhanced Prototype-based Test-Time Adaptation method for vision-language models to improve generalization performance by incorporating three different caches.",
+        "tldr_zh": "本文提出了一种多缓存增强的基于原型学习的测试时适应方法，用于改善视觉-语言模型的泛化性能，通过整合三种不同的缓存来实现。",
+        "relevance_score": 7,
+        "novelty_claim_score": 8,
+        "clarity_score": 9,
+        "potential_impact_score": 8,
+        "overall_priority_score": 8
+    },
+    {
+        "title": "MoGaFace: Momentum-Guided and Texture-Aware Gaussian Avatars for Consistent Facial Geometry",
+        "summary": "Existing 3D head avatar reconstruction methods adopt a two-stage process,\nrelying on tracked FLAME meshes derived from facial landmarks, followed by\nGaussian-based rendering. However, misalignment between the estimated mesh and\ntarget images often leads to suboptimal rendering quality and loss of fine\nvisual details. In this paper, we present MoGaFace, a novel 3D head avatar\nmodeling framework that continuously refines facial geometry and texture\nattributes throughout the Gaussian rendering process. To address the\nmisalignment between estimated FLAME meshes and target images, we introduce the\nMomentum-Guided Consistent Geometry module, which incorporates a\nmomentum-updated expression bank and an expression-aware correction mechanism\nto ensure temporal and multi-view consistency. Additionally, we propose Latent\nTexture Attention, which encodes compact multi-view features into head-aware\nrepresentations, enabling geometry-aware texture refinement via integration\ninto Gaussians. Extensive experiments show that MoGaFace achieves high-fidelity\nhead avatar reconstruction and significantly improves novel-view synthesis\nquality, even under inaccurate mesh initialization and unconstrained real-world\nsettings.",
+        "url": "http://arxiv.org/abs/2508.01218v1",
+        "published_date": "2025-08-02T06:25:51+00:00",
+        "updated_date": "2025-08-02T06:25:51+00:00",
+        "categories": [
+            "cs.CV"
+        ],
+        "authors": [
+            "Yujian Liu",
+            "Linlang Cao",
+            "Chuang Chen",
+            "Fanyu Geng",
+            "Dongxu Shen",
+            "Peng Cao",
+            "Shidang Xu",
+            "Xiaoli Liu"
+        ],
+        "ai_categories": [
+            "GAN",
+            "Multimodality",
+            "Transformer"
+        ],
+        "tldr": "MoGaFace presents a novel 3D head avatar modeling framework that refines facial geometry and texture attributes for high-fidelity head avatar reconstruction and improved novel-view synthesis quality.",
+        "tldr_zh": "MoGaFace提出了一种新颖的3D头像建模框架，用于细化面部几何和纹理属性，以实现高保真度的头像重建和改进的新视图合成质量。",
+        "relevance_score": 8,
+        "novelty_claim_score": 7,
+        "clarity_score": 9,
+        "potential_impact_score": 8,
+        "overall_priority_score": 8
+    },
+    {
+        "title": "StyDeco: Unsupervised Style Transfer with Distilling Priors and Semantic Decoupling",
+        "summary": "Diffusion models have emerged as the dominant paradigm for style transfer,\nbut their text-driven mechanism is hindered by a core limitation: it treats\ntextual descriptions as uniform, monolithic guidance. This limitation overlooks\nthe semantic gap between the non-spatial nature of textual descriptions and the\nspatially-aware attributes of visual style, often leading to the loss of\nsemantic structure and fine-grained details during stylization. In this paper,\nwe propose StyDeco, an unsupervised framework that resolves this limitation by\nlearning text representations specifically tailored for the style transfer\ntask. Our framework first employs Prior-Guided Data Distillation (PGD), a\nstrategy designed to distill stylistic knowledge without human supervision. It\nleverages a powerful frozen generative model to automatically synthesize\npseudo-paired data. Subsequently, we introduce Contrastive Semantic Decoupling\n(CSD), a task-specific objective that adapts a text encoder using\ndomain-specific weights. CSD performs a two-class clustering in the semantic\nspace, encouraging source and target representations to form distinct clusters.\nExtensive experiments on three classic benchmarks demonstrate that our\nframework outperforms several existing approaches in both stylistic fidelity\nand structural preservation, highlighting its effectiveness in style transfer\nwith semantic preservation. In addition, our framework supports a unique\nde-stylization process, further demonstrating its extensibility. Our code is\nvailable at https://github.com/QuanjianSong/StyDeco.",
+        "url": "http://arxiv.org/abs/2508.01215v1",
+        "published_date": "2025-08-02T06:17:23+00:00",
+        "updated_date": "2025-08-02T06:17:23+00:00",
+        "categories": [
+            "cs.CV"
+        ],
+        "authors": [
+            "Yuanlin Yang",
+            "Quanjian Song",
+            "Zhexian Gao",
+            "Ge Wang",
+            "Shanshan Li",
+            "Xiaoyan Zhang"
+        ],
+        "ai_categories": [
+            "Transformer",
+            "Diffusion",
+            "GAN"
+        ],
+        "tldr": "The paper introduces StyDeco, an unsupervised framework for style transfer with semantic preservation using Prior-Guided Data Distillation and Contrastive Semantic Decoupling.",
+        "tldr_zh": "本文介绍了StyDeco，一种无监督框架，用于实现具有语义保留的风格转移，采用Prior-Guided Data Distillation和Contrastive Semantic Decoupling。",
+        "relevance_score": 8,
+        "novelty_claim_score": 9,
+        "clarity_score": 7,
+        "potential_impact_score": 8,
+        "overall_priority_score": 8
+    },
+    {
+        "title": "A Coarse-to-Fine Approach to Multi-Modality 3D Occupancy Grounding",
+        "summary": "Visual grounding aims to identify objects or regions in a scene based on\nnatural language descriptions, essential for spatially aware perception in\nautonomous driving. However, existing visual grounding tasks typically depend\non bounding boxes that often fail to capture fine-grained details. Not all\nvoxels within a bounding box are occupied, resulting in inaccurate object\nrepresentations. To address this, we introduce a benchmark for 3D occupancy\ngrounding in challenging outdoor scenes. Built on the nuScenes dataset, it\nintegrates natural language with voxel-level occupancy annotations, offering\nmore precise object perception compared to the traditional grounding task.\nMoreover, we propose GroundingOcc, an end-to-end model designed for 3D\noccupancy grounding through multi-modal learning. It combines visual, textual,\nand point cloud features to predict object location and occupancy information\nfrom coarse to fine. Specifically, GroundingOcc comprises a multimodal encoder\nfor feature extraction, an occupancy head for voxel-wise predictions, and a\ngrounding head to refine localization. Additionally, a 2D grounding module and\na depth estimation module enhance geometric understanding, thereby boosting\nmodel performance. Extensive experiments on the benchmark demonstrate that our\nmethod outperforms existing baselines on 3D occupancy grounding. The dataset is\navailable at https://github.com/RONINGOD/GroundingOcc.",
+        "url": "http://arxiv.org/abs/2508.01197v1",
+        "published_date": "2025-08-02T05:05:50+00:00",
+        "updated_date": "2025-08-02T05:05:50+00:00",
+        "categories": [
+            "cs.CV",
+            "cs.RO"
+        ],
+        "authors": [
+            "Zhan Shi",
+            "Song Wang",
+            "Junbo Chen",
+            "Jianke Zhu"
+        ],
+        "ai_categories": [
+            "Multimodality",
+            "Dataset"
+        ],
+        "tldr": "The paper introduces a benchmark and model for 3D occupancy grounding in outdoor scenes, combining visual, textual, and point cloud features to improve object perception.",
+        "tldr_zh": "本文介绍了一个用于户外场景中三维占据基准和模型，结合视觉、文本和点云特征以提高对象感知的方法。",
+        "relevance_score": 7,
+        "novelty_claim_score": 8,
+        "clarity_score": 9,
+        "potential_impact_score": 8,
+        "overall_priority_score": 8
+    },
+    {
+        "title": "Object Affordance Recognition and Grounding via Multi-scale Cross-modal Representation Learning",
+        "summary": "A core problem of Embodied AI is to learn object manipulation from\nobservation, as humans do. To achieve this, it is important to localize 3D\nobject affordance areas through observation such as images (3D affordance\ngrounding) and understand their functionalities (affordance classification).\nPrevious attempts usually tackle these two tasks separately, leading to\ninconsistent predictions due to lacking proper modeling of their dependency. In\naddition, these methods typically only ground the incomplete affordance areas\ndepicted in images, failing to predict the full potential affordance areas, and\noperate at a fixed scale, resulting in difficulty in coping with affordances\nsignificantly varying in scale with respect to the whole object. To address\nthese issues, we propose a novel approach that learns an affordance-aware 3D\nrepresentation and employs a stage-wise inference strategy leveraging the\ndependency between grounding and classification tasks. Specifically, we first\ndevelop a cross-modal 3D representation through efficient fusion and\nmulti-scale geometric feature propagation, enabling inference of full potential\naffordance areas at a suitable regional scale. Moreover, we adopt a simple\ntwo-stage prediction mechanism, effectively coupling grounding and\nclassification for better affordance understanding. Experiments demonstrate the\neffectiveness of our method, showing improved performance in both affordance\ngrounding and classification.",
+        "url": "http://arxiv.org/abs/2508.01184v1",
+        "published_date": "2025-08-02T04:14:18+00:00",
+        "updated_date": "2025-08-02T04:14:18+00:00",
+        "categories": [
+            "cs.CV"
+        ],
+        "authors": [
+            "Xinhang Wan",
+            "Dongqiang Gou",
+            "Xinwang Liu",
+            "En Zhu",
+            "Xuming He"
+        ],
+        "ai_categories": [
+            "Multimodality",
+            "Transformer",
+            "Dataset"
+        ],
+        "tldr": "The paper introduces a new approach for recognizing object affordances and their functionalities through observation, improving both grounding and classification tasks.",
+        "tldr_zh": "本文介绍了一种新方法，通过观察来识别对象功能和其作用，从而改进定位和分类任务。",
+        "relevance_score": 7,
+        "novelty_claim_score": 8,
+        "clarity_score": 9,
+        "potential_impact_score": 8,
+        "overall_priority_score": 8
+    },
+    {
+        "title": "No Pose at All: Self-Supervised Pose-Free 3D Gaussian Splatting from Sparse Views",
+        "summary": "We introduce SPFSplat, an efficient framework for 3D Gaussian splatting from\nsparse multi-view images, requiring no ground-truth poses during training or\ninference. It employs a shared feature extraction backbone, enabling\nsimultaneous prediction of 3D Gaussian primitives and camera poses in a\ncanonical space from unposed inputs within a single feed-forward step.\nAlongside the rendering loss based on estimated novel-view poses, a\nreprojection loss is integrated to enforce the learning of pixel-aligned\nGaussian primitives for enhanced geometric constraints. This pose-free training\nparadigm and efficient one-step feed-forward design make SPFSplat well-suited\nfor practical applications. Remarkably, despite the absence of pose\nsupervision, SPFSplat achieves state-of-the-art performance in novel view\nsynthesis even under significant viewpoint changes and limited image overlap.\nIt also surpasses recent methods trained with geometry priors in relative pose\nestimation. Code and trained models are available on our project page:\nhttps://ranrhuang.github.io/spfsplat/.",
+        "url": "http://arxiv.org/abs/2508.01171v1",
+        "published_date": "2025-08-02T03:19:13+00:00",
+        "updated_date": "2025-08-02T03:19:13+00:00",
+        "categories": [
+            "cs.CV"
+        ],
+        "authors": [
+            "Ranran Huang",
+            "Krystian Mikolajczyk"
+        ],
+        "ai_categories": [
+            "GAN",
+            "Transformer",
+            "Dataset"
+        ],
+        "tldr": "SPFSplat is a self-supervised framework for 3D Gaussian splatting from sparse views, achieving state-of-the-art results in novel view synthesis without pose supervision.",
+        "tldr_zh": "SPFSplat是一个自监督框架，从稀疏视图中进行3D高斯飞溅，实现了无需姿势监督的情况下在新视角合成方面的最先进结果。",
+        "relevance_score": 7,
+        "novelty_claim_score": 8,
+        "clarity_score": 9,
+        "potential_impact_score": 8,
+        "overall_priority_score": 8
+    },
+    {
+        "title": "DELTAv2: Accelerating Dense 3D Tracking",
+        "summary": "We propose a novel algorithm for accelerating dense long-term 3D point\ntracking in videos. Through analysis of existing state-of-the-art methods, we\nidentify two major computational bottlenecks. First, transformer-based\niterative tracking becomes expensive when handling a large number of\ntrajectories. To address this, we introduce a coarse-to-fine strategy that\nbegins tracking with a small subset of points and progressively expands the set\nof tracked trajectories. The newly added trajectories are initialized using a\nlearnable interpolation module, which is trained end-to-end alongside the\ntracking network. Second, we propose an optimization that significantly reduces\nthe cost of correlation feature computation, another key bottleneck in prior\nmethods. Together, these improvements lead to a 5-100x speedup over existing\napproaches while maintaining state-of-the-art tracking accuracy.",
+        "url": "http://arxiv.org/abs/2508.01170v1",
+        "published_date": "2025-08-02T03:15:47+00:00",
+        "updated_date": "2025-08-02T03:15:47+00:00",
+        "categories": [
+            "cs.CV"
+        ],
+        "authors": [
+            "Tuan Duc Ngo",
+            "Ashkan Mirzaei",
+            "Guocheng Qian",
+            "Hanwen Liang",
+            "Chuang Gan",
+            "Evangelos Kalogerakis",
+            "Peter Wonka",
+            "Chaoyang Wang"
+        ],
+        "ai_categories": [
+            "Transformer",
+            "Dataset"
+        ],
+        "tldr": "The paper presents a novel algorithm for accelerating dense 3D point tracking in videos by addressing computational bottlenecks through a coarse-to-fine strategy and optimization, resulting in a significant speedup while maintaining tracking accuracy.",
+        "tldr_zh": "该论文提出了一种新颖的算法，通过粗到细的策略和优化来加速视频中密集的3D点跟踪，实现了显著的加速同时保持跟踪精度。",
+        "relevance_score": 7,
+        "novelty_claim_score": 8,
+        "clarity_score": 9,
+        "potential_impact_score": 8,
+        "overall_priority_score": 8
+    },
+    {
+        "title": "LawDIS: Language-Window-based Controllable Dichotomous Image Segmentation",
+        "summary": "We present LawDIS, a language-window-based controllable dichotomous image\nsegmentation (DIS) framework that produces high-quality object masks. Our\nframework recasts DIS as an image-conditioned mask generation task within a\nlatent diffusion model, enabling seamless integration of user controls. LawDIS\nis enhanced with macro-to-micro control modes. Specifically, in macro mode, we\nintroduce a language-controlled segmentation strategy (LS) to generate an\ninitial mask based on user-provided language prompts. In micro mode, a\nwindow-controlled refinement strategy (WR) allows flexible refinement of\nuser-defined regions (i.e., size-adjustable windows) within the initial mask.\nCoordinated by a mode switcher, these modes can operate independently or\njointly, making the framework well-suited for high-accuracy, personalised\napplications. Extensive experiments on the DIS5K benchmark reveal that our\nLawDIS significantly outperforms 11 cutting-edge methods across all metrics.\nNotably, compared to the second-best model MVANet, we achieve $F_\\beta^\\omega$\ngains of 4.6\\% with both the LS and WR strategies and 3.6\\% gains with only the\nLS strategy on DIS-TE. Codes will be made available at\nhttps://github.com/XinyuYanTJU/LawDIS.",
+        "url": "http://arxiv.org/abs/2508.01152v1",
+        "published_date": "2025-08-02T02:25:51+00:00",
+        "updated_date": "2025-08-02T02:25:51+00:00",
+        "categories": [
+            "cs.CV"
+        ],
+        "authors": [
+            "Xinyu Yan",
+            "Meijun Sun",
+            "Ge-Peng Ji",
+            "Fahad Shahbaz Khan",
+            "Salman Khan",
+            "Deng-Ping Fan"
+        ],
+        "ai_categories": [
+            "Transformer",
+            "Dataset"
+        ],
+        "tldr": "LawDIS is a framework for controllable image segmentation that integrates language and window-based strategies, outperforming state-of-the-art methods.",
+        "tldr_zh": "LawDIS是一个可控图像分割框架，集成了语言和基于窗口的策略，优于最先进的方法。",
+        "relevance_score": 7,
+        "novelty_claim_score": 8,
+        "clarity_score": 9,
+        "potential_impact_score": 8,
+        "overall_priority_score": 8
+    },
+    {
+        "title": "Dataset Condensation with Color Compensation",
+        "summary": "Dataset condensation always faces a constitutive trade-off: balancing\nperformance and fidelity under extreme compression. Existing methods struggle\nwith two bottlenecks: image-level selection methods (Coreset Selection, Dataset\nQuantization) suffer from inefficiency condensation, while pixel-level\noptimization (Dataset Distillation) introduces semantic distortion due to\nover-parameterization. With empirical observations, we find that a critical\nproblem in dataset condensation is the oversight of color's dual role as an\ninformation carrier and a basic semantic representation unit. We argue that\nimproving the colorfulness of condensed images is beneficial for representation\nlearning. Motivated by this, we propose DC3: a Dataset Condensation framework\nwith Color Compensation. After a calibrated selection strategy, DC3 utilizes\nthe latent diffusion model to enhance the color diversity of an image rather\nthan creating a brand-new one. Extensive experiments demonstrate the superior\nperformance and generalization of DC3 that outperforms SOTA methods across\nmultiple benchmarks. To the best of our knowledge, besides focusing on\ndownstream tasks, DC3 is the first research to fine-tune pre-trained diffusion\nmodels with condensed datasets. The FID results prove that training networks\nwith our high-quality datasets is feasible without model collapse or other\ndegradation issues. Code and generated data will be released soon.",
+        "url": "http://arxiv.org/abs/2508.01139v1",
+        "published_date": "2025-08-02T01:44:23+00:00",
+        "updated_date": "2025-08-02T01:44:23+00:00",
+        "categories": [
+            "cs.CV",
+            "cs.AI",
+            "cs.LG"
+        ],
+        "authors": [
+            "Huyu Wu",
+            "Duo Su",
+            "Junjie Hou",
+            "Guang Li"
+        ],
+        "ai_categories": [
+            "Dataset",
+            "Diffusion"
+        ],
+        "tldr": "The paper proposes a Dataset Condensation framework with Color Compensation (DC3) to enhance color diversity in condensed images, leading to superior performance in representation learning and generalization.",
+        "tldr_zh": "本文提出了一种采用颜色补偿的数据集压缩框架（DC3），以增强压缩图像的颜色多样性，从而在表示学习和泛化性能方面表现出色。",
+        "relevance_score": 8,
+        "novelty_claim_score": 9,
+        "clarity_score": 7,
+        "potential_impact_score": 8,
+        "overall_priority_score": 8
+    },
+    {
+        "title": "Semi-Supervised Anomaly Detection in Brain MRI Using a Domain-Agnostic Deep Reinforcement Learning Approach",
+        "summary": "To develop a domain-agnostic, semi-supervised anomaly detection framework\nthat integrates deep reinforcement learning (DRL) to address challenges such as\nlarge-scale data, overfitting, and class imbalance, focusing on brain MRI\nvolumes. This retrospective study used publicly available brain MRI datasets\ncollected between 2005 and 2021. The IXI dataset provided 581 T1-weighted and\n578 T2-weighted MRI volumes (from healthy subjects) for training, while the\nBraTS 2021 dataset provided 251 volumes for validation and 1000 for testing\n(unhealthy subjects with Glioblastomas). Preprocessing included normalization,\nskull-stripping, and co-registering to a uniform voxel size. Experiments were\nconducted on both T1- and T2-weighted modalities. Additional experiments and\nablation analyses were also carried out on the industrial datasets. The\nproposed method integrates DRL with feature representations to handle label\nscarcity, large-scale data and overfitting. Statistical analysis was based on\nseveral detection and segmentation metrics including AUROC and Dice score. The\nproposed method achieved an AUROC of 88.7% (pixel-level) and 96.7%\n(image-level) on brain MRI datasets, outperforming State-of-The-Art (SOTA)\nmethods. On industrial surface datasets, the model also showed competitive\nperformance (AUROC = 99.8% pixel-level, 99.3% image-level) on MVTec AD dataset,\nindicating strong cross-domain generalization. Studies on anomaly sample size\nshowed a monotonic increase in AUROC as more anomalies were seen, without\nevidence of overfitting or additional computational cost. The domain-agnostic\nsemi-supervised approach using DRL shows significant promise for MRI anomaly\ndetection, achieving strong performance on both medical and industrial\ndatasets. Its robustness, generalizability and efficiency highlight its\npotential for real-world clinical applications.",
+        "url": "http://arxiv.org/abs/2508.01137v1",
+        "published_date": "2025-08-02T01:39:13+00:00",
+        "updated_date": "2025-08-02T01:39:13+00:00",
+        "categories": [
+            "cs.CV"
+        ],
+        "authors": [
+            "Zeduo Zhang",
+            "Yalda Mohsenzadeh"
+        ],
+        "ai_categories": [
+            "AIGC",
+            "Dataset"
+        ],
+        "tldr": "The paper proposes a domain-agnostic, semi-supervised anomaly detection framework using deep reinforcement learning for brain MRI datasets, achieving strong performance on both medical and industrial datasets.",
+        "tldr_zh": "该论文提出了一种利用深度强化学习的领域无关、半监督异常检测框架，针对脑MRI数据集，在医疗和工业数据集上取得了良好的性能。",
+        "relevance_score": 9,
+        "novelty_claim_score": 8,
+        "clarity_score": 7,
+        "potential_impact_score": 9,
+        "overall_priority_score": 8
+    },
+    {
+        "title": "The Promise of RL for Autoregressive Image Editing",
+        "summary": "We explore three strategies to enhance performance on a wide range of image\nediting tasks: supervised fine-tuning (SFT), reinforcement learning (RL), and\nChain-of-Thought (CoT) reasoning. In order to study all these components in one\nconsistent framework, we adopt an autoregressive multimodal model that\nprocesses textual and visual tokens in a unified manner. We find RL combined\nwith a large multi-modal LLM verifier to be the most effective of these\nstrategies. As a result, we release EARL: Editing with Autoregression and RL, a\nstrong RL-based image editing model that performs competitively on a diverse\nrange of edits compared to strong baselines, despite using much less training\ndata. Thus, EARL pushes the frontier of autoregressive multimodal models on\nimage editing. We release our code, training data, and trained models at\nhttps://github.com/mair-lab/EARL.",
+        "url": "http://arxiv.org/abs/2508.01119v1",
+        "published_date": "2025-08-01T23:47:29+00:00",
+        "updated_date": "2025-08-01T23:47:29+00:00",
+        "categories": [
+            "cs.CV",
+            "cs.LG"
+        ],
+        "authors": [
+            "Saba Ahmadi",
+            "Rabiul Awal",
+            "Ankur Sikarwar",
+            "Amirhossein Kazemnejad",
+            "Ge Ya Luo",
+            "Juan A. Rodriguez",
+            "Sai Rajeswar",
+            "Siva Reddy",
+            "Christopher Pal",
+            "Benno Krojer",
+            "Aishwarya Agrawal"
+        ],
+        "ai_categories": [
+            "Multimodality",
+            "RL",
+            "Dataset"
+        ],
+        "tldr": "The paper explores different strategies for enhancing image editing tasks using reinforcement learning and autoregressive multimodal models. They find RL combined with a large multi-modal verifier to be the most effective and release the EARL model for competitive image editing.",
+        "tldr_zh": "本文探索了使用强化学习和自回归多模态模型增强图像编辑任务的不同策略。他们发现RL结合大型多模态验证器是最有效的，并发布了用于竞争性图像编辑的EARL模型。",
+        "relevance_score": 8,
+        "novelty_claim_score": 7,
+        "clarity_score": 9,
+        "potential_impact_score": 8,
+        "overall_priority_score": 8
+    },
+    {
+        "title": "MASIV: Toward Material-Agnostic System Identification from Videos",
+        "summary": "System identification from videos aims to recover object geometry and\ngoverning physical laws. Existing methods integrate differentiable rendering\nwith simulation but rely on predefined material priors, limiting their ability\nto handle unknown ones. We introduce MASIV, the first vision-based framework\nfor material-agnostic system identification. Unlike existing approaches that\ndepend on hand-crafted constitutive laws, MASIV employs learnable neural\nconstitutive models, inferring object dynamics without assuming a\nscene-specific material prior. However, the absence of full particle state\ninformation imposes unique challenges, leading to unstable optimization and\nphysically implausible behaviors. To address this, we introduce dense geometric\nguidance by reconstructing continuum particle trajectories, providing\ntemporally rich motion constraints beyond sparse visual cues. Comprehensive\nexperiments show that MASIV achieves state-of-the-art performance in geometric\naccuracy, rendering quality, and generalization ability.",
+        "url": "http://arxiv.org/abs/2508.01112v1",
+        "published_date": "2025-08-01T23:23:45+00:00",
+        "updated_date": "2025-08-01T23:23:45+00:00",
+        "categories": [
+            "cs.CV"
+        ],
+        "authors": [
+            "Yizhou Zhao",
+            "Haoyu Chen",
+            "Chunjiang Liu",
+            "Zhenyang Li",
+            "Charles Herrmann",
+            "Junhwa Hur",
+            "Yinxiao Li",
+            "Ming-Hsuan Yang",
+            "Bhiksha Raj",
+            "Min Xu"
+        ],
+        "ai_categories": [
+            "AIGC",
+            "Transformer"
+        ],
+        "tldr": "MASIV is a vision-based framework for material-agnostic system identification using learnable neural constitutive models, achieving state-of-the-art performance in geometric accuracy, rendering quality, and generalization ability.",
+        "tldr_zh": "MASIV是一个基于视觉的框架，用于无材料偏见的系统识别，使用可学习的神经构成模型，在几何精度、渲染质量和泛化能力方面取得了最先进的表现。",
+        "relevance_score": 7,
+        "novelty_claim_score": 8,
+        "clarity_score": 9,
+        "potential_impact_score": 8,
+        "overall_priority_score": 8
+    },
+    {
+        "title": "Diagnostic Accuracy of Open-Source Vision-Language Models on Diverse Medical Imaging Tasks",
+        "summary": "This retrospective study evaluated five VLMs (Qwen2.5, Phi-4, Gemma3,\nLlama3.2, and Mistral3.1) using the MedFMC dataset. This dataset includes\n22,349 images from 7,461 patients encompassing chest radiography (19 disease\nmulti-label classifications), colon pathology (tumor detection), endoscopy\n(colorectal lesion identification), neonatal jaundice assessment (skin\ncolor-based treatment necessity), and retinal fundoscopy (5-point diabetic\nretinopathy grading). Diagnostic accuracy was compared in three experimental\nsettings: visual input only, multimodal input, and chain-of-thought reasoning.\nModel accuracy was assessed against ground truth labels, with statistical\ncomparisons using bootstrapped confidence intervals (p<.05). Qwen2.5 achieved\nthe highest accuracy for chest radiographs (90.4%) and endoscopy images\n(84.2%), significantly outperforming the other models (p<.001). In colon\npathology, Qwen2.5 (69.0%) and Phi-4 (69.6%) performed comparably (p=.41), both\nsignificantly exceeding other VLMs (p<.001). Similarly, for neonatal jaundice\nassessment, Qwen2.5 (58.3%) and Phi-4 (58.1%) showed comparable leading\naccuracies (p=.93) significantly exceeding their counterparts (p<.001). All\nmodels struggled with retinal fundoscopy; Qwen2.5 and Gemma3 achieved the\nhighest, albeit modest, accuracies at 18.6% (comparable, p=.99), significantly\nbetter than other tested models (p<.001). Unexpectedly, multimodal input\nreduced accuracy for some models and modalities, and chain-of-thought reasoning\nprompts also failed to improve accuracy. The open-source VLMs demonstrated\npromising diagnostic capabilities, particularly in chest radiograph\ninterpretation. However, performance in complex domains such as retinal\nfundoscopy was limited, underscoring the need for further development and\ndomain-specific adaptation before widespread clinical application.",
+        "url": "http://arxiv.org/abs/2508.01016v1",
+        "published_date": "2025-08-01T18:28:37+00:00",
+        "updated_date": "2025-08-01T18:28:37+00:00",
+        "categories": [
+            "eess.IV",
+            "cs.CV"
+        ],
+        "authors": [
+            "Gustav Müller-Franzes",
+            "Debora Jutz",
+            "Jakob Nikolas Kather",
+            "Christiane Kuhl",
+            "Sven Nebelung",
+            "Daniel Truhn"
+        ],
+        "ai_categories": [
+            "Multimodality",
+            "Dataset"
+        ],
+        "tldr": "The paper evaluates the diagnostic accuracy of open-source vision-language models on various medical imaging tasks, highlighting their strengths and limitations.",
+        "tldr_zh": "本文评估了开源视觉语言模型在各种医学影像任务上的诊断准确性，突出了它们的优势和局限性。",
+        "relevance_score": 7,
+        "novelty_claim_score": 8,
+        "clarity_score": 9,
+        "potential_impact_score": 8,
+        "overall_priority_score": 8
+    },
+    {
+        "title": "Hestia: Hierarchical Next-Best-View Exploration for Systematic Intelligent Autonomous Data Collection",
+        "summary": "Advances in 3D reconstruction and novel view synthesis have enabled\nefficient, photorealistic rendering, but the data collection process remains\nlargely manual, making it time-consuming and labor-intensive. To address the\nchallenges, this study introduces Hierarchical Next-Best-View Exploration for\nSystematic Intelligent Autonomous Data Collection (Hestia), which leverages\nreinforcement learning to learn a generalizable policy for 5-DoF next-best\nviewpoint prediction. Unlike prior approaches, Hestia systematically defines\nthe next-best-view task by proposing core components such as dataset choice,\nobservation design, action space, reward calculation, and learning schemes,\nforming a foundation for the planner. Hestia goes beyond prior next-best-view\napproaches and traditional capture systems through integration and validation\nin a real-world setup, where a drone serves as a mobile sensor for active scene\nexploration. Experimental results show that Hestia performs robustly across\nthree datasets and translated object settings in the NVIDIA IsaacLab\nenvironment, and proves feasible for real-world deployment.",
+        "url": "http://arxiv.org/abs/2508.01014v1",
+        "published_date": "2025-08-01T18:27:23+00:00",
+        "updated_date": "2025-08-01T18:27:23+00:00",
+        "categories": [
+            "cs.RO",
+            "cs.CV"
+        ],
+        "authors": [
+            "Cheng-You Lu",
+            "Zhuoli Zhuang",
+            "Nguyen Thanh Trung Le",
+            "Da Xiao",
+            "Yu-Cheng Chang",
+            "Thomas Do",
+            "Srinath Sridhar",
+            "Chin-teng Lin"
+        ],
+        "ai_categories": [
+            "AIGC",
+            "Dataset"
+        ],
+        "tldr": "The paper introduces Hestia, a system that uses reinforcement learning to automate data collection with drones for 3D reconstruction and view synthesis.",
+        "tldr_zh": "该论文介绍了使用强化学习技术来自动化数据收集的Hestia系统，用于无人机进行3D重建和视图合成。",
+        "relevance_score": 7,
+        "novelty_claim_score": 8,
+        "clarity_score": 9,
+        "potential_impact_score": 8,
+        "overall_priority_score": 8
+    },
+    {
+        "title": "ROVI: A VLM-LLM Re-Captioned Dataset for Open-Vocabulary Instance-Grounded Text-to-Image Generation",
+        "summary": "We present ROVI, a high-quality synthetic dataset for instance-grounded\ntext-to-image generation, created by labeling 1M curated web images. Our key\ninnovation is a strategy called re-captioning, focusing on the pre-detection\nstage, where a VLM (Vision-Language Model) generates comprehensive visual\ndescriptions that are then processed by an LLM (Large Language Model) to\nextract a flat list of potential categories for OVDs (Open-Vocabulary\nDetectors) to detect. This approach yields a global prompt inherently linked to\ninstance annotations while capturing secondary visual elements humans typically\noverlook. Evaluations show that ROVI exceeds existing detection datasets in\nimage quality and resolution while containing two orders of magnitude more\ncategories with an open-vocabulary nature. For demonstrative purposes, a\ntext-to-image model GLIGEN trained on ROVI significantly outperforms\nstate-of-the-art alternatives in instance grounding accuracy, prompt fidelity,\nand aesthetic quality. Our dataset and reproducible pipeline are available at\nhttps://github.com/CihangPeng/ROVI.",
+        "url": "http://arxiv.org/abs/2508.01008v1",
+        "published_date": "2025-08-01T18:19:51+00:00",
+        "updated_date": "2025-08-01T18:19:51+00:00",
+        "categories": [
+            "cs.CV"
+        ],
+        "authors": [
+            "Cihang Peng",
+            "Qiming Hou",
+            "Zhong Ren",
+            "Kun Zhou"
+        ],
+        "ai_categories": [
+            "Dataset",
+            "Transformer"
+        ],
+        "tldr": "ROVI is a dataset for text-to-image generation, using a re-captioning strategy, achieving high quality and open-vocabulary instance-grounded results.",
+        "tldr_zh": "ROVI 是一个用于文本到图像生成的数据集，使用重新字幕策略，实现了高质量和开放词汇实例地面结果。",
+        "relevance_score": 8,
+        "novelty_claim_score": 9,
+        "clarity_score": 7,
+        "potential_impact_score": 9,
+        "overall_priority_score": 8
+    },
+    {
+        "title": "ReMu: Reconstructing Multi-layer 3D Clothed Human from Image Layers",
+        "summary": "The reconstruction of multi-layer 3D garments typically requires expensive\nmulti-view capture setups and specialized 3D editing efforts. To support the\ncreation of life-like clothed human avatars, we introduce ReMu for\nreconstructing multi-layer clothed humans in a new setup, Image Layers, which\ncaptures a subject wearing different layers of clothing with a single RGB\ncamera. To reconstruct physically plausible multi-layer 3D garments, a unified\n3D representation is necessary to model these garments in a layered manner.\nThus, we first reconstruct and align each garment layer in a shared coordinate\nsystem defined by the canonical body pose. Afterwards, we introduce a\ncollision-aware optimization process to address interpenetration and further\nrefine the garment boundaries leveraging implicit neural fields. It is worth\nnoting that our method is template-free and category-agnostic, which enables\nthe reconstruction of 3D garments in diverse clothing styles. Through our\nexperiments, we show that our method reconstructs nearly penetration-free 3D\nclothed humans and achieves competitive performance compared to\ncategory-specific methods. Project page: https://eth-ait.github.io/ReMu/",
+        "url": "http://arxiv.org/abs/2508.01381v1",
+        "published_date": "2025-08-02T14:24:47+00:00",
+        "updated_date": "2025-08-02T14:24:47+00:00",
+        "categories": [
+            "cs.GR",
+            "cs.CV"
+        ],
+        "authors": [
+            "Onat Vuran",
+            "Hsuan-I Ho"
+        ],
+        "ai_categories": [
+            "Transformer",
+            "Dataset"
+        ],
+        "tldr": "The paper introduces ReMu, a method for reconstructing multi-layer 3D clothed humans using a single RGB camera. It aims to create realistic clothed human avatars by reconstructing garments in a layered manner.",
+        "tldr_zh": "该论文介绍了一种使用单个RGB相机重建多层三维服装人类的方法，旨在通过分层重建服装来创建逼真的服装人类化身。",
+        "relevance_score": 7,
+        "novelty_claim_score": 8,
+        "clarity_score": 9,
+        "potential_impact_score": 7,
+        "overall_priority_score": 7.75
+    },
+    {
+        "title": "Personalized Safety Alignment for Text-to-Image Diffusion Models",
+        "summary": "Text-to-image diffusion models have revolutionized visual content generation,\nbut current safety mechanisms apply uniform standards that often fail to\naccount for individual user preferences. These models overlook the diverse\nsafety boundaries shaped by factors like age, mental health, and personal\nbeliefs. To address this, we propose Personalized Safety Alignment (PSA), a\nframework that allows user-specific control over safety behaviors in generative\nmodels. PSA integrates personalized user profiles into the diffusion process,\nadjusting the model's behavior to match individual safety preferences while\npreserving image quality. We introduce a new dataset, Sage, which captures\nuser-specific safety preferences and incorporates these profiles through a\ncross-attention mechanism. Experiments show that PSA outperforms existing\nmethods in harmful content suppression and aligns generated content better with\nuser constraints, achieving higher Win Rate and Pass Rate scores. Our code,\ndata, and models are publicly available at\nhttps://torpedo2648.github.io/PSAlign/.",
+        "url": "http://arxiv.org/abs/2508.01151v1",
+        "published_date": "2025-08-02T02:23:20+00:00",
+        "updated_date": "2025-08-02T02:23:20+00:00",
+        "categories": [
+            "cs.CV",
+            "cs.AI"
+        ],
+        "authors": [
+            "Yu Lei",
+            "Jinbin Bai",
+            "Qingyu Shi",
+            "Aosong Feng",
+            "Kaidong Yu"
+        ],
+        "ai_categories": [
+            "Diffusion",
+            "Dataset"
+        ],
+        "tldr": "The paper proposes a framework called Personalized Safety Alignment (PSA) for text-to-image diffusion models to cater to individual user preferences for safety. It introduces a new dataset, Sage, and outperforms existing methods in harmful content suppression.",
+        "tldr_zh": "该论文提出了一种名为Personalized Safety Alignment (PSA)的框架，用于文本到图像扩散模型，以满足个人对安全的偏好。它引入了一个新数据集Sage，并在有害内容抑制方面表现优于现有方法。",
+        "relevance_score": 6,
+        "novelty_claim_score": 8,
+        "clarity_score": 9,
+        "potential_impact_score": 8,
+        "overall_priority_score": 7.75
+    },
+    {
+        "title": "Trans-Adapter: A Plug-and-Play Framework for Transparent Image Inpainting",
+        "summary": "RGBA images, with the additional alpha channel, are crucial for any\napplication that needs blending, masking, or transparency effects, making them\nmore versatile than standard RGB images. Nevertheless, existing image\ninpainting methods are designed exclusively for RGB images. Conventional\napproaches to transparent image inpainting typically involve placing a\nbackground underneath RGBA images and employing a two-stage process: image\ninpainting followed by image matting. This pipeline, however, struggles to\npreserve transparency consistency in edited regions, and matting can introduce\njagged edges along transparency boundaries. To address these challenges, we\npropose Trans-Adapter, a plug-and-play adapter that enables diffusion-based\ninpainting models to process transparent images directly. Trans-Adapter also\nsupports controllable editing via ControlNet and can be seamlessly integrated\ninto various community models. To evaluate our method, we introduce LayerBench,\nalong with a novel non-reference alpha edge quality evaluation metric for\nassessing transparency edge quality. We conduct extensive experiments on\nLayerBench to demonstrate the effectiveness of our approach.",
+        "url": "http://arxiv.org/abs/2508.01098v1",
+        "published_date": "2025-08-01T22:27:21+00:00",
+        "updated_date": "2025-08-01T22:27:21+00:00",
+        "categories": [
+            "cs.CV"
+        ],
+        "authors": [
+            "Yuekun Dai",
+            "Haitian Li",
+            "Shangchen Zhou",
+            "Chen Change Loy"
+        ],
+        "ai_categories": [
+            "Transformer",
+            "Dataset"
+        ],
+        "tldr": "Trans-Adapter proposes a framework for directly inpainting transparent images, addressing challenges in transparency consistency and edge quality, with support for controllable editing.",
+        "tldr_zh": "Trans-Adapter 提出了一个框架，用于直接填充透明图像，解决了透明度一致性和边缘质量方面的挑战，支持可控的编辑。",
+        "relevance_score": 7,
+        "novelty_claim_score": 8,
+        "clarity_score": 9,
+        "potential_impact_score": 7,
+        "overall_priority_score": 7.75
+    },
+    {
+        "title": "Capturing More: Learning Multi-Domain Representations for Robust Online Handwriting Verification",
+        "summary": "In this paper, we propose SPECTRUM, a temporal-frequency synergistic model\nthat unlocks the untapped potential of multi-domain representation learning for\nonline handwriting verification (OHV). SPECTRUM comprises three core\ncomponents: (1) a multi-scale interactor that finely combines temporal and\nfrequency features through dual-modal sequence interaction and multi-scale\naggregation, (2) a self-gated fusion module that dynamically integrates global\ntemporal and frequency features via self-driven balancing. These two components\nwork synergistically to achieve micro-to-macro spectral-temporal integration.\n(3) A multi-domain distance-based verifier then utilizes both temporal and\nfrequency representations to improve discrimination between genuine and forged\nhandwriting, surpassing conventional temporal-only approaches. Extensive\nexperiments demonstrate SPECTRUM's superior performance over existing OHV\nmethods, underscoring the effectiveness of temporal-frequency multi-domain\nlearning. Furthermore, we reveal that incorporating multiple handwritten\nbiometrics fundamentally enhances the discriminative power of handwriting\nrepresentations and facilitates verification. These findings not only validate\nthe efficacy of multi-domain learning in OHV but also pave the way for future\nresearch in multi-domain approaches across both feature and biometric domains.\nCode is publicly available at https://github.com/NiceRingNode/SPECTRUM.",
+        "url": "http://arxiv.org/abs/2508.01427v1",
+        "published_date": "2025-08-02T16:20:35+00:00",
+        "updated_date": "2025-08-02T16:20:35+00:00",
+        "categories": [
+            "cs.CV",
+            "cs.AI"
+        ],
+        "authors": [
+            "Peirong Zhang",
+            "Kai Ding",
+            "Lianwen Jin"
+        ],
+        "ai_categories": [
+            "Multimodality",
+            "Dataset"
+        ],
+        "tldr": "The paper introduces SPECTRUM, a model for online handwriting verification that utilizes multi-domain representation learning to improve discrimination between genuine and forged handwriting.",
+        "tldr_zh": "本文介绍了一种名为SPECTRUM的模型，用于在线手写验证，利用多域表示学习来提高真伪手写之间的区分能力。",
+        "relevance_score": 2,
+        "novelty_claim_score": 8,
+        "clarity_score": 9,
+        "potential_impact_score": 7,
+        "overall_priority_score": 7.5
+    },
+    {
+        "title": "Domain Generalized Stereo Matching with Uncertainty-guided Data Augmentation",
+        "summary": "State-of-the-art stereo matching (SM) models trained on synthetic data often\nfail to generalize to real data domains due to domain differences, such as\ncolor, illumination, contrast, and texture. To address this challenge, we\nleverage data augmentation to expand the training domain, encouraging the model\nto acquire robust cross-domain feature representations instead of\ndomain-dependent shortcuts. This paper proposes an uncertainty-guided data\naugmentation (UgDA) method, which argues that the image statistics in RGB space\n(mean and standard deviation) carry the domain characteristics. Thus, samples\nin unseen domains can be generated by properly perturbing these statistics.\nFurthermore, to simulate more potential domains, Gaussian distributions founded\non batch-level statistics are poposed to model the unceratinty of perturbation\ndirection and intensity. Additionally, we further enforce feature consistency\nbetween original and augmented data for the same scene, encouraging the model\nto learn structure aware, shortcuts-invariant feature representations. Our\napproach is simple, architecture-agnostic, and can be integrated into any SM\nnetworks. Extensive experiments on several challenging benchmarks have\ndemonstrated that our method can significantly improve the generalization\nperformance of existing SM networks.",
+        "url": "http://arxiv.org/abs/2508.01303v1",
+        "published_date": "2025-08-02T10:26:53+00:00",
+        "updated_date": "2025-08-02T10:26:53+00:00",
+        "categories": [
+            "cs.CV",
+            "I.2.0; I.2.6"
+        ],
+        "authors": [
+            "Shuangli Du",
+            "Jing Wang",
+            "Minghua Zhao",
+            "Zhenyu Xu",
+            "Jie Li"
+        ],
+        "ai_categories": [
+            "AIGC",
+            "Dataset"
+        ],
+        "tldr": "The paper proposes a method called Uncertainty-guided Data Augmentation to improve stereo matching models' ability to generalize to different domains by perturbing image statistics.",
+        "tldr_zh": "本文提出了一种称为不确定性引导数据增强的方法，通过扰动图像统计数据，改进立体匹配模型对不同领域的泛化能力。",
+        "relevance_score": 6,
+        "novelty_claim_score": 8,
+        "clarity_score": 7,
+        "potential_impact_score": 9,
+        "overall_priority_score": 7.5
+    },
+    {
+        "title": "RoadMamba: A Dual Branch Visual State Space Model for Road Surface Classification",
+        "summary": "Acquiring the road surface conditions in advance based on visual technologies\nprovides effective information for the planning and control system of\nautonomous vehicles, thus improving the safety and driving comfort of the\nvehicles. Recently, the Mamba architecture based on state-space models has\nshown remarkable performance in visual processing tasks, benefiting from the\nefficient global receptive field. However, existing Mamba architectures\nstruggle to achieve state-of-the-art visual road surface classification due to\ntheir lack of effective extraction of the local texture of the road surface. In\nthis paper, we explore for the first time the potential of visual Mamba\narchitectures for road surface classification task and propose a method that\neffectively combines local and global perception, called RoadMamba.\nSpecifically, we utilize the Dual State Space Model (DualSSM) to effectively\nextract the global semantics and local texture of the road surface and decode\nand fuse the dual features through the Dual Attention Fusion (DAF). In\naddition, we propose a dual auxiliary loss to explicitly constrain dual\nbranches, preventing the network from relying only on global semantic\ninformation from the deep large receptive field and ignoring the local texture.\nThe proposed RoadMamba achieves the state-of-the-art performance in experiments\non a large-scale road surface classification dataset containing 1 million\nsamples.",
+        "url": "http://arxiv.org/abs/2508.01210v1",
+        "published_date": "2025-08-02T05:54:38+00:00",
+        "updated_date": "2025-08-02T05:54:38+00:00",
+        "categories": [
+            "cs.CV"
+        ],
+        "authors": [
+            "Tianze Wang",
+            "Zhang Zhang",
+            "Chao Yue",
+            "Nuoran Li",
+            "Chao Sun"
+        ],
+        "ai_categories": [
+            "Transformer",
+            "Dataset"
+        ],
+        "tldr": "RoadMamba proposes a model that combines global semantics and local texture for road surface classification, achieving state-of-the-art performance on a large dataset.",
+        "tldr_zh": "RoadMamba提出了一种结合全局语义和局部纹理的模型，在包含100万样本的大型数据集上取得了最先进的性能。",
+        "relevance_score": 3,
+        "novelty_claim_score": 8,
+        "clarity_score": 7,
+        "potential_impact_score": 9,
+        "overall_priority_score": 7.5
+    },
+    {
+        "title": "OpenGS-Fusion: Open-Vocabulary Dense Mapping with Hybrid 3D Gaussian Splatting for Refined Object-Level Understanding",
+        "summary": "Recent advancements in 3D scene understanding have made significant strides\nin enabling interaction with scenes using open-vocabulary queries, particularly\nfor VR/AR and robotic applications. Nevertheless, existing methods are hindered\nby rigid offline pipelines and the inability to provide precise 3D object-level\nunderstanding given open-ended queries. In this paper, we present\nOpenGS-Fusion, an innovative open-vocabulary dense mapping framework that\nimproves semantic modeling and refines object-level understanding.\nOpenGS-Fusion combines 3D Gaussian representation with a Truncated Signed\nDistance Field to facilitate lossless fusion of semantic features on-the-fly.\nFurthermore, we introduce a novel multimodal language-guided approach named\nMLLM-Assisted Adaptive Thresholding, which refines the segmentation of 3D\nobjects by adaptively adjusting similarity thresholds, achieving an improvement\n17\\% in 3D mIoU compared to the fixed threshold strategy. Extensive experiments\ndemonstrate that our method outperforms existing methods in 3D object\nunderstanding and scene reconstruction quality, as well as showcasing its\neffectiveness in language-guided scene interaction. The code is available at\nhttps://young-bit.github.io/opengs-fusion.github.io/ .",
+        "url": "http://arxiv.org/abs/2508.01150v1",
+        "published_date": "2025-08-02T02:22:36+00:00",
+        "updated_date": "2025-08-02T02:22:36+00:00",
+        "categories": [
+            "cs.CV"
+        ],
+        "authors": [
+            "Dianyi Yang",
+            "Xihan Wang",
+            "Yu Gao",
+            "Shiyang Liu",
+            "Bohan Ren",
+            "Yufeng Yue",
+            "Yi Yang"
+        ],
+        "ai_categories": [
+            "Multimodality",
+            "Transformer"
+        ],
+        "tldr": "OpenGS-Fusion is a novel framework for improving semantic modeling and object-level understanding in 3D scenes using open-vocabulary dense mapping.",
+        "tldr_zh": "OpenGS-Fusion是一种新颖的框架，通过使用开放词汇密集映射来改善在3D场景中的语义建模和对象级理解。",
+        "relevance_score": 6,
+        "novelty_claim_score": 8,
+        "clarity_score": 9,
+        "potential_impact_score": 7,
+        "overall_priority_score": 7.5
+    },
+    {
+        "title": "ReCoSeg++:Extended Residual-Guided Cross-Modal Diffusion for Brain Tumor Segmentation",
+        "summary": "Accurate segmentation of brain tumors in MRI scans is critical for clinical\ndiagnosis and treatment planning. We propose a semi-supervised, two-stage\nframework that extends the ReCoSeg approach to the larger and more\nheterogeneous BraTS 2021 dataset, while eliminating the need for ground-truth\nmasks for the segmentation objective. In the first stage, a residual-guided\ndenoising diffusion probabilistic model (DDPM) performs cross-modal synthesis\nby reconstructing the T1ce modality from FLAIR, T1, and T2 scans. The residual\nmaps, capturing differences between predicted and actual T1ce images, serve as\nspatial priors to enhance downstream segmentation. In the second stage, a\nlightweight U-Net takes as input the concatenation of residual maps, computed\nas the difference between real T1ce and synthesized T1ce, with T1, T2, and\nFLAIR modalities to improve whole tumor segmentation. To address the increased\nscale and variability of BraTS 2021, we apply slice-level filtering to exclude\nnon-informative samples and optimize thresholding strategies to balance\nprecision and recall. Our method achieves a Dice score of $93.02\\%$ and an IoU\nof $86.7\\%$ for whole tumor segmentation on the BraTS 2021 dataset,\noutperforming the ReCoSeg baseline on BraTS 2020 (Dice: $91.7\\%$, IoU:\n$85.3\\%$), and demonstrating improved accuracy and scalability for real-world,\nmulti-center MRI datasets.",
+        "url": "http://arxiv.org/abs/2508.01058v1",
+        "published_date": "2025-08-01T20:24:31+00:00",
+        "updated_date": "2025-08-01T20:24:31+00:00",
+        "categories": [
+            "eess.IV",
+            "cs.CV"
+        ],
+        "authors": [
+            "Sara Yavari",
+            "Rahul Nitin Pandya",
+            "Jacob Furst"
+        ],
+        "ai_categories": [
+            "Multimodality",
+            "Diffusion",
+            "Dataset"
+        ],
+        "tldr": "The paper introduces a two-stage framework for brain tumor segmentation in MRI scans that outperforms existing methods. It achieves high accuracy on a challenging dataset without the need for ground-truth masks.",
+        "tldr_zh": "本文提出了一个两阶段的框架，用于在MRI扫描中进行脑肿瘤分割，效果优于现有方法。它在一个具有挑战性的数据集上实现了高精度，而无需使用地面真值掩膜。",
+        "relevance_score": 6,
+        "novelty_claim_score": 8,
+        "clarity_score": 9,
+        "potential_impact_score": 7,
+        "overall_priority_score": 7.5
+    },
+    {
+        "title": "Integrating Disparity Confidence Estimation into Relative Depth Prior-Guided Unsupervised Stereo Matching",
+        "summary": "Unsupervised stereo matching has garnered significant attention for its\nindependence from costly disparity annotations. Typical unsupervised methods\nrely on the multi-view consistency assumption for training networks, which\nsuffer considerably from stereo matching ambiguities, such as repetitive\npatterns and texture-less regions. A feasible solution lies in transferring 3D\ngeometric knowledge from a relative depth map to the stereo matching networks.\nHowever, existing knowledge transfer methods learn depth ranking information\nfrom randomly built sparse correspondences, which makes inefficient utilization\nof 3D geometric knowledge and introduces noise from mistaken disparity\nestimates. This work proposes a novel unsupervised learning framework to\naddress these challenges, which comprises a plug-and-play disparity confidence\nestimation algorithm and two depth prior-guided loss functions. Specifically,\nthe local coherence consistency between neighboring disparities and their\ncorresponding relative depths is first checked to obtain disparity confidence.\nAfterwards, quasi-dense correspondences are built using only confident\ndisparity estimates to facilitate efficient depth ranking learning. Finally, a\ndual disparity smoothness loss is proposed to boost stereo matching performance\nat disparity discontinuities. Experimental results demonstrate that our method\nachieves state-of-the-art stereo matching accuracy on the KITTI Stereo\nbenchmarks among all unsupervised stereo matching methods.",
+        "url": "http://arxiv.org/abs/2508.01275v1",
+        "published_date": "2025-08-02T09:11:05+00:00",
+        "updated_date": "2025-08-02T09:11:05+00:00",
+        "categories": [
+            "cs.CV"
+        ],
+        "authors": [
+            "Chuang-Wei Liu",
+            "Mingjian Sun",
+            "Cairong Zhao",
+            "Hanli Wang",
+            "Alexander Dvorkovich",
+            "Rui Fan"
+        ],
+        "ai_categories": [
+            "AIGC"
+        ],
+        "tldr": "The paper proposes a novel unsupervised learning framework for stereo matching that integrates disparity confidence estimation and depth prior-guided loss functions to improve accuracy.",
+        "tldr_zh": "本文提出了一种新颖的无监督学习框架，用于立体匹配，通过整合视差置信度估计和深度先验引导损失函数来提高准确性。",
+        "relevance_score": 5,
+        "novelty_claim_score": 8,
+        "clarity_score": 7,
+        "potential_impact_score": 9,
+        "overall_priority_score": 7.25
+    },
+    {
+        "title": "ParaRevSNN: A Parallel Reversible Spiking Neural Network for Efficient Training and Inference",
+        "summary": "Reversible Spiking Neural Networks (RevSNNs) enable memory-efficient training\nby reconstructing forward activations during backpropagation, but suffer from\nhigh latency due to strictly sequential computation. To overcome this\nlimitation, we propose ParaRevSNN, a parallel reversible SNN architecture that\ndecouples sequential dependencies between reversible blocks while preserving\nreversibility. This design enables inter-block parallelism, significantly\naccelerating training and inference while retaining the memory-saving benefits\nof reversibility. Experiments on CIFAR10, CIFAR100, CIFAR10-DVS, and DVS128\nGesture demonstrate that ParaRevSNN matches or exceeds the accuracy of standard\nRevSNNs, while reducing training time by up to 35.2\\% and inference time to\n18.15\\%, making it well-suited for deployment in resource-constrained\nscenarios.",
+        "url": "http://arxiv.org/abs/2508.01223v1",
+        "published_date": "2025-08-02T06:40:59+00:00",
+        "updated_date": "2025-08-02T06:40:59+00:00",
+        "categories": [
+            "cs.CV",
+            "68T10",
+            "I.4.6"
+        ],
+        "authors": [
+            "Changqing Xu",
+            "Guoqing Sun",
+            "Yi Liu",
+            "Xinfang Liao",
+            "Yintang Yang"
+        ],
+        "ai_categories": [
+            "Transformer",
+            "Dataset"
+        ],
+        "tldr": "ParaRevSNN is a parallel reversible spiking neural network architecture that accelerates training and inference while maintaining memory efficiency, outperforming traditional RevSNNs in speed and accuracy.",
+        "tldr_zh": "ParaRevSNN是一种并行可逆脉冲神经网络架构，加速训练和推断，同时保持了内存效率，在速度和准确性上优于传统的RevSNNs。",
+        "relevance_score": 5,
+        "novelty_claim_score": 8,
+        "clarity_score": 9,
+        "potential_impact_score": 7,
+        "overall_priority_score": 7.25
+    },
+    {
+        "title": "TEACH: Text Encoding as Curriculum Hints for Scene Text Recognition",
+        "summary": "Scene Text Recognition (STR) remains a challenging task due to complex visual\nappearances and limited semantic priors. We propose TEACH, a novel training\nparadigm that injects ground-truth text into the model as auxiliary input and\nprogressively reduces its influence during training. By encoding target labels\ninto the embedding space and applying loss-aware masking, TEACH simulates a\ncurriculum learning process that guides the model from label-dependent learning\nto fully visual recognition. Unlike language model-based approaches, TEACH\nrequires no external pretraining and introduces no inference overhead. It is\nmodel-agnostic and can be seamlessly integrated into existing encoder-decoder\nframeworks. Extensive experiments across multiple public benchmarks show that\nmodels trained with TEACH achieve consistently improved accuracy, especially\nunder challenging conditions, validating its robustness and general\napplicability.",
+        "url": "http://arxiv.org/abs/2508.01153v1",
+        "published_date": "2025-08-02T02:28:09+00:00",
+        "updated_date": "2025-08-02T02:28:09+00:00",
+        "categories": [
+            "cs.CV"
+        ],
+        "authors": [
+            "Xiahan Yang",
+            "Hui Zheng"
+        ],
+        "ai_categories": [
+            "Transformer",
+            "Dataset"
+        ],
+        "tldr": "TEACH proposes a novel training paradigm for Text Recognition by injecting ground-truth text into the model and guiding it towards visual recognition, achieving improved accuracy without the need for external pretraining.",
+        "tldr_zh": "TEACH提出了一种新的文本识别训练范式，通过向模型注入地面真实文本并引导它向视觉识别，实现了在无需外部预训练的情况下获得更高的准确率。",
+        "relevance_score": 5,
+        "novelty_claim_score": 8,
+        "clarity_score": 9,
+        "potential_impact_score": 7,
+        "overall_priority_score": 7.25
+    },
+    {
+        "title": "Mobile U-ViT: Revisiting large kernel and U-shaped ViT for efficient medical image segmentation",
+        "summary": "In clinical practice, medical image analysis often requires efficient\nexecution on resource-constrained mobile devices. However, existing mobile\nmodels-primarily optimized for natural images-tend to perform poorly on medical\ntasks due to the significant information density gap between natural and\nmedical domains. Combining computational efficiency with medical\nimaging-specific architectural advantages remains a challenge when developing\nlightweight, universal, and high-performing networks. To address this, we\npropose a mobile model called Mobile U-shaped Vision Transformer (Mobile U-ViT)\ntailored for medical image segmentation. Specifically, we employ the newly\npurposed ConvUtr as a hierarchical patch embedding, featuring a\nparameter-efficient large-kernel CNN with inverted bottleneck fusion. This\ndesign exhibits transformer-like representation learning capacity while being\nlighter and faster. To enable efficient local-global information exchange, we\nintroduce a novel Large-kernel Local-Global-Local (LGL) block that effectively\nbalances the low information density and high-level semantic discrepancy of\nmedical images. Finally, we incorporate a shallow and lightweight transformer\nbottleneck for long-range modeling and employ a cascaded decoder with\ndownsample skip connections for dense prediction. Despite its reduced\ncomputational demands, our medical-optimized architecture achieves\nstate-of-the-art performance across eight public 2D and 3D datasets covering\ndiverse imaging modalities, including zero-shot testing on four unseen\ndatasets. These results establish it as an efficient yet powerful and\ngeneralization solution for mobile medical image analysis. Code is available at\nhttps://github.com/FengheTan9/Mobile-U-ViT.",
+        "url": "http://arxiv.org/abs/2508.01064v1",
+        "published_date": "2025-08-01T20:45:42+00:00",
+        "updated_date": "2025-08-01T20:45:42+00:00",
+        "categories": [
+            "eess.IV",
+            "cs.CV"
+        ],
+        "authors": [
+            "Fenghe Tang",
+            "Bingkun Nian",
+            "Jianrui Ding",
+            "Wenxin Ma",
+            "Quan Quan",
+            "Chengqi Dong",
+            "Jie Yang",
+            "Wei Liu",
+            "S. Kevin Zhou"
+        ],
+        "ai_categories": [
+            "Transformer",
+            "Dataset"
+        ],
+        "tldr": "The paper introduces Mobile U-ViT, a model for efficient medical image segmentation on mobile devices, achieving state-of-the-art performance across various datasets.",
+        "tldr_zh": "该论文介绍了Mobile U-ViT，一种用于在移动设备上进行高效医学图像分割的模型，在各种数据集上实现了最先进的性能。",
+        "relevance_score": 3,
+        "novelty_claim_score": 8,
+        "clarity_score": 9,
+        "potential_impact_score": 7,
+        "overall_priority_score": 7.25
+    },
+    {
+        "title": "Hyperspectral Image Recovery Constrained by Multi-Granularity Non-Local Self-Similarity Priors",
+        "summary": "Hyperspectral image (HSI) recovery, as an upstream image processing task,\n  holds significant importance for downstream tasks such as classification,\n  segmentation, and detection. In recent years, HSI recovery methods based on\n  non-local prior representations have demonstrated outstanding performance.\nHowever,\n  these methods employ a fixed-format factor to represent the non-local\nself-similarity\n  tensor groups, making them unable to adapt to diverse missing scenarios. To\naddress\n  this issue, we introduce the concept of granularity in tensor decomposition\nfor the first\n  time and propose an HSI recovery model constrained by multi-granularity\nnon-local\n  self-similarity priors. Specifically, the proposed model alternately performs\n  coarse-grained decomposition and fine-grained decomposition on the non-local\n  self-similarity tensor groups. Among them, the coarse-grained decomposition\nbuilds\n  upon Tucker tensor decomposition, which extracts global structural\ninformation of the\n  image by performing singular value shrinkage on the mode-unfolded matrices.\nThe\n  fine-grained decomposition employs the FCTN decomposition, capturing local\ndetail\n  information through modeling pairwise correlations among factor tensors. This\n  architectural approach achieves a unified representation of global, local,\nand non-local\n  priors for HSIs. Experimental results demonstrate that the model has strong\n  applicability and exhibits outstanding recovery effects in various types of\nmissing\n  scenes such as pixels and stripes.",
+        "url": "http://arxiv.org/abs/2508.01435v1",
+        "published_date": "2025-08-02T16:51:07+00:00",
+        "updated_date": "2025-08-02T16:51:07+00:00",
+        "categories": [
+            "cs.CV"
+        ],
+        "authors": [
+            "Zhuoran Peng",
+            "Yiqing Shen"
+        ],
+        "ai_categories": [
+            "Transformer",
+            "Dataset"
+        ],
+        "tldr": "A new model for hyperspectral image recovery using multi-granularity non-local self-similarity priors is proposed, showing strong applicability and outstanding recovery effects in various missing scenarios.",
+        "tldr_zh": "提出了一种利用多粒度非局部自相似先验的高光谱图像恢复模型，表现出在各种丢失场景中具有很强的适用性和出色的恢复效果。",
+        "relevance_score": 2,
+        "novelty_claim_score": 8,
+        "clarity_score": 7,
+        "potential_impact_score": 9,
+        "overall_priority_score": 7
+    },
+    {
+        "title": "Predicting EGFR Mutation in LUAD from Histopathological Whole-Slide Images Using Pretrained Foundation Model and Transfer Learning: An Indian Cohort Study",
+        "summary": "Lung adenocarcinoma (LUAD) is a subtype of non-small cell lung cancer\n(NSCLC). LUAD with mutation in the EGFR gene accounts for approximately 46% of\nLUAD cases. Patients carrying EGFR mutations can be treated with specific\ntyrosine kinase inhibitors (TKIs). Hence, predicting EGFR mutation status can\nhelp in clinical decision making. H&E-stained whole slide imaging (WSI) is a\nroutinely performed screening procedure for cancer staging and subtyping,\nespecially affecting the Southeast Asian populations with significantly higher\nincidence of the mutation when compared to Caucasians (39-64% vs 7-22%). Recent\nprogress in AI models has shown promising results in cancer detection and\nclassification. In this study, we propose a deep learning (DL) framework built\non vision transformers (ViT) based pathology foundation model and\nattention-based multiple instance learning (ABMIL) architecture to predict EGFR\nmutation status from H&E WSI. The developed pipeline was trained using data\nfrom an Indian cohort (170 WSI) and evaluated across two independent datasets:\nInternal test (30 WSI from Indian cohort) set, and an external test set from\nTCGA (86 WSI). The model shows consistent performance across both datasets,\nwith AUCs of 0.933 (+/-0.010), and 0.965 (+/-0.015) for the internal and\nexternal test sets respectively. This proposed framework can be efficiently\ntrained on small datasets, achieving superior performance as compared to\nseveral prior studies irrespective of training domain. The current study\ndemonstrates the feasibility of accurately predicting EGFR mutation status\nusing routine pathology slides, particularly in resource-limited settings using\nfoundation models and attention-based multiple instance learning.",
+        "url": "http://arxiv.org/abs/2508.01352v1",
+        "published_date": "2025-08-02T12:57:16+00:00",
+        "updated_date": "2025-08-02T12:57:16+00:00",
+        "categories": [
+            "eess.IV",
+            "cs.CV"
+        ],
+        "authors": [
+            "Sagar Singh Gwal",
+            "Rajan",
+            "Suyash Devgan",
+            "Shraddhanjali Satapathy",
+            "Abhishek Goyal",
+            "Nuruddin Mohammad Iqbal",
+            "Vivaan Jain",
+            "Prabhat Singh Mallik",
+            "Deepali Jain",
+            "Ishaan Gupta"
+        ],
+        "ai_categories": [
+            "Multimodality",
+            "Dataset"
+        ],
+        "tldr": "The paper proposes a deep learning framework to predict EGFR mutation status in lung cancer from pathology images with high accuracy, particularly focusing on the Southeast Asian population.",
+        "tldr_zh": "该论文提出了一个深度学习框架，可以从病理图像中高精度地预测肺癌中的EGFR突变状态，特别关注东南亚人群。",
+        "relevance_score": 5,
+        "novelty_claim_score": 8,
+        "clarity_score": 9,
+        "potential_impact_score": 7,
+        "overall_priority_score": 7
+    },
+    {
+        "title": "SBP-YOLO:A Lightweight Real-Time Model for Detecting Speed Bumps and Potholes",
+        "summary": "With increasing demand for ride comfort in new energy vehicles, accurate\nreal-time detection of speed bumps and potholes is critical for predictive\nsuspension control. This paper proposes SBP-YOLO, a lightweight detection\nframework based on YOLOv11, optimized for embedded deployment. The model\nintegrates GhostConv for efficient computation, VoVGSCSPC for multi-scale\nfeature enhancement, and a Lightweight Efficiency Detection Head (LEDH) to\nreduce early-stage feature processing costs. A hybrid training strategy\ncombining NWD loss, knowledge distillation, and Albumentations-based weather\naugmentation improves detection robustness, especially for small and distant\ntargets. Experiments show SBP-YOLO achieves 87.0% mAP (outperforming YOLOv11n\nby 5.8%) and runs at 139.5 FPS on a Jetson AGX Xavier with TensorRT FP16\nquantization. The results validate its effectiveness for real-time road\ncondition perception in intelligent suspension systems.",
+        "url": "http://arxiv.org/abs/2508.01339v1",
+        "published_date": "2025-08-02T12:15:08+00:00",
+        "updated_date": "2025-08-02T12:15:08+00:00",
+        "categories": [
+            "cs.CV",
+            "cs.AI",
+            "68T45",
+            "I.4.8; C.3"
+        ],
+        "authors": [
+            "Chuanqi Liang",
+            "Jie Fu",
+            "Lei Luo",
+            "Miao Yu"
+        ],
+        "ai_categories": [
+            "Transformer",
+            "Dataset"
+        ],
+        "tldr": "The paper introduces SBP-YOLO, a lightweight model for real-time detection of speed bumps and potholes, outperforming YOLOv11n in terms of mAP and FPS.",
+        "tldr_zh": "本文介绍了SBP-YOLO，一个轻量级模型，用于实时检测减速带和坑洼，在mAP和FPS方面优于YOLOv11n。",
+        "relevance_score": 2,
+        "novelty_claim_score": 7,
+        "clarity_score": 9,
+        "potential_impact_score": 8,
+        "overall_priority_score": 7
+    },
+    {
+        "title": "ODOV: Towards Open-Domain Open-Vocabulary Object Detection",
+        "summary": "In this work, we handle a new problem of Open-Domain Open-Vocabulary (ODOV)\nobject detection, which considers the detection model's adaptability to the\nreal world including both domain and category shifts. For this problem, we\nfirst construct a new benchmark OD-LVIS, which includes 46,949 images, covers\n18 complex real-world domains and 1,203 categories, and provides a\ncomprehensive dataset for evaluating real-world object detection. Besides, we\ndevelop a novel baseline method for ODOV detection.The proposed method first\nleverages large language models to generate the domain-agnostic text prompts\nfor category embedding. It further learns the domain embedding from the given\nimage, which, during testing, can be integrated into the category embedding to\nform the customized domain-specific category embedding for each test image. We\nprovide sufficient benchmark evaluations for the proposed ODOV detection task\nand report the results, which verify the rationale of ODOV detection, the\nusefulness of our benchmark, and the superiority of the proposed method.",
+        "url": "http://arxiv.org/abs/2508.01253v1",
+        "published_date": "2025-08-02T08:10:45+00:00",
+        "updated_date": "2025-08-02T08:10:45+00:00",
+        "categories": [
+            "cs.CV"
+        ],
+        "authors": [
+            "Yupeng Zhang",
+            "Ruize Han",
+            "Fangnan Zhou",
+            "Song Wang",
+            "Wei Feng",
+            "Liang Wan"
+        ],
+        "ai_categories": [
+            "Transformer",
+            "Dataset"
+        ],
+        "tldr": "The paper introduces a new problem of Open-Domain Open-Vocabulary object detection and proposes a method using language models and image domain information for detection.",
+        "tldr_zh": "本文介绍了一种新的开放域开放词汇目标检测问题，并提出了一种利用语言模型和图像领域信息进行检测的方法。",
+        "relevance_score": 5,
+        "novelty_claim_score": 8,
+        "clarity_score": 9,
+        "potential_impact_score": 7,
+        "overall_priority_score": 7
+    },
+    {
+        "title": "DisFaceRep: Representation Disentanglement for Co-occurring Facial Components in Weakly Supervised Face Parsing",
+        "summary": "Face parsing aims to segment facial images into key components such as eyes,\nlips, and eyebrows. While existing methods rely on dense pixel-level\nannotations, such annotations are expensive and labor-intensive to obtain. To\nreduce annotation cost, we introduce Weakly Supervised Face Parsing (WSFP), a\nnew task setting that performs dense facial component segmentation using only\nweak supervision, such as image-level labels and natural language descriptions.\nWSFP introduces unique challenges due to the high co-occurrence and visual\nsimilarity of facial components, which lead to ambiguous activations and\ndegraded parsing performance. To address this, we propose DisFaceRep, a\nrepresentation disentanglement framework designed to separate co-occurring\nfacial components through both explicit and implicit mechanisms. Specifically,\nwe introduce a co-occurring component disentanglement strategy to explicitly\nreduce dataset-level bias, and a text-guided component disentanglement loss to\nguide component separation using language supervision implicitly. Extensive\nexperiments on CelebAMask-HQ, LaPa, and Helen demonstrate the difficulty of\nWSFP and the effectiveness of DisFaceRep, which significantly outperforms\nexisting weakly supervised semantic segmentation methods. The code will be\nreleased at\n\\href{https://github.com/CVI-SZU/DisFaceRep}{\\textcolor{cyan}{https://github.com/CVI-SZU/DisFaceRep}}.",
+        "url": "http://arxiv.org/abs/2508.01250v1",
+        "published_date": "2025-08-02T08:02:06+00:00",
+        "updated_date": "2025-08-02T08:02:06+00:00",
+        "categories": [
+            "cs.CV"
+        ],
+        "authors": [
+            "Xiaoqin Wang",
+            "Xianxu Hou",
+            "Meidan Ding",
+            "Junliang Chen",
+            "Kaijun Deng",
+            "Jinheng Xie",
+            "Linlin Shen"
+        ],
+        "ai_categories": [
+            "Transformer",
+            "Dataset"
+        ],
+        "tldr": "The paper introduces Weakly Supervised Face Parsing to segment facial components using weak labels, proposes DisFaceRep to separate co-occurring components, and outperforms existing methods.",
+        "tldr_zh": "本文引入了弱监督人脸解析来使用弱标签分割面部组件，提出了DisFaceRep来分离共存组件，并优于现有方法。",
+        "relevance_score": 5,
+        "novelty_claim_score": 8,
+        "clarity_score": 7,
+        "potential_impact_score": 7,
+        "overall_priority_score": 7
+    },
+    {
+        "title": "Enhancing Multi-view Open-set Learning via Ambiguity Uncertainty Calibration and View-wise Debiasing",
+        "summary": "Existing multi-view learning models struggle in open-set scenarios due to\ntheir implicit assumption of class completeness. Moreover, static view-induced\nbiases, which arise from spurious view-label associations formed during\ntraining, further degrade their ability to recognize unknown categories. In\nthis paper, we propose a multi-view open-set learning framework via ambiguity\nuncertainty calibration and view-wise debiasing. To simulate ambiguous samples,\nwe design O-Mix, a novel synthesis strategy to generate virtual samples with\ncalibrated open-set ambiguity uncertainty. These samples are further processed\nby an auxiliary ambiguity perception network that captures atypical patterns\nfor improved open-set adaptation. Furthermore, we incorporate an HSIC-based\ncontrastive debiasing module that enforces independence between view-specific\nambiguous and view-consistent representations, encouraging the model to learn\ngeneralizable features. Extensive experiments on diverse multi-view benchmarks\ndemonstrate that the proposed framework consistently enhances unknown-class\nrecognition while preserving strong closed-set performance.",
+        "url": "http://arxiv.org/abs/2508.01227v1",
+        "published_date": "2025-08-02T06:46:16+00:00",
+        "updated_date": "2025-08-02T06:46:16+00:00",
+        "categories": [
+            "cs.CV",
+            "cs.LG"
+        ],
+        "authors": [
+            "Zihan Fang",
+            "Zhiyong Xu",
+            "Lan Du",
+            "Shide Du",
+            "Zhiling Cai",
+            "Shiping Wang"
+        ],
+        "ai_categories": [
+            "AIGC",
+            "Other"
+        ],
+        "tldr": "The paper introduces a framework for enhancing multi-view open-set learning by calibrating uncertainty and debiasing view-wise.",
+        "tldr_zh": "该论文介绍了一个通过校准不确定性和去偏见方式来增强多视图开放集学习的框架。",
+        "relevance_score": 5,
+        "novelty_claim_score": 8,
+        "clarity_score": 7,
+        "potential_impact_score": 9,
+        "overall_priority_score": 7
+    },
+    {
+        "title": "Perspective from a Broader Context: Can Room Style Knowledge Help Visual Floorplan Localization?",
+        "summary": "Since a building's floorplan remains consistent over time and is inherently\nrobust to changes in visual appearance, visual Floorplan Localization (FLoc)\nhas received increasing attention from researchers. However, as a compact and\nminimalist representation of the building's layout, floorplans contain many\nrepetitive structures (e.g., hallways and corners), thus easily result in\nambiguous localization. Existing methods either pin their hopes on matching 2D\nstructural cues in floorplans or rely on 3D geometry-constrained visual\npre-trainings, ignoring the richer contextual information provided by visual\nimages. In this paper, we suggest using broader visual scene context to empower\nFLoc algorithms with scene layout priors to eliminate localization uncertainty.\nIn particular, we propose an unsupervised learning technique with clustering\nconstraints to pre-train a room discriminator on self-collected unlabeled room\nimages. Such a discriminator can empirically extract the hidden room type of\nthe observed image and distinguish it from other room types. By injecting the\nscene context information summarized by the discriminator into an FLoc\nalgorithm, the room style knowledge is effectively exploited to guide definite\nvisual FLoc. We conducted sufficient comparative studies on two standard visual\nFloc benchmarks. Our experiments show that our approach outperforms\nstate-of-the-art methods and achieves significant improvements in robustness\nand accuracy.",
+        "url": "http://arxiv.org/abs/2508.01216v1",
+        "published_date": "2025-08-02T06:17:54+00:00",
+        "updated_date": "2025-08-02T06:17:54+00:00",
+        "categories": [
+            "cs.CV",
+            "cs.RO"
+        ],
+        "authors": [
+            "Bolei Chen",
+            "Shengsheng Yan",
+            "Yongzheng Cui",
+            "Jiaxu Kang",
+            "Ping Zhong",
+            "Jianxin Wang"
+        ],
+        "ai_categories": [
+            "Transformer",
+            "Dataset",
+            "Other"
+        ],
+        "tldr": "The paper proposes using room style knowledge to enhance visual floorplan localization, achieving better performance than existing methods.",
+        "tldr_zh": "本文提出了利用房间风格知识来增强视觉楼层平面定位，实现比现有方法更好的性能。",
+        "relevance_score": 3,
+        "novelty_claim_score": 7,
+        "clarity_score": 8,
+        "potential_impact_score": 9,
+        "overall_priority_score": 7
+    },
+    {
+        "title": "Deep Learning for Pavement Condition Evaluation Using Satellite Imagery",
+        "summary": "Civil infrastructure systems covers large land areas and needs frequent\ninspections to maintain their public service capabilities. The conventional\napproaches of manual surveys or vehicle-based automated surveys to assess\ninfrastructure conditions are often labor-intensive and time-consuming. For\nthis reason, it is worthwhile to explore more cost-effective methods for\nmonitoring and maintaining these infrastructures. Fortunately, recent\nadvancements in satellite systems and image processing algorithms have opened\nup new possibilities. Numerous satellite systems have been employed to monitor\ninfrastructure conditions and identify damages. Due to the improvement in\nground sample distance (GSD), the level of detail that can be captured has\nsignificantly increased. Taking advantage of these technology advancement, this\nresearch investigated to evaluate pavement conditions using deep learning\nmodels for analyzing satellite images. We gathered over 3,000 satellite images\nof pavement sections, together with pavement evaluation ratings from TxDOT's\nPMIS database. The results of our study show an accuracy rate is exceeding 90%.\nThis research paves the way for a rapid and cost-effective approach to\nevaluating the pavement network in the future.",
+        "url": "http://arxiv.org/abs/2508.01206v1",
+        "published_date": "2025-08-02T05:43:33+00:00",
+        "updated_date": "2025-08-02T05:43:33+00:00",
+        "categories": [
+            "cs.CV",
+            "cs.AI"
+        ],
+        "authors": [
+            "Prathyush Kumar Reddy Lebaku",
+            "Lu Gao",
+            "Pan Lu",
+            "Jingran Sun"
+        ],
+        "ai_categories": [
+            "Dataset",
+            "Transformer"
+        ],
+        "tldr": "This paper explores the use of deep learning models on satellite images to evaluate pavement conditions, achieving over 90% accuracy rates.",
+        "tldr_zh": "本文探讨了利用深度学习模型分析卫星图像来评估道路状况，准确率超过90%。",
+        "relevance_score": 4,
+        "novelty_claim_score": 7,
+        "clarity_score": 8,
+        "potential_impact_score": 9,
+        "overall_priority_score": 7.0
+    },
+    {
+        "title": "AURA: A Hybrid Spatiotemporal-Chromatic Framework for Robust, Real-Time Detection of Industrial Smoke Emissions",
+        "summary": "This paper introduces AURA, a novel hybrid spatiotemporal-chromatic framework\ndesigned for robust, real-time detection and classification of industrial smoke\nemissions. The framework addresses critical limitations of current monitoring\nsystems, which often lack the specificity to distinguish smoke types and\nstruggle with environmental variability. AURA leverages both the dynamic\nmovement patterns and the distinct color characteristics of industrial smoke to\nprovide enhanced accuracy and reduced false positives. This framework aims to\nsignificantly improve environmental compliance, operational safety, and public\nhealth outcomes by enabling precise, automated monitoring of industrial\nemissions.",
+        "url": "http://arxiv.org/abs/2508.01095v1",
+        "published_date": "2025-08-01T22:22:05+00:00",
+        "updated_date": "2025-08-01T22:22:05+00:00",
+        "categories": [
+            "cs.CV"
+        ],
+        "authors": [
+            "Mikhail Bychkov",
+            "Matey Yordanov",
+            "Andrei Kuchma"
+        ],
+        "ai_categories": [
+            "AIGC",
+            "Multimodality",
+            "Dataset"
+        ],
+        "tldr": "AURA is a new framework for real-time detection of industrial smoke emissions using spatiotemporal and color features.",
+        "tldr_zh": "AURA是一个新的框架，利用时空和颜色特征实时检测工业烟气排放。",
+        "relevance_score": 2,
+        "novelty_claim_score": 8,
+        "clarity_score": 9,
+        "potential_impact_score": 7,
+        "overall_priority_score": 7
+    },
+    {
+        "title": "COSTARR: Consolidated Open Set Technique with Attenuation for Robust Recognition",
+        "summary": "Handling novelty remains a key challenge in visual recognition systems.\nExisting open-set recognition (OSR) methods rely on the familiarity hypothesis,\ndetecting novelty by the absence of familiar features. We propose a novel\nattenuation hypothesis: small weights learned during training attenuate\nfeatures and serve a dual role-differentiating known classes while discarding\ninformation useful for distinguishing known from unknown classes. To leverage\nthis overlooked information, we present COSTARR, a novel approach that combines\nboth the requirement of familiar features and the lack of unfamiliar ones. We\nprovide a probabilistic interpretation of the COSTARR score, linking it to the\nlikelihood of correct classification and belonging in a known class. To\ndetermine the individual contributions of the pre- and post-attenuated features\nto COSTARR's performance, we conduct ablation studies that show both\npre-attenuated deep features and the underutilized post-attenuated Hadamard\nproduct features are essential for improving OSR. Also, we evaluate COSTARR in\na large-scale setting using ImageNet2012-1K as known data and NINCO,\niNaturalist, OpenImage-O, and other datasets as unknowns, across multiple\nmodern pre-trained architectures (ViTs, ConvNeXts, and ResNet). The experiments\ndemonstrate that COSTARR generalizes effectively across various architectures\nand significantly outperforms prior state-of-the-art methods by incorporating\npreviously discarded attenuation information, advancing open-set recognition\ncapabilities.",
+        "url": "http://arxiv.org/abs/2508.01087v1",
+        "published_date": "2025-08-01T21:44:46+00:00",
+        "updated_date": "2025-08-01T21:44:46+00:00",
+        "categories": [
+            "cs.CV"
+        ],
+        "authors": [
+            "Ryan Rabinowitz",
+            "Steve Cruz",
+            "Walter Scheirer",
+            "Terrance E. Boult"
+        ],
+        "ai_categories": [
+            "Transformer",
+            "Dataset"
+        ],
+        "tldr": "COSTARR proposes a new approach for open-set recognition by combining familiar and unfamiliar features, outperforming prior methods by leveraging attenuation information.",
+        "tldr_zh": "COSTARR提出了一种新的方法，通过结合熟悉和陌生特征来进行开放集识别，利用衰减信息优于先前方法。",
+        "relevance_score": 3,
+        "novelty_claim_score": 9,
+        "clarity_score": 8,
+        "potential_impact_score": 8,
+        "overall_priority_score": 7
+    },
+    {
+        "title": "Evading Data Provenance in Deep Neural Networks",
+        "summary": "Modern over-parameterized deep models are highly data-dependent, with large\nscale general-purpose and domain-specific datasets serving as the bedrock for\nrapid advancements. However, many datasets are proprietary or contain sensitive\ninformation, making unrestricted model training problematic. In the open world\nwhere data thefts cannot be fully prevented, Dataset Ownership Verification\n(DOV) has emerged as a promising method to protect copyright by detecting\nunauthorized model training and tracing illicit activities. Due to its\ndiversity and superior stealth, evading DOV is considered extremely\nchallenging. However, this paper identifies that previous studies have relied\non oversimplistic evasion attacks for evaluation, leading to a false sense of\nsecurity. We introduce a unified evasion framework, in which a teacher model\nfirst learns from the copyright dataset and then transfers task-relevant yet\nidentifier-independent domain knowledge to a surrogate student using an\nout-of-distribution (OOD) dataset as the intermediary. Leveraging\nVision-Language Models and Large Language Models, we curate the most\ninformative and reliable subsets from the OOD gallery set as the final transfer\nset, and propose selectively transferring task-oriented knowledge to achieve a\nbetter trade-off between generalization and evasion effectiveness. Experiments\nacross diverse datasets covering eleven DOV methods demonstrate our approach\nsimultaneously eliminates all copyright identifiers and significantly\noutperforms nine state-of-the-art evasion attacks in both generalization and\neffectiveness, with moderate computational overhead. As a proof of concept, we\nreveal key vulnerabilities in current DOV methods, highlighting the need for\nlong-term development to enhance practicality.",
+        "url": "http://arxiv.org/abs/2508.01074v1",
+        "published_date": "2025-08-01T21:13:45+00:00",
+        "updated_date": "2025-08-01T21:13:45+00:00",
+        "categories": [
+            "cs.CV",
+            "cs.CR"
+        ],
+        "authors": [
+            "Hongyu Zhu",
+            "Sichu Liang",
+            "Wenwen Wang",
+            "Zhuomeng Zhang",
+            "Fangqi Li",
+            "Shi-Lin Wang"
+        ],
+        "ai_categories": [
+            "Dataset",
+            "GAN",
+            "Transformer"
+        ],
+        "tldr": "The paper introduces a unified evasion framework to evade Dataset Ownership Verification (DOV) by transferring task-relevant knowledge through an out-of-distribution dataset, outperforming state-of-the-art evasion attacks in both generalization and effectiveness.",
+        "tldr_zh": "本文引入了一种统一的规避框架，通过传输任务相关知识的方式通过一个超出分布的数据集来规避数据集所有权验证（DOV），在泛化性和有效性上优于现有技术攻击。",
+        "relevance_score": 5,
+        "novelty_claim_score": 8,
+        "clarity_score": 9,
+        "potential_impact_score": 7,
+        "overall_priority_score": 7
+    },
+    {
+        "title": "CP-FREEZER: Latency Attacks against Vehicular Cooperative Perception",
+        "summary": "Cooperative perception (CP) enhances situational awareness of connected and\nautonomous vehicles by exchanging and combining messages from multiple agents.\nWhile prior work has explored adversarial integrity attacks that degrade\nperceptual accuracy, little is known about CP's robustness against attacks on\ntimeliness (or availability), a safety-critical requirement for autonomous\ndriving. In this paper, we present CP-FREEZER, the first latency attack that\nmaximizes the computation delay of CP algorithms by injecting adversarial\nperturbation via V2V messages. Our attack resolves several unique challenges,\nincluding the non-differentiability of point cloud preprocessing, asynchronous\nknowledge of the victim's input due to transmission delays, and uses a novel\nloss function that effectively maximizes the execution time of the CP pipeline.\nExtensive experiments show that CP-FREEZER increases end-to-end CP latency by\nover $90\\times$, pushing per-frame processing time beyond 3 seconds with a 100%\nsuccess rate on our real-world vehicle testbed. Our findings reveal a critical\nthreat to the availability of CP systems, highlighting the urgent need for\nrobust defenses.",
+        "url": "http://arxiv.org/abs/2508.01062v1",
+        "published_date": "2025-08-01T20:34:36+00:00",
+        "updated_date": "2025-08-01T20:34:36+00:00",
+        "categories": [
+            "cs.CR",
+            "cs.CV"
+        ],
+        "authors": [
+            "Chenyi Wang",
+            "Ruoyu Song",
+            "Raymond Muller",
+            "Jean-Philippe Monteuuis",
+            "Z. Berkay Celik",
+            "Jonathan Petit",
+            "Ryan Gerdes",
+            "Ming Li"
+        ],
+        "ai_categories": [
+            "Other"
+        ],
+        "tldr": "CP-FREEZER introduces latency attacks targeting vehicular cooperative perception systems, significantly increasing processing time and posing a critical threat to system availability.",
+        "tldr_zh": "CP-FREEZER引入延迟攻击，针对车联网协作感知系统，大幅增加处理时间，对系统可用性构成严重威胁。",
+        "relevance_score": 2,
+        "novelty_claim_score": 8,
+        "clarity_score": 9,
+        "potential_impact_score": 7,
+        "overall_priority_score": 7
+    },
+    {
+        "title": "Structured Spectral Graph Learning for Anomaly Classification in 3D Chest CT Scans",
+        "summary": "With the increasing number of CT scan examinations, there is a need for\nautomated methods such as organ segmentation, anomaly detection and report\ngeneration to assist radiologists in managing their increasing workload.\nMulti-label classification of 3D CT scans remains a critical yet challenging\ntask due to the complex spatial relationships within volumetric data and the\nvariety of observed anomalies. Existing approaches based on 3D convolutional\nnetworks have limited abilities to model long-range dependencies while Vision\nTransformers suffer from high computational costs and often require extensive\npre-training on large-scale datasets from the same domain to achieve\ncompetitive performance. In this work, we propose an alternative by introducing\na new graph-based approach that models CT scans as structured graphs,\nleveraging axial slice triplets nodes processed through spectral domain\nconvolution to enhance multi-label anomaly classification performance. Our\nmethod exhibits strong cross-dataset generalization, and competitive\nperformance while achieving robustness to z-axis translation. An ablation study\nevaluates the contribution of each proposed component.",
+        "url": "http://arxiv.org/abs/2508.01045v1",
+        "published_date": "2025-08-01T19:52:34+00:00",
+        "updated_date": "2025-08-01T19:52:34+00:00",
+        "categories": [
+            "cs.CV",
+            "cs.LG"
+        ],
+        "authors": [
+            "Theo Di Piazza",
+            "Carole Lazarus",
+            "Olivier Nempont",
+            "Loic Boussel"
+        ],
+        "ai_categories": [
+            "Transformer",
+            "Dataset"
+        ],
+        "tldr": "The paper introduces a new graph-based approach for anomaly classification in 3D chest CT scans, showcasing strong generalization and competitive performance.",
+        "tldr_zh": "这篇论文提出了一种新的基于图的方法，用于3D胸部CT扫描中的异常分类，展示出了强大的泛化能力和竞争性能。",
+        "relevance_score": 6,
+        "novelty_claim_score": 8,
+        "clarity_score": 7,
+        "potential_impact_score": 8,
+        "overall_priority_score": 7
+    },
+    {
+        "title": "3D Reconstruction via Incremental Structure From Motion",
+        "summary": "Accurate 3D reconstruction from unstructured image collections is a key\nrequirement in applications such as robotics, mapping, and scene understanding.\nWhile global Structure from Motion (SfM) techniques rely on full image\nconnectivity and can be sensitive to noise or missing data, incremental SfM\noffers a more flexible alternative. By progressively incorporating new views\ninto the reconstruction, it enables the system to recover scene structure and\ncamera motion even in sparse or partially overlapping datasets. In this paper,\nwe present a detailed implementation of the incremental SfM pipeline, focusing\non the consistency of geometric estimation and the effect of iterative\nrefinement through bundle adjustment. We demonstrate the approach using a real\ndataset and assess reconstruction quality through reprojection error and camera\ntrajectory coherence. The results support the practical utility of incremental\nSfM as a reliable method for sparse 3D reconstruction in visually structured\nenvironments.",
+        "url": "http://arxiv.org/abs/2508.01019v1",
+        "published_date": "2025-08-01T18:45:05+00:00",
+        "updated_date": "2025-08-01T18:45:05+00:00",
+        "categories": [
+            "cs.CV",
+            "math.OC"
+        ],
+        "authors": [
+            "Muhammad Zeeshan",
+            "Umer Zaki",
+            "Syed Ahmed Pasha",
+            "Zaar Khizar"
+        ],
+        "ai_categories": [
+            "Dataset",
+            "Other"
+        ],
+        "tldr": "The paper presents an incremental Structure from Motion (SfM) pipeline for 3D reconstruction, showcasing its flexibility and practical utility in visually structured environments.",
+        "tldr_zh": "该论文介绍了一种增量式结构运动（SfM）管道用于3D重建，展示了其在视觉结构化环境中的灵活性和实用性。",
+        "relevance_score": 3,
+        "novelty_claim_score": 7,
+        "clarity_score": 9,
+        "potential_impact_score": 8,
+        "overall_priority_score": 7
+    },
+    {
+        "title": "Open-Attribute Recognition for Person Retrieval: Finding People Through Distinctive and Novel Attributes",
+        "summary": "Pedestrian Attribute Recognition (PAR) plays a crucial role in various vision\ntasks such as person retrieval and identification. Most existing\nattribute-based retrieval methods operate under the closed-set assumption that\nall attribute classes are consistently available during both training and\ninference. However, this assumption limits their applicability in real-world\nscenarios where novel attributes may emerge. Moreover, predefined attributes in\nbenchmark datasets are often generic and shared across individuals, making them\nless discriminative for retrieving the target person. To address these\nchallenges, we propose the Open-Attribute Recognition for Person Retrieval\n(OAPR) task, which aims to retrieve individuals based on attribute cues,\nregardless of whether those attributes were seen during training. To support\nthis task, we introduce a novel framework designed to learn generalizable body\npart representations that cover a broad range of attribute categories.\nFurthermore, we reconstruct four widely used datasets for open-attribute\nrecognition. Comprehensive experiments on these datasets demonstrate the\nnecessity of the OAPR task and the effectiveness of our framework. The source\ncode and pre-trained models will be publicly available upon publication.",
+        "url": "http://arxiv.org/abs/2508.01389v1",
+        "published_date": "2025-08-02T14:38:24+00:00",
+        "updated_date": "2025-08-02T14:38:24+00:00",
+        "categories": [
+            "cs.CV"
+        ],
+        "authors": [
+            "Minjeong Park",
+            "Hongbeen Park",
+            "Sangwon Lee",
+            "Yoonha Jang",
+            "Jinkyu Kim"
+        ],
+        "ai_categories": [
+            "AIGC",
+            "Dataset"
+        ],
+        "tldr": "The paper proposes a new Open-Attribute Recognition for Person Retrieval task to find people based on attributes regardless of whether they were seen during training. They introduce a novel framework and datasets to support this task.",
+        "tldr_zh": "本文提出了一项新的开放属性识别用于人员检索任务，根据属性找到人员，无论这些属性在训练期间是否可见。他们引入了一个新的框架和数据集来支持这一任务。",
+        "relevance_score": 3,
+        "novelty_claim_score": 8,
+        "clarity_score": 7,
+        "potential_impact_score": 6,
+        "overall_priority_score": 6.5
+    },
+    {
+        "title": "P3P Made Easy",
+        "summary": "We present a novel algebraic solution to the Perspective-Three-Point (P3P)\nproblem, which aims to recover the absolute pose of a calibrated camera from\nthree 2D-3D correspondences. Our method reformulates the problem into a quartic\npolynomial with coefficients that are analytically simple and computationally\nefficient. Despite its simplicity, the proposed solver achieves accuracy and\nruntime performance comparable to state-of-the-art methods. Extensive\nexperiments on synthetic datasets validate its robustness and efficiency. This\ncombination of simplicity and performance makes our solver appealing for both\nreal-time systems and educational contexts, where interpretability and\nreliability are critical.",
+        "url": "http://arxiv.org/abs/2508.01312v1",
+        "published_date": "2025-08-02T10:58:03+00:00",
+        "updated_date": "2025-08-02T10:58:03+00:00",
+        "categories": [
+            "cs.CV"
+        ],
+        "authors": [
+            "Seong Hun Lee",
+            "Patrick Vandewalle",
+            "Javier Civera"
+        ],
+        "ai_categories": [
+            "Dataset"
+        ],
+        "tldr": "The paper presents a new algebraic solution to the Perspective-Three-Point problem for recovering camera pose, with simplicity, accuracy, and efficiency.",
+        "tldr_zh": "该论文提出了一种新的代数解决方案，用于从三个二维-三维对应中恢复相机姿态，具有简单性、准确性和效率。",
+        "relevance_score": 5,
+        "novelty_claim_score": 7,
+        "clarity_score": 8,
+        "potential_impact_score": 6,
+        "overall_priority_score": 6.5
+    },
+    {
+        "title": "ModelNet40-E: An Uncertainty-Aware Benchmark for Point Cloud Classification",
+        "summary": "We introduce ModelNet40-E, a new benchmark designed to assess the robustness\nand calibration of point cloud classification models under synthetic LiDAR-like\nnoise. Unlike existing benchmarks, ModelNet40-E provides both noise-corrupted\npoint clouds and point-wise uncertainty annotations via Gaussian noise\nparameters ({\\sigma}, {\\mu}), enabling fine-grained evaluation of uncertainty\nmodeling. We evaluate three popular models-PointNet, DGCNN, and Point\nTransformer v3-across multiple noise levels using classification accuracy,\ncalibration metrics, and uncertainty-awareness. While all models degrade under\nincreasing noise, Point Transformer v3 demonstrates superior calibration, with\npredicted uncertainties more closely aligned with the underlying measurement\nuncertainty.",
+        "url": "http://arxiv.org/abs/2508.01269v1",
+        "published_date": "2025-08-02T08:57:20+00:00",
+        "updated_date": "2025-08-02T08:57:20+00:00",
+        "categories": [
+            "cs.CV"
+        ],
+        "authors": [
+            "Pedro Alonso",
+            "Tianrui Li",
+            "Chongshou Li"
+        ],
+        "ai_categories": [
+            "Dataset",
+            "Transformer",
+            "Diffusion"
+        ],
+        "tldr": "The paper introduces a benchmark called ModelNet40-E to assess the robustness and calibration of point cloud classification models under LiDAR-like noise, providing noise-corrupted point clouds and uncertainty annotations. It evaluates popular models and shows that Point Transformer v3 exhibits superior calibration.",
+        "tldr_zh": "该论文引入了一个名为ModelNet40-E的基准，用于评估点云分类模型在类似LiDAR的噪声下的鲁棒性和校准性，提供了受噪音干扰的点云和不确定性注释。它评估了流行模型，并显示Point Transformer v3展现出卓越的校准性。",
+        "relevance_score": 2,
+        "novelty_claim_score": 7,
+        "clarity_score": 8,
+        "potential_impact_score": 6,
+        "overall_priority_score": 6.5
+    },
+    {
+        "title": "OCSplats: Observation Completeness Quantification and Label Noise Separation in 3DGS",
+        "summary": "3D Gaussian Splatting (3DGS) has become one of the most promising 3D\nreconstruction technologies. However, label noise in real-world scenarios-such\nas moving objects, non-Lambertian surfaces, and shadows-often leads to\nreconstruction errors. Existing 3DGS-Bsed anti-noise reconstruction methods\neither fail to separate noise effectively or require scene-specific fine-tuning\nof hyperparameters, making them difficult to apply in practice. This paper\nre-examines the problem of anti-noise reconstruction from the perspective of\nepistemic uncertainty, proposing a novel framework, OCSplats. By combining key\ntechnologies such as hybrid noise assessment and observation-based cognitive\ncorrection, the accuracy of noise classification in areas with cognitive\ndifferences has been significantly improved. Moreover, to address the issue of\nvarying noise proportions in different scenarios, we have designed a label\nnoise classification pipeline based on dynamic anchor points. This pipeline\nenables OCSplats to be applied simultaneously to scenarios with vastly\ndifferent noise proportions without adjusting parameters. Extensive experiments\ndemonstrate that OCSplats always achieve leading reconstruction performance and\nprecise label noise classification in scenes of different complexity levels.",
+        "url": "http://arxiv.org/abs/2508.01239v1",
+        "published_date": "2025-08-02T07:24:12+00:00",
+        "updated_date": "2025-08-02T07:24:12+00:00",
+        "categories": [
+            "cs.CV"
+        ],
+        "authors": [
+            "Han Ling",
+            "Xian Xu",
+            "Yinghui Sun",
+            "Quansen Sun"
+        ],
+        "ai_categories": [
+            "AIGC",
+            "Transformer"
+        ],
+        "tldr": "The paper introduces OCSplats, a novel framework for anti-noise reconstruction in 3DGS using epistemic uncertainty and dynamic anchor points for label noise classification.",
+        "tldr_zh": "本文介绍了OCSplats，这是一个新颖的框架，用于3DGS中的抗噪声重建，利用认知不确定性和动态锚点进行标签噪声分类。",
+        "relevance_score": 3,
+        "novelty_claim_score": 8,
+        "clarity_score": 7,
+        "potential_impact_score": 8,
+        "overall_priority_score": 6.5
+    },
+    {
+        "title": "3DRot: 3D Rotation Augmentation for RGB-Based 3D Tasks",
+        "summary": "RGB-based 3D tasks, e.g., 3D detection, depth estimation, 3D keypoint\nestimation, still suffer from scarce, expensive annotations and a thin\naugmentation toolbox, since most image transforms, including resize and\nrotation, disrupt geometric consistency. In this paper, we introduce 3DRot, a\nplug-and-play augmentation that rotates and mirrors images about the camera's\noptical center while synchronously updating RGB images, camera intrinsics,\nobject poses, and 3D annotations to preserve projective geometry-achieving\ngeometry-consistent rotations and reflections without relying on any scene\ndepth. We validate 3DRot with a classical 3D task, monocular 3D detection. On\nSUN RGB-D dataset, 3DRot raises $IoU_{3D}$ from 43.21 to 44.51, cuts rotation\nerror (ROT) from 22.91$^\\circ$ to 20.93$^\\circ$, and boosts $mAP_{0.5}$ from\n35.70 to 38.11. As a comparison, Cube R-CNN adds 3 other datasets together with\nSUN RGB-D for monocular 3D estimation, with a similar mechanism and test\ndataset, increases $IoU_{3D}$ from 36.2 to 37.8, boosts $mAP_{0.5}$ from 34.7\nto 35.4. Because it operates purely through camera-space transforms, 3DRot is\nreadily transferable to other 3D tasks.",
+        "url": "http://arxiv.org/abs/2508.01423v1",
+        "published_date": "2025-08-02T16:08:16+00:00",
+        "updated_date": "2025-08-02T16:08:16+00:00",
+        "categories": [
+            "cs.CV",
+            "cs.LG",
+            "cs.RO"
+        ],
+        "authors": [
+            "Shitian Yang",
+            "Deyu Li",
+            "Xiaoke Jiang",
+            "Lei Zhang"
+        ],
+        "ai_categories": [
+            "Dataset",
+            "Transformer"
+        ],
+        "tldr": "The paper introduces 3DRot, an augmentation technique for 3D tasks that rotates and mirrors images to improve performance without needing scene depth data.",
+        "tldr_zh": "本文介绍了3DRot，一种用于改善3D任务性能的增强技术，通过旋转和镜像图像而无需场景深度数据。",
+        "relevance_score": 5,
+        "novelty_claim_score": 7,
+        "clarity_score": 8,
+        "potential_impact_score": 6,
+        "overall_priority_score": 6
+    },
+    {
+        "title": "Spatial-Frequency Aware for Object Detection in RAW Image",
+        "summary": "Direct RAW-based object detection offers great promise by utilizing RAW data\n(unprocessed sensor data), but faces inherent challenges due to its wide\ndynamic range and linear response, which tends to suppress crucial object\ndetails. In particular, existing enhancement methods are almost all performed\nin the spatial domain, making it difficult to effectively recover these\nsuppressed details from the skewed pixel distribution of RAW images. To address\nthis limitation, we turn to the frequency domain, where features, such as\nobject contours and textures, can be naturally separated based on frequency. In\nthis paper, we propose Space-Frequency Aware RAW Image Object Detection\nEnhancer (SFAE), a novel framework that synergizes spatial and frequency\nrepresentations. Our contribution is threefold. The first lies in the\n``spatialization\" of frequency bands. Different from the traditional paradigm\nof directly manipulating abstract spectra in deep networks, our method\ninversely transforms individual frequency bands back into tangible spatial\nmaps, thus preserving direct physical intuition. Then the cross-domain fusion\nattention module is developed to enable deep multimodal interactions between\nthese maps and the original spatial features. Finally, the framework performs\nadaptive nonlinear adjustments by predicting and applying different gamma\nparameters for the two domains.",
+        "url": "http://arxiv.org/abs/2508.01396v1",
+        "published_date": "2025-08-02T15:03:23+00:00",
+        "updated_date": "2025-08-02T15:03:23+00:00",
+        "categories": [
+            "cs.CV",
+            "cs.AI"
+        ],
+        "authors": [
+            "Zhuohua Ye",
+            "Liming Zhang",
+            "Hongru Han"
+        ],
+        "ai_categories": [
+            "Multimodality",
+            "Transformer"
+        ],
+        "tldr": "The paper proposes a Space-Frequency Aware RAW Image Object Detection Enhancer (SFAE) framework that combines spatial and frequency representations to enhance object details in RAW images.",
+        "tldr_zh": "本文提出了一种空间频率感知的原始图像目标检测增强器（SFAE）框架，结合空间和频率表示来增强原始图像中的目标细节。",
+        "relevance_score": 3,
+        "novelty_claim_score": 7,
+        "clarity_score": 8,
+        "potential_impact_score": 6,
+        "overall_priority_score": 6.0
+    },
+    {
+        "title": "Classification of Brain Tumors using Hybrid Deep Learning Models",
+        "summary": "The use of Convolutional Neural Networks (CNNs) has greatly improved the\ninterpretation of medical images. However, conventional CNNs typically demand\nextensive computational resources and large training datasets. To address these\nlimitations, this study applied transfer learning to achieve strong\nclassification performance using fewer training samples. Specifically, the\nstudy compared EfficientNetV2 with its predecessor, EfficientNet, and with\nResNet50 in classifying brain tumors into three types: glioma, meningioma, and\npituitary tumors. Results showed that EfficientNetV2 delivered superior\nperformance compared to the other models. However, this improvement came at the\ncost of increased training time, likely due to the model's greater complexity.",
+        "url": "http://arxiv.org/abs/2508.01350v1",
+        "published_date": "2025-08-02T12:56:18+00:00",
+        "updated_date": "2025-08-02T12:56:18+00:00",
+        "categories": [
+            "eess.IV",
+            "cs.AI",
+            "cs.CV"
+        ],
+        "authors": [
+            "Neerav Nemchand Gala"
+        ],
+        "ai_categories": [
+            "Dataset",
+            "Transformer"
+        ],
+        "tldr": "The paper explores using transfer learning to classify brain tumors into three types using EfficientNetV2, showing superior performance but with increased training time.",
+        "tldr_zh": "本文探讨了使用迁移学习将脑瘤分类为三种类型，使用EfficientNetV2显示出卓越性能，但训练时间增加。",
+        "relevance_score": 3,
+        "novelty_claim_score": 6,
+        "clarity_score": 8,
+        "potential_impact_score": 7,
+        "overall_priority_score": 6.0
+    },
+    {
+        "title": "C3D-AD: Toward Continual 3D Anomaly Detection via Kernel Attention with Learnable Advisor",
+        "summary": "3D Anomaly Detection (AD) has shown great potential in detecting anomalies or\ndefects of high-precision industrial products. However, existing methods are\ntypically trained in a class-specific manner and also lack the capability of\nlearning from emerging classes. In this study, we proposed a continual learning\nframework named Continual 3D Anomaly Detection (C3D-AD), which can not only\nlearn generalized representations for multi-class point clouds but also handle\nnew classes emerging over time.Specifically, in the feature extraction module,\nto extract generalized local features from diverse product types of different\ntasks efficiently, Kernel Attention with random feature Layer (KAL) is\nintroduced, which normalizes the feature space. Then, to reconstruct data\ncorrectly and continually, an efficient Kernel Attention with learnable Advisor\n(KAA) mechanism is proposed, which learns the information from new categories\nwhile discarding redundant old information within both the encoder and decoder.\nFinally, to keep the representation consistency over tasks, a Reconstruction\nwith Parameter Perturbation (RPP) module is proposed by designing a\nrepresentation rehearsal loss function, which ensures that the model remembers\nprevious category information and returns category-adaptive\nrepresentation.Extensive experiments on three public datasets demonstrate the\neffectiveness of the proposed method, achieving an average performance of\n66.4%, 83.1%, and 63.4% AUROC on Real3D-AD, Anomaly-ShapeNet, and MulSen-AD,\nrespectively.",
+        "url": "http://arxiv.org/abs/2508.01311v1",
+        "published_date": "2025-08-02T10:54:55+00:00",
+        "updated_date": "2025-08-02T10:54:55+00:00",
+        "categories": [
+            "cs.CV",
+            "cs.LG"
+        ],
+        "authors": [
+            "Haoquan Lu",
+            "Hanzhe Liang",
+            "Jie Zhang",
+            "Chenxi Hu",
+            "Jinbao Wang",
+            "Can Gao"
+        ],
+        "ai_categories": [
+            "AIGC",
+            "Transformer",
+            "Dataset"
+        ],
+        "tldr": "The paper presents a continual 3D anomaly detection framework that can learn from new classes over time, achieving promising results on multiple datasets.",
+        "tldr_zh": "这篇论文提出了一个连续的3D异常检测框架，可以随着时间学习新类别，对多个数据集取得了令人满意的结果。",
+        "relevance_score": 3,
+        "novelty_claim_score": 7,
+        "clarity_score": 8,
+        "potential_impact_score": 6,
+        "overall_priority_score": 6
+    },
+    {
+        "title": "GMAT: Grounded Multi-Agent Clinical Description Generation for Text Encoder in Vision-Language MIL for Whole Slide Image Classification",
+        "summary": "Multiple Instance Learning (MIL) is the leading approach for whole slide\nimage (WSI) classification, enabling efficient analysis of gigapixel pathology\nslides. Recent work has introduced vision-language models (VLMs) into MIL\npipelines to incorporate medical knowledge through text-based class\ndescriptions rather than simple class names. However, when these methods rely\non large language models (LLMs) to generate clinical descriptions or use\nfixed-length prompts to represent complex pathology concepts, the limited token\ncapacity of VLMs often constrains the expressiveness and richness of the\nencoded class information. Additionally, descriptions generated solely by LLMs\nmay lack domain grounding and fine-grained medical specificity, leading to\nsuboptimal alignment with visual features. To address these challenges, we\npropose a vision-language MIL framework with two key contributions: (1) A\ngrounded multi-agent description generation system that leverages curated\npathology textbooks and agent specialization (e.g., morphology, spatial\ncontext) to produce accurate and diverse clinical descriptions; (2) A text\nencoding strategy using a list of descriptions rather than a single prompt,\ncapturing fine-grained and complementary clinical signals for better alignment\nwith visual features. Integrated into a VLM-MIL pipeline, our approach shows\nimproved performance over single-prompt class baselines and achieves results\ncomparable to state-of-the-art models, as demonstrated on renal and lung cancer\ndatasets.",
+        "url": "http://arxiv.org/abs/2508.01293v1",
+        "published_date": "2025-08-02T09:59:39+00:00",
+        "updated_date": "2025-08-02T09:59:39+00:00",
+        "categories": [
+            "cs.CV",
+            "cs.AI"
+        ],
+        "authors": [
+            "Ngoc Bui Lam Quang",
+            "Nam Le Nguyen Binh",
+            "Thanh-Huy Nguyen",
+            "Le Thien Phuc Nguyen",
+            "Quan Nguyen",
+            "Ulas Bagci"
+        ],
+        "ai_categories": [
+            "Multimodality",
+            "Dataset",
+            "Transformer"
+        ],
+        "tldr": "The paper introduces a vision-language MIL framework for clinical description generation in whole slide image classification, showing improved performance over existing models.",
+        "tldr_zh": "本文介绍了一种用于整张幻灯片图像分类的视觉语言MIL框架，展示了优于现有模型的性能。",
+        "relevance_score": 5,
+        "novelty_claim_score": 7,
+        "clarity_score": 8,
+        "potential_impact_score": 6,
+        "overall_priority_score": 6
+    },
+    {
+        "title": "DreamSat-2.0: Towards a General Single-View Asteroid 3D Reconstruction",
+        "summary": "To enhance asteroid exploration and autonomous spacecraft navigation, we\nintroduce DreamSat-2.0, a pipeline that benchmarks three state-of-the-art 3D\nreconstruction models-Hunyuan-3D, Trellis-3D, and Ouroboros-3D-on custom\nspacecraft and asteroid datasets. Our systematic analysis, using 2D perceptual\n(image quality) and 3D geometric (shape accuracy) metrics, reveals that model\nperformance is domain-dependent. While models produce higher-quality images of\ncomplex spacecraft, they achieve better geometric reconstructions for the\nsimpler forms of asteroids. New benchmarks are established, with Hunyuan-3D\nachieving top perceptual scores on spacecraft but its best geometric accuracy\non asteroids, marking a significant advance over our prior work.",
+        "url": "http://arxiv.org/abs/2508.01079v1",
+        "published_date": "2025-08-01T21:23:28+00:00",
+        "updated_date": "2025-08-01T21:23:28+00:00",
+        "categories": [
+            "cs.CV",
+            "cs.LG"
+        ],
+        "authors": [
+            "Santiago Diaz",
+            "Xinghui Hu",
+            "Josiane Uwumukiza",
+            "Giovanni Lavezzi",
+            "Victor Rodriguez-Fernandez",
+            "Richard Linares"
+        ],
+        "ai_categories": [
+            "Dataset"
+        ],
+        "tldr": "The paper introduces DreamSat-2.0, a pipeline for 3D reconstruction of asteroids and spacecraft. It benchmarks three models and shows domain-dependent performance.",
+        "tldr_zh": "该论文介绍了DreamSat-2.0，一个用于行星和太空船的3D重建的流程。它对三个模型进行了基准测试，显示了与领域相关性的表现。",
+        "relevance_score": 5,
+        "novelty_claim_score": 7,
+        "clarity_score": 8,
+        "potential_impact_score": 6,
+        "overall_priority_score": 6
+    },
+    {
+        "title": "AutoSIGHT: Automatic Eye Tracking-based System for Immediate Grading of Human experTise",
+        "summary": "Can we teach machines to assess the expertise of humans solving visual tasks\nautomatically based on eye tracking features? This paper proposes AutoSIGHT,\nAutomatic System for Immediate Grading of Human experTise, that classifies\nexpert and non-expert performers, and builds upon an ensemble of features\nextracted from eye tracking data while the performers were solving a visual\ntask. Results on the task of iris Presentation Attack Detection (PAD) used for\nthis study show that with a small evaluation window of just 5 seconds,\nAutoSIGHT achieves an average average Area Under the ROC curve performance of\n0.751 in subject-disjoint train-test regime, indicating that such detection is\nviable. Furthermore, when a larger evaluation window of up to 30 seconds is\navailable, the Area Under the ROC curve (AUROC) increases to 0.8306, indicating\nthe model is effectively leveraging more information at a cost of slightly\ndelayed decisions. This work opens new areas of research on how to incorporate\nthe automatic weighing of human and machine expertise into human-AI pairing\nsetups, which need to react dynamically to nonstationary expertise distribution\nbetween the human and AI players (e.g. when the experts need to be replaced, or\nthe task at hand changes rapidly). Along with this paper, we offer the eye\ntracking data used in this study collected from 6 experts and 53 non-experts\nsolving iris PAD visual task.",
+        "url": "http://arxiv.org/abs/2508.01015v1",
+        "published_date": "2025-08-01T18:28:13+00:00",
+        "updated_date": "2025-08-01T18:28:13+00:00",
+        "categories": [
+            "cs.CV",
+            "cs.AI",
+            "cs.LG"
+        ],
+        "authors": [
+            "Byron Dowling",
+            "Jozef Probcin",
+            "Adam Czajka"
+        ],
+        "ai_categories": [
+            "Multimodality",
+            "Dataset"
+        ],
+        "tldr": "AutoSIGHT is a system that uses eye tracking data to automatically grade human expertise in visual tasks, showing promising results in iris Presentation Attack Detection.",
+        "tldr_zh": "AutoSIGHT是一个利用眼动数据自动评估人类在视觉任务中的专业水平的系统，在虹膜呈现攻击检测方面表现出令人期待的结果。",
+        "relevance_score": 5,
+        "novelty_claim_score": 7,
+        "clarity_score": 8,
+        "potential_impact_score": 6,
+        "overall_priority_score": 6
+    }
+]
