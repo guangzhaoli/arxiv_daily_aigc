@@ -1,0 +1,1157 @@
+[
+    {
+        "title": "SpecSwin3D: Generating Hyperspectral Imagery from Multispectral Data via Transformer Networks",
+        "summary": "Multispectral and hyperspectral imagery are widely used in agriculture,\nenvironmental monitoring, and urban planning due to their complementary spatial\nand spectral characteristics. A fundamental trade-off persists: multispectral\nimagery offers high spatial but limited spectral resolution, while\nhyperspectral imagery provides rich spectra at lower spatial resolution. Prior\nhyperspectral generation approaches (e.g., pan-sharpening variants, matrix\nfactorization, CNNs) often struggle to jointly preserve spatial detail and\nspectral fidelity. In response, we propose SpecSwin3D, a transformer-based\nmodel that generates hyperspectral imagery from multispectral inputs while\npreserving both spatial and spectral quality. Specifically, SpecSwin3D takes\nfive multispectral bands as input and reconstructs 224 hyperspectral bands at\nthe same spatial resolution. In addition, we observe that reconstruction errors\ngrow for hyperspectral bands spectrally distant from the input bands. To\naddress this, we introduce a cascade training strategy that progressively\nexpands the spectral range to stabilize learning and improve fidelity.\nMoreover, we design an optimized band sequence that strategically repeats and\norders the five selected multispectral bands to better capture pairwise\nrelations within a 3D shifted-window transformer framework. Quantitatively, our\nmodel achieves a PSNR of 35.82 dB, SAM of 2.40{\\deg}, and SSIM of 0.96,\noutperforming the baseline MHF-Net by +5.6 dB in PSNR and reducing ERGAS by\nmore than half. Beyond reconstruction, we further demonstrate the practical\nvalue of SpecSwin3D on two downstream tasks, including land use classification\nand burnt area segmentation.",
+        "url": "http://arxiv.org/abs/2509.06122v1",
+        "published_date": "2025-09-07T16:18:31+00:00",
+        "updated_date": "2025-09-07T16:18:31+00:00",
+        "categories": [
+            "cs.CV",
+            "cs.AI"
+        ],
+        "authors": [
+            "Tang Sui",
+            "Songxi Yang",
+            "Qunying Huang"
+        ],
+        "ai_categories": [
+            "Transformer",
+            "GAN",
+            "Dataset"
+        ],
+        "tldr": "SpecSwin3D is a transformer-based model that generates hyperspectral imagery from multispectral inputs, preserving spatial and spectral quality, achieving high performance metrics, and demonstrating practical value in downstream tasks.",
+        "tldr_zh": "SpecSwin3D是一种基于Transformer网络的模型，用于从多光谱输入中生成高光谱图像，保持空间和光谱质量，并在性能指标上取得了较高的表现，在下游任务中展现了实际价值。",
+        "relevance_score": 9,
+        "novelty_claim_score": 8,
+        "clarity_score": 9,
+        "potential_impact_score": 8,
+        "overall_priority_score": 8.5
+    },
+    {
+        "title": "BranchGRPO: Stable and Efficient GRPO with Structured Branching in Diffusion Models",
+        "summary": "Recent advancements in aligning image and video generative models via GRPO\nhave achieved remarkable gains in enhancing human preference alignment.\nHowever, these methods still face high computational costs from on-policy\nrollouts and excessive SDE sampling steps, as well as training instability due\nto sparse rewards. In this paper, we propose BranchGRPO, a novel method that\nintroduces a branch sampling policy updating the SDE sampling process. By\nsharing computation across common prefixes and pruning low-reward paths and\nredundant depths, BranchGRPO substantially lowers the per-update compute cost\nwhile maintaining or improving exploration diversity. This work makes three\nmain contributions: (1) a branch sampling scheme that reduces rollout and\ntraining cost; (2) a tree-based advantage estimator incorporating dense\nprocess-level rewards; and (3) pruning strategies exploiting path and depth\nredundancy to accelerate convergence and boost performance. Experiments on\nimage and video preference alignment show that BranchGRPO improves alignment\nscores by 16% over strong baselines, while cutting training time by 50%.",
+        "url": "http://arxiv.org/abs/2509.06040v1",
+        "published_date": "2025-09-07T12:53:06+00:00",
+        "updated_date": "2025-09-07T12:53:06+00:00",
+        "categories": [
+            "cs.CV",
+            "cs.AI",
+            "cs.LG"
+        ],
+        "authors": [
+            "Yuming Li",
+            "Yikai Wang",
+            "Yuying Zhu",
+            "Zhongyu Zhao",
+            "Ming Lu",
+            "Qi She",
+            "Shanghang Zhang"
+        ],
+        "ai_categories": [
+            "Diffusion",
+            "GAN"
+        ],
+        "tldr": "BranchGRPO proposes a novel method to reduce computational costs and improve exploration diversity in image and video generative models through structured branching and pruning strategies.",
+        "tldr_zh": "BranchGRPO提出了一种新颖的方法，通过结构化分支和修剪策略来减少图像和视频生成模型中的计算成本，并提高探索多样性。",
+        "relevance_score": 9,
+        "novelty_claim_score": 8,
+        "clarity_score": 9,
+        "potential_impact_score": 8,
+        "overall_priority_score": 8.5
+    },
+    {
+        "title": "Imagining Alternatives: Towards High-Resolution 3D Counterfactual Medical Image Generation via Language Guidance",
+        "summary": "Vision-language models have demonstrated impressive capabilities in\ngenerating 2D images under various conditions; however the impressive\nperformance of these models in 2D is largely enabled by extensive, readily\navailable pretrained foundation models. Critically, comparable pretrained\nfoundation models do not exist for 3D, significantly limiting progress in this\ndomain. As a result, the potential of vision-language models to produce\nhigh-resolution 3D counterfactual medical images conditioned solely on natural\nlanguage descriptions remains completely unexplored. Addressing this gap would\nenable powerful clinical and research applications, such as personalized\ncounterfactual explanations, simulation of disease progression scenarios, and\nenhanced medical training by visualizing hypothetical medical conditions in\nrealistic detail. Our work takes a meaningful step toward addressing this\nchallenge by introducing a framework capable of generating high-resolution 3D\ncounterfactual medical images of synthesized patients guided by free-form\nlanguage prompts. We adapt state-of-the-art 3D diffusion models with\nenhancements from Simple Diffusion and incorporate augmented conditioning to\nimprove text alignment and image quality. To our knowledge, this represents the\nfirst demonstration of a language-guided native-3D diffusion model applied\nspecifically to neurological imaging data, where faithful three-dimensional\nmodeling is essential to represent the brain's three-dimensional structure.\nThrough results on two distinct neurological MRI datasets, our framework\nsuccessfully simulates varying counterfactual lesion loads in Multiple\nSclerosis (MS), and cognitive states in Alzheimer's disease, generating\nhigh-quality images while preserving subject fidelity in synthetically\ngenerated medical images. Our results lay the groundwork for prompt-driven\ndisease progression analysis within 3D medical imaging.",
+        "url": "http://arxiv.org/abs/2509.05978v1",
+        "published_date": "2025-09-07T08:52:18+00:00",
+        "updated_date": "2025-09-07T08:52:18+00:00",
+        "categories": [
+            "eess.IV",
+            "cs.CL",
+            "cs.CV",
+            "cs.LG"
+        ],
+        "authors": [
+            "Mohamed Mohamed",
+            "Brennan Nichyporuk",
+            "Douglas L. Arnold",
+            "Tal Arbel"
+        ],
+        "ai_categories": [
+            "Transformer",
+            "GAN",
+            "Dataset"
+        ],
+        "tldr": "The paper introduces a framework for generating high-resolution 3D medical images based on natural language descriptions, focusing on neurological imaging data.",
+        "tldr_zh": "本文介绍了一种基于自然语言描述生成高分辨率3D医学图像的框架，重点放在神经影像数据上。",
+        "relevance_score": 8,
+        "novelty_claim_score": 9,
+        "clarity_score": 9,
+        "potential_impact_score": 8,
+        "overall_priority_score": 8.5
+    },
+    {
+        "title": "MedSeqFT: Sequential Fine-tuning Foundation Models for 3D Medical Image Segmentation",
+        "summary": "Foundation models have become a promising paradigm for advancing medical\nimage analysis, particularly for segmentation tasks where downstream\napplications often emerge sequentially. Existing fine-tuning strategies,\nhowever, remain limited: parallel fine-tuning isolates tasks and fails to\nexploit shared knowledge, while multi-task fine-tuning requires simultaneous\naccess to all datasets and struggles with incremental task integration. To\naddress these challenges, we propose MedSeqFT, a sequential fine-tuning\nframework that progressively adapts pre-trained models to new tasks while\nrefining their representational capacity. MedSeqFT introduces two core\ncomponents: (1) Maximum Data Similarity (MDS) selection, which identifies\ndownstream samples most representative of the original pre-training\ndistribution to preserve general knowledge, and (2) Knowledge and\nGeneralization Retention Fine-Tuning (K&G RFT), a LoRA-based knowledge\ndistillation scheme that balances task-specific adaptation with the retention\nof pre-trained knowledge. Extensive experiments on two multi-task datasets\ncovering ten 3D segmentation tasks demonstrate that MedSeqFT consistently\noutperforms state-of-the-art fine-tuning strategies, yielding substantial\nperformance gains (e.g., an average Dice improvement of 3.0%). Furthermore,\nevaluations on two unseen tasks (COVID-19-20 and Kidney) verify that MedSeqFT\nenhances transferability, particularly for tumor segmentation. Visual analyses\nof loss landscapes and parameter variations further highlight the robustness of\nMedSeqFT. These results establish sequential fine-tuning as an effective,\nknowledge-retentive paradigm for adapting foundation models to evolving\nclinical tasks. Code will be released.",
+        "url": "http://arxiv.org/abs/2509.06096v1",
+        "published_date": "2025-09-07T15:22:53+00:00",
+        "updated_date": "2025-09-07T15:22:53+00:00",
+        "categories": [
+            "cs.CV"
+        ],
+        "authors": [
+            "Yiwen Ye",
+            "Yicheng Wu",
+            "Xiangde Luo",
+            "He Zhang",
+            "Ziyang Chen",
+            "Ting Dang",
+            "Yanning Zhang",
+            "Yong Xia"
+        ],
+        "ai_categories": [
+            "Transformer",
+            "Dataset",
+            "LoRA"
+        ],
+        "tldr": "The paper introduces MedSeqFT, a sequential fine-tuning framework for 3D medical image segmentation that outperforms existing strategies in adapting pre-trained models to new tasks and retaining knowledge.",
+        "tldr_zh": "本文介绍了MedSeqFT，一个逐步微调的框架，用于3D医学图像分割，它在适应预训练模型到新任务并保留知识方面优于现有策略。",
+        "relevance_score": 8,
+        "novelty_claim_score": 7,
+        "clarity_score": 9,
+        "potential_impact_score": 9,
+        "overall_priority_score": 8.25
+    },
+    {
+        "title": "ConstStyle: Robust Domain Generalization with Unified Style Transformation",
+        "summary": "Deep neural networks often suffer performance drops when test data\ndistribution differs from training data. Domain Generalization (DG) aims to\naddress this by focusing on domain-invariant features or augmenting data for\ngreater diversity. However, these methods often struggle with limited training\ndomains or significant gaps between seen (training) and unseen (test) domains.\nTo enhance DG robustness, we hypothesize that it is essential for the model to\nbe trained on data from domains that closely resemble unseen test domains-an\ninherently difficult task due to the absence of prior knowledge about the\nunseen domains. Accordingly, we propose ConstStyle, a novel approach that\nleverages a unified domain to capture domain-invariant features and bridge the\ndomain gap with theoretical analysis. During training, all samples are mapped\nonto this unified domain, optimized for seen domains. During testing, unseen\ndomain samples are projected similarly before predictions. By aligning both\ntraining and testing data within this unified domain, ConstStyle effectively\nreduces the impact of domain shifts, even with large domain gaps or few seen\ndomains. Extensive experiments demonstrate that ConstStyle consistently\noutperforms existing methods across diverse scenarios. Notably, when only a\nlimited number of seen domains are available, ConstStyle can boost accuracy up\nto 19.82\\% compared to the next best approach.",
+        "url": "http://arxiv.org/abs/2509.05975v1",
+        "published_date": "2025-09-07T08:40:19+00:00",
+        "updated_date": "2025-09-07T08:40:19+00:00",
+        "categories": [
+            "cs.CV",
+            "cs.AI"
+        ],
+        "authors": [
+            "Nam Duong Tran",
+            "Nam Nguyen Phuong",
+            "Hieu H. Pham",
+            "Phi Le Nguyen",
+            "My T. Thai"
+        ],
+        "ai_categories": [
+            "Transformer"
+        ],
+        "tldr": "ConstStyle is a novel approach for domain generalization in deep neural networks, aiming to reduce the impact of domain shifts by mapping all samples onto a unified domain during training and testing.",
+        "tldr_zh": "ConstStyle 是一种新颖的方法，用于深度神经网络中的领域泛化，通过在训练和测试期间将所有样本映射到统一的域，以减少领域转移的影响。",
+        "relevance_score": 8,
+        "novelty_claim_score": 9,
+        "clarity_score": 7,
+        "potential_impact_score": 9,
+        "overall_priority_score": 8.25
+    },
+    {
+        "title": "UniVerse-1: Unified Audio-Video Generation via Stitching of Experts",
+        "summary": "We introduce UniVerse-1, a unified, Veo-3-like model capable of\nsimultaneously generating coordinated audio and video. To enhance training\nefficiency, we bypass training from scratch and instead employ a stitching of\nexperts (SoE) technique. This approach deeply fuses the corresponding blocks of\npre-trained video and music generation experts models, thereby fully leveraging\ntheir foundational capabilities. To ensure accurate annotations and temporal\nalignment for both ambient sounds and speech with video content, we developed\nan online annotation pipeline that processes the required training data and\ngenerates labels during training process. This strategy circumvents the\nperformance degradation often caused by misalignment text-based annotations.\nThrough the synergy of these techniques, our model, after being finetuned on\napproximately 7,600 hours of audio-video data, produces results with\nwell-coordinated audio-visuals for ambient sounds generation and strong\nalignment for speech generation. To systematically evaluate our proposed\nmethod, we introduce Verse-Bench, a new benchmark dataset. In an effort to\nadvance research in audio-video generation and to close the performance gap\nwith state-of-the-art models such as Veo3, we make our model and code publicly\navailable. We hope this contribution will benefit the broader research\ncommunity. Project page: https://dorniwang.github.io/UniVerse-1/.",
+        "url": "http://arxiv.org/abs/2509.06155v1",
+        "published_date": "2025-09-07T17:55:03+00:00",
+        "updated_date": "2025-09-07T17:55:03+00:00",
+        "categories": [
+            "cs.CV"
+        ],
+        "authors": [
+            "Duomin Wang",
+            "Wei Zuo",
+            "Aojie Li",
+            "Ling-Hao Chen",
+            "Xinyao Liao",
+            "Deyu Zhou",
+            "Zixin Yin",
+            "Xili Dai",
+            "Daxin Jiang",
+            "Gang Yu"
+        ],
+        "ai_categories": [
+            "Transformer",
+            "Dataset"
+        ],
+        "tldr": "UniVerse-1 is a unified model for generating coordinated audio and video using a stitching of experts technique, aiming to improve efficiency and alignment.",
+        "tldr_zh": "UniVerse-1 是一个统一模型，通过专家拼接技术生成协调的音频和视频，旨在提高效率和对齐性。",
+        "relevance_score": 8,
+        "novelty_claim_score": 7,
+        "clarity_score": 9,
+        "potential_impact_score": 8,
+        "overall_priority_score": 8
+    },
+    {
+        "title": "CARDIE: clustering algorithm on relevant descriptors for image enhancement",
+        "summary": "Automatic image clustering is a cornerstone of computer vision, yet its\napplication to image enhancement remains limited, primarily due to the\ndifficulty of defining clusters that are meaningful for this specific task. To\naddress this issue, we introduce CARDIE, an unsupervised algorithm that\nclusters images based on their color and luminosity content. In addition, we\nintroduce a method to quantify the impact of image enhancement algorithms on\nluminance distribution and local variance. Using this method, we demonstrate\nthat CARDIE produces clusters more relevant to image enhancement than those\nderived from semantic image attributes. Furthermore, we demonstrate that CARDIE\nclusters can be leveraged to resample image enhancement datasets, leading to\nimproved performance for tone mapping and denoising algorithms. To encourage\nadoption and ensure reproducibility, we publicly release CARDIE code on our\nGitHub.",
+        "url": "http://arxiv.org/abs/2509.06116v1",
+        "published_date": "2025-09-07T15:55:55+00:00",
+        "updated_date": "2025-09-07T15:55:55+00:00",
+        "categories": [
+            "cs.CV",
+            "I.4.8"
+        ],
+        "authors": [
+            "Giulia Bonino",
+            "Luca Alberto Rizzo"
+        ],
+        "ai_categories": [
+            "Dataset",
+            "Transformer"
+        ],
+        "tldr": "CARDIE is an unsupervised clustering algorithm for image enhancement based on color and luminosity content, showing improved performance for tone mapping and denoising algorithms.",
+        "tldr_zh": "CARDIE是一种基于颜色和亮度内容的无监督图像增强聚类算法，对色调映射和降噪算法表现出改进的性能。",
+        "relevance_score": 7,
+        "novelty_claim_score": 8,
+        "clarity_score": 9,
+        "potential_impact_score": 8,
+        "overall_priority_score": 8
+    },
+    {
+        "title": "High-Quality Tomographic Image Reconstruction Integrating Neural Networks and Mathematical Optimization",
+        "summary": "In this work, we develop a novel technique for reconstructing images from\nprojection-based nano- and microtomography. Our contribution focuses on\nenhancing reconstruction quality, particularly for specimen composed of\nhomogeneous material phases connected by sharp edges. This is accomplished by\ntraining a neural network to identify edges within subpictures. The trained\nnetwork is then integrated into a mathematical optimization model, to reduce\nartifacts from previous reconstructions. To this end, the optimization approach\nfavors solutions according to the learned predictions, however may also\ndetermine alternative solutions if these are strongly supported by the raw\ndata. Hence, our technique successfully incorporates knowledge about the\nhomogeneity and presence of sharp edges in the sample and thereby eliminates\nblurriness. Our results on experimental datasets show significant enhancements\nin interface sharpness and material homogeneity compared to benchmark\nalgorithms. Thus, our technique produces high-quality reconstructions,\nshowcasing its potential for advancing tomographic imaging techniques.",
+        "url": "http://arxiv.org/abs/2509.06082v1",
+        "published_date": "2025-09-07T14:51:48+00:00",
+        "updated_date": "2025-09-07T14:51:48+00:00",
+        "categories": [
+            "cs.CV",
+            "cond-mat.mtrl-sci",
+            "90C20, 94A08, 68U10"
+        ],
+        "authors": [
+            "Anuraag Mishra",
+            "Andrea Gilch",
+            "Benjamin Apeleo Zubiri",
+            "Jan Rolfes",
+            "Frauke Liers"
+        ],
+        "ai_categories": [
+            "Transformer",
+            "Dataset"
+        ],
+        "tldr": "The paper presents a novel technique combining neural networks and mathematical optimization for high-quality image reconstruction in tomography, particularly for specimens with sharp edges.",
+        "tldr_zh": "该论文提出了一种新颖的技术，结合神经网络和数学优化，用于高质量的断层成像重建，特别是适用于具有尖锐边缘的样本。",
+        "relevance_score": 7,
+        "novelty_claim_score": 8,
+        "clarity_score": 9,
+        "potential_impact_score": 8,
+        "overall_priority_score": 8
+    },
+    {
+        "title": "Multimodal Reasoning for Science: Technical Report and 1st Place Solution to the ICML 2025 SeePhys Challenge",
+        "summary": "Multimodal reasoning remains a fundamental challenge in artificial\nintelligence. Despite substantial advances in text-based reasoning, even\nstate-of-the-art models such as GPT-o3 struggle to maintain strong performance\nin multimodal scenarios. To address this gap, we introduce a caption-assisted\nreasoning framework that effectively bridges visual and textual modalities. Our\napproach achieved 1st place in the ICML 2025 AI for Math Workshop \\& Challenge\n2: SeePhys, highlighting its effectiveness and robustness. Furthermore, we\nvalidate its generalization on the MathVerse benchmark for geometric reasoning,\ndemonstrating the versatility of our method. Our code is publicly available at\nhttps://github.com/OpenDCAI/SciReasoner.",
+        "url": "http://arxiv.org/abs/2509.06079v1",
+        "published_date": "2025-09-07T14:47:32+00:00",
+        "updated_date": "2025-09-07T14:47:32+00:00",
+        "categories": [
+            "cs.CL",
+            "cs.CV"
+        ],
+        "authors": [
+            "Hao Liang",
+            "Ruitao Wu",
+            "Bohan Zeng",
+            "Junbo Niu",
+            "Wentao Zhang",
+            "Bin Dong"
+        ],
+        "ai_categories": [
+            "Multimodality",
+            "Dataset",
+            "Transformer"
+        ],
+        "tldr": "The paper introduces a caption-assisted reasoning framework for multimodal reasoning in artificial intelligence, winning the ICML 2025 SeePhys Challenge and demonstrating generalization on the MathVerse benchmark.",
+        "tldr_zh": "该论文介绍了一种在人工智能中进行多模态推理的标题辅助推理框架，在ICML 2025 SeePhys挑战赛中获得第一名，并在MathVerse基准测试中展示了泛化能力。",
+        "relevance_score": 8,
+        "novelty_claim_score": 7,
+        "clarity_score": 9,
+        "potential_impact_score": 8,
+        "overall_priority_score": 8
+    },
+    {
+        "title": "Home-made Diffusion Model from Scratch to Hatch",
+        "summary": "We introduce Home-made Diffusion Model (HDM), an efficient yet powerful\ntext-to-image diffusion model optimized for training (and inferring) on\nconsumer-grade hardware. HDM achieves competitive 1024x1024 generation quality\nwhile maintaining a remarkably low training cost of $535-620 using four RTX5090\nGPUs, representing a significant reduction in computational requirements\ncompared to traditional approaches. Our key contributions include: (1)\nCross-U-Transformer (XUT), a novel U-shape transformer, Cross-U-Transformer\n(XUT), that employs cross-attention for skip connections, providing superior\nfeature integration that leads to remarkable compositional consistency; (2) a\ncomprehensive training recipe that incorporates TREAD acceleration, a novel\nshifted square crop strategy for efficient arbitrary aspect-ratio training, and\nprogressive resolution scaling; and (3) an empirical demonstration that smaller\nmodels (343M parameters) with carefully crafted architectures can achieve\nhigh-quality results and emergent capabilities, such as intuitive camera\ncontrol. Our work provides an alternative paradigm of scaling, demonstrating a\nviable path toward democratizing high-quality text-to-image generation for\nindividual researchers and smaller organizations with limited computational\nresources.",
+        "url": "http://arxiv.org/abs/2509.06068v1",
+        "published_date": "2025-09-07T14:21:57+00:00",
+        "updated_date": "2025-09-07T14:21:57+00:00",
+        "categories": [
+            "cs.CV"
+        ],
+        "authors": [
+            "Shih-Ying Yeh"
+        ],
+        "ai_categories": [
+            "Diffusion",
+            "Transformer",
+            "GAN"
+        ],
+        "tldr": "The paper introduces a new text-to-image diffusion model called Home-made Diffusion Model (HDM) that achieves high generation quality with low computational costs, making it accessible for individual researchers and smaller organizations.",
+        "tldr_zh": "该论文介绍了一种名为Home-made Diffusion Model (HDM)的文本到图像扩散模型，实现了高生成质量和低计算成本，使其适用于个人研究者和小型组织。",
+        "relevance_score": 8,
+        "novelty_claim_score": 9,
+        "clarity_score": 7,
+        "potential_impact_score": 8,
+        "overall_priority_score": 8
+    },
+    {
+        "title": "Micro-Expression Recognition via Fine-Grained Dynamic Perception",
+        "summary": "Facial micro-expression recognition (MER) is a challenging task, due to the\ntransience, subtlety, and dynamics of micro-expressions (MEs). Most existing\nmethods resort to hand-crafted features or deep networks, in which the former\noften additionally requires key frames, and the latter suffers from small-scale\nand low-diversity training data. In this paper, we develop a novel fine-grained\ndynamic perception (FDP) framework for MER. We propose to rank frame-level\nfeatures of a sequence of raw frames in chronological order, in which the rank\nprocess encodes the dynamic information of both ME appearances and motions.\nSpecifically, a novel local-global feature-aware transformer is proposed for\nframe representation learning. A rank scorer is further adopted to calculate\nrank scores of each frame-level feature. Afterwards, the rank features from\nrank scorer are pooled in temporal dimension to capture dynamic representation.\nFinally, the dynamic representation is shared by a MER module and a dynamic\nimage construction module, in which the former predicts the ME category, and\nthe latter uses an encoder-decoder structure to construct the dynamic image.\nThe design of dynamic image construction task is beneficial for capturing\nfacial subtle actions associated with MEs and alleviating the data scarcity\nissue. Extensive experiments show that our method (i) significantly outperforms\nthe state-of-the-art MER methods, and (ii) works well for dynamic image\nconstruction. Particularly, our FDP improves by 4.05%, 2.50%, 7.71%, and 2.11%\nover the previous best results in terms of F1-score on the CASME II, SAMM,\nCAS(ME)^2, and CAS(ME)^3 datasets, respectively. The code is available at\nhttps://github.com/CYF-cuber/FDP.",
+        "url": "http://arxiv.org/abs/2509.06015v1",
+        "published_date": "2025-09-07T11:13:50+00:00",
+        "updated_date": "2025-09-07T11:13:50+00:00",
+        "categories": [
+            "cs.CV"
+        ],
+        "authors": [
+            "Zhiwen Shao",
+            "Yifan Cheng",
+            "Fan Zhang",
+            "Xuehuai Shi",
+            "Canlin Li",
+            "Lizhuang Ma",
+            "Dit-yan Yeung"
+        ],
+        "ai_categories": [
+            "Transformer",
+            "Dataset"
+        ],
+        "tldr": "The paper introduces a Fine-Grained Dynamic Perception framework for micro-expression recognition, outperforming existing methods and improving F1-scores on multiple datasets.",
+        "tldr_zh": "本文介绍了一种微表情识别的Fine-Grained Dynamic Perception框架，优于现有方法，在多个数据集上提高了F1分数。",
+        "relevance_score": 8,
+        "novelty_claim_score": 9,
+        "clarity_score": 7,
+        "potential_impact_score": 8,
+        "overall_priority_score": 8
+    },
+    {
+        "title": "BLaVe-CoT: Consistency-Aware Visual Question Answering for Blind and Low Vision Users",
+        "summary": "Visual Question Answering (VQA) holds great potential for assisting Blind and\nLow Vision (BLV) users, yet real-world usage remains challenging. Due to visual\nimpairments, BLV users often take blurry or poorly framed photos and face\ndifficulty in articulating specific questions about what they cannot fully see.\nAs a result, their visual questions are frequently ambiguous, and different\nusers may interpret them in diverse ways. This leads to multiple valid answers,\neach grounded in different image regions-posing a mismatch with conventional\nVQA systems that assume a single answer and region. To bridge this gap, we\npresent BLaVe-CoT, a VQA framework designed to reason about answer consistency\nin the face of ambiguity. Our method proposes diverse candidate answers using a\nLoRA-tuned BLIP-2 model, then grounds each answer spatially using PolyFormer,\nand finally applies a chain-of-thought reasoning module to assess whether the\nanswers refer to the same or different regions. Evaluated on the\nVQA-AnswerTherapy benchmark, BLaVe-CoT outperforms previous methods and proves\nmore robust to the ambiguity and visual noise common in assistive settings.\nThis work highlights the need for VQA systems that can adapt to real human\nuncertainty and provide inclusive support for BLV users. To foster further\nresearch and accessibility applications, we have made the code publicly\navailable at https://github.com/Accecwan/BLaVe-CoT.",
+        "url": "http://arxiv.org/abs/2509.06010v1",
+        "published_date": "2025-09-07T10:58:17+00:00",
+        "updated_date": "2025-09-07T10:58:17+00:00",
+        "categories": [
+            "cs.CV"
+        ],
+        "authors": [
+            "Wanyin Cheng",
+            "Zanxi Ruan"
+        ],
+        "ai_categories": [
+            "LoRA",
+            "Multimodality",
+            "Dataset"
+        ],
+        "tldr": "BLaVe-CoT is a Visual Question Answering framework designed to address ambiguity in questions from Blind and Low Vision users, outperforming previous methods and providing more robust support for them.",
+        "tldr_zh": "BLaVe-CoT是一个旨在解决盲人和低视力用户提出的问题中的歧义的视觉问答框架，优于先前方法，并为他们提供更强大的支持。",
+        "relevance_score": 7,
+        "novelty_claim_score": 8,
+        "clarity_score": 9,
+        "potential_impact_score": 9,
+        "overall_priority_score": 8
+    },
+    {
+        "title": "Khana: A Comprehensive Indian Cuisine Dataset",
+        "summary": "As global interest in diverse culinary experiences grows, food image models\nare essential for improving food-related applications by enabling accurate food\nrecognition, recipe suggestions, dietary tracking, and automated meal planning.\nDespite the abundance of food datasets, a noticeable gap remains in capturing\nthe nuances of Indian cuisine due to its vast regional diversity, complex\npreparations, and the lack of comprehensive labeled datasets that cover its\nfull breadth. Through this exploration, we uncover Khana, a new benchmark\ndataset for food image classification, segmentation, and retrieval of dishes\nfrom Indian cuisine. Khana fills the gap by establishing a taxonomy of Indian\ncuisine and offering around 131K images in the dataset spread across 80 labels,\neach with a resolution of 500x500 pixels. This paper describes the dataset\ncreation process and evaluates state-of-the-art models on classification,\nsegmentation, and retrieval as baselines. Khana bridges the gap between\nresearch and development by providing a comprehensive and challenging benchmark\nfor researchers while also serving as a valuable resource for developers\ncreating real-world applications that leverage the rich tapestry of Indian\ncuisine. Webpage: https://khana.omkar.xyz",
+        "url": "http://arxiv.org/abs/2509.06006v1",
+        "published_date": "2025-09-07T10:43:29+00:00",
+        "updated_date": "2025-09-07T10:43:29+00:00",
+        "categories": [
+            "cs.CV",
+            "cs.AI",
+            "cs.LG"
+        ],
+        "authors": [
+            "Omkar Prabhu"
+        ],
+        "ai_categories": [
+            "Dataset"
+        ],
+        "tldr": "The paper introduces Khana, a new Indian cuisine dataset with 131K images across 80 labels, aimed at improving food-related applications through accurate food recognition and automated meal planning.",
+        "tldr_zh": "该论文介绍了Khana，一个新的印度美食数据集，包含131K张图片，涵盖80个标签，旨在通过准确的食物识别和自动化餐饮规划来改进与食物相关的应用。",
+        "relevance_score": 7,
+        "novelty_claim_score": 8,
+        "clarity_score": 9,
+        "potential_impact_score": 8,
+        "overall_priority_score": 8
+    },
+    {
+        "title": "Multi-Strategy Guided Diffusion via Sparse Masking Temporal Reweighting Distribution Correction",
+        "summary": "Diffusion models have demonstrated remarkable generative capabilities in\nimage processing tasks. We propose a Sparse condition Temporal Rewighted\nIntegrated Distribution Estimation guided diffusion model (STRIDE) for\nsparse-view CT reconstruction. Specifically, we design a joint training\nmechanism guided by sparse conditional probabilities to facilitate the model\neffective learning of missing projection view completion and global information\nmodeling. Based on systematic theoretical analysis, we propose a temporally\nvarying sparse condition reweighting guidance strategy to dynamically adjusts\nweights during the progressive denoising process from pure noise to the real\nimage, enabling the model to progressively perceive sparse-view information.\nThe linear regression is employed to correct distributional shifts between\nknown and generated data, mitigating inconsistencies arising during the\nguidance process. Furthermore, we construct a dual-network parallel\narchitecture to perform global correction and optimization across multiple\nsub-frequency components, thereby effectively improving the model capability in\nboth detail restoration and structural preservation, ultimately achieving\nhigh-quality image reconstruction. Experimental results on both public and real\ndatasets demonstrate that the proposed method achieves the best improvement of\n2.58 dB in PSNR, increase of 2.37\\% in SSIM, and reduction of 0.236 in MSE\ncompared to the best-performing baseline methods. The reconstructed images\nexhibit excellent generalization and robustness in terms of structural\nconsistency, detail restoration, and artifact suppression.",
+        "url": "http://arxiv.org/abs/2509.05992v1",
+        "published_date": "2025-09-07T09:42:16+00:00",
+        "updated_date": "2025-09-07T09:42:16+00:00",
+        "categories": [
+            "cs.CV"
+        ],
+        "authors": [
+            "Zekun Zhou",
+            "Yanru Gong",
+            "Liu Shi",
+            "Qiegen Liu"
+        ],
+        "ai_categories": [
+            "Diffusion",
+            "Dataset"
+        ],
+        "tldr": "The paper proposes a diffusion model named STRIDE for sparse-view CT reconstruction, achieving high-quality image reconstruction with improved performance compared to baseline methods.",
+        "tldr_zh": "本文提出了一种名为STRIDE的扩散模型，用于稀疏视角CT重建，在与基准方法相比表现出更高的性能。",
+        "relevance_score": 7,
+        "novelty_claim_score": 8,
+        "clarity_score": 9,
+        "potential_impact_score": 8,
+        "overall_priority_score": 8
+    },
+    {
+        "title": "OmniStyle2: Scalable and High Quality Artistic Style Transfer Data Generation via Destylization",
+        "summary": "OmniStyle2 introduces a novel approach to artistic style transfer by\nreframing it as a data problem. Our key insight is destylization, reversing\nstyle transfer by removing stylistic elements from artworks to recover natural,\nstyle-free counterparts. This yields DST-100K, a large-scale dataset that\nprovides authentic supervision signals by aligning real artistic styles with\ntheir underlying content. To build DST-100K, we develop (1) DST, a text-guided\ndestylization model that reconstructs stylefree content, and (2) DST-Filter, a\nmulti-stage evaluation model that employs Chain-of-Thought reasoning to\nautomatically discard low-quality pairs while ensuring content fidelity and\nstyle accuracy. Leveraging DST-100K, we train OmniStyle2, a simple feed-forward\nmodel based on FLUX.1-dev. Despite its simplicity, OmniStyle2 consistently\nsurpasses state-of-the-art methods across both qualitative and quantitative\nbenchmarks. Our results demonstrate that scalable data generation via\ndestylization provides a reliable supervision paradigm, overcoming the\nfundamental challenge posed by the lack of ground-truth data in artistic style\ntransfer.",
+        "url": "http://arxiv.org/abs/2509.05970v1",
+        "published_date": "2025-09-07T08:22:17+00:00",
+        "updated_date": "2025-09-07T08:22:17+00:00",
+        "categories": [
+            "cs.CV"
+        ],
+        "authors": [
+            "Ye Wang",
+            "Zili Yi",
+            "Yibo Zhang",
+            "Peng Zheng",
+            "Xuping Xie",
+            "Jiang Lin",
+            "Yilin Wang",
+            "Rui Ma"
+        ],
+        "ai_categories": [
+            "Transformer",
+            "Dataset"
+        ],
+        "tldr": "OmniStyle2 introduces a novel approach to artistic style transfer through destylization, creating a large dataset for training. The approach outperforms existing methods in both qualitative and quantitative measures.",
+        "tldr_zh": "OmniStyle2通过去风格化引入了一种新颖的艺术风格转移方法，为训练创建了一个大型数据集。该方法在定性和定量指标方面均优于现有方法。",
+        "relevance_score": 7,
+        "novelty_claim_score": 8,
+        "clarity_score": 9,
+        "potential_impact_score": 8,
+        "overall_priority_score": 8
+    },
+    {
+        "title": "Neural Bloom: A Deep Learning Approach to Real-Time Lighting",
+        "summary": "We propose a novel method to generate bloom lighting effect in real time\nusing neural networks. Our solution generate brightness mask from given 3D\nscene view up to 30% faster than state-of-the-art methods. The existing\ntraditional techniques rely on multiple blur appliances and texture sampling,\nalso very often have existing conditional branching in its implementation.\nThese operations occupy big portion of the execution time. We solve this\nproblem by proposing two neural network-based bloom lighting methods, Neural\nBloom Lighting (NBL) and Fast Neural Bloom Lighting (FastNBL), focusing on\ntheir quality and performance. Both methods were tested on a variety of 3D\nscenes, with evaluations conducted on brightness mask accuracy and inference\nspeed. The main contribution of this work is that both methods produce\nhigh-quality bloom effects while outperforming the standard state-of-the-art\nbloom implementation, with FastNBL being faster by 28% and NBL faster by 12%.\nThese findings highlight that we can achieve realistic bloom lighting phenomena\nfaster, moving us towards more realism in real-time environments in the future.\nThis improvement saves computational resources, which is a major bottleneck in\nreal-time rendering. Furthermore, it is crucial for sustaining immersion and\nensuring smooth experiences in high FPS environments, while maintaining\nhigh-quality realism.",
+        "url": "http://arxiv.org/abs/2509.05963v1",
+        "published_date": "2025-09-07T08:04:44+00:00",
+        "updated_date": "2025-09-07T08:04:44+00:00",
+        "categories": [
+            "cs.CV"
+        ],
+        "authors": [
+            "Rafal Karp",
+            "Dawid Gruszka",
+            "Tomasz Trzcinski"
+        ],
+        "ai_categories": [
+            "GAN",
+            "Transformer"
+        ],
+        "tldr": "This paper introduces two neural network-based methods, NBL and FastNBL, for generating bloom lighting effects in real time. The methods outperform traditional techniques in terms of speed and quality.",
+        "tldr_zh": "本文介绍了两种基于神经网络的方法，NBL和FastNBL，用于实时生成绽放光照效果。这些方法在速度和质量上均优于传统技术。",
+        "relevance_score": 7,
+        "novelty_claim_score": 8,
+        "clarity_score": 9,
+        "potential_impact_score": 8,
+        "overall_priority_score": 8
+    },
+    {
+        "title": "Coefficients-Preserving Sampling for Reinforcement Learning with Flow Matching",
+        "summary": "Reinforcement Learning (RL) has recently emerged as a powerful technique for\nimproving image and video generation in Diffusion and Flow Matching models,\nspecifically for enhancing output quality and alignment with prompts. A\ncritical step for applying online RL methods on Flow Matching is the\nintroduction of stochasticity into the deterministic framework, commonly\nrealized by Stochastic Differential Equation (SDE). Our investigation reveals a\nsignificant drawback to this approach: SDE-based sampling introduces pronounced\nnoise artifacts in the generated images, which we found to be detrimental to\nthe reward learning process. A rigorous theoretical analysis traces the origin\nof this noise to an excess of stochasticity injected during inference. To\naddress this, we draw inspiration from Denoising Diffusion Implicit Models\n(DDIM) to reformulate the sampling process. Our proposed method,\nCoefficients-Preserving Sampling (CPS), eliminates these noise artifacts. This\nleads to more accurate reward modeling, ultimately enabling faster and more\nstable convergence for reinforcement learning-based optimizers like Flow-GRPO\nand Dance-GRPO. Code will be released at https://github.com/IamCreateAI/FlowCPS",
+        "url": "http://arxiv.org/abs/2509.05952v1",
+        "published_date": "2025-09-07T07:25:00+00:00",
+        "updated_date": "2025-09-07T07:25:00+00:00",
+        "categories": [
+            "cs.CV"
+        ],
+        "authors": [
+            "Feng Wang",
+            "Zihao Yu"
+        ],
+        "ai_categories": [
+            "Transformer",
+            "GAN",
+            "Diffusion"
+        ],
+        "tldr": "The paper introduces a new method called Coefficients-Preserving Sampling (CPS) to improve reinforcement learning in image and video generation by eliminating noise artifacts caused by stochasticity.",
+        "tldr_zh": "本文引入了一种名为保留系数采样（CPS）的新方法，通过消除随机性引起的噪声问题，改善图像和视频生成中的强化学习。",
+        "relevance_score": 8,
+        "novelty_claim_score": 7,
+        "clarity_score": 9,
+        "potential_impact_score": 8,
+        "overall_priority_score": 8
+    },
+    {
+        "title": "AttriPrompt: Dynamic Prompt Composition Learning for CLIP",
+        "summary": "The evolution of prompt learning methodologies has driven exploration of\ndeeper prompt designs to enhance model performance. However, current deep text\nprompting approaches suffer from two critical limitations: Over-reliance on\nconstrastive learning objectives that prioritize high-level semantic alignment,\nneglecting fine-grained feature optimization; Static prompts across all input\ncategories, preventing content-aware adaptation. To address these limitations,\nwe propose AttriPrompt-a novel framework that enhances and refines textual\nsemantic representations by leveraging the intermediate-layer features of\nCLIP's vision encoder. We designed an Attribute Retrieval module that first\nclusters visual features from each layer. The aggregated visual features\nretrieve semantically similar prompts from a prompt pool, which are then\nconcatenated to the input of every layer in the text encoder. Leveraging\nhierarchical visual information embedded in prompted text features, we\nintroduce Dual-stream Contrastive Learning to realize fine-grained alignment.\nFurthermore, we introduce a Self-Regularization mechanism by applying explicit\nregularization constraints between the prompted and non-prompted text features\nto prevent overfitting on limited training data. Extensive experiments across\nthree benchmarks demonstrate AttriPrompt's superiority over state-of-the-art\nmethods, achieving up to 7.37\\% improvement in the base-to-novel setting. The\nobserved strength of our method in cross-domain knowledge transfer positions\nvision-language pre-trained models as more viable solutions for real-world\nimplementation.",
+        "url": "http://arxiv.org/abs/2509.05949v1",
+        "published_date": "2025-09-07T07:07:59+00:00",
+        "updated_date": "2025-09-07T07:07:59+00:00",
+        "categories": [
+            "cs.CV"
+        ],
+        "authors": [
+            "Qiqi Zhan",
+            "Shiwei Li",
+            "Qingjie Liu",
+            "Yunhong Wang"
+        ],
+        "ai_categories": [
+            "Transformer"
+        ],
+        "tldr": "AttriPrompt is a new framework that improves textual semantic representations by leveraging CLIP's vision encoder, achieving significant performance improvements over current methods.",
+        "tldr_zh": "AttriPrompt是一个新的框架，通过利用CLIP的视觉编码器来改进文本语义表示，相比当前方法取得了显著的性能改进。",
+        "relevance_score": 6,
+        "novelty_claim_score": 8,
+        "clarity_score": 7,
+        "potential_impact_score": 9,
+        "overall_priority_score": 8
+    },
+    {
+        "title": "Compression Beyond Pixels: Semantic Compression with Multimodal Foundation Models",
+        "summary": "Recent deep learning-based methods for lossy image compression achieve\ncompetitive rate-distortion performance through extensive end-to-end training\nand advanced architectures. However, emerging applications increasingly\nprioritize semantic preservation over pixel-level reconstruction and demand\nrobust performance across diverse data distributions and downstream tasks.\nThese challenges call for advanced semantic compression paradigms. Motivated by\nthe zero-shot and representational capabilities of multimodal foundation\nmodels, we propose a novel semantic compression method based on the contrastive\nlanguage-image pretraining (CLIP) model. Rather than compressing images for\nreconstruction, we propose compressing the CLIP feature embeddings into minimal\nbits while preserving semantic information across different tasks. Experiments\nshow that our method maintains semantic integrity across benchmark datasets,\nachieving an average bit rate of approximately 2-3* 10(-3) bits per pixel. This\nis less than 5% of the bitrate required by mainstream image compression\napproaches for comparable performance. Remarkably, even under extreme\ncompression, the proposed approach exhibits zero-shot robustness across diverse\ndata distributions and downstream tasks.",
+        "url": "http://arxiv.org/abs/2509.05925v1",
+        "published_date": "2025-09-07T04:49:25+00:00",
+        "updated_date": "2025-09-07T04:49:25+00:00",
+        "categories": [
+            "cs.CV",
+            "cs.IT",
+            "math.IT"
+        ],
+        "authors": [
+            "Ruiqi Shen",
+            "Haotian Wu",
+            "Wenjing Zhang",
+            "Jiangjing Hu",
+            "Deniz Gunduz"
+        ],
+        "ai_categories": [
+            "Multimodality",
+            "Dataset"
+        ],
+        "tldr": "The paper proposes a novel semantic compression method based on the CLIP model, achieving high compression rates while preserving semantic information across diverse data distributions and tasks.",
+        "tldr_zh": "该论文提出了一种基于CLIP模型的新型语义压缩方法，实现了高压缩率，同时保持了跨多种数据分布和任务的语义信息。",
+        "relevance_score": 8,
+        "novelty_claim_score": 9,
+        "clarity_score": 7,
+        "potential_impact_score": 8,
+        "overall_priority_score": 8
+    },
+    {
+        "title": "A Fine-Grained Attention and Geometric Correspondence Model for Musculoskeletal Risk Classification in Athletes Using Multimodal Visual and Skeletal Features",
+        "summary": "Musculoskeletal disorders pose significant risks to athletes, and assessing\nrisk early is important for prevention. However, most existing methods are\ndesigned for controlled settings and fail to reliably assess risk in complex\nenvironments due to their reliance on a single type of data. This research\nproposes ViSK-GAT (Visual-Skeletal Geometric Attention Transformer), a novel\nmultimodal deep learning framework designed to classify musculoskeletal risk\nusing visual and skeletal coordinate-based features. In addition, a custom\nmultimodal dataset is constructed by combining visual data and skeletal\ncoordinates for risk assessment. Each sample is labeled into eight risk\ncategories based on the Rapid Entire Body Assessment system. ViSK-GAT combines\na Residual Block with a Lightweight Transformer Block to learn spatial and\ntemporal dependencies jointly. It incorporates two novel modules: the\nFine-Grained Attention Module (FGAM), which enables precise inter-modal feature\nrefinement through cross-attention between visual and skeletal inputs, and the\nMultimodal Geometric Correspondence Module (MGCM), which enhances cross-modal\ncoherence by aligning image features with coordinate-based representations.\nViSK-GAT achieved strong performance with validation and test accuracies of\n93.55\\% and 93.89\\%, respectively; a precision of 93.86\\%; an F1 score of\n93.85\\%; and Cohen's Kappa and Matthews Correlation Coefficient of 93\\%. The\nregression results also indicated a low Root Mean Square Error of the predicted\nprobability distribution of 0.1205 and a corresponding Mean Absolute Error of\n0.0156. Compared to nine popular transfer learning backbones, ViSK-GAT\nconsistently outperformed previous methods. The ViSK-GAT model advances\nartificial intelligence implementation and application, transforming\nmusculoskeletal risk classification and enabling impactful early interventions\nin sports.",
+        "url": "http://arxiv.org/abs/2509.05913v1",
+        "published_date": "2025-09-07T04:09:06+00:00",
+        "updated_date": "2025-09-07T04:09:06+00:00",
+        "categories": [
+            "cs.CV"
+        ],
+        "authors": [
+            "Md. Abdur Rahman",
+            "Mohaimenul Azam Khan Raiaan",
+            "Tamanna Shermin",
+            "Md Rafiqul Islam",
+            "Mukhtar Hussain",
+            "Sami Azam"
+        ],
+        "ai_categories": [
+            "Multimodality",
+            "Transformer",
+            "Dataset"
+        ],
+        "tldr": "The paper introduces ViSK-GAT, a multimodal deep learning framework for classifying musculoskeletal risk in athletes using visual and skeletal features, achieving high accuracy and outperforming existing methods.",
+        "tldr_zh": "这篇论文介绍了ViSK-GAT，这是一个利用视觉和骨骼特征进行运动员肌肉骨骼风险分类的多模态深度学习框架，取得了很高的准确性，并超过了现有方法。",
+        "relevance_score": 7,
+        "novelty_claim_score": 8,
+        "clarity_score": 9,
+        "potential_impact_score": 9,
+        "overall_priority_score": 8
+    },
+    {
+        "title": "BTCChat: Advancing Remote Sensing Bi-temporal Change Captioning with Multimodal Large Language Model",
+        "summary": "Bi-temporal satellite imagery supports critical applications such as urban\ndevelopment monitoring and disaster assessment. Although powerful multimodal\nlarge language models (MLLMs) have been applied in bi-temporal change analysis,\nprevious methods process image pairs through direct concatenation, inadequately\nmodeling temporal correlations and spatial semantic changes. This deficiency\nhampers visual-semantic alignment in change understanding, thereby constraining\nthe overall effectiveness of current approaches. To address this gap, we\npropose BTCChat, a multi-temporal MLLM with advanced bi-temporal change\nunderstanding capability. BTCChat supports bi-temporal change captioning and\nretains single-image interpretation capability. To better capture temporal\nfeatures and spatial semantic changes in image pairs, we design a Change\nExtraction module. Moreover, to enhance the model's attention to spatial\ndetails, we introduce a Prompt Augmentation mechanism, which incorporates\ncontextual clues into the prompt to enhance model performance. Experimental\nresults demonstrate that BTCChat achieves state-of-the-art performance on\nchange captioning and visual question answering tasks.",
+        "url": "http://arxiv.org/abs/2509.05895v1",
+        "published_date": "2025-09-07T02:16:18+00:00",
+        "updated_date": "2025-09-07T02:16:18+00:00",
+        "categories": [
+            "cs.CV"
+        ],
+        "authors": [
+            "Yujie Li",
+            "Wenjia Xu",
+            "Yuanben Zhang",
+            "Zhiwei Wei",
+            "Mugen Peng"
+        ],
+        "ai_categories": [
+            "Multimodality",
+            "Transformer",
+            "Dataset"
+        ],
+        "tldr": "BTCChat proposes a multi-temporal MLLM for bi-temporal change captioning in satellite imagery, achieving state-of-the-art performance.",
+        "tldr_zh": "BTCChat提出了一种多时序MLLM模型，用于处理卫星图像的双时变化描述，在性能上达到了最新水平。",
+        "relevance_score": 7,
+        "novelty_claim_score": 8,
+        "clarity_score": 9,
+        "potential_impact_score": 8,
+        "overall_priority_score": 8
+    },
+    {
+        "title": "Brain Tumor Detection Through Diverse CNN Architectures in IoT Healthcare Industries: Fast R-CNN, U-Net, Transfer Learning-Based CNN, and Fully Connected CNN",
+        "summary": "Artificial intelligence (AI)-powered deep learning has advanced brain tumor\ndiagnosis in Internet of Things (IoT)-healthcare systems, achieving high\naccuracy with large datasets. Brain health is critical to human life, and\naccurate diagnosis is essential for effective treatment. Magnetic Resonance\nImaging (MRI) provides key data for brain tumor detection, serving as a major\nsource of big data for AI-driven image classification. In this study, we\nclassified glioma, meningioma, and pituitary tumors from MRI images using\nRegion-based Convolutional Neural Network (R-CNN) and UNet architectures. We\nalso applied Convolutional Neural Networks (CNN) and CNN-based transfer\nlearning models such as Inception-V3, EfficientNetB4, and VGG19. Model\nperformance was assessed using F-score, recall, precision, and accuracy. The\nFast R-CNN achieved the best results with 99% accuracy, 98.5% F-score, 99.5%\nArea Under the Curve (AUC), 99.4% recall, and 98.5% precision. Combining R-CNN,\nUNet, and transfer learning enables earlier diagnosis and more effective\ntreatment in IoT-healthcare systems, improving patient outcomes. IoT devices\nsuch as wearable monitors and smart imaging systems continuously collect\nreal-time data, which AI algorithms analyze to provide immediate insights for\ntimely interventions and personalized care. For external cohort cross-dataset\nvalidation, EfficientNetB2 achieved the strongest performance among fine-tuned\nEfficientNet models, with 92.11% precision, 92.11% recall/sensitivity, 95.96%\nspecificity, 92.02% F1-score, and 92.23% accuracy. These findings underscore\nthe robustness and reliability of AI models in handling diverse datasets,\nreinforcing their potential to enhance brain tumor classification and patient\ncare in IoT healthcare environments.",
+        "url": "http://arxiv.org/abs/2509.05821v1",
+        "published_date": "2025-09-06T20:03:51+00:00",
+        "updated_date": "2025-09-06T20:03:51+00:00",
+        "categories": [
+            "eess.IV",
+            "cs.CV"
+        ],
+        "authors": [
+            "Mohsen Asghari Ilani",
+            "Yaser M. Banad"
+        ],
+        "ai_categories": [
+            "AIGC",
+            "Dataset"
+        ],
+        "tldr": "The paper discusses the use of diverse CNN architectures in IoT healthcare for brain tumor detection, achieving high accuracy. It highlights the potential of AI in improving patient outcomes.",
+        "tldr_zh": "本文讨论了在物联网医疗领域使用多样的CNN架构进行脑肿瘤检测，取得了高准确性。它强调了人工智能在改善患者预后方面的潜力。",
+        "relevance_score": 5,
+        "novelty_claim_score": 8,
+        "clarity_score": 9,
+        "potential_impact_score": 9,
+        "overall_priority_score": 8
+    },
+    {
+        "title": "A Probabilistic Segment Anything Model for Ambiguity-Aware Medical Image Segmentation",
+        "summary": "Recent advances in promptable segmentation, such as the Segment Anything\nModel (SAM), have enabled flexible, high-quality mask generation across a wide\nrange of visual domains. However, SAM and similar models remain fundamentally\ndeterministic, producing a single segmentation per object per prompt, and fail\nto capture the inherent ambiguity present in many real-world tasks. This\nlimitation is particularly troublesome in medical imaging, where multiple\nplausible segmentations may exist due to annotation uncertainty or inter-expert\nvariability. In this paper, we introduce Probabilistic SAM, a probabilistic\nextension of SAM that models a distribution over segmentations conditioned on\nboth the input image and prompt. By incorporating a latent variable space and\ntraining with a variational objective, our model learns to generate diverse and\nplausible segmentation masks reflecting the variability in human annotations.\nThe architecture integrates a prior and posterior network into the SAM\nframework, allowing latent codes to modulate the prompt embeddings during\ninference. The latent space allows for efficient sampling during inference,\nenabling uncertainty-aware outputs with minimal overhead. We evaluate\nProbabilistic SAM on the public LIDC-IDRI lung nodule dataset and demonstrate\nits ability to produce diverse outputs that align with expert disagreement,\noutperforming existing probabilistic baselines on uncertainty-aware metrics.\nOur code is available at: https://github.com/tbwa233/Probabilistic-SAM/.",
+        "url": "http://arxiv.org/abs/2509.05809v1",
+        "published_date": "2025-09-06T19:02:53+00:00",
+        "updated_date": "2025-09-06T19:02:53+00:00",
+        "categories": [
+            "cs.CV"
+        ],
+        "authors": [
+            "Tyler Ward",
+            "Abdullah Imran"
+        ],
+        "ai_categories": [
+            "AIGC",
+            "Dataset"
+        ],
+        "tldr": "The paper introduces a Probabilistic Segment Anything Model (Probabilistic SAM) for ambiguity-aware medical image segmentation, generating diverse and plausible segmentation masks. It outperforms existing probabilistic baselines on uncertainty-aware metrics.",
+        "tldr_zh": "本文介绍了一种用于模糊感知医学图像分割的概率Segment Anything模型（Probabilistic SAM），生成多样且可信的分割蒙版。在不确定性感知指标上优于现有的概率基准。",
+        "relevance_score": 8,
+        "novelty_claim_score": 7,
+        "clarity_score": 9,
+        "potential_impact_score": 8,
+        "overall_priority_score": 8
+    },
+    {
+        "title": "RetinaGuard: Obfuscating Retinal Age in Fundus Images for Biometric Privacy Preserving",
+        "summary": "The integration of AI with medical images enables the extraction of implicit\nimage-derived biomarkers for a precise health assessment. Recently, retinal\nage, a biomarker predicted from fundus images, is a proven predictor of\nsystemic disease risks, behavioral patterns, aging trajectory and even\nmortality. However, the capability to infer such sensitive biometric data\nraises significant privacy risks, where unauthorized use of fundus images could\nlead to bioinformation leakage, breaching individual privacy. In response, we\nformulate a new research problem of biometric privacy associated with medical\nimages and propose RetinaGuard, a novel privacy-enhancing framework that\nemploys a feature-level generative adversarial masking mechanism to obscure\nretinal age while preserving image visual quality and disease diagnostic\nutility. The framework further utilizes a novel multiple-to-one knowledge\ndistillation strategy incorporating a retinal foundation model and diverse\nsurrogate age encoders to enable a universal defense against black-box age\nprediction models. Comprehensive evaluations confirm that RetinaGuard\nsuccessfully obfuscates retinal age prediction with minimal impact on image\nquality and pathological feature representation. RetinaGuard is also flexible\nfor extension to other medical image derived biomarkers. RetinaGuard is also\nflexible for extension to other medical image biomarkers.",
+        "url": "http://arxiv.org/abs/2509.06142v1",
+        "published_date": "2025-09-07T17:16:42+00:00",
+        "updated_date": "2025-09-07T17:16:42+00:00",
+        "categories": [
+            "cs.CV"
+        ],
+        "authors": [
+            "Zhengquan Luo",
+            "Chi Liu",
+            "Dongfu Xiao",
+            "Zhen Yu",
+            "Yueye Wang",
+            "Tianqing Zhu"
+        ],
+        "ai_categories": [
+            "GAN",
+            "AIGC",
+            "Dataset"
+        ],
+        "tldr": "The paper introduces RetinaGuard, a framework for obfuscating retinal age in fundus images to protect biometric privacy while preserving image quality and diagnostic utility.",
+        "tldr_zh": "文章介绍了RetinaGuard，一种用于隐藏眼底图像中眼底年龄的框架，以保护生物特征隐私同时保持图像质量和诊断效果。",
+        "relevance_score": 2,
+        "novelty_claim_score": 8,
+        "clarity_score": 9,
+        "potential_impact_score": 7,
+        "overall_priority_score": 7.5
+    },
+    {
+        "title": "PathoHR: Hierarchical Reasoning for Vision-Language Models in Pathology",
+        "summary": "Accurate analysis of pathological images is essential for automated tumor\ndiagnosis but remains challenging due to high structural similarity and subtle\nmorphological variations in tissue images. Current vision-language (VL) models\noften struggle to capture the complex reasoning required for interpreting\nstructured pathological reports. To address these limitations, we propose\nPathoHR-Bench, a novel benchmark designed to evaluate VL models' abilities in\nhierarchical semantic understanding and compositional reasoning within the\npathology domain. Results of this benchmark reveal that existing VL models fail\nto effectively model intricate cross-modal relationships, hence limiting their\napplicability in clinical setting. To overcome this, we further introduce a\npathology-specific VL training scheme that generates enhanced and perturbed\nsamples for multimodal contrastive learning. Experimental evaluations\ndemonstrate that our approach achieves state-of-the-art performance on\nPathoHR-Bench and six additional pathology datasets, highlighting its\neffectiveness in fine-grained pathology representation.",
+        "url": "http://arxiv.org/abs/2509.06105v1",
+        "published_date": "2025-09-07T15:42:38+00:00",
+        "updated_date": "2025-09-07T15:42:38+00:00",
+        "categories": [
+            "cs.CV"
+        ],
+        "authors": [
+            "Yating Huang",
+            "Ziyan Huang",
+            "Lintao Xiang",
+            "Qijun Yang",
+            "Hujun Yin"
+        ],
+        "ai_categories": [
+            "Transformer",
+            "Dataset",
+            "Multimodality"
+        ],
+        "tldr": "The paper introduces a benchmark for evaluating vision-language models in the pathology domain and proposes a specific training scheme to enhance their performance, achieving state-of-the-art results on various datasets.",
+        "tldr_zh": "本文介绍了一个用于评估病理领域视觉语言模型的基准，并提出了一种特定的训练方案来增强它们的性能，在各种数据集上取得了最先进的结果。",
+        "relevance_score": 6,
+        "novelty_claim_score": 7,
+        "clarity_score": 8,
+        "potential_impact_score": 9,
+        "overall_priority_score": 7.5
+    },
+    {
+        "title": "Multi-Stage Graph Neural Networks for Data-Driven Prediction of Natural Convection in Enclosed Cavities",
+        "summary": "Buoyancy-driven heat transfer in closed cavities serves as a canonical\ntestbed for thermal design High-fidelity CFD modelling yields accurate thermal\nfield solutions, yet its reliance on expert-crafted physics models, fine\nmeshes, and intensive computation limits rapid iteration. Recent developments\nin data-driven modeling, especially Graph Neural Networks (GNNs), offer new\nalternatives for learning thermal-fluid behavior directly from simulation data,\nparticularly on irregular mesh structures. However, conventional GNNs often\nstruggle to capture long-range dependencies in high-resolution graph\nstructures. To overcome this limitation, we propose a novel multi-stage GNN\narchitecture that leverages hierarchical pooling and unpooling operations to\nprogressively model global-to-local interactions across multiple spatial\nscales. We evaluate the proposed model on our newly developed CFD dataset\nsimulating natural convection within a rectangular cavities with varying aspect\nratios where the bottom wall is isothermal hot, the top wall is isothermal\ncold, and the two vertical walls are adiabatic. Experimental results\ndemonstrate that the proposed model achieves higher predictive accuracy,\nimproved training efficiency, and reduced long-term error accumulation compared\nto state-of-the-art (SOTA) GNN baselines. These findings underscore the\npotential of the proposed multi-stage GNN approach for modeling complex heat\ntransfer in mesh-based fluid dynamics simulations.",
+        "url": "http://arxiv.org/abs/2509.06041v1",
+        "published_date": "2025-09-07T13:05:39+00:00",
+        "updated_date": "2025-09-07T13:05:39+00:00",
+        "categories": [
+            "cs.CV"
+        ],
+        "authors": [
+            "Mohammad Ahangarkiasari",
+            "Hassan Pouraria"
+        ],
+        "ai_categories": [
+            "Dataset",
+            "Transformer"
+        ],
+        "tldr": "The paper proposes a multi-stage Graph Neural Network architecture to predict natural convection in enclosed cavities, outperforming state-of-the-art GNN baselines in terms of accuracy and efficiency.",
+        "tldr_zh": "本文提出了一种多阶段图神经网络架构，用于预测封闭腔体中的自然对流，对比基准图神经网络，在准确性和效率方面表现优异。",
+        "relevance_score": 3,
+        "novelty_claim_score": 8,
+        "clarity_score": 9,
+        "potential_impact_score": 7,
+        "overall_priority_score": 7.5
+    },
+    {
+        "title": "TinyDef-DETR:An Enhanced DETR Detector for UAV Power Line Defect Detection",
+        "summary": "Automated inspection of transmission lines using UAVs is hindered by the\ndifficulty of detecting small and ambiguous defects against complex\nbackgrounds. Conventional detectors often suffer from detail loss due to\nstrided downsampling, weak boundary sensitivity in lightweight backbones, and\ninsufficient integration of global context with local cues. To address these\nchallenges, we propose TinyDef-DETR, a DETR-based framework designed for\nsmall-defect detection. The method introduces a stride-free space-to-depth\nmodule for lossless downsampling, an edge-enhanced convolution for\nboundary-aware feature extraction, a cross-stage dual-domain multi-scale\nattention module to jointly capture global and local information, and a\nFocaler-Wise-SIoU regression loss to improve localization of small objects.\nExperiments conducted on the CSG-ADCD dataset demonstrate that TinyDef-DETR\nachieves substantial improvements in both precision and recall compared to\ncompetitive baselines, with particularly notable gains on small-object subsets,\nwhile incurring only modest computational overhead. Further validation on the\nVisDrone benchmark confirms the generalization capability of the proposed\napproach. Overall, the results indicate that integrating detail-preserving\ndownsampling, edge-sensitive representations, dual-domain attention, and\ndifficulty-adaptive regression provides a practical and efficient solution for\nUAV-based small-defect inspection in power grids.",
+        "url": "http://arxiv.org/abs/2509.06035v1",
+        "published_date": "2025-09-07T12:36:33+00:00",
+        "updated_date": "2025-09-07T12:36:33+00:00",
+        "categories": [
+            "cs.CV",
+            "cs.AI",
+            "cs.CE"
+        ],
+        "authors": [
+            "Jiaming Cui"
+        ],
+        "ai_categories": [
+            "Transformer",
+            "Dataset"
+        ],
+        "tldr": "TinyDef-DETR is a new framework for detecting small defects in power lines using UAVs, showing improvements in precision and recall compared to existing methods.",
+        "tldr_zh": "TinyDef-DETR是一种新的框架，用于利用无人机检测输电线路中的小缺陷，相较于现有方法在精度和召回率方面取得了改进。",
+        "relevance_score": 3,
+        "novelty_claim_score": 8,
+        "clarity_score": 7,
+        "potential_impact_score": 9,
+        "overall_priority_score": 7.5
+    },
+    {
+        "title": "Analysis of Blood Report Images Using General Purpose Vision-Language Models",
+        "summary": "The reliable analysis of blood reports is important for health knowledge, but\nindividuals often struggle with interpretation, leading to anxiety and\noverlooked issues. We explore the potential of general-purpose Vision-Language\nModels (VLMs) to address this challenge by automatically analyzing blood report\nimages. We conduct a comparative evaluation of three VLMs: Qwen-VL-Max, Gemini\n2.5 Pro, and Llama 4 Maverick, determining their performance on a dataset of\n100 diverse blood report images. Each model was prompted with clinically\nrelevant questions adapted to each blood report. The answers were then\nprocessed using Sentence-BERT to compare and evaluate how closely the models\nresponded. The findings suggest that general-purpose VLMs are a practical and\npromising technology for developing patient-facing tools for preliminary blood\nreport analysis. Their ability to provide clear interpretations directly from\nimages can improve health literacy and reduce the limitations to understanding\ncomplex medical information. This work establishes a foundation for the future\ndevelopment of reliable and accessible AI-assisted healthcare applications.\nWhile results are encouraging, they should be interpreted cautiously given the\nlimited dataset size.",
+        "url": "http://arxiv.org/abs/2509.06033v1",
+        "published_date": "2025-09-07T12:31:16+00:00",
+        "updated_date": "2025-09-07T12:31:16+00:00",
+        "categories": [
+            "cs.CV"
+        ],
+        "authors": [
+            "Nadia Bakhsheshi",
+            "Hamid Beigy"
+        ],
+        "ai_categories": [
+            "Multimodality",
+            "Dataset"
+        ],
+        "tldr": "The paper explores the use of general-purpose Vision-Language Models to automatically analyze blood report images, showing promising results for developing patient-facing tools.",
+        "tldr_zh": "本文探讨了使用通用视觉-语言模型自动分析血液报告图像的潜力，为开发面向患者的工具提供了有希望的结果。",
+        "relevance_score": 6,
+        "novelty_claim_score": 7,
+        "clarity_score": 8,
+        "potential_impact_score": 9,
+        "overall_priority_score": 7.5
+    },
+    {
+        "title": "StripDet: Strip Attention-Based Lightweight 3D Object Detection from Point Cloud",
+        "summary": "The deployment of high-accuracy 3D object detection models from point cloud\nremains a significant challenge due to their substantial computational and\nmemory requirements. To address this, we introduce StripDet, a novel\nlightweight framework designed for on-device efficiency. First, we propose the\nnovel Strip Attention Block (SAB), a highly efficient module designed to\ncapture long-range spatial dependencies. By decomposing standard 2D\nconvolutions into asymmetric strip convolutions, SAB efficiently extracts\ndirectional features while reducing computational complexity from quadratic to\nlinear. Second, we design a hardware-friendly hierarchical backbone that\nintegrates SAB with depthwise separable convolutions and a simple multiscale\nfusion strategy, achieving end-to-end efficiency. Extensive experiments on the\nKITTI dataset validate StripDet's superiority. With only 0.65M parameters, our\nmodel achieves a 79.97% mAP for car detection, surpassing the baseline\nPointPillars with a 7x parameter reduction. Furthermore, StripDet outperforms\nrecent lightweight and knowledge distillation-based methods, achieving a\nsuperior accuracy-efficiency trade-off while establishing itself as a practical\nsolution for real-world 3D detection on edge devices.",
+        "url": "http://arxiv.org/abs/2509.05954v1",
+        "published_date": "2025-09-07T07:32:31+00:00",
+        "updated_date": "2025-09-07T07:32:31+00:00",
+        "categories": [
+            "cs.CV"
+        ],
+        "authors": [
+            "Weichao Wang",
+            "Wendong Mao",
+            "Zhongfeng Wang"
+        ],
+        "ai_categories": [
+            "Transformer",
+            "Dataset",
+            "Other"
+        ],
+        "tldr": "StripDet is a lightweight 3D object detection framework designed for on-device efficiency, outperforming existing methods with superior accuracy-efficiency trade-off on edge devices.",
+        "tldr_zh": "StripDet是一个轻量级的3D物体检测框架，旨在提高设备效率，在边缘设备上表现卓越，并超越现有方法的准确性-效率权衡。",
+        "relevance_score": 3,
+        "novelty_claim_score": 9,
+        "clarity_score": 8,
+        "potential_impact_score": 7,
+        "overall_priority_score": 7.5
+    },
+    {
+        "title": "Cross-Modal Enhancement and Benchmark for UAV-based Open-Vocabulary Object Detection",
+        "summary": "Open-Vocabulary Object Detection (OVD) has emerged as a pivotal technology\nfor applications involving Unmanned Aerial Vehicles (UAVs). However, the\nprevailing large-scale datasets for OVD pre-training are predominantly composed\nof ground-level, natural images. This creates a significant domain gap, causing\nmodels trained on them to exhibit a substantial drop in performance on UAV\nimagery. To address this limitation, we first propose a refined UAV-Label\nengine. Then we construct and introduce UAVDE-2M(contains over 2,000,000\ninstances and 1800 categories) and UAVCAP-15k(contains over 15,000 images).\nFurthermore, we propose a novel Cross-Attention Gated Enhancement Fusion (CAGE)\nmodule and integrate it into the YOLO-World-v2 architecture. Finally, extensive\nexperiments on the VisDrone and SIMD datasets verify the effectiveness of our\nproposed method for applications in UAV-based imagery and remote sensing.",
+        "url": "http://arxiv.org/abs/2509.06011v1",
+        "published_date": "2025-09-07T10:59:02+00:00",
+        "updated_date": "2025-09-07T10:59:02+00:00",
+        "categories": [
+            "cs.CV"
+        ],
+        "authors": [
+            "Zhenhai Weng",
+            "Zhongliang Yu"
+        ],
+        "ai_categories": [
+            "Multimodality",
+            "Transformer",
+            "Dataset"
+        ],
+        "tldr": "The paper proposes a method to improve object detection for UAVs by introducing a new dataset and a novel fusion module, showing improved performance on UAV imagery.",
+        "tldr_zh": "本文提出了一种改善UAV目标检测的方法，通过引入新的数据集和新颖的融合模块，在UAV图像上展现出更好的性能。",
+        "relevance_score": 5,
+        "novelty_claim_score": 8,
+        "clarity_score": 7,
+        "potential_impact_score": 9,
+        "overall_priority_score": 7.25
+    },
+    {
+        "title": "Dual Interaction Network with Cross-Image Attention for Medical Image Segmentation",
+        "summary": "Medical image segmentation is a crucial method for assisting professionals in\ndiagnosing various diseases through medical imaging. However, various factors\nsuch as noise, blurriness, and low contrast often hinder the accurate diagnosis\nof diseases. While numerous image enhancement techniques can mitigate these\nissues, they may also alter crucial information needed for accurate diagnosis\nin the original image. Conventional image fusion strategies, such as feature\nconcatenation can address this challenge. However, they struggle to fully\nleverage the advantages of both original and enhanced images while suppressing\nthe side effects of the enhancements. To overcome the problem, we propose a\ndual interactive fusion module (DIFM) that effectively exploits mutual\ncomplementary information from the original and enhanced images. DIFM employs\ncross-attention bidirectionally to simultaneously attend to corresponding\nspatial information across different images, subsequently refining the\ncomplementary features via global spatial attention. This interaction leverages\nlow- to high-level features implicitly associated with diverse structural\nattributes like edges, blobs, and object shapes, resulting in enhanced features\nthat embody important spatial characteristics. In addition, we introduce a\nmulti-scale boundary loss based on gradient extraction to improve segmentation\naccuracy at object boundaries. Experimental results on the ACDC and Synapse\ndatasets demonstrate the superiority of the proposed method quantitatively and\nqualitatively. Code available at: https://github.com/JJeong-Gari/DIN",
+        "url": "http://arxiv.org/abs/2509.05953v1",
+        "published_date": "2025-09-07T07:25:59+00:00",
+        "updated_date": "2025-09-07T07:25:59+00:00",
+        "categories": [
+            "cs.CV"
+        ],
+        "authors": [
+            "Jeonghyun Noh",
+            "Wangsu Jeon",
+            "Jinsun Park"
+        ],
+        "ai_categories": [
+            "AIGC",
+            "Dataset"
+        ],
+        "tldr": "The paper introduces a dual interactive fusion module for medical image segmentation, leveraging original and enhanced images to improve accuracy. Experimental results show the superiority of the proposed method.",
+        "tldr_zh": "本文提出了一种双交互融合模块，用于医学图像分割，利用原始和增强图像以提高准确性。实验结果表明所提出的方法具有优越性。",
+        "relevance_score": 3,
+        "novelty_claim_score": 8,
+        "clarity_score": 9,
+        "potential_impact_score": 7,
+        "overall_priority_score": 7.25
+    },
+    {
+        "title": "Dual-Mode Deep Anomaly Detection for Medical Manufacturing: Structural Similarity and Feature Distance",
+        "summary": "Automating visual inspection in medical device manufacturing remains\nchallenging due to small and imbalanced datasets, high-resolution imagery, and\nstringent regulatory requirements. This work proposes two attention-guided\nautoencoder architectures for deep anomaly detection designed to address these\nconstraints. The first employs a structural similarity-based anomaly score\n(4-MS-SSIM), offering lightweight and accurate real-time defect detection,\nyielding ACC 0.903 (unsupervised thresholding) and 0.931 (supervised\nthresholding) on the - Surface Seal Image - Test split with only 10% of\ndefective samples. The second applies a feature-distance approach using\nMahalanobis scoring on reduced latent features, providing high sensitivity to\ndistributional shifts for supervisory monitoring, achieving ACC 0.722 with\nsupervised thresholding. Together, these methods deliver complementary\ncapabilities: the first supports reliable inline inspection, while the second\nenables scalable post-production surveillance and regulatory compliance\nmonitoring. Experimental results demonstrate that both approaches surpass\nre-implemented baselines and provide a practical pathway for deploying deep\nanomaly detection in regulated manufacturing environments, aligning accuracy,\nefficiency, and the regulatory obligations defined for high-risk AI systems\nunder the EU AI Act.",
+        "url": "http://arxiv.org/abs/2509.05796v1",
+        "published_date": "2025-09-06T18:17:40+00:00",
+        "updated_date": "2025-09-06T18:17:40+00:00",
+        "categories": [
+            "cs.CV",
+            "cs.AI"
+        ],
+        "authors": [
+            "Julio Zanon Diaz",
+            "Georgios Siogkas",
+            "Peter Corcoran"
+        ],
+        "ai_categories": [
+            "Multimodality",
+            "Transformer",
+            "Dataset"
+        ],
+        "tldr": "The paper proposes two attention-guided autoencoder architectures for deep anomaly detection in medical device manufacturing to address small dataset challenges, achieving high accuracy and regulatory compliance.",
+        "tldr_zh": "该论文提出两种注意力引导的自动编码器架构，用于医疗设备制造中的深度异常检测，以解决小数据集挑战，实现高精度和监管合规性。",
+        "relevance_score": 3,
+        "novelty_claim_score": 7,
+        "clarity_score": 9,
+        "potential_impact_score": 8,
+        "overall_priority_score": 7.25
+    },
+    {
+        "title": "FASL-Seg: Anatomy and Tool Segmentation of Surgical Scenes",
+        "summary": "The growing popularity of robotic minimally invasive surgeries has made deep\nlearning-based surgical training a key area of research. A thorough\nunderstanding of the surgical scene components is crucial, which semantic\nsegmentation models can help achieve. However, most existing work focuses on\nsurgical tools and overlooks anatomical objects. Additionally, current\nstate-of-the-art (SOTA) models struggle to balance capturing high-level\ncontextual features and low-level edge features. We propose a Feature-Adaptive\nSpatial Localization model (FASL-Seg), designed to capture features at multiple\nlevels of detail through two distinct processing streams, namely a Low-Level\nFeature Projection (LLFP) and a High-Level Feature Projection (HLFP) stream,\nfor varying feature resolutions - enabling precise segmentation of anatomy and\nsurgical instruments. We evaluated FASL-Seg on surgical segmentation benchmark\ndatasets EndoVis18 and EndoVis17 on three use cases. The FASL-Seg model\nachieves a mean Intersection over Union (mIoU) of 72.71% on parts and anatomy\nsegmentation in EndoVis18, improving on SOTA by 5%. It further achieves a mIoU\nof 85.61% and 72.78% in EndoVis18 and EndoVis17 tool type segmentation,\nrespectively, outperforming SOTA overall performance, with comparable per-class\nSOTA results in both datasets and consistent performance in various classes for\nanatomy and instruments, demonstrating the effectiveness of distinct processing\nstreams for varying feature resolutions.",
+        "url": "http://arxiv.org/abs/2509.06159v1",
+        "published_date": "2025-09-07T17:59:09+00:00",
+        "updated_date": "2025-09-07T17:59:09+00:00",
+        "categories": [
+            "eess.IV",
+            "cs.AI",
+            "cs.CV",
+            "I.4.6; I.4.8; J.3"
+        ],
+        "authors": [
+            "Muraam Abdel-Ghani",
+            "Mahmoud Ali",
+            "Mohamed Ali",
+            "Fatmaelzahraa Ahmed",
+            "Mohamed Arsalan",
+            "Abdulaziz Al-Ali",
+            "Shidin Balakrishnan"
+        ],
+        "ai_categories": [
+            "Transformer",
+            "Dataset"
+        ],
+        "tldr": "The paper proposes a Feature-Adaptive Spatial Localization model for segmenting anatomical objects and surgical tools in surgical scenes, achieving high accuracy on benchmark datasets.",
+        "tldr_zh": "本文提出了一种特征自适应空间定位模型，用于在手术场景中分割解剖结构和手术工具，在基准数据集上取得了很高的准确性。",
+        "relevance_score": 3,
+        "novelty_claim_score": 7,
+        "clarity_score": 8,
+        "potential_impact_score": 8,
+        "overall_priority_score": 7
+    },
+    {
+        "title": "DVLO4D: Deep Visual-Lidar Odometry with Sparse Spatial-temporal Fusion",
+        "summary": "Visual-LiDAR odometry is a critical component for autonomous system\nlocalization, yet achieving high accuracy and strong robustness remains a\nchallenge. Traditional approaches commonly struggle with sensor misalignment,\nfail to fully leverage temporal information, and require extensive manual\ntuning to handle diverse sensor configurations. To address these problems, we\nintroduce DVLO4D, a novel visual-LiDAR odometry framework that leverages sparse\nspatial-temporal fusion to enhance accuracy and robustness. Our approach\nproposes three key innovations: (1) Sparse Query Fusion, which utilizes sparse\nLiDAR queries for effective multi-modal data fusion; (2) a Temporal Interaction\nand Update module that integrates temporally-predicted positions with current\nframe data, providing better initialization values for pose estimation and\nenhancing model's robustness against accumulative errors; and (3) a Temporal\nClip Training strategy combined with a Collective Average Loss mechanism that\naggregates losses across multiple frames, enabling global optimization and\nreducing the scale drift over long sequences. Extensive experiments on the\nKITTI and Argoverse Odometry dataset demonstrate the superiority of our\nproposed DVLO4D, which achieves state-of-the-art performance in terms of both\npose accuracy and robustness. Additionally, our method has high efficiency,\nwith an inference time of 82 ms, possessing the potential for the real-time\ndeployment.",
+        "url": "http://arxiv.org/abs/2509.06023v1",
+        "published_date": "2025-09-07T11:43:11+00:00",
+        "updated_date": "2025-09-07T11:43:11+00:00",
+        "categories": [
+            "cs.CV"
+        ],
+        "authors": [
+            "Mengmeng Liu",
+            "Michael Ying Yang",
+            "Jiuming Liu",
+            "Yunpeng Zhang",
+            "Jiangtao Li",
+            "Sander Oude Elberink",
+            "George Vosselman",
+            "Hao Cheng"
+        ],
+        "ai_categories": [
+            "Transformer",
+            "Dataset"
+        ],
+        "tldr": "DVLO4D is a novel visual-LiDAR odometry framework that leverages sparse spatial-temporal fusion to enhance accuracy and robustness, achieving state-of-the-art performance in pose accuracy and robustness.",
+        "tldr_zh": "DVLO4D是一种新颖的视觉-LiDAR里程表框架，利用稀疏的空间-时间融合来提高准确性和鲁棒性，在姿态准确性和鲁棒性方面取得了最新的性能。",
+        "relevance_score": 5,
+        "novelty_claim_score": 8,
+        "clarity_score": 9,
+        "potential_impact_score": 7,
+        "overall_priority_score": 7
+    },
+    {
+        "title": "S-LAM3D: Segmentation-Guided Monocular 3D Object Detection via Feature Space Fusion",
+        "summary": "Monocular 3D Object Detection represents a challenging Computer Vision task\ndue to the nature of the input used, which is a single 2D image, lacking in any\ndepth cues and placing the depth estimation problem as an ill-posed one.\nExisting solutions leverage the information extracted from the input by using\nConvolutional Neural Networks or Transformer architectures as feature\nextraction backbones, followed by specific detection heads for 3D parameters\nprediction. In this paper, we introduce a decoupled strategy based on injecting\nprecomputed segmentation information priors and fusing them directly into the\nfeature space for guiding the detection, without expanding the detection model\nor jointly learning the priors. The focus is on evaluating the impact of\nadditional segmentation information on existing detection pipelines without\nadding additional prediction branches. The proposed method is evaluated on the\nKITTI 3D Object Detection Benchmark, outperforming the equivalent architecture\nthat relies only on RGB image features for small objects in the scene:\npedestrians and cyclists, and proving that understanding the input data can\nbalance the need for additional sensors or training data.",
+        "url": "http://arxiv.org/abs/2509.05999v1",
+        "published_date": "2025-09-07T10:14:56+00:00",
+        "updated_date": "2025-09-07T10:14:56+00:00",
+        "categories": [
+            "cs.CV",
+            "cs.AI"
+        ],
+        "authors": [
+            "Diana-Alexandra Sas",
+            "Florin Oniga"
+        ],
+        "ai_categories": [
+            "Transformer",
+            "Dataset"
+        ],
+        "tldr": "The paper introduces a method for improving monocular 3D object detection by incorporating segmentation information into the feature space, showing better performance for small objects like pedestrians and cyclists.",
+        "tldr_zh": "该论文提出了一种通过将分割信息融入特征空间来改善单眼 3D 物体检测的方法，显示出对于行人和骑行者等小物体有更好的性能。",
+        "relevance_score": 5,
+        "novelty_claim_score": 8,
+        "clarity_score": 7,
+        "potential_impact_score": 6,
+        "overall_priority_score": 6.5
+    },
+    {
+        "title": "Near Real-Time Dust Aerosol Detection with 3D Convolutional Neural Networks on MODIS Data",
+        "summary": "Dust storms harm health and reduce visibility; quick detection from\nsatellites is needed. We present a near real-time system that flags dust at the\npixel level using multi-band images from NASA's Terra and Aqua (MODIS). A 3D\nconvolutional network learns patterns across all 36 bands, plus split thermal\nbands, to separate dust from clouds and surface features. Simple normalization\nand local filling handle missing data. An improved version raises training\nspeed by 21x and supports fast processing of full scenes. On 17 independent\nMODIS scenes, the model reaches about 0.92 accuracy with a mean squared error\nof 0.014. Maps show strong agreement in plume cores, with most misses along\nedges. These results show that joint band-and-space learning can provide timely\ndust alerts at global scale; using wider input windows or attention-based\nmodels may further sharpen edges.",
+        "url": "http://arxiv.org/abs/2509.05887v1",
+        "published_date": "2025-09-07T01:38:51+00:00",
+        "updated_date": "2025-09-07T01:38:51+00:00",
+        "categories": [
+            "cs.CV",
+            "cs.LG",
+            "eess.IV",
+            "68T07, 86A32",
+            "I.2.6; I.5.4"
+        ],
+        "authors": [
+            "Caleb Gates",
+            "Patrick Moorhead",
+            "Jayden Ferguson",
+            "Omar Darwish",
+            "Conner Stallman",
+            "Pablo Rivas",
+            "Paapa Quansah"
+        ],
+        "ai_categories": [
+            "GAN",
+            "Dataset"
+        ],
+        "tldr": "The paper presents a near real-time system using 3D convolutional neural networks to detect dust aerosols from satellite images with high accuracy.",
+        "tldr_zh": "该论文提出了一种使用3D卷积神经网络在卫星图像中高准确度检测灰尘气溶胶的近实时系统。",
+        "relevance_score": 5,
+        "novelty_claim_score": 7,
+        "clarity_score": 8,
+        "potential_impact_score": 6,
+        "overall_priority_score": 6.5
+    },
+    {
+        "title": "Motion Aware ViT-based Framework for Monocular 6-DoF Spacecraft Pose Estimation",
+        "summary": "Monocular 6-DoF pose estimation plays an important role in multiple\nspacecraft missions. Most existing pose estimation approaches rely on single\nimages with static keypoint localisation, failing to exploit valuable temporal\ninformation inherent to space operations. In this work, we adapt a deep\nlearning framework from human pose estimation to the spacecraft pose estimation\ndomain that integrates motion-aware heatmaps and optical flow to capture motion\ndynamics. Our approach combines image features from a Vision Transformer (ViT)\nencoder with motion cues from a pre-trained optical flow model to localise 2D\nkeypoints. Using the estimates, a Perspective-n-Point (PnP) solver recovers\n6-DoF poses from known 2D-3D correspondences. We train and evaluate our method\non the SPADES-RGB dataset and further assess its generalisation on real and\nsynthetic data from the SPARK-2024 dataset. Overall, our approach demonstrates\nimproved performance over single-image baselines in both 2D keypoint\nlocalisation and 6-DoF pose estimation. Furthermore, it shows promising\ngeneralisation capabilities when testing on different data distributions.",
+        "url": "http://arxiv.org/abs/2509.06000v1",
+        "published_date": "2025-09-07T10:15:55+00:00",
+        "updated_date": "2025-09-07T10:15:55+00:00",
+        "categories": [
+            "cs.CV"
+        ],
+        "authors": [
+            "Jose Sosa",
+            "Dan Pineau",
+            "Arunkumar Rathinam",
+            "Abdelrahman Shabayek",
+            "Djamila Aouada"
+        ],
+        "ai_categories": [
+            "Transformer",
+            "Dataset"
+        ],
+        "tldr": "The paper proposes a framework for spacecraft pose estimation using motion-aware heatmaps and optical flow, showing improved performance over existing methods.",
+        "tldr_zh": "本文提出了一种利用运动感知热图和光流进行航天器姿态估计的框架，相对于现有方法，表现出了更好的性能。",
+        "relevance_score": 4,
+        "novelty_claim_score": 7,
+        "clarity_score": 8,
+        "potential_impact_score": 6,
+        "overall_priority_score": 6.25
+    },
+    {
+        "title": "Spatial-Aware Self-Supervision for Medical 3D Imaging with Multi-Granularity Observable Tasks",
+        "summary": "The application of self-supervised techniques has become increasingly\nprevalent within medical visualization tasks, primarily due to its capacity to\nmitigate the data scarcity prevalent in the healthcare sector. The majority of\ncurrent works are influenced by designs originating in the generic 2D visual\ndomain, which lack the intuitive demonstration of the model's learning process\nregarding 3D spatial knowledge. Consequently, these methods often fall short in\nterms of medical interpretability. We propose a method consisting of three\nsub-tasks to capture the spatially relevant semantics in medical 3D imaging.\nTheir design adheres to observable principles to ensure interpretability, and\nminimize the performance loss caused thereby as much as possible. By leveraging\nthe enhanced semantic depth offered by the extra dimension in 3D imaging, this\napproach incorporates multi-granularity spatial relationship modeling to\nmaintain training stability. Experimental findings suggest that our approach is\ncapable of delivering performance that is on par with current methodologies,\nwhile facilitating an intuitive understanding of the self-supervised learning\nprocess.",
+        "url": "http://arxiv.org/abs/2509.05967v1",
+        "published_date": "2025-09-07T08:16:37+00:00",
+        "updated_date": "2025-09-07T08:16:37+00:00",
+        "categories": [
+            "cs.CV"
+        ],
+        "authors": [
+            "Yiqin Zhang",
+            "Meiling Chen",
+            "Zhengjie Zhang"
+        ],
+        "ai_categories": [
+            "Transformer",
+            "Dataset"
+        ],
+        "tldr": "The paper proposes a method for self-supervised learning in medical 3D imaging, focusing on capturing spatially relevant semantics through multi-granularity observable tasks.",
+        "tldr_zh": "本文提出一种用于医学3D成像的自监督学习方法，重点关注通过多粒度可观测任务捕获具有空间相关语义的内容。",
+        "relevance_score": 3,
+        "novelty_claim_score": 7,
+        "clarity_score": 8,
+        "potential_impact_score": 5,
+        "overall_priority_score": 6
+    },
+    {
+        "title": "eKalibr-Inertial: Continuous-Time Spatiotemporal Calibration for Event-Based Visual-Inertial Systems",
+        "summary": "The bioinspired event camera, distinguished by its exceptional temporal\nresolution, high dynamic range, and low power consumption, has been extensively\nstudied in recent years for motion estimation, robotic perception, and object\ndetection. In ego-motion estimation, the visual-inertial setup is commonly\nadopted due to complementary characteristics between sensors (e.g., scale\nperception and low drift). For optimal event-based visual-inertial fusion,\naccurate spatiotemporal (extrinsic and temporal) calibration is required. In\nthis work, we present eKalibr-Inertial, an accurate spatiotemporal calibrator\nfor event-based visual-inertial systems, utilizing the widely used circle grid\nboard. Building upon the grid pattern recognition and tracking methods in\neKalibr and eKalibr-Stereo, the proposed method starts with a rigorous and\nefficient initialization, where all parameters in the estimator would be\naccurately recovered. Subsequently, a continuous-time-based batch optimization\nis conducted to refine the initialized parameters toward better states. The\nresults of extensive real-world experiments show that eKalibr-Inertial can\nachieve accurate event-based visual-inertial spatiotemporal calibration. The\nimplementation of eKalibr-Inertial is open-sourced at\n(https://github.com/Unsigned-Long/eKalibr) to benefit the research community.",
+        "url": "http://arxiv.org/abs/2509.05923v1",
+        "published_date": "2025-09-07T04:44:56+00:00",
+        "updated_date": "2025-09-07T04:44:56+00:00",
+        "categories": [
+            "cs.RO",
+            "cs.CV"
+        ],
+        "authors": [
+            "Shuolong Chen",
+            "Xingxing Li",
+            "Liu Yuan"
+        ],
+        "ai_categories": [
+            "Other"
+        ],
+        "tldr": "eKalibr-Inertial presents a calibration method for event-based visual-inertial systems, achieving accurate spatiotemporal calibration using a circle grid board.",
+        "tldr_zh": "eKalibr-Inertial提出了一种用于事件驱动视觉惯性系统的校准方法，利用圆形格网板实现了精确的时空校准。",
+        "relevance_score": 3,
+        "novelty_claim_score": 6,
+        "clarity_score": 8,
+        "potential_impact_score": 7,
+        "overall_priority_score": 6.0
+    },
+    {
+        "title": "Challenges in Deep Learning-Based Small Organ Segmentation: A Benchmarking Perspective for Medical Research with Limited Datasets",
+        "summary": "Accurate segmentation of carotid artery structures in histopathological\nimages is vital for advancing cardiovascular disease research and diagnosis.\nHowever, deep learning model development in this domain is constrained by the\nscarcity of annotated cardiovascular histopathological data. This study\ninvestigates a systematic evaluation of state-of-the-art deep learning\nsegmentation models, including convolutional neural networks (U-Net,\nDeepLabV3+), a Vision Transformer (SegFormer), and recent foundation models\n(SAM, MedSAM, MedSAM+UNet), on a limited dataset of cardiovascular histology\nimages. Despite employing an extensive hyperparameter optimization strategy\nwith Bayesian search, our findings reveal that model performance is highly\nsensitive to data splits, with minor differences driven more by statistical\nnoise than by true algorithmic superiority. This instability exposes the\nlimitations of standard benchmarking practices in low-data clinical settings\nand challenges the assumption that performance rankings reflect meaningful\nclinical utility.",
+        "url": "http://arxiv.org/abs/2509.05892v1",
+        "published_date": "2025-09-07T01:54:20+00:00",
+        "updated_date": "2025-09-07T01:54:20+00:00",
+        "categories": [
+            "cs.CV",
+            "cs.AI"
+        ],
+        "authors": [
+            "Phongsakon Mark Konrad",
+            "Andrei-Alexandru Popa",
+            "Yaser Sabzehmeidani",
+            "Liang Zhong",
+            "Elisa A. Liehn",
+            "Serkan Ayvaz"
+        ],
+        "ai_categories": [
+            "Dataset",
+            "Transformer"
+        ],
+        "tldr": "The paper explores challenges in deep learning-based small organ segmentation in medical research with limited datasets, highlighting the sensitivity of model performance to data splits and the limitations of standard benchmarking practices.",
+        "tldr_zh": "本文探讨了在医学研究中使用深度学习进行小器官分割的挑战，强调模型性能对数据拆分的敏感性以及标准基准实践的局限性。",
+        "relevance_score": 5,
+        "novelty_claim_score": 7,
+        "clarity_score": 8,
+        "potential_impact_score": 6,
+        "overall_priority_score": 6
+    },
+    {
+        "title": "Performance of Conformal Prediction in Capturing Aleatoric Uncertainty",
+        "summary": "Conformal prediction is a model-agnostic approach to generating prediction\nsets that cover the true class with a high probability. Although its prediction\nset size is expected to capture aleatoric uncertainty, there is a lack of\nevidence regarding its effectiveness. The literature presents that prediction\nset size can upper-bound aleatoric uncertainty or that prediction sets are\nlarger for difficult instances and smaller for easy ones, but a validation of\nthis attribute of conformal predictors is missing. This work investigates how\neffectively conformal predictors quantify aleatoric uncertainty, specifically\nthe inherent ambiguity in datasets caused by overlapping classes. We perform\nthis by measuring the correlation between prediction set sizes and the number\nof distinct labels assigned by human annotators per instance. We further assess\nthe similarity between prediction sets and human-provided annotations. We use\nthree conformal prediction approaches to generate prediction sets for eight\ndeep learning models trained on four datasets. The datasets contain annotations\nfrom multiple human annotators (ranging from five to fifty participants) per\ninstance, enabling the identification of class overlap. We show that the vast\nmajority of the conformal prediction outputs show a very weak to weak\ncorrelation with human annotations, with only a few showing moderate\ncorrelation. These findings underscore the necessity of critically reassessing\nthe prediction sets generated using conformal predictors. While they can\nprovide a higher coverage of the true classes, their capability in capturing\naleatoric uncertainty remains limited.",
+        "url": "http://arxiv.org/abs/2509.05826v1",
+        "published_date": "2025-09-06T20:41:55+00:00",
+        "updated_date": "2025-09-06T20:41:55+00:00",
+        "categories": [
+            "cs.LG",
+            "cs.CV"
+        ],
+        "authors": [
+            "Misgina Tsighe Hagos",
+            "Claes Lundström"
+        ],
+        "ai_categories": [
+            "AIGC",
+            "Dataset"
+        ],
+        "tldr": "The paper investigates the effectiveness of conformal predictors in quantifying aleatoric uncertainty in datasets with overlapping classes.",
+        "tldr_zh": "本文研究了符合性预测器在量化具有重叠类别的数据集中的不确定性方面的有效性。",
+        "relevance_score": 5,
+        "novelty_claim_score": 6,
+        "clarity_score": 8,
+        "potential_impact_score": 7,
+        "overall_priority_score": 6
+    }
+]
