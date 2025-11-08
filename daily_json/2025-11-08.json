@@ -1,0 +1,257 @@
+[
+    {
+        "title": "Carousel: A High-Resolution Dataset for Multi-Target Automatic Image Cropping",
+        "summary": "Automatic image cropping is a method for maximizing the human-perceived\nquality of cropped regions in photographs. Although several works have proposed\ntechniques for producing singular crops, little work has addressed the problem\nof producing multiple, distinct crops with aesthetic appeal. In this paper, we\nmotivate the problem with a discussion on modern social media applications,\nintroduce a dataset of 277 relevant images and human labels, and evaluate the\nefficacy of several single-crop models with an image partitioning algorithm as\na pre-processing step. The dataset is available at\nhttps://github.com/RafeLoya/carousel.",
+        "url": "http://arxiv.org/abs/2511.04680v1",
+        "published_date": "2025-11-06T18:59:52+00:00",
+        "updated_date": "2025-11-06T18:59:52+00:00",
+        "categories": [
+            "cs.CV"
+        ],
+        "authors": [
+            "Rafe Loya",
+            "Andrew Hamara",
+            "Benjamin Estell",
+            "Benjamin Kilpatrick",
+            "Andrew C. Freeman"
+        ],
+        "ai_categories": []
+    },
+    {
+        "title": "GentleHumanoid: Learning Upper-body Compliance for Contact-rich Human and Object Interaction",
+        "summary": "Humanoid robots are expected to operate in human-centered environments where\nsafe and natural physical interaction is essential. However, most recent\nreinforcement learning (RL) policies emphasize rigid tracking and suppress\nexternal forces. Existing impedance-augmented approaches are typically\nrestricted to base or end-effector control and focus on resisting extreme\nforces rather than enabling compliance. We introduce GentleHumanoid, a\nframework that integrates impedance control into a whole-body motion tracking\npolicy to achieve upper-body compliance. At its core is a unified spring-based\nformulation that models both resistive contacts (restoring forces when pressing\nagainst surfaces) and guiding contacts (pushes or pulls sampled from human\nmotion data). This formulation ensures kinematically consistent forces across\nthe shoulder, elbow, and wrist, while exposing the policy to diverse\ninteraction scenarios. Safety is further supported through task-adjustable\nforce thresholds. We evaluate our approach in both simulation and on the\nUnitree G1 humanoid across tasks requiring different levels of compliance,\nincluding gentle hugging, sit-to-stand assistance, and safe object\nmanipulation. Compared to baselines, our policy consistently reduces peak\ncontact forces while maintaining task success, resulting in smoother and more\nnatural interactions. These results highlight a step toward humanoid robots\nthat can safely and effectively collaborate with humans and handle objects in\nreal-world environments.",
+        "url": "http://arxiv.org/abs/2511.04679v1",
+        "published_date": "2025-11-06T18:59:33+00:00",
+        "updated_date": "2025-11-06T18:59:33+00:00",
+        "categories": [
+            "cs.RO",
+            "cs.CV",
+            "cs.HC"
+        ],
+        "authors": [
+            "Qingzhou Lu",
+            "Yao Feng",
+            "Baiyu Shi",
+            "Michael Piseno",
+            "Zhenan Bao",
+            "C. Karen Liu"
+        ],
+        "ai_categories": []
+    },
+    {
+        "title": "Tracking and Understanding Object Transformations",
+        "summary": "Real-world objects frequently undergo state transformations. From an apple\nbeing cut into pieces to a butterfly emerging from its cocoon, tracking through\nthese changes is important for understanding real-world objects and dynamics.\nHowever, existing methods often lose track of the target object after\ntransformation, due to significant changes in object appearance. To address\nthis limitation, we introduce the task of Track Any State: tracking objects\nthrough transformations while detecting and describing state changes,\naccompanied by a new benchmark dataset, VOST-TAS. To tackle this problem, we\npresent TubeletGraph, a zero-shot system that recovers missing objects after\ntransformation and maps out how object states are evolving over time.\nTubeletGraph first identifies potentially overlooked tracks, and determines\nwhether they should be integrated based on semantic and proximity priors. Then,\nit reasons about the added tracks and generates a state graph describing each\nobserved transformation. TubeletGraph achieves state-of-the-art tracking\nperformance under transformations, while demonstrating deeper understanding of\nobject transformations and promising capabilities in temporal grounding and\nsemantic reasoning for complex object transformations. Code, additional\nresults, and the benchmark dataset are available at\nhttps://tubelet-graph.github.io.",
+        "url": "http://arxiv.org/abs/2511.04678v1",
+        "published_date": "2025-11-06T18:59:30+00:00",
+        "updated_date": "2025-11-06T18:59:30+00:00",
+        "categories": [
+            "cs.CV"
+        ],
+        "authors": [
+            "Yihong Sun",
+            "Xinyu Yang",
+            "Jennifer J. Sun",
+            "Bharath Hariharan"
+        ],
+        "ai_categories": []
+    },
+    {
+        "title": "InfinityStar: Unified Spacetime AutoRegressive Modeling for Visual Generation",
+        "summary": "We introduce InfinityStar, a unified spacetime autoregressive framework for\nhigh-resolution image and dynamic video synthesis. Building on the recent\nsuccess of autoregressive modeling in both vision and language, our purely\ndiscrete approach jointly captures spatial and temporal dependencies within a\nsingle architecture. This unified design naturally supports a variety of\ngeneration tasks such as text-to-image, text-to-video, image-to-video, and long\ninteractive video synthesis via straightforward temporal autoregression.\nExtensive experiments demonstrate that InfinityStar scores 83.74 on VBench,\noutperforming all autoregressive models by large margins, even surpassing some\ndiffusion competitors like HunyuanVideo. Without extra optimizations, our model\ngenerates a 5s, 720p video approximately 10x faster than leading\ndiffusion-based methods. To our knowledge, InfinityStar is the first discrete\nautoregressive video generator capable of producing industrial level 720p\nvideos. We release all code and models to foster further research in efficient,\nhigh-quality video generation.",
+        "url": "http://arxiv.org/abs/2511.04675v1",
+        "published_date": "2025-11-06T18:58:03+00:00",
+        "updated_date": "2025-11-06T18:58:03+00:00",
+        "categories": [
+            "cs.CV"
+        ],
+        "authors": [
+            "Jinlai Liu",
+            "Jian Han",
+            "Bin Yan",
+            "Hui Wu",
+            "Fengda Zhu",
+            "Xing Wang",
+            "Yi Jiang",
+            "Bingyue Peng",
+            "Zehuan Yuan"
+        ],
+        "ai_categories": []
+    },
+    {
+        "title": "X-Diffusion: Training Diffusion Policies on Cross-Embodiment Human Demonstrations",
+        "summary": "Human videos can be recorded quickly and at scale, making them an appealing\nsource of training data for robot learning. However, humans and robots differ\nfundamentally in embodiment, resulting in mismatched action execution. Direct\nkinematic retargeting of human hand motion can therefore produce actions that\nare physically infeasible for robots. Despite these low-level differences,\nhuman demonstrations provide valuable motion cues about how to manipulate and\ninteract with objects. Our key idea is to exploit the forward diffusion\nprocess: as noise is added to actions, low-level execution differences fade\nwhile high-level task guidance is preserved. We present X-Diffusion, a\nprincipled framework for training diffusion policies that maximally leverages\nhuman data without learning dynamically infeasible motions. X-Diffusion first\ntrains a classifier to predict whether a noisy action is executed by a human or\nrobot. Then, a human action is incorporated into policy training only after\nadding sufficient noise such that the classifier cannot discern its embodiment.\nActions consistent with robot execution supervise fine-grained denoising at low\nnoise levels, while mismatched human actions provide only coarse guidance at\nhigher noise levels. Our experiments show that naive co-training under\nexecution mismatches degrades policy performance, while X-Diffusion\nconsistently improves it. Across five manipulation tasks, X-Diffusion achieves\na 16% higher average success rate than the best baseline. The project website\nis available at https://portal-cornell.github.io/X-Diffusion/.",
+        "url": "http://arxiv.org/abs/2511.04671v1",
+        "published_date": "2025-11-06T18:56:30+00:00",
+        "updated_date": "2025-11-06T18:56:30+00:00",
+        "categories": [
+            "cs.RO",
+            "cs.AI",
+            "cs.CV"
+        ],
+        "authors": [
+            "Maximus A. Pace",
+            "Prithwish Dan",
+            "Chuanruo Ning",
+            "Atiksh Bhardwaj",
+            "Audrey Du",
+            "Edward W. Duan",
+            "Wei-Chiu Ma",
+            "Kushal Kedia"
+        ],
+        "ai_categories": []
+    },
+    {
+        "title": "Cambrian-S: Towards Spatial Supersensing in Video",
+        "summary": "We argue that progress in true multimodal intelligence calls for a shift from\nreactive, task-driven systems and brute-force long context towards a broader\nparadigm of supersensing. We frame spatial supersensing as four stages beyond\nlinguistic-only understanding: semantic perception (naming what is seen),\nstreaming event cognition (maintaining memory across continuous experiences),\nimplicit 3D spatial cognition (inferring the world behind pixels), and\npredictive world modeling (creating internal models that filter and organize\ninformation). Current benchmarks largely test only the early stages, offering\nnarrow coverage of spatial cognition and rarely challenging models in ways that\nrequire true world modeling. To drive progress in spatial supersensing, we\npresent VSI-SUPER, a two-part benchmark: VSR (long-horizon visual spatial\nrecall) and VSC (continual visual spatial counting). These tasks require\narbitrarily long video inputs yet are resistant to brute-force context\nexpansion. We then test data scaling limits by curating VSI-590K and training\nCambrian-S, achieving +30% absolute improvement on VSI-Bench without\nsacrificing general capabilities. Yet performance on VSI-SUPER remains limited,\nindicating that scale alone is insufficient for spatial supersensing. We\npropose predictive sensing as a path forward, presenting a proof-of-concept in\nwhich a self-supervised next-latent-frame predictor leverages surprise\n(prediction error) to drive memory and event segmentation. On VSI-SUPER, this\napproach substantially outperforms leading proprietary baselines, showing that\nspatial supersensing requires models that not only see but also anticipate,\nselect, and organize experience.",
+        "url": "http://arxiv.org/abs/2511.04670v1",
+        "published_date": "2025-11-06T18:55:17+00:00",
+        "updated_date": "2025-11-06T18:55:17+00:00",
+        "categories": [
+            "cs.CV"
+        ],
+        "authors": [
+            "Shusheng Yang",
+            "Jihan Yang",
+            "Pinzhi Huang",
+            "Ellis Brown",
+            "Zihao Yang",
+            "Yue Yu",
+            "Shengbang Tong",
+            "Zihan Zheng",
+            "Yifan Xu",
+            "Muhan Wang",
+            "Daohan Lu",
+            "Rob Fergus",
+            "Yann LeCun",
+            "Li Fei-Fei",
+            "Saining Xie"
+        ],
+        "ai_categories": []
+    },
+    {
+        "title": "SIMS-V: Simulated Instruction-Tuning for Spatial Video Understanding",
+        "summary": "Despite impressive high-level video comprehension, multimodal language models\nstruggle with spatial reasoning across time and space. While current spatial\ntraining approaches rely on real-world video data, obtaining diverse footage\nwith precise spatial annotations remains a bottleneck. To alleviate this\nbottleneck, we present SIMS-V -- a systematic data-generation framework that\nleverages the privileged information of 3D simulators to create spatially-rich\nvideo training data for multimodal language models. Using this framework, we\ninvestigate which properties of simulated data drive effective real-world\ntransfer through systematic ablations of question types, mixes, and scales. We\nidentify a minimal set of three question categories (metric measurement,\nperspective-dependent reasoning, and temporal tracking) that prove most\neffective for developing transferable spatial intelligence, outperforming\ncomprehensive coverage despite using fewer question types. These insights\nenable highly efficient training: our 7B-parameter video LLM fine-tuned on just\n25K simulated examples outperforms the larger 72B baseline and achieves\ncompetitive performance with proprietary models on rigorous real-world spatial\nreasoning benchmarks. Our approach demonstrates robust generalization,\nmaintaining performance on general video understanding while showing\nsubstantial improvements on embodied and real-world spatial tasks.",
+        "url": "http://arxiv.org/abs/2511.04668v1",
+        "published_date": "2025-11-06T18:53:31+00:00",
+        "updated_date": "2025-11-06T18:53:31+00:00",
+        "categories": [
+            "cs.CV"
+        ],
+        "authors": [
+            "Ellis Brown",
+            "Arijit Ray",
+            "Ranjay Krishna",
+            "Ross Girshick",
+            "Rob Fergus",
+            "Saining Xie"
+        ],
+        "ai_categories": []
+    },
+    {
+        "title": "Real-to-Sim Robot Policy Evaluation with Gaussian Splatting Simulation of Soft-Body Interactions",
+        "summary": "Robotic manipulation policies are advancing rapidly, but their direct\nevaluation in the real world remains costly, time-consuming, and difficult to\nreproduce, particularly for tasks involving deformable objects. Simulation\nprovides a scalable and systematic alternative, yet existing simulators often\nfail to capture the coupled visual and physical complexity of soft-body\ninteractions. We present a real-to-sim policy evaluation framework that\nconstructs soft-body digital twins from real-world videos and renders robots,\nobjects, and environments with photorealistic fidelity using 3D Gaussian\nSplatting. We validate our approach on representative deformable manipulation\ntasks, including plush toy packing, rope routing, and T-block pushing,\ndemonstrating that simulated rollouts correlate strongly with real-world\nexecution performance and reveal key behavioral patterns of learned policies.\nOur results suggest that combining physics-informed reconstruction with\nhigh-quality rendering enables reproducible, scalable, and accurate evaluation\nof robotic manipulation policies. Website: https://real2sim-eval.github.io/",
+        "url": "http://arxiv.org/abs/2511.04665v1",
+        "published_date": "2025-11-06T18:52:08+00:00",
+        "updated_date": "2025-11-06T18:52:08+00:00",
+        "categories": [
+            "cs.RO",
+            "cs.CV",
+            "cs.LG"
+        ],
+        "authors": [
+            "Kaifeng Zhang",
+            "Shuo Sha",
+            "Hanxiao Jiang",
+            "Matthew Loper",
+            "Hyunjong Song",
+            "Guangyan Cai",
+            "Zhuo Xu",
+            "Xiaochen Hu",
+            "Changxi Zheng",
+            "Yunzhu Li"
+        ],
+        "ai_categories": []
+    },
+    {
+        "title": "Benchmark Designers Should \"Train on the Test Set\" to Expose Exploitable Non-Visual Shortcuts",
+        "summary": "Robust benchmarks are crucial for evaluating Multimodal Large Language Models\n(MLLMs). Yet we find that models can ace many multimodal benchmarks without\nstrong visual understanding, instead exploiting biases, linguistic priors, and\nsuperficial patterns. This is especially problematic for vision-centric\nbenchmarks that are meant to require visual inputs. We adopt a diagnostic\nprinciple for benchmark design: if a benchmark can be gamed, it will be.\nDesigners should therefore try to ``game'' their own benchmarks first, using\ndiagnostic and debiasing procedures to systematically identify and mitigate\nnon-visual biases. Effective diagnosis requires directly ``training on the test\nset'' -- probing the released test set for its intrinsic, exploitable patterns.\n  We operationalize this standard with two components. First, we diagnose\nbenchmark susceptibility using a ``Test-set Stress-Test'' (TsT) methodology.\nOur primary diagnostic tool involves fine-tuning a powerful Large Language\nModel via $k$-fold cross-validation on exclusively the non-visual, textual\ninputs of the test set to reveal shortcut performance and assign each sample a\nbias score $s(x)$. We complement this with a lightweight Random Forest-based\ndiagnostic operating on hand-crafted features for fast, interpretable auditing.\nSecond, we debias benchmarks by filtering high-bias samples using an\n``Iterative Bias Pruning'' (IBP) procedure. Applying this framework to four\nbenchmarks -- VSI-Bench, CV-Bench, MMMU, and VideoMME -- we uncover pervasive\nnon-visual biases. As a case study, we apply our full framework to create\nVSI-Bench-Debiased, demonstrating reduced non-visual solvability and a wider\nvision-blind performance gap than the original.",
+        "url": "http://arxiv.org/abs/2511.04655v1",
+        "published_date": "2025-11-06T18:43:21+00:00",
+        "updated_date": "2025-11-06T18:43:21+00:00",
+        "categories": [
+            "cs.CV"
+        ],
+        "authors": [
+            "Ellis Brown",
+            "Jihan Yang",
+            "Shusheng Yang",
+            "Rob Fergus",
+            "Saining Xie"
+        ],
+        "ai_categories": []
+    },
+    {
+        "title": "Polarization-resolved imaging improves eye tracking",
+        "summary": "Polarization-resolved near-infrared imaging adds a useful optical contrast\nmechanism to eye tracking by measuring the polarization state of light\nreflected by ocular tissues in addition to its intensity. In this paper we\ndemonstrate how this contrast can be used to enable eye tracking. Specifically,\nwe demonstrate that a polarization-enabled eye tracking (PET) system composed\nof a polarization--filter--array camera paired with a linearly polarized\nnear-infrared illuminator can reveal trackable features across the sclera and\ngaze-informative patterns on the cornea, largely absent in intensity-only\nimages. Across a cohort of 346 participants, convolutional neural network based\nmachine learning models trained on data from PET reduced the median\n95th-percentile absolute gaze error by 10--16\\% relative to capacity-matched\nintensity baselines under nominal conditions and in the presence of eyelid\nocclusions, eye-relief changes, and pupil-size variation. These results link\nlight--tissue polarization effects to practical gains in human--computer\ninteraction and position PET as a simple, robust sensing modality for future\nwearable devices.",
+        "url": "http://arxiv.org/abs/2511.04652v1",
+        "published_date": "2025-11-06T18:42:09+00:00",
+        "updated_date": "2025-11-06T18:42:09+00:00",
+        "categories": [
+            "cs.CV",
+            "physics.optics"
+        ],
+        "authors": [
+            "Mantas Žurauskas",
+            "Tom Bu",
+            "Sanaz Alali",
+            "Beyza Kalkanli",
+            "Derek Shi",
+            "Fernando Alamos",
+            "Gauresh Pandit",
+            "Christopher Mei",
+            "Ali Behrooz",
+            "Ramin Mirjalili",
+            "Dave Stronks",
+            "Alexander Fix",
+            "Dmitri Model"
+        ],
+        "ai_categories": []
+    },
+    {
+        "title": "NovisVQ: A Streaming Convolutional Neural Network for No-Reference Opinion-Unaware Frame Quality Assessment",
+        "summary": "Video quality assessment (VQA) is vital for computer vision tasks, but\nexisting approaches face major limitations: full-reference (FR) metrics require\nclean reference videos, and most no-reference (NR) models depend on training on\ncostly human opinion labels. Moreover, most opinion-unaware NR methods are\nimage-based, ignoring temporal context critical for video object detection. In\nthis work, we present a scalable, streaming-based VQA model that is both\nno-reference and opinion-unaware. Our model leverages synthetic degradations of\nthe DAVIS dataset, training a temporal-aware convolutional architecture to\npredict FR metrics (LPIPS , PSNR, SSIM) directly from degraded video, without\nreferences at inference. We show that our streaming approach outperforms our\nown image-based baseline by generalizing across diverse degradations,\nunderscoring the value of temporal modeling for scalable VQA in real-world\nvision systems. Additionally, we demonstrate that our model achieves higher\ncorrelation with full-reference metrics compared to BRISQUE, a widely-used\nopinion-aware image quality assessment baseline, validating the effectiveness\nof our temporal, opinion-unaware approach.",
+        "url": "http://arxiv.org/abs/2511.04628v1",
+        "published_date": "2025-11-06T18:23:55+00:00",
+        "updated_date": "2025-11-06T18:23:55+00:00",
+        "categories": [
+            "cs.CV"
+        ],
+        "authors": [
+            "Kylie Cancilla",
+            "Alexander Moore",
+            "Amar Saini",
+            "Carmen Carrano"
+        ],
+        "ai_categories": []
+    },
+    {
+        "title": "Building Trust in Virtual Immunohistochemistry: Automated Assessment of Image Quality",
+        "summary": "Deep learning models can generate virtual immunohistochemistry (IHC) stains\nfrom hematoxylin and eosin (H&E) images, offering a scalable and low-cost\nalternative to laboratory IHC. However, reliable evaluation of image quality\nremains a challenge as current texture- and distribution-based metrics quantify\nimage fidelity rather than the accuracy of IHC staining. Here, we introduce an\nautomated and accuracy grounded framework to determine image quality across\nsixteen paired or unpaired image translation models. Using color deconvolution,\nwe generate masks of pixels stained brown (i.e., IHC-positive) as predicted by\neach virtual IHC model. We use the segmented masks of real and virtual IHC to\ncompute stain accuracy metrics (Dice, IoU, Hausdorff distance) that directly\nquantify correct pixel - level labeling without needing expert manual\nannotations. Our results demonstrate that conventional image fidelity metrics,\nincluding Frechet Inception Distance (FID), peak signal-to-noise ratio (PSNR),\nand structural similarity (SSIM), correlate poorly with stain accuracy and\npathologist assessment. Paired models such as PyramidPix2Pix and AdaptiveNCE\nachieve the highest stain accuracy, whereas unpaired diffusion- and GAN-based\nmodels are less reliable in providing accurate IHC positive pixel labels.\nMoreover, whole-slide images (WSI) reveal performance declines that are\ninvisible in patch-based evaluations, emphasizing the need for WSI-level\nbenchmarks. Together, this framework defines a reproducible approach for\nassessing the quality of virtual IHC models, a critical step to accelerate\ntranslation towards routine use by pathologists.",
+        "url": "http://arxiv.org/abs/2511.04615v1",
+        "published_date": "2025-11-06T18:09:09+00:00",
+        "updated_date": "2025-11-06T18:09:09+00:00",
+        "categories": [
+            "cs.CV"
+        ],
+        "authors": [
+            "Tushar Kataria",
+            "Shikha Dubey",
+            "Mary Bronner",
+            "Jolanta Jedrzkiewicz",
+            "Ben J. Brintz",
+            "Shireen Y. Elhabian",
+            "Beatrice S. Knudsen"
+        ],
+        "ai_categories": []
+    }
+]

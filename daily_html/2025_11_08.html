@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ArXiv CS.CV Papers (Image/Video Generation) - November 08, 2025</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/framer-motion/10.16.4/framer-motion.dev.js"></script>
+    <!-- Example using Font Awesome (replace with your preferred icon library if needed) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+        :root {
+            /* New Palette: Light, Clean, Futuristic with Teal/Aqua accents */
+            --bg-color: #f8fafc; /* Tailwind slate-50 (Very Light Gray) */
+            --card-bg-color: #ffffff; /* White */
+            --text-color: #1e293b; /* Tailwind slate-800 (Dark Gray-Blue) */
+            --text-muted-color: #64748b; /* Tailwind slate-500 (Medium Gray-Blue) */
+            --header-color: #0f172a; /* Tailwind slate-900 (Very Dark Blue) */
+            --highlight-primary: #14b8a6; /* Tailwind teal-500 */
+            --highlight-secondary: #67e8f9; /* Tailwind cyan-300 */
+            --border-color: #e2e8f0; /* Tailwind slate-200 (Light Gray) */
+            --shadow-color: rgba(15, 23, 42, 0.08); /* Subtle shadow based on slate-900 */
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden; /* Prevent horizontal scroll */
+            line-height: 1.6;
+        }
+
+        .bento-grid {
+            display: grid;
+            gap: 1.5rem; /* Tailwind gap-6 */
+            grid-template-columns: 1fr; /* Force single column */
+            padding-bottom: 4rem; /* Add padding at the bottom */
+        }
+
+        .bento-item {
+            /* Apply semi-transparent white background and blur */
+            background-color: rgba(255, 255, 255, 0.7); /* White with 70% opacity */
+            backdrop-filter: blur(10px); /* Apply blur effect */
+            -webkit-backdrop-filter: blur(10px); /* Safari prefix */
+            border-radius: 1rem; /* Slightly larger radius */
+            padding: 1.75rem; /* Slightly more padding */
+            border: 1px solid rgba(226, 232, 240, 0.5); /* Lighter border with transparency */
+            box-shadow: 0 4px 12px var(--shadow-color);
+            transition: transform 0.3s ease-out, box-shadow 0.3s ease-out, background-color 0.3s ease-out;
+            overflow: hidden; /* Ensure content doesn't overflow */
+            position: relative; /* For potential pseudo-elements */
+        }
+
+        /* Removed ::before pseudo-element for a cleaner look */
+
+
+        .bento-item:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 10px 20px var(--shadow-color), 0 4px 8px rgba(15, 23, 42, 0.06); /* Adjusted hover shadow */
+        }
+
+        .paper-title {
+            font-size: 1.125rem; /* Tailwind text-lg */
+            font-weight: 600; /* Tailwind font-semibold */
+            color: var(--highlight-primary); /* Use new primary highlight */
+            margin-bottom: 0.75rem; /* Tailwind mb-3 */
+            line-height: 1.4;
+        }
+
+        .paper-summary {
+            font-size: 0.875rem; /* Tailwind text-sm */
+            color: var(--text-muted-color);
+            margin-bottom: 1.25rem; /* Tailwind mb-5 */
+            line-height: 1.6;
+        }
+
+        .paper-link {
+            display: inline-flex; /* Use flex for icon alignment */
+            align-items: center;
+            font-size: 0.875rem; /* Tailwind text-sm */
+            font-weight: 600;
+            color: var(--highlight-primary);
+            text-decoration: none;
+            padding: 0.5rem 1rem; /* Add padding */
+            border-radius: 0.5rem; /* Slightly rounder */
+            background-color: rgba(20, 184, 166, 0.08); /* Subtle teal background */
+            border: 1px solid rgba(20, 184, 166, 0.2);
+            transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+        }
+
+        .paper-link i {
+            margin-right: 0.5rem; /* Tailwind mr-2 */
+            transition: transform 0.3s ease;
+        }
+
+        .paper-link:hover {
+            background-color: rgba(20, 184, 166, 0.15);
+            color: #0d9488; /* Darker teal on hover */
+            transform: translateY(-1px);
+        }
+        .paper-link:hover i {
+             transform: translateX(2px);
+        }
+
+        .paper-authors {
+            font-size: 0.75rem; /* Tailwind text-xs */
+            color: var(--text-muted-color);
+            margin-top: 1rem; /* Tailwind mt-4 */
+            font-style: italic;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 3rem; /* Tailwind mb-12 */
+            padding-top: 3rem; /* Tailwind pt-12 */
+        }
+
+        .header h1 {
+            font-size: 2.5rem; /* Tailwind text-4xl or 5xl */
+            font-weight: 700; /* Tailwind font-bold */
+            color: var(--header-color);
+            letter-spacing: -0.025em; /* Tailwind tracking-tight */
+            margin-bottom: 0.5rem;
+            /* Optional: Add a subtle text gradient */
+            /* background: linear-gradient(90deg, var(--highlight-primary), var(--highlight-secondary)); */
+            /* -webkit-background-clip: text; */
+            /* -webkit-text-fill-color: transparent; */
+        }
+
+        .header p {
+            font-size: 1.125rem; /* Tailwind text-lg */
+            color: var(--text-muted-color);
+            margin-top: 0.5rem; /* Tailwind mt-2 */
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .footer {
+            text-align: center;
+            color: var(--text-muted-color);
+            font-size: 0.875rem; /* Tailwind text-sm */
+            padding-top: 2rem;
+            padding-bottom: 2rem; /* Tailwind py-8 */
+            border-top: 1px solid var(--border-color);
+            margin-top: 4rem;
+        }
+
+        /* Simple line graphic element (optional) */
+        .line-graphic {
+            height: 1px; /* Thinner line */
+            background: linear-gradient(90deg, rgba(20, 184, 166, 0), var(--highlight-primary), rgba(20, 184, 166, 0));
+            opacity: 0.6;
+            margin: 1.5rem 0; /* Adjust margin */
+        }
+
+        /* Framer Motion requires the script, styles enhance appearance */
+        [data-motion-element] {
+             /* Base styles for elements animated by Framer Motion */
+        }
+
+        .paper-tldr {
+            font-size: 0.95rem; /* Slightly bigger than summary */
+            color: #475569; /* Changed to Tailwind slate-600 (slightly darker than summary) */
+            margin-top: 0.75rem; /* Tailwind mt-3 */
+            margin-bottom: 0.75rem; /* Tailwind mb-2 */
+            /* font-style: italic; */
+            font-weight: bold;
+        }
+
+        .paper-rating {
+            margin-top: 1rem; /* Tailwind mt-4 */
+            margin-bottom: 1rem; /* Tailwind mb-4 */
+            color: #f59e0b; /* Tailwind amber-500 */
+        }
+
+        .paper-rating i {
+            margin-right: 0.125rem; /* Tailwind mr-0.5 */
+        }
+
+        /* Apply consistent star color to sub-ratings */
+        .paper-sub-ratings .rating-item i {
+            color: #f59e0b; /* Match overall rating star color (amber-500) */
+            margin-right: 0.125rem; /* Consistent spacing */
+        }
+
+    </style>
+</head>
+<body class="container mx-auto px-4 antialiased">
+
+    <motion.div
+        initial="{ opacity: 0, y: -30 }"
+        animate="{ opacity: 1, y: 0 }"
+        transition="{ duration: 0.6, ease: 'easeOut' }"
+        class="header"
+        data-motion-element
+    >
+        <h1>AIGC Daily Papers</h1>
+        <p>Daily papers related to Image/Video/Multimodal Generation from cs.CV</p>
+        <p>November 08, 2025</p>
+        <div class="line-graphic mt-4 mb-8 mx-auto w-1/4"></div> <!-- Added line graphic -->
+    </motion.div>
+
+    <div class="bento-grid" id="paper-grid">
+        
+        <motion.div
+            initial="{ opacity: 0, y: 50, scale: 0.9 }"
+            whileInView="{ opacity: 1, y: 0, scale: 1 }"
+            viewport="{ once: true, amount: 0.2 }" /* Trigger when 20% is visible */
+            transition="{ duration: 0.5, delay: 0.0, ease: 'easeOut' }"  
+            class="bento-item"
+            data-motion-element
+        >
+            <h2 class="paper-title">Carousel: A High-Resolution Dataset for Multi-Target Automatic Image Cropping</h2>
+            <p class="paper-summary">Automatic image cropping is a method for maximizing the human-perceived
+quality of cropped regions in photographs. Although several works have proposed
+techniques for producing singular crops, little work has addressed the problem
+of producing multiple, distinct crops with aesthetic appeal. In this paper, we
+motivate the problem with a discussion on modern social media applications,
+introduce a dataset of 277 relevant images and human labels, and evaluate the
+efficacy of several single-crop models with an image partitioning algorithm as
+a pre-processing step. The dataset is available at
+https://github.com/RafeLoya/carousel.</p>
+            
+            
+
+            
+            
+            
+
+            
+
+            <a href="http://arxiv.org/abs/2511.04680v1" target="_blank" class="paper-link">
+                <i class="fas fa-file-pdf mr-1"></i> Read Paper (PDF)
+            </a>
+            
+            <p class="paper-authors">Authors: Rafe Loya, Andrew Hamara, Benjamin Estell, Benjamin Kilpatrick, Andrew C. Freeman</p>
+            
+        </motion.div>
+        
+        <motion.div
+            initial="{ opacity: 0, y: 50, scale: 0.9 }"
+            whileInView="{ opacity: 1, y: 0, scale: 1 }"
+            viewport="{ once: true, amount: 0.2 }" /* Trigger when 20% is visible */
+            transition="{ duration: 0.5, delay: 0.05, ease: 'easeOut' }"  
+            class="bento-item"
+            data-motion-element
+        >
+            <h2 class="paper-title">GentleHumanoid: Learning Upper-body Compliance for Contact-rich Human and Object Interaction</h2>
+            <p class="paper-summary">Humanoid robots are expected to operate in human-centered environments where
+safe and natural physical interaction is essential. However, most recent
+reinforcement learning (RL) policies emphasize rigid tracking and suppress
+external forces. Existing impedance-augmented approaches are typically
+restricted to base or end-effector control and focus on resisting extreme
+forces rather than enabling compliance. We introduce GentleHumanoid, a
+framework that integrates impedance control into a whole-body motion tracking
+policy to achieve upper-body compliance. At its core is a unified spring-based
+formulation that models both resistive contacts (restoring forces when pressing
+against surfaces) and guiding contacts (pushes or pulls sampled from human
+motion data). This formulation ensures kinematically consistent forces across
+the shoulder, elbow, and wrist, while exposing the policy to diverse
+interaction scenarios. Safety is further supported through task-adjustable
+force thresholds. We evaluate our approach in both simulation and on the
+Unitree G1 humanoid across tasks requiring different levels of compliance,
+including gentle hugging, sit-to-stand assistance, and safe object
+manipulation. Compared to baselines, our policy consistently reduces peak
+contact forces while maintaining task success, resulting in smoother and more
+natural interactions. These results highlight a step toward humanoid robots
+that can safely and effectively collaborate with humans and handle objects in
+real-world environments.</p>
+            
+            
+
+            
+            
+            
+
+            
+
+            <a href="http://arxiv.org/abs/2511.04679v1" target="_blank" class="paper-link">
+                <i class="fas fa-file-pdf mr-1"></i> Read Paper (PDF)
+            </a>
+            
+            <p class="paper-authors">Authors: Qingzhou Lu, Yao Feng, Baiyu Shi, Michael Piseno, Zhenan Bao, C. Karen Liu</p>
+            
+        </motion.div>
+        
+        <motion.div
+            initial="{ opacity: 0, y: 50, scale: 0.9 }"
+            whileInView="{ opacity: 1, y: 0, scale: 1 }"
+            viewport="{ once: true, amount: 0.2 }" /* Trigger when 20% is visible */
+            transition="{ duration: 0.5, delay: 0.1, ease: 'easeOut' }"  
+            class="bento-item"
+            data-motion-element
+        >
+            <h2 class="paper-title">Tracking and Understanding Object Transformations</h2>
+            <p class="paper-summary">Real-world objects frequently undergo state transformations. From an apple
+being cut into pieces to a butterfly emerging from its cocoon, tracking through
+these changes is important for understanding real-world objects and dynamics.
+However, existing methods often lose track of the target object after
+transformation, due to significant changes in object appearance. To address
+this limitation, we introduce the task of Track Any State: tracking objects
+through transformations while detecting and describing state changes,
+accompanied by a new benchmark dataset, VOST-TAS. To tackle this problem, we
+present TubeletGraph, a zero-shot system that recovers missing objects after
+transformation and maps out how object states are evolving over time.
+TubeletGraph first identifies potentially overlooked tracks, and determines
+whether they should be integrated based on semantic and proximity priors. Then,
+it reasons about the added tracks and generates a state graph describing each
+observed transformation. TubeletGraph achieves state-of-the-art tracking
+performance under transformations, while demonstrating deeper understanding of
+object transformations and promising capabilities in temporal grounding and
+semantic reasoning for complex object transformations. Code, additional
+results, and the benchmark dataset are available at
+https://tubelet-graph.github.io.</p>
+            
+            
+
+            
+            
+            
+
+            
+
+            <a href="http://arxiv.org/abs/2511.04678v1" target="_blank" class="paper-link">
+                <i class="fas fa-file-pdf mr-1"></i> Read Paper (PDF)
+            </a>
+            
+            <p class="paper-authors">Authors: Yihong Sun, Xinyu Yang, Jennifer J. Sun, Bharath Hariharan</p>
+            
+        </motion.div>
+        
+        <motion.div
+            initial="{ opacity: 0, y: 50, scale: 0.9 }"
+            whileInView="{ opacity: 1, y: 0, scale: 1 }"
+            viewport="{ once: true, amount: 0.2 }" /* Trigger when 20% is visible */
+            transition="{ duration: 0.5, delay: 0.15000000000000002, ease: 'easeOut' }"  
+            class="bento-item"
+            data-motion-element
+        >
+            <h2 class="paper-title">InfinityStar: Unified Spacetime AutoRegressive Modeling for Visual Generation</h2>
+            <p class="paper-summary">We introduce InfinityStar, a unified spacetime autoregressive framework for
+high-resolution image and dynamic video synthesis. Building on the recent
+success of autoregressive modeling in both vision and language, our purely
+discrete approach jointly captures spatial and temporal dependencies within a
+single architecture. This unified design naturally supports a variety of
+generation tasks such as text-to-image, text-to-video, image-to-video, and long
+interactive video synthesis via straightforward temporal autoregression.
+Extensive experiments demonstrate that InfinityStar scores 83.74 on VBench,
+outperforming all autoregressive models by large margins, even surpassing some
+diffusion competitors like HunyuanVideo. Without extra optimizations, our model
+generates a 5s, 720p video approximately 10x faster than leading
+diffusion-based methods. To our knowledge, InfinityStar is the first discrete
+autoregressive video generator capable of producing industrial level 720p
+videos. We release all code and models to foster further research in efficient,
+high-quality video generation.</p>
+            
+            
+
+            
+            
+            
+
+            
+
+            <a href="http://arxiv.org/abs/2511.04675v1" target="_blank" class="paper-link">
+                <i class="fas fa-file-pdf mr-1"></i> Read Paper (PDF)
+            </a>
+            
+            <p class="paper-authors">Authors: Jinlai Liu, Jian Han, Bin Yan, Hui Wu, Fengda Zhu, Xing Wang, Yi Jiang, Bingyue Peng, Zehuan Yuan</p>
+            
+        </motion.div>
+        
+        <motion.div
+            initial="{ opacity: 0, y: 50, scale: 0.9 }"
+            whileInView="{ opacity: 1, y: 0, scale: 1 }"
+            viewport="{ once: true, amount: 0.2 }" /* Trigger when 20% is visible */
+            transition="{ duration: 0.5, delay: 0.2, ease: 'easeOut' }"  
+            class="bento-item"
+            data-motion-element
+        >
+            <h2 class="paper-title">X-Diffusion: Training Diffusion Policies on Cross-Embodiment Human Demonstrations</h2>
+            <p class="paper-summary">Human videos can be recorded quickly and at scale, making them an appealing
+source of training data for robot learning. However, humans and robots differ
+fundamentally in embodiment, resulting in mismatched action execution. Direct
+kinematic retargeting of human hand motion can therefore produce actions that
+are physically infeasible for robots. Despite these low-level differences,
+human demonstrations provide valuable motion cues about how to manipulate and
+interact with objects. Our key idea is to exploit the forward diffusion
+process: as noise is added to actions, low-level execution differences fade
+while high-level task guidance is preserved. We present X-Diffusion, a
+principled framework for training diffusion policies that maximally leverages
+human data without learning dynamically infeasible motions. X-Diffusion first
+trains a classifier to predict whether a noisy action is executed by a human or
+robot. Then, a human action is incorporated into policy training only after
+adding sufficient noise such that the classifier cannot discern its embodiment.
+Actions consistent with robot execution supervise fine-grained denoising at low
+noise levels, while mismatched human actions provide only coarse guidance at
+higher noise levels. Our experiments show that naive co-training under
+execution mismatches degrades policy performance, while X-Diffusion
+consistently improves it. Across five manipulation tasks, X-Diffusion achieves
+a 16% higher average success rate than the best baseline. The project website
+is available at https://portal-cornell.github.io/X-Diffusion/.</p>
+            
+            
+
+            
+            
+            
+
+            
+
+            <a href="http://arxiv.org/abs/2511.04671v1" target="_blank" class="paper-link">
+                <i class="fas fa-file-pdf mr-1"></i> Read Paper (PDF)
+            </a>
+            
+            <p class="paper-authors">Authors: Maximus A. Pace, Prithwish Dan, Chuanruo Ning, Atiksh Bhardwaj, Audrey Du, Edward W. Duan, Wei-Chiu Ma, Kushal Kedia</p>
+            
+        </motion.div>
+        
+        <motion.div
+            initial="{ opacity: 0, y: 50, scale: 0.9 }"
+            whileInView="{ opacity: 1, y: 0, scale: 1 }"
+            viewport="{ once: true, amount: 0.2 }" /* Trigger when 20% is visible */
+            transition="{ duration: 0.5, delay: 0.25, ease: 'easeOut' }"  
+            class="bento-item"
+            data-motion-element
+        >
+            <h2 class="paper-title">Cambrian-S: Towards Spatial Supersensing in Video</h2>
+            <p class="paper-summary">We argue that progress in true multimodal intelligence calls for a shift from
+reactive, task-driven systems and brute-force long context towards a broader
+paradigm of supersensing. We frame spatial supersensing as four stages beyond
+linguistic-only understanding: semantic perception (naming what is seen),
+streaming event cognition (maintaining memory across continuous experiences),
+implicit 3D spatial cognition (inferring the world behind pixels), and
+predictive world modeling (creating internal models that filter and organize
+information). Current benchmarks largely test only the early stages, offering
+narrow coverage of spatial cognition and rarely challenging models in ways that
+require true world modeling. To drive progress in spatial supersensing, we
+present VSI-SUPER, a two-part benchmark: VSR (long-horizon visual spatial
+recall) and VSC (continual visual spatial counting). These tasks require
+arbitrarily long video inputs yet are resistant to brute-force context
+expansion. We then test data scaling limits by curating VSI-590K and training
+Cambrian-S, achieving +30% absolute improvement on VSI-Bench without
+sacrificing general capabilities. Yet performance on VSI-SUPER remains limited,
+indicating that scale alone is insufficient for spatial supersensing. We
+propose predictive sensing as a path forward, presenting a proof-of-concept in
+which a self-supervised next-latent-frame predictor leverages surprise
+(prediction error) to drive memory and event segmentation. On VSI-SUPER, this
+approach substantially outperforms leading proprietary baselines, showing that
+spatial supersensing requires models that not only see but also anticipate,
+select, and organize experience.</p>
+            
+            
+
+            
+            
+            
+
+            
+
+            <a href="http://arxiv.org/abs/2511.04670v1" target="_blank" class="paper-link">
+                <i class="fas fa-file-pdf mr-1"></i> Read Paper (PDF)
+            </a>
+            
+            <p class="paper-authors">Authors: Shusheng Yang, Jihan Yang, Pinzhi Huang, Ellis Brown, Zihao Yang, Yue Yu, Shengbang Tong, Zihan Zheng, Yifan Xu, Muhan Wang, Daohan Lu, Rob Fergus, Yann LeCun, Li Fei-Fei, Saining Xie</p>
+            
+        </motion.div>
+        
+        <motion.div
+            initial="{ opacity: 0, y: 50, scale: 0.9 }"
+            whileInView="{ opacity: 1, y: 0, scale: 1 }"
+            viewport="{ once: true, amount: 0.2 }" /* Trigger when 20% is visible */
+            transition="{ duration: 0.5, delay: 0.30000000000000004, ease: 'easeOut' }"  
+            class="bento-item"
+            data-motion-element
+        >
+            <h2 class="paper-title">SIMS-V: Simulated Instruction-Tuning for Spatial Video Understanding</h2>
+            <p class="paper-summary">Despite impressive high-level video comprehension, multimodal language models
+struggle with spatial reasoning across time and space. While current spatial
+training approaches rely on real-world video data, obtaining diverse footage
+with precise spatial annotations remains a bottleneck. To alleviate this
+bottleneck, we present SIMS-V -- a systematic data-generation framework that
+leverages the privileged information of 3D simulators to create spatially-rich
+video training data for multimodal language models. Using this framework, we
+investigate which properties of simulated data drive effective real-world
+transfer through systematic ablations of question types, mixes, and scales. We
+identify a minimal set of three question categories (metric measurement,
+perspective-dependent reasoning, and temporal tracking) that prove most
+effective for developing transferable spatial intelligence, outperforming
+comprehensive coverage despite using fewer question types. These insights
+enable highly efficient training: our 7B-parameter video LLM fine-tuned on just
+25K simulated examples outperforms the larger 72B baseline and achieves
+competitive performance with proprietary models on rigorous real-world spatial
+reasoning benchmarks. Our approach demonstrates robust generalization,
+maintaining performance on general video understanding while showing
+substantial improvements on embodied and real-world spatial tasks.</p>
+            
+            
+
+            
+            
+            
+
+            
+
+            <a href="http://arxiv.org/abs/2511.04668v1" target="_blank" class="paper-link">
+                <i class="fas fa-file-pdf mr-1"></i> Read Paper (PDF)
+            </a>
+            
+            <p class="paper-authors">Authors: Ellis Brown, Arijit Ray, Ranjay Krishna, Ross Girshick, Rob Fergus, Saining Xie</p>
+            
+        </motion.div>
+        
+        <motion.div
+            initial="{ opacity: 0, y: 50, scale: 0.9 }"
+            whileInView="{ opacity: 1, y: 0, scale: 1 }"
+            viewport="{ once: true, amount: 0.2 }" /* Trigger when 20% is visible */
+            transition="{ duration: 0.5, delay: 0.35000000000000003, ease: 'easeOut' }"  
+            class="bento-item"
+            data-motion-element
+        >
+            <h2 class="paper-title">Real-to-Sim Robot Policy Evaluation with Gaussian Splatting Simulation of Soft-Body Interactions</h2>
+            <p class="paper-summary">Robotic manipulation policies are advancing rapidly, but their direct
+evaluation in the real world remains costly, time-consuming, and difficult to
+reproduce, particularly for tasks involving deformable objects. Simulation
+provides a scalable and systematic alternative, yet existing simulators often
+fail to capture the coupled visual and physical complexity of soft-body
+interactions. We present a real-to-sim policy evaluation framework that
+constructs soft-body digital twins from real-world videos and renders robots,
+objects, and environments with photorealistic fidelity using 3D Gaussian
+Splatting. We validate our approach on representative deformable manipulation
+tasks, including plush toy packing, rope routing, and T-block pushing,
+demonstrating that simulated rollouts correlate strongly with real-world
+execution performance and reveal key behavioral patterns of learned policies.
+Our results suggest that combining physics-informed reconstruction with
+high-quality rendering enables reproducible, scalable, and accurate evaluation
+of robotic manipulation policies. Website: https://real2sim-eval.github.io/</p>
+            
+            
+
+            
+            
+            
+
+            
+
+            <a href="http://arxiv.org/abs/2511.04665v1" target="_blank" class="paper-link">
+                <i class="fas fa-file-pdf mr-1"></i> Read Paper (PDF)
+            </a>
+            
+            <p class="paper-authors">Authors: Kaifeng Zhang, Shuo Sha, Hanxiao Jiang, Matthew Loper, Hyunjong Song, Guangyan Cai, Zhuo Xu, Xiaochen Hu, Changxi Zheng, Yunzhu Li</p>
+            
+        </motion.div>
+        
+        <motion.div
+            initial="{ opacity: 0, y: 50, scale: 0.9 }"
+            whileInView="{ opacity: 1, y: 0, scale: 1 }"
+            viewport="{ once: true, amount: 0.2 }" /* Trigger when 20% is visible */
+            transition="{ duration: 0.5, delay: 0.4, ease: 'easeOut' }"  
+            class="bento-item"
+            data-motion-element
+        >
+            <h2 class="paper-title">Benchmark Designers Should "Train on the Test Set" to Expose Exploitable Non-Visual Shortcuts</h2>
+            <p class="paper-summary">Robust benchmarks are crucial for evaluating Multimodal Large Language Models
+(MLLMs). Yet we find that models can ace many multimodal benchmarks without
+strong visual understanding, instead exploiting biases, linguistic priors, and
+superficial patterns. This is especially problematic for vision-centric
+benchmarks that are meant to require visual inputs. We adopt a diagnostic
+principle for benchmark design: if a benchmark can be gamed, it will be.
+Designers should therefore try to ``game'' their own benchmarks first, using
+diagnostic and debiasing procedures to systematically identify and mitigate
+non-visual biases. Effective diagnosis requires directly ``training on the test
+set'' -- probing the released test set for its intrinsic, exploitable patterns.
+  We operationalize this standard with two components. First, we diagnose
+benchmark susceptibility using a ``Test-set Stress-Test'' (TsT) methodology.
+Our primary diagnostic tool involves fine-tuning a powerful Large Language
+Model via $k$-fold cross-validation on exclusively the non-visual, textual
+inputs of the test set to reveal shortcut performance and assign each sample a
+bias score $s(x)$. We complement this with a lightweight Random Forest-based
+diagnostic operating on hand-crafted features for fast, interpretable auditing.
+Second, we debias benchmarks by filtering high-bias samples using an
+``Iterative Bias Pruning'' (IBP) procedure. Applying this framework to four
+benchmarks -- VSI-Bench, CV-Bench, MMMU, and VideoMME -- we uncover pervasive
+non-visual biases. As a case study, we apply our full framework to create
+VSI-Bench-Debiased, demonstrating reduced non-visual solvability and a wider
+vision-blind performance gap than the original.</p>
+            
+            
+
+            
+            
+            
+
+            
+
+            <a href="http://arxiv.org/abs/2511.04655v1" target="_blank" class="paper-link">
+                <i class="fas fa-file-pdf mr-1"></i> Read Paper (PDF)
+            </a>
+            
+            <p class="paper-authors">Authors: Ellis Brown, Jihan Yang, Shusheng Yang, Rob Fergus, Saining Xie</p>
+            
+        </motion.div>
+        
+        <motion.div
+            initial="{ opacity: 0, y: 50, scale: 0.9 }"
+            whileInView="{ opacity: 1, y: 0, scale: 1 }"
+            viewport="{ once: true, amount: 0.2 }" /* Trigger when 20% is visible */
+            transition="{ duration: 0.5, delay: 0.45, ease: 'easeOut' }"  
+            class="bento-item"
+            data-motion-element
+        >
+            <h2 class="paper-title">Polarization-resolved imaging improves eye tracking</h2>
+            <p class="paper-summary">Polarization-resolved near-infrared imaging adds a useful optical contrast
+mechanism to eye tracking by measuring the polarization state of light
+reflected by ocular tissues in addition to its intensity. In this paper we
+demonstrate how this contrast can be used to enable eye tracking. Specifically,
+we demonstrate that a polarization-enabled eye tracking (PET) system composed
+of a polarization--filter--array camera paired with a linearly polarized
+near-infrared illuminator can reveal trackable features across the sclera and
+gaze-informative patterns on the cornea, largely absent in intensity-only
+images. Across a cohort of 346 participants, convolutional neural network based
+machine learning models trained on data from PET reduced the median
+95th-percentile absolute gaze error by 10--16\% relative to capacity-matched
+intensity baselines under nominal conditions and in the presence of eyelid
+occlusions, eye-relief changes, and pupil-size variation. These results link
+light--tissue polarization effects to practical gains in human--computer
+interaction and position PET as a simple, robust sensing modality for future
+wearable devices.</p>
+            
+            
+
+            
+            
+            
+
+            
+
+            <a href="http://arxiv.org/abs/2511.04652v1" target="_blank" class="paper-link">
+                <i class="fas fa-file-pdf mr-1"></i> Read Paper (PDF)
+            </a>
+            
+            <p class="paper-authors">Authors: Mantas Žurauskas, Tom Bu, Sanaz Alali, Beyza Kalkanli, Derek Shi, Fernando Alamos, Gauresh Pandit, Christopher Mei, Ali Behrooz, Ramin Mirjalili, Dave Stronks, Alexander Fix, Dmitri Model</p>
+            
+        </motion.div>
+        
+        <motion.div
+            initial="{ opacity: 0, y: 50, scale: 0.9 }"
+            whileInView="{ opacity: 1, y: 0, scale: 1 }"
+            viewport="{ once: true, amount: 0.2 }" /* Trigger when 20% is visible */
+            transition="{ duration: 0.5, delay: 0.5, ease: 'easeOut' }"  
+            class="bento-item"
+            data-motion-element
+        >
+            <h2 class="paper-title">NovisVQ: A Streaming Convolutional Neural Network for No-Reference Opinion-Unaware Frame Quality Assessment</h2>
+            <p class="paper-summary">Video quality assessment (VQA) is vital for computer vision tasks, but
+existing approaches face major limitations: full-reference (FR) metrics require
+clean reference videos, and most no-reference (NR) models depend on training on
+costly human opinion labels. Moreover, most opinion-unaware NR methods are
+image-based, ignoring temporal context critical for video object detection. In
+this work, we present a scalable, streaming-based VQA model that is both
+no-reference and opinion-unaware. Our model leverages synthetic degradations of
+the DAVIS dataset, training a temporal-aware convolutional architecture to
+predict FR metrics (LPIPS , PSNR, SSIM) directly from degraded video, without
+references at inference. We show that our streaming approach outperforms our
+own image-based baseline by generalizing across diverse degradations,
+underscoring the value of temporal modeling for scalable VQA in real-world
+vision systems. Additionally, we demonstrate that our model achieves higher
+correlation with full-reference metrics compared to BRISQUE, a widely-used
+opinion-aware image quality assessment baseline, validating the effectiveness
+of our temporal, opinion-unaware approach.</p>
+            
+            
+
+            
+            
+            
+
+            
+
+            <a href="http://arxiv.org/abs/2511.04628v1" target="_blank" class="paper-link">
+                <i class="fas fa-file-pdf mr-1"></i> Read Paper (PDF)
+            </a>
+            
+            <p class="paper-authors">Authors: Kylie Cancilla, Alexander Moore, Amar Saini, Carmen Carrano</p>
+            
+        </motion.div>
+        
+        <motion.div
+            initial="{ opacity: 0, y: 50, scale: 0.9 }"
+            whileInView="{ opacity: 1, y: 0, scale: 1 }"
+            viewport="{ once: true, amount: 0.2 }" /* Trigger when 20% is visible */
+            transition="{ duration: 0.5, delay: 0.55, ease: 'easeOut' }"  
+            class="bento-item"
+            data-motion-element
+        >
+            <h2 class="paper-title">Building Trust in Virtual Immunohistochemistry: Automated Assessment of Image Quality</h2>
+            <p class="paper-summary">Deep learning models can generate virtual immunohistochemistry (IHC) stains
+from hematoxylin and eosin (H&E) images, offering a scalable and low-cost
+alternative to laboratory IHC. However, reliable evaluation of image quality
+remains a challenge as current texture- and distribution-based metrics quantify
+image fidelity rather than the accuracy of IHC staining. Here, we introduce an
+automated and accuracy grounded framework to determine image quality across
+sixteen paired or unpaired image translation models. Using color deconvolution,
+we generate masks of pixels stained brown (i.e., IHC-positive) as predicted by
+each virtual IHC model. We use the segmented masks of real and virtual IHC to
+compute stain accuracy metrics (Dice, IoU, Hausdorff distance) that directly
+quantify correct pixel - level labeling without needing expert manual
+annotations. Our results demonstrate that conventional image fidelity metrics,
+including Frechet Inception Distance (FID), peak signal-to-noise ratio (PSNR),
+and structural similarity (SSIM), correlate poorly with stain accuracy and
+pathologist assessment. Paired models such as PyramidPix2Pix and AdaptiveNCE
+achieve the highest stain accuracy, whereas unpaired diffusion- and GAN-based
+models are less reliable in providing accurate IHC positive pixel labels.
+Moreover, whole-slide images (WSI) reveal performance declines that are
+invisible in patch-based evaluations, emphasizing the need for WSI-level
+benchmarks. Together, this framework defines a reproducible approach for
+assessing the quality of virtual IHC models, a critical step to accelerate
+translation towards routine use by pathologists.</p>
+            
+            
+
+            
+            
+            
+
+            
+
+            <a href="http://arxiv.org/abs/2511.04615v1" target="_blank" class="paper-link">
+                <i class="fas fa-file-pdf mr-1"></i> Read Paper (PDF)
+            </a>
+            
+            <p class="paper-authors">Authors: Tushar Kataria, Shikha Dubey, Mary Bronner, Jolanta Jedrzkiewicz, Ben J. Brintz, Shireen Y. Elhabian, Beatrice S. Knudsen</p>
+            
+        </motion.div>
+        
+    </div>
+
+    <footer class="footer">
+        Generated on 2025-11-08 04:26:55 UTC. Powered by <a href="https://github.com/onion-liu" target="_blank">onion-liu</a>.
+    </footer>
+
+</body>
+</html>
