@@ -1,0 +1,182 @@
+[
+    {
+        "title": "Visual Spatial Tuning",
+        "summary": "Capturing spatial relationships from visual inputs is a cornerstone of\nhuman-like general intelligence. Several previous studies have tried to enhance\nthe spatial awareness of Vision-Language Models (VLMs) by adding extra expert\nencoders, which brings extra overhead and usually harms general capabilities.\nTo enhance the spatial ability in general architectures, we introduce Visual\nSpatial Tuning (VST), a comprehensive framework to cultivate VLMs with\nhuman-like visuospatial abilities, from spatial perception to reasoning. We\nfirst attempt to enhance spatial perception in VLMs by constructing a\nlarge-scale dataset termed VST-P, which comprises 4.1 million samples spanning\n19 skills across single views, multiple images, and videos. Then, we present\nVST-R, a curated dataset with 135K samples that instruct models to reason in\nspace. In particular, we adopt a progressive training pipeline: supervised\nfine-tuning to build foundational spatial knowledge, followed by reinforcement\nlearning to further improve spatial reasoning abilities. Without the\nside-effect to general capabilities, the proposed VST consistently achieves\nstate-of-the-art results on several spatial benchmarks, including $34.8\\%$ on\nMMSI-Bench and $61.2\\%$ on VSIBench. It turns out that the\nVision-Language-Action models can be significantly enhanced with the proposed\nspatial tuning paradigm, paving the way for more physically grounded AI.",
+        "url": "http://arxiv.org/abs/2511.05491v1",
+        "published_date": "2025-11-07T18:59:16+00:00",
+        "updated_date": "2025-11-07T18:59:16+00:00",
+        "categories": [
+            "cs.CV"
+        ],
+        "authors": [
+            "Rui Yang",
+            "Ziyu Zhu",
+            "Yanwei Li",
+            "Jingjia Huang",
+            "Shen Yan",
+            "Siyuan Zhou",
+            "Zhe Liu",
+            "Xiangtai Li",
+            "Shuangye Li",
+            "Wenqian Wang",
+            "Yi Lin",
+            "Hengshuang Zhao"
+        ],
+        "ai_categories": []
+    },
+    {
+        "title": "TimeSearch-R: Adaptive Temporal Search for Long-Form Video Understanding via Self-Verification Reinforcement Learning",
+        "summary": "Temporal search aims to identify a minimal set of relevant frames from tens\nof thousands based on a given query, serving as a foundation for accurate\nlong-form video understanding. Existing works attempt to progressively narrow\nthe search space. However, these approaches typically rely on a hand-crafted\nsearch process, lacking end-to-end optimization for learning optimal search\nstrategies. In this paper, we propose TimeSearch-R, which reformulates temporal\nsearch as interleaved text-video thinking, seamlessly integrating searching\nvideo clips into the reasoning process through reinforcement learning (RL).\nHowever, applying RL training methods, such as Group Relative Policy\nOptimization (GRPO), to video reasoning can result in unsupervised intermediate\nsearch decisions. This leads to insufficient exploration of the video content\nand inconsistent logical reasoning. To address these issues, we introduce GRPO\nwith Completeness Self-Verification (GRPO-CSV), which gathers searched video\nframes from the interleaved reasoning process and utilizes the same policy\nmodel to verify the adequacy of searched frames, thereby improving the\ncompleteness of video reasoning. Additionally, we construct datasets\nspecifically designed for the SFT cold-start and RL training of GRPO-CSV,\nfiltering out samples with weak temporal dependencies to enhance task\ndifficulty and improve temporal search capabilities. Extensive experiments\ndemonstrate that TimeSearch-R achieves significant improvements on temporal\nsearch benchmarks such as Haystack-LVBench and Haystack-Ego4D, as well as\nlong-form video understanding benchmarks like VideoMME and MLVU. Notably,\nTimeSearch-R establishes a new state-of-the-art on LongVideoBench with 4.1%\nimprovement over the base model Qwen2.5-VL and 2.0% over the advanced video\nreasoning model Video-R1. Our code is available at\nhttps://github.com/Time-Search/TimeSearch-R.",
+        "url": "http://arxiv.org/abs/2511.05489v1",
+        "published_date": "2025-11-07T18:58:25+00:00",
+        "updated_date": "2025-11-07T18:58:25+00:00",
+        "categories": [
+            "cs.CV",
+            "cs.AI"
+        ],
+        "authors": [
+            "Junwen Pan",
+            "Qizhe Zhang",
+            "Rui Zhang",
+            "Ming Lu",
+            "Xin Wan",
+            "Yuan Zhang",
+            "Chang Liu",
+            "Qi She"
+        ],
+        "ai_categories": []
+    },
+    {
+        "title": "On Flow Matching KL Divergence",
+        "summary": "We derive a deterministic, non-asymptotic upper bound on the Kullback-Leibler\n(KL) divergence of the flow-matching distribution approximation. In particular,\nif the $L_2$ flow-matching loss is bounded by $\\epsilon^2 > 0$, then the KL\ndivergence between the true data distribution and the estimated distribution is\nbounded by $A_1 \\epsilon + A_2 \\epsilon^2$. Here, the constants $A_1$ and $A_2$\ndepend only on the regularities of the data and velocity fields. Consequently,\nthis bound implies statistical convergence rates of Flow Matching Transformers\nunder the Total Variation (TV) distance. We show that, flow matching achieves\nnearly minimax-optimal efficiency in estimating smooth distributions. Our\nresults make the statistical efficiency of flow matching comparable to that of\ndiffusion models under the TV distance. Numerical studies on synthetic and\nlearned velocities corroborate our theory.",
+        "url": "http://arxiv.org/abs/2511.05480v1",
+        "published_date": "2025-11-07T18:47:46+00:00",
+        "updated_date": "2025-11-07T18:47:46+00:00",
+        "categories": [
+            "cs.LG",
+            "cs.AI",
+            "cs.CV",
+            "stat.ML"
+        ],
+        "authors": [
+            "Maojiang Su",
+            "Jerry Yao-Chieh Hu",
+            "Sophia Pi",
+            "Han Liu"
+        ],
+        "ai_categories": []
+    },
+    {
+        "title": "GroupKAN: Rethinking Nonlinearity with Grouped Spline-based KAN Modeling for Efficient Medical Image Segmentation",
+        "summary": "Medical image segmentation requires models that are accurate, lightweight,\nand interpretable. Convolutional architectures lack adaptive nonlinearity and\ntransparent decision-making, whereas Transformer architectures are hindered by\nquadratic complexity and opaque attention mechanisms. U-KAN addresses these\nchallenges using Kolmogorov-Arnold Networks, achieving higher accuracy than\nboth convolutional and attention-based methods, fewer parameters than\nTransformer variants, and improved interpretability compared to conventional\napproaches. However, its O(C^2) complexity due to full-channel transformations\nlimits its scalability as the number of channels increases. To overcome this,\nwe introduce GroupKAN, a lightweight segmentation network that incorporates two\nnovel, structured functional modules: (1) Grouped KAN Transform, which\npartitions channels into G groups for multivariate spline mappings, reducing\ncomplexity to O(C^2/G), and (2) Grouped KAN Activation, which applies shared\nspline-based mappings within each channel group for efficient, token-wise\nnonlinearity. Evaluated on three medical benchmarks (BUSI, GlaS, and CVC),\nGroupKAN achieves an average IoU of 79.80 percent, surpassing U-KAN by +1.11\npercent while requiring only 47.6 percent of the parameters (3.02M vs 6.35M),\nand shows improved interpretability.",
+        "url": "http://arxiv.org/abs/2511.05477v1",
+        "published_date": "2025-11-07T18:39:09+00:00",
+        "updated_date": "2025-11-07T18:39:09+00:00",
+        "categories": [
+            "cs.CV"
+        ],
+        "authors": [
+            "Guojie Li",
+            "Anwar P. P. Abdul Majeed",
+            "Muhammad Ateeq",
+            "Anh Nguyen",
+            "Fan Zhang"
+        ],
+        "ai_categories": []
+    },
+    {
+        "title": "Semantic-Guided Natural Language and Visual Fusion for Cross-Modal Interaction Based on Tiny Object Detection",
+        "summary": "This paper introduces a cutting-edge approach to cross-modal interaction for\ntiny object detection by combining semantic-guided natural language processing\nwith advanced visual recognition backbones. The proposed method integrates the\nBERT language model with the CNN-based Parallel Residual Bi-Fusion Feature\nPyramid Network (PRB-FPN-Net), incorporating innovative backbone architectures\nsuch as ELAN, MSP, and CSP to optimize feature extraction and fusion. By\nemploying lemmatization and fine-tuning techniques, the system aligns semantic\ncues from textual inputs with visual features, enhancing detection precision\nfor small and complex objects. Experimental validation using the COCO and\nObjects365 datasets demonstrates that the model achieves superior performance.\nOn the COCO2017 validation set, it attains a 52.6% average precision (AP),\noutperforming YOLO-World significantly while maintaining half the parameter\nconsumption of Transformer-based models like GLIP. Several test on different of\nbackbones such ELAN, MSP, and CSP further enable efficient handling of\nmulti-scale objects, ensuring scalability and robustness in\nresource-constrained environments. This study underscores the potential of\nintegrating natural language understanding with advanced backbone\narchitectures, setting new benchmarks in object detection accuracy, efficiency,\nand adaptability to real-world challenges.",
+        "url": "http://arxiv.org/abs/2511.05474v1",
+        "published_date": "2025-11-07T18:38:00+00:00",
+        "updated_date": "2025-11-07T18:38:00+00:00",
+        "categories": [
+            "cs.CV"
+        ],
+        "authors": [
+            "Xian-Hong Huang",
+            "Hui-Kai Su",
+            "Chi-Chia Sun",
+            "Jun-Wei Hsieh"
+        ],
+        "ai_categories": []
+    },
+    {
+        "title": "EventFlow: Real-Time Neuromorphic Event-Driven Classification of Two-Phase Boiling Flow Regimes",
+        "summary": "Flow boiling is an efficient heat transfer mechanism capable of dissipating\nhigh heat loads with minimal temperature variation, making it an ideal thermal\nmanagement method. However, sudden shifts between flow regimes can disrupt\nthermal performance and system reliability, highlighting the need for accurate\nand low-latency real-time monitoring. Conventional optical imaging methods are\nlimited by high computational demands and insufficient temporal resolution,\nmaking them inadequate for capturing transient flow behavior. To address this,\nwe propose a real-time framework based on signals from neuromorphic sensors for\nflow regime classification. Neuromorphic sensors detect changes in brightness\nat individual pixels, which typically correspond to motion at edges, enabling\nfast and efficient detection without full-frame reconstruction, providing\nevent-based information. We develop five classification models using both\ntraditional image data and event-based data, demonstrating that models\nleveraging event data outperform frame-based approaches due to their\nsensitivity to dynamic flow features. Among these models, the event-based long\nshort-term memory model provides the best balance between accuracy and speed,\nachieving 97.6% classification accuracy with a processing time of 0.28 ms. Our\nasynchronous processing pipeline supports continuous, low-latency predictions\nand delivers stable output through a majority voting mechanisms, enabling\nreliable real-time feedback for experimental control and intelligent thermal\nmanagement.",
+        "url": "http://arxiv.org/abs/2511.05467v1",
+        "published_date": "2025-11-07T18:13:46+00:00",
+        "updated_date": "2025-11-07T18:13:46+00:00",
+        "categories": [
+            "cs.CV",
+            "76T10, 68T07",
+            "I.2.10; I.4.8; I.4.9"
+        ],
+        "authors": [
+            "Sanghyeon Chang",
+            "Srikar Arani",
+            "Nishant Sai Nuthalapati",
+            "Youngjoon Suh",
+            "Nicholas Choi",
+            "Siavash Khodakarami",
+            "Md Rakibul Hasan Roni",
+            "Nenad Miljkovic",
+            "Aparna Chandramowlishwaran",
+            "Yoonjin Won"
+        ],
+        "ai_categories": []
+    },
+    {
+        "title": "Photo Dating by Facial Age Aggregation",
+        "summary": "We introduce a novel method for Photo Dating which estimates the year a\nphotograph was taken by leveraging information from the faces of people present\nin the image. To facilitate this research, we publicly release CSFD-1.6M, a new\ndataset containing over 1.6 million annotated faces, primarily from movie\nstills, with identity and birth year annotations. Uniquely, our dataset\nprovides annotations for multiple individuals within a single image, enabling\nthe study of multi-face information aggregation. We propose a probabilistic\nframework that formally combines visual evidence from modern face recognition\nand age estimation models, and career-based temporal priors to infer the photo\ncapture year. Our experiments demonstrate that aggregating evidence from\nmultiple faces consistently improves the performance and the approach\nsignificantly outperforms strong, scene-based baselines, particularly for\nimages containing several identifiable individuals.",
+        "url": "http://arxiv.org/abs/2511.05464v1",
+        "published_date": "2025-11-07T18:08:04+00:00",
+        "updated_date": "2025-11-07T18:08:04+00:00",
+        "categories": [
+            "cs.CV"
+        ],
+        "authors": [
+            "Jakub Paplham",
+            "Vojtech Franc"
+        ],
+        "ai_categories": []
+    },
+    {
+        "title": "SiamMM: A Mixture Model Perspective on Deep Unsupervised Learning",
+        "summary": "Recent studies have demonstrated the effectiveness of clustering-based\napproaches for self-supervised and unsupervised learning. However, the\napplication of clustering is often heuristic, and the optimal methodology\nremains unclear. In this work, we establish connections between these\nunsupervised clustering methods and classical mixture models from statistics.\nThrough this framework, we demonstrate significant enhancements to these\nclustering methods, leading to the development of a novel model named SiamMM.\nOur method attains state-of-the-art performance across various self-supervised\nlearning benchmarks. Inspection of the learned clusters reveals a strong\nresemblance to unseen ground truth labels, uncovering potential instances of\nmislabeling.",
+        "url": "http://arxiv.org/abs/2511.05462v1",
+        "published_date": "2025-11-07T18:07:42+00:00",
+        "updated_date": "2025-11-07T18:07:42+00:00",
+        "categories": [
+            "cs.LG",
+            "cs.CV"
+        ],
+        "authors": [
+            "Xiaodong Wang",
+            "Jing Huang",
+            "Kevin J Liang"
+        ],
+        "ai_categories": []
+    },
+    {
+        "title": "The Potential of Copernicus Satellites for Disaster Response: Retrieving Building Damage from Sentinel-1 and Sentinel-2",
+        "summary": "Natural disasters demand rapid damage assessment to guide humanitarian\nresponse. Here, we investigate whether medium-resolution Earth observation\nimages from the Copernicus program can support building damage assessment,\ncomplementing very-high resolution imagery with often limited availability. We\nintroduce xBD-S12, a dataset of 10,315 pre- and post-disaster image pairs from\nboth Sentinel-1 and Sentinel-2, spatially and temporally aligned with the\nestablished xBD benchmark. In a series of experiments, we demonstrate that\nbuilding damage can be detected and mapped rather well in many disaster\nscenarios, despite the moderate 10$\\,$m ground sampling distance. We also find\nthat, for damage mapping at that resolution, architectural sophistication does\nnot seem to bring much advantage: more complex model architectures tend to\nstruggle with generalization to unseen disasters, and geospatial foundation\nmodels bring little practical benefit. Our results suggest that Copernicus\nimages are a viable data source for rapid, wide-area damage assessment and\ncould play an important role alongside VHR imagery. We release the xBD-S12\ndataset, code, and trained models to support further research.",
+        "url": "http://arxiv.org/abs/2511.05461v1",
+        "published_date": "2025-11-07T18:02:07+00:00",
+        "updated_date": "2025-11-07T18:02:07+00:00",
+        "categories": [
+            "cs.CV"
+        ],
+        "authors": [
+            "Olivier Dietrich",
+            "Merlin Alfredsson",
+            "Emilia Arens",
+            "Nando Metzger",
+            "Torben Peters",
+            "Linus Scheibenreif",
+            "Jan Dirk Wegner",
+            "Konrad Schindler"
+        ],
+        "ai_categories": []
+    }
+]

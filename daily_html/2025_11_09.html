@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ArXiv CS.CV Papers (Image/Video Generation) - November 09, 2025</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/framer-motion/10.16.4/framer-motion.dev.js"></script>
+    <!-- Example using Font Awesome (replace with your preferred icon library if needed) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+        :root {
+            /* New Palette: Light, Clean, Futuristic with Teal/Aqua accents */
+            --bg-color: #f8fafc; /* Tailwind slate-50 (Very Light Gray) */
+            --card-bg-color: #ffffff; /* White */
+            --text-color: #1e293b; /* Tailwind slate-800 (Dark Gray-Blue) */
+            --text-muted-color: #64748b; /* Tailwind slate-500 (Medium Gray-Blue) */
+            --header-color: #0f172a; /* Tailwind slate-900 (Very Dark Blue) */
+            --highlight-primary: #14b8a6; /* Tailwind teal-500 */
+            --highlight-secondary: #67e8f9; /* Tailwind cyan-300 */
+            --border-color: #e2e8f0; /* Tailwind slate-200 (Light Gray) */
+            --shadow-color: rgba(15, 23, 42, 0.08); /* Subtle shadow based on slate-900 */
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden; /* Prevent horizontal scroll */
+            line-height: 1.6;
+        }
+
+        .bento-grid {
+            display: grid;
+            gap: 1.5rem; /* Tailwind gap-6 */
+            grid-template-columns: 1fr; /* Force single column */
+            padding-bottom: 4rem; /* Add padding at the bottom */
+        }
+
+        .bento-item {
+            /* Apply semi-transparent white background and blur */
+            background-color: rgba(255, 255, 255, 0.7); /* White with 70% opacity */
+            backdrop-filter: blur(10px); /* Apply blur effect */
+            -webkit-backdrop-filter: blur(10px); /* Safari prefix */
+            border-radius: 1rem; /* Slightly larger radius */
+            padding: 1.75rem; /* Slightly more padding */
+            border: 1px solid rgba(226, 232, 240, 0.5); /* Lighter border with transparency */
+            box-shadow: 0 4px 12px var(--shadow-color);
+            transition: transform 0.3s ease-out, box-shadow 0.3s ease-out, background-color 0.3s ease-out;
+            overflow: hidden; /* Ensure content doesn't overflow */
+            position: relative; /* For potential pseudo-elements */
+        }
+
+        /* Removed ::before pseudo-element for a cleaner look */
+
+
+        .bento-item:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 10px 20px var(--shadow-color), 0 4px 8px rgba(15, 23, 42, 0.06); /* Adjusted hover shadow */
+        }
+
+        .paper-title {
+            font-size: 1.125rem; /* Tailwind text-lg */
+            font-weight: 600; /* Tailwind font-semibold */
+            color: var(--highlight-primary); /* Use new primary highlight */
+            margin-bottom: 0.75rem; /* Tailwind mb-3 */
+            line-height: 1.4;
+        }
+
+        .paper-summary {
+            font-size: 0.875rem; /* Tailwind text-sm */
+            color: var(--text-muted-color);
+            margin-bottom: 1.25rem; /* Tailwind mb-5 */
+            line-height: 1.6;
+        }
+
+        .paper-link {
+            display: inline-flex; /* Use flex for icon alignment */
+            align-items: center;
+            font-size: 0.875rem; /* Tailwind text-sm */
+            font-weight: 600;
+            color: var(--highlight-primary);
+            text-decoration: none;
+            padding: 0.5rem 1rem; /* Add padding */
+            border-radius: 0.5rem; /* Slightly rounder */
+            background-color: rgba(20, 184, 166, 0.08); /* Subtle teal background */
+            border: 1px solid rgba(20, 184, 166, 0.2);
+            transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+        }
+
+        .paper-link i {
+            margin-right: 0.5rem; /* Tailwind mr-2 */
+            transition: transform 0.3s ease;
+        }
+
+        .paper-link:hover {
+            background-color: rgba(20, 184, 166, 0.15);
+            color: #0d9488; /* Darker teal on hover */
+            transform: translateY(-1px);
+        }
+        .paper-link:hover i {
+             transform: translateX(2px);
+        }
+
+        .paper-authors {
+            font-size: 0.75rem; /* Tailwind text-xs */
+            color: var(--text-muted-color);
+            margin-top: 1rem; /* Tailwind mt-4 */
+            font-style: italic;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 3rem; /* Tailwind mb-12 */
+            padding-top: 3rem; /* Tailwind pt-12 */
+        }
+
+        .header h1 {
+            font-size: 2.5rem; /* Tailwind text-4xl or 5xl */
+            font-weight: 700; /* Tailwind font-bold */
+            color: var(--header-color);
+            letter-spacing: -0.025em; /* Tailwind tracking-tight */
+            margin-bottom: 0.5rem;
+            /* Optional: Add a subtle text gradient */
+            /* background: linear-gradient(90deg, var(--highlight-primary), var(--highlight-secondary)); */
+            /* -webkit-background-clip: text; */
+            /* -webkit-text-fill-color: transparent; */
+        }
+
+        .header p {
+            font-size: 1.125rem; /* Tailwind text-lg */
+            color: var(--text-muted-color);
+            margin-top: 0.5rem; /* Tailwind mt-2 */
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .footer {
+            text-align: center;
+            color: var(--text-muted-color);
+            font-size: 0.875rem; /* Tailwind text-sm */
+            padding-top: 2rem;
+            padding-bottom: 2rem; /* Tailwind py-8 */
+            border-top: 1px solid var(--border-color);
+            margin-top: 4rem;
+        }
+
+        /* Simple line graphic element (optional) */
+        .line-graphic {
+            height: 1px; /* Thinner line */
+            background: linear-gradient(90deg, rgba(20, 184, 166, 0), var(--highlight-primary), rgba(20, 184, 166, 0));
+            opacity: 0.6;
+            margin: 1.5rem 0; /* Adjust margin */
+        }
+
+        /* Framer Motion requires the script, styles enhance appearance */
+        [data-motion-element] {
+             /* Base styles for elements animated by Framer Motion */
+        }
+
+        .paper-tldr {
+            font-size: 0.95rem; /* Slightly bigger than summary */
+            color: #475569; /* Changed to Tailwind slate-600 (slightly darker than summary) */
+            margin-top: 0.75rem; /* Tailwind mt-3 */
+            margin-bottom: 0.75rem; /* Tailwind mb-2 */
+            /* font-style: italic; */
+            font-weight: bold;
+        }
+
+        .paper-rating {
+            margin-top: 1rem; /* Tailwind mt-4 */
+            margin-bottom: 1rem; /* Tailwind mb-4 */
+            color: #f59e0b; /* Tailwind amber-500 */
+        }
+
+        .paper-rating i {
+            margin-right: 0.125rem; /* Tailwind mr-0.5 */
+        }
+
+        /* Apply consistent star color to sub-ratings */
+        .paper-sub-ratings .rating-item i {
+            color: #f59e0b; /* Match overall rating star color (amber-500) */
+            margin-right: 0.125rem; /* Consistent spacing */
+        }
+
+    </style>
+</head>
+<body class="container mx-auto px-4 antialiased">
+
+    <motion.div
+        initial="{ opacity: 0, y: -30 }"
+        animate="{ opacity: 1, y: 0 }"
+        transition="{ duration: 0.6, ease: 'easeOut' }"
+        class="header"
+        data-motion-element
+    >
+        <h1>AIGC Daily Papers</h1>
+        <p>Daily papers related to Image/Video/Multimodal Generation from cs.CV</p>
+        <p>November 09, 2025</p>
+        <div class="line-graphic mt-4 mb-8 mx-auto w-1/4"></div> <!-- Added line graphic -->
+    </motion.div>
+
+    <div class="bento-grid" id="paper-grid">
+        
+        <motion.div
+            initial="{ opacity: 0, y: 50, scale: 0.9 }"
+            whileInView="{ opacity: 1, y: 0, scale: 1 }"
+            viewport="{ once: true, amount: 0.2 }" /* Trigger when 20% is visible */
+            transition="{ duration: 0.5, delay: 0.0, ease: 'easeOut' }"  
+            class="bento-item"
+            data-motion-element
+        >
+            <h2 class="paper-title">Visual Spatial Tuning</h2>
+            <p class="paper-summary">Capturing spatial relationships from visual inputs is a cornerstone of
+human-like general intelligence. Several previous studies have tried to enhance
+the spatial awareness of Vision-Language Models (VLMs) by adding extra expert
+encoders, which brings extra overhead and usually harms general capabilities.
+To enhance the spatial ability in general architectures, we introduce Visual
+Spatial Tuning (VST), a comprehensive framework to cultivate VLMs with
+human-like visuospatial abilities, from spatial perception to reasoning. We
+first attempt to enhance spatial perception in VLMs by constructing a
+large-scale dataset termed VST-P, which comprises 4.1 million samples spanning
+19 skills across single views, multiple images, and videos. Then, we present
+VST-R, a curated dataset with 135K samples that instruct models to reason in
+space. In particular, we adopt a progressive training pipeline: supervised
+fine-tuning to build foundational spatial knowledge, followed by reinforcement
+learning to further improve spatial reasoning abilities. Without the
+side-effect to general capabilities, the proposed VST consistently achieves
+state-of-the-art results on several spatial benchmarks, including $34.8\%$ on
+MMSI-Bench and $61.2\%$ on VSIBench. It turns out that the
+Vision-Language-Action models can be significantly enhanced with the proposed
+spatial tuning paradigm, paving the way for more physically grounded AI.</p>
+            
+            
+
+            
+            
+            
+
+            
+
+            <a href="http://arxiv.org/abs/2511.05491v1" target="_blank" class="paper-link">
+                <i class="fas fa-file-pdf mr-1"></i> Read Paper (PDF)
+            </a>
+            
+            <p class="paper-authors">Authors: Rui Yang, Ziyu Zhu, Yanwei Li, Jingjia Huang, Shen Yan, Siyuan Zhou, Zhe Liu, Xiangtai Li, Shuangye Li, Wenqian Wang, Yi Lin, Hengshuang Zhao</p>
+            
+        </motion.div>
+        
+        <motion.div
+            initial="{ opacity: 0, y: 50, scale: 0.9 }"
+            whileInView="{ opacity: 1, y: 0, scale: 1 }"
+            viewport="{ once: true, amount: 0.2 }" /* Trigger when 20% is visible */
+            transition="{ duration: 0.5, delay: 0.05, ease: 'easeOut' }"  
+            class="bento-item"
+            data-motion-element
+        >
+            <h2 class="paper-title">TimeSearch-R: Adaptive Temporal Search for Long-Form Video Understanding via Self-Verification Reinforcement Learning</h2>
+            <p class="paper-summary">Temporal search aims to identify a minimal set of relevant frames from tens
+of thousands based on a given query, serving as a foundation for accurate
+long-form video understanding. Existing works attempt to progressively narrow
+the search space. However, these approaches typically rely on a hand-crafted
+search process, lacking end-to-end optimization for learning optimal search
+strategies. In this paper, we propose TimeSearch-R, which reformulates temporal
+search as interleaved text-video thinking, seamlessly integrating searching
+video clips into the reasoning process through reinforcement learning (RL).
+However, applying RL training methods, such as Group Relative Policy
+Optimization (GRPO), to video reasoning can result in unsupervised intermediate
+search decisions. This leads to insufficient exploration of the video content
+and inconsistent logical reasoning. To address these issues, we introduce GRPO
+with Completeness Self-Verification (GRPO-CSV), which gathers searched video
+frames from the interleaved reasoning process and utilizes the same policy
+model to verify the adequacy of searched frames, thereby improving the
+completeness of video reasoning. Additionally, we construct datasets
+specifically designed for the SFT cold-start and RL training of GRPO-CSV,
+filtering out samples with weak temporal dependencies to enhance task
+difficulty and improve temporal search capabilities. Extensive experiments
+demonstrate that TimeSearch-R achieves significant improvements on temporal
+search benchmarks such as Haystack-LVBench and Haystack-Ego4D, as well as
+long-form video understanding benchmarks like VideoMME and MLVU. Notably,
+TimeSearch-R establishes a new state-of-the-art on LongVideoBench with 4.1%
+improvement over the base model Qwen2.5-VL and 2.0% over the advanced video
+reasoning model Video-R1. Our code is available at
+https://github.com/Time-Search/TimeSearch-R.</p>
+            
+            
+
+            
+            
+            
+
+            
+
+            <a href="http://arxiv.org/abs/2511.05489v1" target="_blank" class="paper-link">
+                <i class="fas fa-file-pdf mr-1"></i> Read Paper (PDF)
+            </a>
+            
+            <p class="paper-authors">Authors: Junwen Pan, Qizhe Zhang, Rui Zhang, Ming Lu, Xin Wan, Yuan Zhang, Chang Liu, Qi She</p>
+            
+        </motion.div>
+        
+        <motion.div
+            initial="{ opacity: 0, y: 50, scale: 0.9 }"
+            whileInView="{ opacity: 1, y: 0, scale: 1 }"
+            viewport="{ once: true, amount: 0.2 }" /* Trigger when 20% is visible */
+            transition="{ duration: 0.5, delay: 0.1, ease: 'easeOut' }"  
+            class="bento-item"
+            data-motion-element
+        >
+            <h2 class="paper-title">On Flow Matching KL Divergence</h2>
+            <p class="paper-summary">We derive a deterministic, non-asymptotic upper bound on the Kullback-Leibler
+(KL) divergence of the flow-matching distribution approximation. In particular,
+if the $L_2$ flow-matching loss is bounded by $\epsilon^2 > 0$, then the KL
+divergence between the true data distribution and the estimated distribution is
+bounded by $A_1 \epsilon + A_2 \epsilon^2$. Here, the constants $A_1$ and $A_2$
+depend only on the regularities of the data and velocity fields. Consequently,
+this bound implies statistical convergence rates of Flow Matching Transformers
+under the Total Variation (TV) distance. We show that, flow matching achieves
+nearly minimax-optimal efficiency in estimating smooth distributions. Our
+results make the statistical efficiency of flow matching comparable to that of
+diffusion models under the TV distance. Numerical studies on synthetic and
+learned velocities corroborate our theory.</p>
+            
+            
+
+            
+            
+            
+
+            
+
+            <a href="http://arxiv.org/abs/2511.05480v1" target="_blank" class="paper-link">
+                <i class="fas fa-file-pdf mr-1"></i> Read Paper (PDF)
+            </a>
+            
+            <p class="paper-authors">Authors: Maojiang Su, Jerry Yao-Chieh Hu, Sophia Pi, Han Liu</p>
+            
+        </motion.div>
+        
+        <motion.div
+            initial="{ opacity: 0, y: 50, scale: 0.9 }"
+            whileInView="{ opacity: 1, y: 0, scale: 1 }"
+            viewport="{ once: true, amount: 0.2 }" /* Trigger when 20% is visible */
+            transition="{ duration: 0.5, delay: 0.15000000000000002, ease: 'easeOut' }"  
+            class="bento-item"
+            data-motion-element
+        >
+            <h2 class="paper-title">GroupKAN: Rethinking Nonlinearity with Grouped Spline-based KAN Modeling for Efficient Medical Image Segmentation</h2>
+            <p class="paper-summary">Medical image segmentation requires models that are accurate, lightweight,
+and interpretable. Convolutional architectures lack adaptive nonlinearity and
+transparent decision-making, whereas Transformer architectures are hindered by
+quadratic complexity and opaque attention mechanisms. U-KAN addresses these
+challenges using Kolmogorov-Arnold Networks, achieving higher accuracy than
+both convolutional and attention-based methods, fewer parameters than
+Transformer variants, and improved interpretability compared to conventional
+approaches. However, its O(C^2) complexity due to full-channel transformations
+limits its scalability as the number of channels increases. To overcome this,
+we introduce GroupKAN, a lightweight segmentation network that incorporates two
+novel, structured functional modules: (1) Grouped KAN Transform, which
+partitions channels into G groups for multivariate spline mappings, reducing
+complexity to O(C^2/G), and (2) Grouped KAN Activation, which applies shared
+spline-based mappings within each channel group for efficient, token-wise
+nonlinearity. Evaluated on three medical benchmarks (BUSI, GlaS, and CVC),
+GroupKAN achieves an average IoU of 79.80 percent, surpassing U-KAN by +1.11
+percent while requiring only 47.6 percent of the parameters (3.02M vs 6.35M),
+and shows improved interpretability.</p>
+            
+            
+
+            
+            
+            
+
+            
+
+            <a href="http://arxiv.org/abs/2511.05477v1" target="_blank" class="paper-link">
+                <i class="fas fa-file-pdf mr-1"></i> Read Paper (PDF)
+            </a>
+            
+            <p class="paper-authors">Authors: Guojie Li, Anwar P. P. Abdul Majeed, Muhammad Ateeq, Anh Nguyen, Fan Zhang</p>
+            
+        </motion.div>
+        
+        <motion.div
+            initial="{ opacity: 0, y: 50, scale: 0.9 }"
+            whileInView="{ opacity: 1, y: 0, scale: 1 }"
+            viewport="{ once: true, amount: 0.2 }" /* Trigger when 20% is visible */
+            transition="{ duration: 0.5, delay: 0.2, ease: 'easeOut' }"  
+            class="bento-item"
+            data-motion-element
+        >
+            <h2 class="paper-title">Semantic-Guided Natural Language and Visual Fusion for Cross-Modal Interaction Based on Tiny Object Detection</h2>
+            <p class="paper-summary">This paper introduces a cutting-edge approach to cross-modal interaction for
+tiny object detection by combining semantic-guided natural language processing
+with advanced visual recognition backbones. The proposed method integrates the
+BERT language model with the CNN-based Parallel Residual Bi-Fusion Feature
+Pyramid Network (PRB-FPN-Net), incorporating innovative backbone architectures
+such as ELAN, MSP, and CSP to optimize feature extraction and fusion. By
+employing lemmatization and fine-tuning techniques, the system aligns semantic
+cues from textual inputs with visual features, enhancing detection precision
+for small and complex objects. Experimental validation using the COCO and
+Objects365 datasets demonstrates that the model achieves superior performance.
+On the COCO2017 validation set, it attains a 52.6% average precision (AP),
+outperforming YOLO-World significantly while maintaining half the parameter
+consumption of Transformer-based models like GLIP. Several test on different of
+backbones such ELAN, MSP, and CSP further enable efficient handling of
+multi-scale objects, ensuring scalability and robustness in
+resource-constrained environments. This study underscores the potential of
+integrating natural language understanding with advanced backbone
+architectures, setting new benchmarks in object detection accuracy, efficiency,
+and adaptability to real-world challenges.</p>
+            
+            
+
+            
+            
+            
+
+            
+
+            <a href="http://arxiv.org/abs/2511.05474v1" target="_blank" class="paper-link">
+                <i class="fas fa-file-pdf mr-1"></i> Read Paper (PDF)
+            </a>
+            
+            <p class="paper-authors">Authors: Xian-Hong Huang, Hui-Kai Su, Chi-Chia Sun, Jun-Wei Hsieh</p>
+            
+        </motion.div>
+        
+        <motion.div
+            initial="{ opacity: 0, y: 50, scale: 0.9 }"
+            whileInView="{ opacity: 1, y: 0, scale: 1 }"
+            viewport="{ once: true, amount: 0.2 }" /* Trigger when 20% is visible */
+            transition="{ duration: 0.5, delay: 0.25, ease: 'easeOut' }"  
+            class="bento-item"
+            data-motion-element
+        >
+            <h2 class="paper-title">EventFlow: Real-Time Neuromorphic Event-Driven Classification of Two-Phase Boiling Flow Regimes</h2>
+            <p class="paper-summary">Flow boiling is an efficient heat transfer mechanism capable of dissipating
+high heat loads with minimal temperature variation, making it an ideal thermal
+management method. However, sudden shifts between flow regimes can disrupt
+thermal performance and system reliability, highlighting the need for accurate
+and low-latency real-time monitoring. Conventional optical imaging methods are
+limited by high computational demands and insufficient temporal resolution,
+making them inadequate for capturing transient flow behavior. To address this,
+we propose a real-time framework based on signals from neuromorphic sensors for
+flow regime classification. Neuromorphic sensors detect changes in brightness
+at individual pixels, which typically correspond to motion at edges, enabling
+fast and efficient detection without full-frame reconstruction, providing
+event-based information. We develop five classification models using both
+traditional image data and event-based data, demonstrating that models
+leveraging event data outperform frame-based approaches due to their
+sensitivity to dynamic flow features. Among these models, the event-based long
+short-term memory model provides the best balance between accuracy and speed,
+achieving 97.6% classification accuracy with a processing time of 0.28 ms. Our
+asynchronous processing pipeline supports continuous, low-latency predictions
+and delivers stable output through a majority voting mechanisms, enabling
+reliable real-time feedback for experimental control and intelligent thermal
+management.</p>
+            
+            
+
+            
+            
+            
+
+            
+
+            <a href="http://arxiv.org/abs/2511.05467v1" target="_blank" class="paper-link">
+                <i class="fas fa-file-pdf mr-1"></i> Read Paper (PDF)
+            </a>
+            
+            <p class="paper-authors">Authors: Sanghyeon Chang, Srikar Arani, Nishant Sai Nuthalapati, Youngjoon Suh, Nicholas Choi, Siavash Khodakarami, Md Rakibul Hasan Roni, Nenad Miljkovic, Aparna Chandramowlishwaran, Yoonjin Won</p>
+            
+        </motion.div>
+        
+        <motion.div
+            initial="{ opacity: 0, y: 50, scale: 0.9 }"
+            whileInView="{ opacity: 1, y: 0, scale: 1 }"
+            viewport="{ once: true, amount: 0.2 }" /* Trigger when 20% is visible */
+            transition="{ duration: 0.5, delay: 0.30000000000000004, ease: 'easeOut' }"  
+            class="bento-item"
+            data-motion-element
+        >
+            <h2 class="paper-title">Photo Dating by Facial Age Aggregation</h2>
+            <p class="paper-summary">We introduce a novel method for Photo Dating which estimates the year a
+photograph was taken by leveraging information from the faces of people present
+in the image. To facilitate this research, we publicly release CSFD-1.6M, a new
+dataset containing over 1.6 million annotated faces, primarily from movie
+stills, with identity and birth year annotations. Uniquely, our dataset
+provides annotations for multiple individuals within a single image, enabling
+the study of multi-face information aggregation. We propose a probabilistic
+framework that formally combines visual evidence from modern face recognition
+and age estimation models, and career-based temporal priors to infer the photo
+capture year. Our experiments demonstrate that aggregating evidence from
+multiple faces consistently improves the performance and the approach
+significantly outperforms strong, scene-based baselines, particularly for
+images containing several identifiable individuals.</p>
+            
+            
+
+            
+            
+            
+
+            
+
+            <a href="http://arxiv.org/abs/2511.05464v1" target="_blank" class="paper-link">
+                <i class="fas fa-file-pdf mr-1"></i> Read Paper (PDF)
+            </a>
+            
+            <p class="paper-authors">Authors: Jakub Paplham, Vojtech Franc</p>
+            
+        </motion.div>
+        
+        <motion.div
+            initial="{ opacity: 0, y: 50, scale: 0.9 }"
+            whileInView="{ opacity: 1, y: 0, scale: 1 }"
+            viewport="{ once: true, amount: 0.2 }" /* Trigger when 20% is visible */
+            transition="{ duration: 0.5, delay: 0.35000000000000003, ease: 'easeOut' }"  
+            class="bento-item"
+            data-motion-element
+        >
+            <h2 class="paper-title">SiamMM: A Mixture Model Perspective on Deep Unsupervised Learning</h2>
+            <p class="paper-summary">Recent studies have demonstrated the effectiveness of clustering-based
+approaches for self-supervised and unsupervised learning. However, the
+application of clustering is often heuristic, and the optimal methodology
+remains unclear. In this work, we establish connections between these
+unsupervised clustering methods and classical mixture models from statistics.
+Through this framework, we demonstrate significant enhancements to these
+clustering methods, leading to the development of a novel model named SiamMM.
+Our method attains state-of-the-art performance across various self-supervised
+learning benchmarks. Inspection of the learned clusters reveals a strong
+resemblance to unseen ground truth labels, uncovering potential instances of
+mislabeling.</p>
+            
+            
+
+            
+            
+            
+
+            
+
+            <a href="http://arxiv.org/abs/2511.05462v1" target="_blank" class="paper-link">
+                <i class="fas fa-file-pdf mr-1"></i> Read Paper (PDF)
+            </a>
+            
+            <p class="paper-authors">Authors: Xiaodong Wang, Jing Huang, Kevin J Liang</p>
+            
+        </motion.div>
+        
+        <motion.div
+            initial="{ opacity: 0, y: 50, scale: 0.9 }"
+            whileInView="{ opacity: 1, y: 0, scale: 1 }"
+            viewport="{ once: true, amount: 0.2 }" /* Trigger when 20% is visible */
+            transition="{ duration: 0.5, delay: 0.4, ease: 'easeOut' }"  
+            class="bento-item"
+            data-motion-element
+        >
+            <h2 class="paper-title">The Potential of Copernicus Satellites for Disaster Response: Retrieving Building Damage from Sentinel-1 and Sentinel-2</h2>
+            <p class="paper-summary">Natural disasters demand rapid damage assessment to guide humanitarian
+response. Here, we investigate whether medium-resolution Earth observation
+images from the Copernicus program can support building damage assessment,
+complementing very-high resolution imagery with often limited availability. We
+introduce xBD-S12, a dataset of 10,315 pre- and post-disaster image pairs from
+both Sentinel-1 and Sentinel-2, spatially and temporally aligned with the
+established xBD benchmark. In a series of experiments, we demonstrate that
+building damage can be detected and mapped rather well in many disaster
+scenarios, despite the moderate 10$\,$m ground sampling distance. We also find
+that, for damage mapping at that resolution, architectural sophistication does
+not seem to bring much advantage: more complex model architectures tend to
+struggle with generalization to unseen disasters, and geospatial foundation
+models bring little practical benefit. Our results suggest that Copernicus
+images are a viable data source for rapid, wide-area damage assessment and
+could play an important role alongside VHR imagery. We release the xBD-S12
+dataset, code, and trained models to support further research.</p>
+            
+            
+
+            
+            
+            
+
+            
+
+            <a href="http://arxiv.org/abs/2511.05461v1" target="_blank" class="paper-link">
+                <i class="fas fa-file-pdf mr-1"></i> Read Paper (PDF)
+            </a>
+            
+            <p class="paper-authors">Authors: Olivier Dietrich, Merlin Alfredsson, Emilia Arens, Nando Metzger, Torben Peters, Linus Scheibenreif, Jan Dirk Wegner, Konrad Schindler</p>
+            
+        </motion.div>
+        
+    </div>
+
+    <footer class="footer">
+        Generated on 2025-11-10 04:31:05 UTC. Powered by <a href="https://github.com/onion-liu" target="_blank">onion-liu</a>.
+    </footer>
+
+</body>
+</html>
