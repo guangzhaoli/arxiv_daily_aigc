@@ -1,0 +1,350 @@
+[
+    {
+        "title": "Dataset Distillation for Pre-Trained Self-Supervised Vision Models",
+        "summary": "The task of dataset distillation aims to find a small set of synthetic images such that training a model on them reproduces the performance of the same model trained on a much larger dataset of real samples. Existing distillation methods focus on synthesizing datasets that enable training randomly initialized models. In contrast, state-of-the-art vision approaches are increasingly building on large, pre-trained self-supervised models rather than training from scratch. In this paper, we investigate the problem of distilling datasets that enable us to optimally train linear probes on top of such large, pre-trained vision models. We introduce a method of dataset distillation for this task called Linear Gradient Matching that optimizes the synthetic images such that, when passed through a pre-trained feature extractor, they induce gradients in the linear classifier similar to those produced by the real data. Our method yields synthetic data that outperform all real-image baselines and, remarkably, generalize across pre-trained vision models, enabling us, for instance, to train a linear CLIP probe that performs competitively using a dataset distilled via a DINO backbone. Further, we show that our distilled datasets are exceptionally effective for fine-grained classification and provide a valuable tool for model interpretability, predicting, among other things, how similar two models' embedding spaces are under the platonic representation hypothesis or whether a model is sensitive to spurious correlations in adversarial datasets.",
+        "url": "http://arxiv.org/abs/2511.16674v1",
+        "published_date": "2025-11-20T18:59:57+00:00",
+        "updated_date": "2025-11-20T18:59:57+00:00",
+        "categories": [
+            "cs.CV",
+            "cs.AI",
+            "cs.LG"
+        ],
+        "authors": [
+            "George Cazenavette",
+            "Antonio Torralba",
+            "Vincent Sitzmann"
+        ],
+        "ai_categories": []
+    },
+    {
+        "title": "EvoLMM: Self-Evolving Large Multimodal Models with Continuous Rewards",
+        "summary": "Recent advances in large multimodal models (LMMs) have enabled impressive reasoning and perception abilities, yet most existing training pipelines still depend on human-curated data or externally verified reward models, limiting their autonomy and scalability. In this work, we strive to improve LMM reasoning capabilities in a purely unsupervised fashion (without any annotated data or reward distillation). To this end, we propose a self-evolving framework, named EvoLMM, that instantiates two cooperative agents from a single backbone model: a Proposer, which generates diverse, image-grounded questions, and a Solver, which solves them through internal consistency, where learning proceeds through a continuous self-rewarding process. This dynamic feedback encourages both the generation of informative queries and the refinement of structured reasoning without relying on ground-truth or human judgments. When using the popular Qwen2.5-VL as the base model, our EvoLMM yields consistent gains upto $\\sim$3\\% on multimodal math-reasoning benchmarks, including ChartQA, MathVista, and MathVision, using only raw training images. We hope our simple yet effective approach will serve as a solid baseline easing future research in self-improving LMMs in a fully-unsupervised fashion. Our code and models are available at https://github.com/mbzuai-oryx/EvoLMM.",
+        "url": "http://arxiv.org/abs/2511.16672v1",
+        "published_date": "2025-11-20T18:59:54+00:00",
+        "updated_date": "2025-11-20T18:59:54+00:00",
+        "categories": [
+            "cs.CV"
+        ],
+        "authors": [
+            "Omkat Thawakar",
+            "Shravan Venkatraman",
+            "Ritesh Thawkar",
+            "Abdelrahman Shaker",
+            "Hisham Cholakkal",
+            "Rao Muhammad Anwer",
+            "Salman Khan",
+            "Fahad Khan"
+        ],
+        "ai_categories": []
+    },
+    {
+        "title": "NoPo-Avatar: Generalizable and Animatable Avatars from Sparse Inputs without Human Poses",
+        "summary": "We tackle the task of recovering an animatable 3D human avatar from a single or a sparse set of images. For this task, beyond a set of images, many prior state-of-the-art methods use accurate \"ground-truth\" camera poses and human poses as input to guide reconstruction at test-time. We show that pose-dependent reconstruction degrades results significantly if pose estimates are noisy. To overcome this, we introduce NoPo-Avatar, which reconstructs avatars solely from images, without any pose input. By removing the dependence of test-time reconstruction on human poses, NoPo-Avatar is not affected by noisy human pose estimates, making it more widely applicable. Experiments on challenging THuman2.0, XHuman, and HuGe100K data show that NoPo-Avatar outperforms existing baselines in practical settings (without ground-truth poses) and delivers comparable results in lab settings (with ground-truth poses).",
+        "url": "http://arxiv.org/abs/2511.16673v1",
+        "published_date": "2025-11-20T18:59:54+00:00",
+        "updated_date": "2025-11-20T18:59:54+00:00",
+        "categories": [
+            "cs.CV"
+        ],
+        "authors": [
+            "Jing Wen",
+            "Alexander G. Schwing",
+            "Shenlong Wang"
+        ],
+        "ai_categories": []
+    },
+    {
+        "title": "Thinking-while-Generating: Interleaving Textual Reasoning throughout Visual Generation",
+        "summary": "Recent advances in visual generation have increasingly explored the integration of reasoning capabilities. They incorporate textual reasoning, i.e., think, either before (as pre-planning) or after (as post-refinement) the generation process, yet they lack on-the-fly multimodal interaction during the generation itself. In this preliminary study, we introduce Thinking-while-Generating (TwiG), the first interleaved framework that enables co-evolving textual reasoning throughout the visual generation process. As visual content is progressively generating, textual reasoning is interleaved to both guide upcoming local regions and reflect on previously synthesized ones. This dynamic interplay produces more context-aware and semantically rich visual outputs. To unveil the potential of this framework, we investigate three candidate strategies, zero-shot prompting, supervised fine-tuning (SFT) on our curated TwiG-50K dataset, and reinforcement learning (RL) via a customized TwiG-GRPO strategy, each offering unique insights into the dynamics of interleaved reasoning. We hope this work inspires further research into interleaving textual reasoning for enhanced visual generation. Code will be released at: https://github.com/ZiyuGuo99/Thinking-while-Generating.",
+        "url": "http://arxiv.org/abs/2511.16671v1",
+        "published_date": "2025-11-20T18:59:52+00:00",
+        "updated_date": "2025-11-20T18:59:52+00:00",
+        "categories": [
+            "cs.CV",
+            "cs.AI",
+            "cs.CL"
+        ],
+        "authors": [
+            "Ziyu Guo",
+            "Renrui Zhang",
+            "Hongyu Li",
+            "Manyuan Zhang",
+            "Xinyan Chen",
+            "Sifan Wang",
+            "Yan Feng",
+            "Peng Pei",
+            "Pheng-Ann Heng"
+        ],
+        "ai_categories": []
+    },
+    {
+        "title": "Learning to Think Fast and Slow for Visual Language Models",
+        "summary": "When confronted with complex problems, we tend to think slowly; conversely, for simple questions, we think quickly. Such a two-system thinking mechanism allows us to efficiently allocate cognitive resources, enabling quick decision-making for straightforward issues while reserving deeper analytical thinking for more intricate challenges. However, existing reasoning-oriented visual language models (VLMs), whether trained with explicit chain-of-thought annotations or rule-based RL rewards, mainly pursue lengthy, detailed reasoning chains, which often lead to excessive computational costs. In this work, we propose a simple RL approach, which enables VLMs to automatically switch between fast and slow thinking modes depending on task difficulty. The approach consists of two stages: in the first stage, we label data as either requiring fast thinking or slow thinking based on the model output length, which is inspired by the observation that pre-trained VLMs typically produce answers of varying lengths for different types of questions; in the second stage, we train the model using GRPO along with the thinking mode labels to develop dual-mode thinking. Despite its simplicity, our model, named DualMindVLM, significantly outperforms the base model and achieves performance on par with state-of-the-art visual reasoning models, while maintaining exceptionally high token efficiency.",
+        "url": "http://arxiv.org/abs/2511.16670v1",
+        "published_date": "2025-11-20T18:59:48+00:00",
+        "updated_date": "2025-11-20T18:59:48+00:00",
+        "categories": [
+            "cs.CV"
+        ],
+        "authors": [
+            "Chenyu Lin",
+            "Cheng Chi",
+            "Jinlin Wu",
+            "Sharon Li",
+            "Kaiyang Zhou"
+        ],
+        "ai_categories": []
+    },
+    {
+        "title": "Video-as-Answer: Predict and Generate Next Video Event with Joint-GRPO",
+        "summary": "While language models have become impactful in many real-world applications, video generation remains largely confined to entertainment. Motivated by video's inherent capacity to demonstrate physical-world information that is difficult to convey through language alone (e.g., imagine teaching someone to tie a tie using only text), we identify an underutilized opportunity to extend video as a new answer modality for Next-Event Prediction (NEP), formalized as Video-Next-Event Prediction (VNEP). While the established NEP task takes a video with a procedural or predictive question as input to predict the next event in text, VNEP requires dynamic video responses. This shift from telling to showing unlocks more intuitive and customized answers for procedural learning and creative exploration. However, this task remains challenging for existing models, as it demands an understanding of multimodal input, instruction-conditioned reasoning, and the generation of video with visual and semantic consistency. To address this, we introduce VANS, a model that leverages reinforcement learning to align a Vision-Language Model (VLM) with a Video Diffusion Model (VDM) for VNEP. The core of VANS is our proposed Joint-GRPO that orchestrates the VLM and VDM to function as a unit. Driven by a shared reward on their respective output, it optimizes the VLM to produce captions that are both accurate and friendly to visualize, while guiding the VDM to generate videos that are faithful to these captions and the input visual context. To enable this learning, we craft VANS-Data-100K, a dedicated dataset for the VNEP task. Experiments on procedural and predictive benchmarks demonstrate that VANS achieves state-of-the-art performance in both video event prediction and visualization. Codes are released in https://github.com/KlingTeam/VANS.",
+        "url": "http://arxiv.org/abs/2511.16669v1",
+        "published_date": "2025-11-20T18:59:44+00:00",
+        "updated_date": "2025-11-20T18:59:44+00:00",
+        "categories": [
+            "cs.CV"
+        ],
+        "authors": [
+            "Junhao Cheng",
+            "Liang Hou",
+            "Xin Tao",
+            "Jing Liao"
+        ],
+        "ai_categories": []
+    },
+    {
+        "title": "V-ReasonBench: Toward Unified Reasoning Benchmark Suite for Video Generation Models",
+        "summary": "Recent progress in generative video models, such as Veo-3, has shown surprising zero-shot reasoning abilities, creating a growing need for systematic and reliable evaluation. We introduce V-ReasonBench, a benchmark designed to assess video reasoning across four key dimensions: structured problem-solving, spatial cognition, pattern-based inference, and physical dynamics. The benchmark is built from both synthetic and real-world image sequences and provides a diverse set of answer-verifiable tasks that are reproducible, scalable, and unambiguous. Evaluations of six state-of-the-art video models reveal clear dimension-wise differences, with strong variation in structured, spatial, pattern-based, and physical reasoning. We further compare video models with strong image models, analyze common hallucination behaviors, and study how video duration affects Chain-of-Frames reasoning. Overall, V-ReasonBench offers a unified and reproducible framework for measuring video reasoning and aims to support the development of models with more reliable, human-aligned reasoning skills.",
+        "url": "http://arxiv.org/abs/2511.16668v1",
+        "published_date": "2025-11-20T18:59:42+00:00",
+        "updated_date": "2025-11-20T18:59:42+00:00",
+        "categories": [
+            "cs.CV"
+        ],
+        "authors": [
+            "Yang Luo",
+            "Xuanlei Zhao",
+            "Baijiong Lin",
+            "Lingting Zhu",
+            "Liyao Tang",
+            "Yuqi Liu",
+            "Ying-Cong Chen",
+            "Shengju Qian",
+            "Xin Wang",
+            "Yang You"
+        ],
+        "ai_categories": []
+    },
+    {
+        "title": "SceneDesigner: Controllable Multi-Object Image Generation with 9-DoF Pose Manipulation",
+        "summary": "Controllable image generation has attracted increasing attention in recent years, enabling users to manipulate visual content such as identity and style. However, achieving simultaneous control over the 9D poses (location, size, and orientation) of multiple objects remains an open challenge. Despite recent progress, existing methods often suffer from limited controllability and degraded quality, falling short of comprehensive multi-object 9D pose control. To address these limitations, we propose SceneDesigner, a method for accurate and flexible multi-object 9-DoF pose manipulation. SceneDesigner incorporates a branched network to the pre-trained base model and leverages a new representation, CNOCS map, which encodes 9D pose information from the camera view. This representation exhibits strong geometric interpretation properties, leading to more efficient and stable training. To support training, we construct a new dataset, ObjectPose9D, which aggregates images from diverse sources along with 9D pose annotations. To further address data imbalance issues, particularly performance degradation on low-frequency poses, we introduce a two-stage training strategy with reinforcement learning, where the second stage fine-tunes the model using a reward-based objective on rebalanced data. At inference time, we propose Disentangled Object Sampling, a technique that mitigates insufficient object generation and concept confusion in complex multi-object scenes. Moreover, by integrating user-specific personalization weights, SceneDesigner enables customized pose control for reference subjects. Extensive qualitative and quantitative experiments demonstrate that SceneDesigner significantly outperforms existing approaches in both controllability and quality. Code is publicly available at https://github.com/FudanCVL/SceneDesigner.",
+        "url": "http://arxiv.org/abs/2511.16666v1",
+        "published_date": "2025-11-20T18:59:25+00:00",
+        "updated_date": "2025-11-20T18:59:25+00:00",
+        "categories": [
+            "cs.CV"
+        ],
+        "authors": [
+            "Zhenyuan Qin",
+            "Xincheng Shuai",
+            "Henghui Ding"
+        ],
+        "ai_categories": []
+    },
+    {
+        "title": "TriDiff-4D: Fast 4D Generation through Diffusion-based Triplane Re-posing",
+        "summary": "With the increasing demand for 3D animation, generating high-fidelity, controllable 4D avatars from textual descriptions remains a significant challenge. Despite notable efforts in 4D generative modeling, existing methods exhibit fundamental limitations that impede their broader applicability, including temporal and geometric inconsistencies, perceptual artifacts, motion irregularities, high computational costs, and limited control over dynamics. To address these challenges, we propose TriDiff-4D, a novel 4D generative pipeline that employs diffusion-based triplane re-posing to produce high-quality, temporally coherent 4D avatars. Our model adopts an auto-regressive strategy to generate 4D sequences of arbitrary length, synthesizing each 3D frame with a single diffusion process. By explicitly learning 3D structure and motion priors from large-scale 3D and motion datasets, TriDiff-4D enables skeleton-driven 4D generation that excels in temporal consistency, motion accuracy, computational efficiency, and visual fidelity. Specifically, TriDiff-4D first generates a canonical 3D avatar and a corresponding motion sequence from a text prompt, then uses a second diffusion model to animate the avatar according to the motion sequence, supporting arbitrarily long 4D generation. Experimental results demonstrate that TriDiff-4D significantly outperforms existing methods, reducing generation time from hours to seconds by eliminating the optimization process, while substantially improving the generation of complex motions with high-fidelity appearance and accurate 3D geometry.",
+        "url": "http://arxiv.org/abs/2511.16662v1",
+        "published_date": "2025-11-20T18:59:03+00:00",
+        "updated_date": "2025-11-20T18:59:03+00:00",
+        "categories": [
+            "cs.CV"
+        ],
+        "authors": [
+            "Eddie Pokming Sheung",
+            "Qihao Liu",
+            "Wufei Ma",
+            "Prakhar Kaushik",
+            "Jianwen Xie",
+            "Alan Yuille"
+        ],
+        "ai_categories": []
+    },
+    {
+        "title": "PartUV: Part-Based UV Unwrapping of 3D Meshes",
+        "summary": "UV unwrapping flattens 3D surfaces to 2D with minimal distortion, often requiring the complex surface to be decomposed into multiple charts. Although extensively studied, existing UV unwrapping methods frequently struggle with AI-generated meshes, which are typically noisy, bumpy, and poorly conditioned. These methods often produce highly fragmented charts and suboptimal boundaries, introducing artifacts and hindering downstream tasks. We introduce PartUV, a part-based UV unwrapping pipeline that generates significantly fewer, part-aligned charts while maintaining low distortion. Built on top of a recent learning-based part decomposition method PartField, PartUV combines high-level semantic part decomposition with novel geometric heuristics in a top-down recursive framework. It ensures each chart's distortion remains below a user-specified threshold while minimizing the total number of charts. The pipeline integrates and extends parameterization and packing algorithms, incorporates dedicated handling of non-manifold and degenerate meshes, and is extensively parallelized for efficiency. Evaluated across four diverse datasets, including man-made, CAD, AI-generated, and Common Shapes, PartUV outperforms existing tools and recent neural methods in chart count and seam length, achieves comparable distortion, exhibits high success rates on challenging meshes, and enables new applications like part-specific multi-tiles packing. Our project page is at https://www.zhaoningwang.com/PartUV.",
+        "url": "http://arxiv.org/abs/2511.16659v1",
+        "published_date": "2025-11-20T18:58:39+00:00",
+        "updated_date": "2025-11-20T18:58:39+00:00",
+        "categories": [
+            "cs.CV",
+            "cs.CG",
+            "cs.GR"
+        ],
+        "authors": [
+            "Zhaoning Wang",
+            "Xinyue Wei",
+            "Ruoxi Shi",
+            "Xiaoshuai Zhang",
+            "Hao Su",
+            "Minghua Liu"
+        ],
+        "ai_categories": []
+    },
+    {
+        "title": "Solving Spatial Supersensing Without Spatial Supersensing",
+        "summary": "Cambrian-S aims to take the first steps towards improving video world models with spatial supersensing by introducing (i) two benchmarks, VSI-Super-Recall (VSR) and VSI-Super-Counting (VSC), and (ii) bespoke predictive sensing inference strategies tailored to each benchmark. In this work, we conduct a critical analysis of Cambrian-S across both these fronts. First, we introduce a simple baseline, NoSense, which discards almost all temporal structure and uses only a bag-of-words SigLIP model, yet near-perfectly solves VSR, achieving 95% accuracy even on 4-hour videos. This shows benchmarks like VSR can be nearly solved without spatial cognition, world modeling or spatial supersensing. Second, we hypothesize that the tailored inference methods proposed by Cambrian-S likely exploit shortcut heuristics in the benchmark. We illustrate this with a simple sanity check on the VSC benchmark, called VSC-Repeat: We concatenate each video with itself 1-5 times, which does not change the number of unique objects. However, this simple perturbation entirely collapses the mean relative accuracy of Cambrian-S from 42% to 0%. A system that performs spatial supersensing and integrates information across experiences should recognize views of the same scene and keep object-count predictions unchanged; instead, Cambrian-S inference algorithm relies largely on a shortcut in the VSC benchmark that rooms are never revisited. Taken together, our findings suggest that (i) current VSI-Super benchmarks do not yet reliably measure spatial supersensing, and (ii) predictive-sensing inference recipes used by Cambrian-S improve performance by inadvertently exploiting shortcuts rather than from robust spatial supersensing. We include the response from the Cambrian-S authors (in Appendix A) to provide a balanced perspective alongside our claims. We release our code at: https://github.com/bethgelab/supersanity",
+        "url": "http://arxiv.org/abs/2511.16655v1",
+        "published_date": "2025-11-20T18:57:05+00:00",
+        "updated_date": "2025-11-20T18:57:05+00:00",
+        "categories": [
+            "cs.CV",
+            "cs.LG"
+        ],
+        "authors": [
+            "Vishaal Udandarao",
+            "Shyamgopal Karthik",
+            "Surabhi S. Nath",
+            "Andreas Hochlehnert",
+            "Matthias Bethge",
+            "Ameya Prabhu"
+        ],
+        "ai_categories": []
+    },
+    {
+        "title": "Teacher-Guided One-Shot Pruning via Context-Aware Knowledge Distillation",
+        "summary": "Unstructured pruning remains a powerful strategy for compressing deep neural networks, yet it often demands iterative train-prune-retrain cycles, resulting in significant computational overhead. To address this challenge, we introduce a novel teacher-guided pruning framework that tightly integrates Knowledge Distillation (KD) with importance score estimation. Unlike prior approaches that apply KD as a post-pruning recovery step, our method leverages gradient signals informed by the teacher during importance score calculation to identify and retain parameters most critical for both task performance and knowledge transfer. Our method facilitates a one-shot global pruning strategy that efficiently eliminates redundant weights while preserving essential representations. After pruning, we employ sparsity-aware retraining with and without KD to recover accuracy without reactivating pruned connections. Comprehensive experiments across multiple image classification benchmarks, including CIFAR-10, CIFAR-100, and TinyImageNet, demonstrate that our method consistently achieves high sparsity levels with minimal performance degradation. Notably, our approach outperforms state-of-the-art baselines such as EPG and EPSD at high sparsity levels, while offering a more computationally efficient alternative to iterative pruning schemes like COLT. The proposed framework offers a computation-efficient, performance-preserving solution well suited for deployment in resource-constrained environments.",
+        "url": "http://arxiv.org/abs/2511.16653v1",
+        "published_date": "2025-11-20T18:56:05+00:00",
+        "updated_date": "2025-11-20T18:56:05+00:00",
+        "categories": [
+            "cs.CV",
+            "cs.AI"
+        ],
+        "authors": [
+            "Md. Samiul Alim",
+            "Sharjil Khan",
+            "Amrijit Biswas",
+            "Fuad Rahman",
+            "Shafin Rahman",
+            "Nabeel Mohammed"
+        ],
+        "ai_categories": []
+    },
+    {
+        "title": "Late-decoupled 3D Hierarchical Semantic Segmentation with Semantic Prototype Discrimination based Bi-branch Supervision",
+        "summary": "3D hierarchical semantic segmentation (3DHS) is crucial for embodied intelligence applications that demand a multi-grained and multi-hierarchy understanding of 3D scenes. Despite the progress, previous 3DHS methods have overlooked following two challenges: I) multi-label learning with a parameter-sharing model can lead to multi-hierarchy conflicts in cross-hierarchy optimization, and II) the class imbalance issue is inevitable across multiple hierarchies of 3D scenes, which makes the model performance become dominated by major classes. To address these issues, we propose a novel framework with a primary 3DHS branch and an auxiliary discrimination branch. Specifically, to alleviate the multi-hierarchy conflicts, we propose a late-decoupled 3DHS framework which employs multiple decoders with the coarse-to-fine hierarchical guidance and consistency. The late-decoupled architecture can mitigate the underfitting and overfitting conflicts among multiple hierarchies and can also constrain the class imbalance problem in each individual hierarchy. Moreover, we introduce a 3DHS-oriented semantic prototype based bi-branch supervision mechanism, which additionally learns class-wise discriminative point cloud features and performs mutual supervision between the auxiliary and 3DHS branches, to enhance the class-imbalance segmentation. Extensive experiments on multiple datasets and backbones demonstrate that our approach achieves state-of-the-art 3DHS performance, and its core components can also be used as a plug-and-play enhancement to improve previous methods.",
+        "url": "http://arxiv.org/abs/2511.16650v1",
+        "published_date": "2025-11-20T18:54:31+00:00",
+        "updated_date": "2025-11-20T18:54:31+00:00",
+        "categories": [
+            "cs.CV"
+        ],
+        "authors": [
+            "Shuyu Cao",
+            "Chongshou Li",
+            "Jie Xu",
+            "Tianrui Li",
+            "Na Zhao"
+        ],
+        "ai_categories": []
+    },
+    {
+        "title": "TRIM: Scalable 3D Gaussian Diffusion Inference with Temporal and Spatial Trimming",
+        "summary": "Recent advances in 3D Gaussian diffusion models suffer from time-intensive denoising and post-denoising processing due to the massive number of Gaussian primitives, resulting in slow generation and limited scalability along sampling trajectories. To improve the efficiency of 3D diffusion models, we propose $\\textbf{TRIM}$ ($\\textbf{T}$rajectory $\\textbf{R}$eduction and $\\textbf{I}$nstance $\\textbf{M}$ask denoising), a post-training approach that incorporates both temporal and spatial trimming strategies, to accelerate inference without compromising output quality while supporting the inference-time scaling for Gaussian diffusion models. Instead of scaling denoising trajectories in a costly end-to-end manner, we develop a lightweight selector model to evaluate latent Gaussian primitives derived from multiple sampled noises, enabling early trajectory reduction by selecting candidates with high-quality potential. Furthermore, we introduce instance mask denoising to prune learnable Gaussian primitives by filtering out redundant background regions, reducing inference computation at each denoising step. Extensive experiments and analysis demonstrate that TRIM significantly improves both the efficiency and quality of 3D generation. Source code is available at $\\href{https://github.com/zeyuanyin/TRIM}{link}$.",
+        "url": "http://arxiv.org/abs/2511.16642v1",
+        "published_date": "2025-11-20T18:49:09+00:00",
+        "updated_date": "2025-11-20T18:49:09+00:00",
+        "categories": [
+            "cs.CV"
+        ],
+        "authors": [
+            "Zeyuan Yin",
+            "Xiaoming Liu"
+        ],
+        "ai_categories": []
+    },
+    {
+        "title": "SurvAgent: Hierarchical CoT-Enhanced Case Banking and Dichotomy-Based Multi-Agent System for Multimodal Survival Prediction",
+        "summary": "Survival analysis is critical for cancer prognosis and treatment planning, yet existing methods lack the transparency essential for clinical adoption. While recent pathology agents have demonstrated explainability in diagnostic tasks, they face three limitations for survival prediction: inability to integrate multimodal data, ineffective region-of-interest exploration, and failure to leverage experiential learning from historical cases. We introduce SurvAgent, the first hierarchical chain-of-thought (CoT)-enhanced multi-agent system for multimodal survival prediction. SurvAgent consists of two stages: (1) WSI-Gene CoT-Enhanced Case Bank Construction employs hierarchical analysis through Low-Magnification Screening, Cross-Modal Similarity-Aware Patch Mining, and Confidence-Aware Patch Mining for pathology images, while Gene-Stratified analysis processes six functional gene categories. Both generate structured reports with CoT reasoning, storing complete analytical processes for experiential learning. (2) Dichotomy-Based Multi-Expert Agent Inference retrieves similar cases via RAG and integrates multimodal reports with expert predictions through progressive interval refinement. Extensive experiments on five TCGA cohorts demonstrate SurvAgent's superority over conventional methods, proprietary MLLMs, and medical agents, establishing a new paradigm for explainable AI-driven survival prediction in precision oncology.",
+        "url": "http://arxiv.org/abs/2511.16635v1",
+        "published_date": "2025-11-20T18:41:44+00:00",
+        "updated_date": "2025-11-20T18:41:44+00:00",
+        "categories": [
+            "cs.CV",
+            "cs.CL"
+        ],
+        "authors": [
+            "Guolin Huang",
+            "Wenting Chen",
+            "Jiaqi Yang",
+            "Xinheng Lyu",
+            "Xiaoling Luo",
+            "Sen Yang",
+            "Xiaohan Xing",
+            "Linlin Shen"
+        ],
+        "ai_categories": []
+    },
+    {
+        "title": "SAM 3D: 3Dfy Anything in Images",
+        "summary": "We present SAM 3D, a generative model for visually grounded 3D object reconstruction, predicting geometry, texture, and layout from a single image. SAM 3D excels in natural images, where occlusion and scene clutter are common and visual recognition cues from context play a larger role. We achieve this with a human- and model-in-the-loop pipeline for annotating object shape, texture, and pose, providing visually grounded 3D reconstruction data at unprecedented scale. We learn from this data in a modern, multi-stage training framework that combines synthetic pretraining with real-world alignment, breaking the 3D \"data barrier\". We obtain significant gains over recent work, with at least a 5:1 win rate in human preference tests on real-world objects and scenes. We will release our code and model weights, an online demo, and a new challenging benchmark for in-the-wild 3D object reconstruction.",
+        "url": "http://arxiv.org/abs/2511.16624v1",
+        "published_date": "2025-11-20T18:31:46+00:00",
+        "updated_date": "2025-11-20T18:31:46+00:00",
+        "categories": [
+            "cs.CV",
+            "cs.AI"
+        ],
+        "authors": [
+            "SAM 3D Team",
+            "Xingyu Chen",
+            "Fu-Jen Chu",
+            "Pierre Gleize",
+            "Kevin J Liang",
+            "Alexander Sax",
+            "Hao Tang",
+            "Weiyao Wang",
+            "Michelle Guo",
+            "Thibaut Hardin",
+            "Xiang Li",
+            "Aohan Lin",
+            "Jiawei Liu",
+            "Ziqi Ma",
+            "Anushka Sagar",
+            "Bowen Song",
+            "Xiaodong Wang",
+            "Jianing Yang",
+            "Bowen Zhang",
+            "Piotr Dollár",
+            "Georgia Gkioxari",
+            "Matt Feiszli",
+            "Jitendra Malik"
+        ],
+        "ai_categories": []
+    },
+    {
+        "title": "SAM2S: Segment Anything in Surgical Videos via Semantic Long-term Tracking",
+        "summary": "Surgical video segmentation is crucial for computer-assisted surgery, enabling precise localization and tracking of instruments and tissues. Interactive Video Object Segmentation (iVOS) models such as Segment Anything Model 2 (SAM2) provide prompt-based flexibility beyond methods with predefined categories, but face challenges in surgical scenarios due to the domain gap and limited long-term tracking. To address these limitations, we construct SA-SV, the largest surgical iVOS benchmark with instance-level spatio-temporal annotations (masklets) spanning eight procedure types (61k frames, 1.6k masklets), enabling comprehensive development and evaluation for long-term tracking and zero-shot generalization. Building on SA-SV, we propose SAM2S, a foundation model enhancing \\textbf{SAM2} for \\textbf{S}urgical iVOS through: (1) DiveMem, a trainable diverse memory mechanism for robust long-term tracking; (2) temporal semantic learning for instrument understanding; and (3) ambiguity-resilient learning to mitigate annotation inconsistencies across multi-source datasets. Extensive experiments demonstrate that fine-tuning on SA-SV enables substantial performance gains, with SAM2 improving by 12.99 average $\\mathcal{J}$\\&$\\mathcal{F}$ over vanilla SAM2. SAM2S further advances performance to 80.42 average $\\mathcal{J}$\\&$\\mathcal{F}$, surpassing vanilla and fine-tuned SAM2 by 17.10 and 4.11 points respectively, while maintaining 68 FPS real-time inference and strong zero-shot generalization. Code and dataset will be released at https://jinlab-imvr.github.io/SAM2S.",
+        "url": "http://arxiv.org/abs/2511.16618v1",
+        "published_date": "2025-11-20T18:18:49+00:00",
+        "updated_date": "2025-11-20T18:18:49+00:00",
+        "categories": [
+            "cs.CV",
+            "eess.IV",
+            "q-bio.TO"
+        ],
+        "authors": [
+            "Haofeng Liu",
+            "Ziyue Wang",
+            "Sudhanshu Mishra",
+            "Mingqi Gao",
+            "Guanyi Qin",
+            "Chang Han Low",
+            "Alex Y. W. Kong",
+            "Yueming Jin"
+        ],
+        "ai_categories": []
+    }
+]
