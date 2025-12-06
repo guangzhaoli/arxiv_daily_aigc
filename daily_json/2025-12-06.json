@@ -1,0 +1,390 @@
+[
+    {
+        "title": "The Universal Weight Subspace Hypothesis",
+        "summary": "We show that deep neural networks trained across diverse tasks exhibit remarkably similar low-dimensional parametric subspaces. We provide the first large-scale empirical evidence that demonstrates that neural networks systematically converge to shared spectral subspaces regardless of initialization, task, or domain. Through mode-wise spectral analysis of over 1100 models - including 500 Mistral-7B LoRAs, 500 Vision Transformers, and 50 LLaMA-8B models - we identify universal subspaces capturing majority variance in just a few principal directions. By applying spectral decomposition techniques to the weight matrices of various architectures trained on a wide range of tasks and datasets, we identify sparse, joint subspaces that are consistently exploited, within shared architectures across diverse tasks and datasets. Our findings offer new insights into the intrinsic organization of information within deep networks and raise important questions about the possibility of discovering these universal subspaces without the need for extensive data and computational resources. Furthermore, this inherent structure has significant implications for model reusability, multi-task learning, model merging, and the development of training and inference-efficient algorithms, potentially reducing the carbon footprint of large-scale neural models.",
+        "url": "http://arxiv.org/abs/2512.05117v1",
+        "published_date": "2025-12-04T18:59:58+00:00",
+        "updated_date": "2025-12-04T18:59:58+00:00",
+        "categories": [
+            "cs.LG",
+            "cs.AI",
+            "cs.CV"
+        ],
+        "authors": [
+            "Prakhar Kaushik",
+            "Shravan Chaudhari",
+            "Ankit Vaidya",
+            "Rama Chellappa",
+            "Alan Yuille"
+        ],
+        "ai_categories": []
+    },
+    {
+        "title": "Light-X: Generative 4D Video Rendering with Camera and Illumination Control",
+        "summary": "Recent advances in illumination control extend image-based methods to video, yet still facing a trade-off between lighting fidelity and temporal consistency. Moving beyond relighting, a key step toward generative modeling of real-world scenes is the joint control of camera trajectory and illumination, since visual dynamics are inherently shaped by both geometry and lighting. To this end, we present Light-X, a video generation framework that enables controllable rendering from monocular videos with both viewpoint and illumination control. 1) We propose a disentangled design that decouples geometry and lighting signals: geometry and motion are captured via dynamic point clouds projected along user-defined camera trajectories, while illumination cues are provided by a relit frame consistently projected into the same geometry. These explicit, fine-grained cues enable effective disentanglement and guide high-quality illumination. 2) To address the lack of paired multi-view and multi-illumination videos, we introduce Light-Syn, a degradation-based pipeline with inverse-mapping that synthesizes training pairs from in-the-wild monocular footage. This strategy yields a dataset covering static, dynamic, and AI-generated scenes, ensuring robust training. Extensive experiments show that Light-X outperforms baseline methods in joint camera-illumination control and surpasses prior video relighting methods under both text- and background-conditioned settings.",
+        "url": "http://arxiv.org/abs/2512.05115v1",
+        "published_date": "2025-12-04T18:59:57+00:00",
+        "updated_date": "2025-12-04T18:59:57+00:00",
+        "categories": [
+            "cs.CV"
+        ],
+        "authors": [
+            "Tianqi Liu",
+            "Zhaoxi Chen",
+            "Zihao Huang",
+            "Shaocong Xu",
+            "Saining Zhang",
+            "Chongjie Ye",
+            "Bohan Li",
+            "Zhiguo Cao",
+            "Wei Li",
+            "Hao Zhao",
+            "Ziwei Liu"
+        ],
+        "ai_categories": []
+    },
+    {
+        "title": "Value Gradient Guidance for Flow Matching Alignment",
+        "summary": "While methods exist for aligning flow matching models--a popular and effective class of generative models--with human preferences, existing approaches fail to achieve both adaptation efficiency and probabilistically sound prior preservation. In this work, we leverage the theory of optimal control and propose VGG-Flow, a gradient-matching-based method for finetuning pretrained flow matching models. The key idea behind this algorithm is that the optimal difference between the finetuned velocity field and the pretrained one should be matched with the gradient field of a value function. This method not only incorporates first-order information from the reward model but also benefits from heuristic initialization of the value function to enable fast adaptation. Empirically, we show on a popular text-to-image flow matching model, Stable Diffusion 3, that our method can finetune flow matching models under limited computational budgets while achieving effective and prior-preserving alignment.",
+        "url": "http://arxiv.org/abs/2512.05116v1",
+        "published_date": "2025-12-04T18:59:57+00:00",
+        "updated_date": "2025-12-04T18:59:57+00:00",
+        "categories": [
+            "cs.LG",
+            "cs.CV"
+        ],
+        "authors": [
+            "Zhen Liu",
+            "Tim Z. Xiao",
+            "Carles Domingo-Enrich",
+            "Weiyang Liu",
+            "Dinghuai Zhang"
+        ],
+        "ai_categories": []
+    },
+    {
+        "title": "Deep infant brain segmentation from multi-contrast MRI",
+        "summary": "Segmentation of magnetic resonance images (MRI) facilitates analysis of human brain development by delineating anatomical structures. However, in infants and young children, accurate segmentation is challenging due to development and imaging constraints. Pediatric brain MRI is notoriously difficult to acquire, with inconsistent availability of imaging modalities, substantial non-head anatomy in the field of view, and frequent motion artifacts. This has led to specialized segmentation models that are often limited to specific image types or narrow age groups, or that are fragile for more variable images such as those acquired clinically. We address this method fragmentation with BabySeg, a deep learning brain segmentation framework for infants and young children that supports diverse MRI protocols, including repeat scans and image types unavailable during training. Our approach builds on recent domain randomization techniques, which synthesize training images far beyond realistic bounds to promote dataset shift invariance. We also describe a mechanism that enables models to flexibly pool and interact features from any number of input scans. We demonstrate state-of-the-art performance that matches or exceeds the accuracy of several existing methods for various age cohorts and input configurations using a single model, in a fraction of the runtime required by many existing tools.",
+        "url": "http://arxiv.org/abs/2512.05114v1",
+        "published_date": "2025-12-04T18:59:55+00:00",
+        "updated_date": "2025-12-04T18:59:55+00:00",
+        "categories": [
+            "cs.LG",
+            "cs.CV",
+            "eess.IV"
+        ],
+        "authors": [
+            "Malte Hoffmann",
+            "Lilla Zöllei",
+            "Adrian V. Dalca"
+        ],
+        "ai_categories": []
+    },
+    {
+        "title": "Splannequin: Freezing Monocular Mannequin-Challenge Footage with Dual-Detection Splatting",
+        "summary": "Synthesizing high-fidelity frozen 3D scenes from monocular Mannequin-Challenge (MC) videos is a unique problem distinct from standard dynamic scene reconstruction. Instead of focusing on modeling motion, our goal is to create a frozen scene while strategically preserving subtle dynamics to enable user-controlled instant selection. To achieve this, we introduce a novel application of dynamic Gaussian splatting: the scene is modeled dynamically, which retains nearby temporal variation, and a static scene is rendered by fixing the model's time parameter. However, under this usage, monocular capture with sparse temporal supervision introduces artifacts like ghosting and blur for Gaussians that become unobserved or occluded at weakly supervised timestamps. We propose Splannequin, an architecture-agnostic regularization that detects two states of Gaussian primitives, hidden and defective, and applies temporal anchoring. Under predominantly forward camera motion, hidden states are anchored to their recent well-observed past states, while defective states are anchored to future states with stronger supervision. Our method integrates into existing dynamic Gaussian pipelines via simple loss terms, requires no architectural changes, and adds zero inference overhead. This results in markedly improved visual quality, enabling high-fidelity, user-selectable frozen-time renderings, validated by a 96% user preference. Project page: https://chien90190.github.io/splannequin/",
+        "url": "http://arxiv.org/abs/2512.05113v1",
+        "published_date": "2025-12-04T18:59:53+00:00",
+        "updated_date": "2025-12-04T18:59:53+00:00",
+        "categories": [
+            "cs.CV"
+        ],
+        "authors": [
+            "Hao-Jen Chien",
+            "Yi-Chuan Huang",
+            "Chung-Ho Wu",
+            "Wei-Lun Chao",
+            "Yu-Lun Liu"
+        ],
+        "ai_categories": []
+    },
+    {
+        "title": "DraCo: Draft as CoT for Text-to-Image Preview and Rare Concept Generation",
+        "summary": "Recent unified multimodal large language models (MLLMs) have shown impressive capabilities, incorporating chain-of-thought (CoT) reasoning for enhanced text-to-image generation. However, existing approaches remain limited, either treating the model merely as a standalone generator or relying on abstract textual planning. To this end, we propose Draft-as-CoT (DraCo), a novel interleaved reasoning paradigm that fully leverages both textual and visual contents in CoT for better planning and verification. Our method first generates a low-resolution draft image as preview, providing more concrete and structural visual planning and guidance. Then, we employ the model's inherent understanding capability to verify potential semantic misalignments between the draft and input prompt, and performs refinement through selective corrections with super-resolution. In this way, our approach addresses two fundamental challenges: the coarse-grained nature of textual planning and the difficulty in generating rare attribute combinations. To support training, we curate DraCo-240K, aiming to enhance three atomic capabilities spanning general correction, instance manipulation, and layout reorganization. Supported by DraCo-CFG, a specialized classifier-free guidance (CFG) strategy for interleaved reasoning, DraCo achieves a tremendous increase on GenEval (+8%), Imagine-Bench (+0.91), and GenEval++ (+3%), significantly outperforming direct generation and other generation methods empowered by CoT.",
+        "url": "http://arxiv.org/abs/2512.05112v1",
+        "published_date": "2025-12-04T18:59:53+00:00",
+        "updated_date": "2025-12-04T18:59:53+00:00",
+        "categories": [
+            "cs.CV",
+            "cs.AI",
+            "cs.CL",
+            "cs.LG"
+        ],
+        "authors": [
+            "Dongzhi Jiang",
+            "Renrui Zhang",
+            "Haodong Li",
+            "Zhuofan Zong",
+            "Ziyu Guo",
+            "Jun He",
+            "Claire Guo",
+            "Junyan Ye",
+            "Rongyao Fang",
+            "Weijia Li",
+            "Rui Liu",
+            "Hongsheng Li"
+        ],
+        "ai_categories": []
+    },
+    {
+        "title": "ARM-Thinker: Reinforcing Multimodal Generative Reward Models with Agentic Tool Use and Visual Reasoning",
+        "summary": "Reward models are critical for aligning vision-language systems with human preferences, yet current approaches suffer from hallucination, weak visual grounding, and an inability to use tools for verification, limiting their reliability on complex multimodal reasoning tasks. We present ARM-Thinker, an A}gentic multimodal Reward Model that autonomously invokes external tools (e.g., image cropping, doc page retrieval) to ground judgments in verifiable evidence, replacing static, non-interactive reward scoring. This enables the model to verify fine-grained visual details, cross-reference multi-page evidence, and validate reasoning claims, which are capabilities absent in existing reward models. We train ARM-Thinker with multi-stage reinforcement learning, jointly optimizing tool-calling decisions and judgment accuracy. To evaluate agentic reward modeling, we introduce ARMBench-VL, comprising three benchmarks that assess fine-grained visual grounding (image-level tools), multi-page document understanding (retrieval tools), and instruction following (text-level verification). ARM-Thinker achieves +16.2% average improvement on reward modeling benchmarks, +9.6% on tool-use tasks, and outperforms baselines on multimodal math and logical reasoning benchmarks. Our results demonstrate that agentic capabilities significantly enhance both accuracy and interpretability of reward models.",
+        "url": "http://arxiv.org/abs/2512.05111v1",
+        "published_date": "2025-12-04T18:59:52+00:00",
+        "updated_date": "2025-12-04T18:59:52+00:00",
+        "categories": [
+            "cs.CV"
+        ],
+        "authors": [
+            "Shengyuan Ding",
+            "Xinyu Fang",
+            "Ziyu Liu",
+            "Yuhang Zang",
+            "Yuhang Cao",
+            "Xiangyu Zhao",
+            "Haodong Duan",
+            "Xiaoyi Dong",
+            "Jianze Liang",
+            "Bin Wang",
+            "Conghui He",
+            "Dahua Lin",
+            "Jiaqi Wang"
+        ],
+        "ai_categories": []
+    },
+    {
+        "title": "ShadowDraw: From Any Object to Shadow-Drawing Compositional Art",
+        "summary": "We introduce ShadowDraw, a framework that transforms ordinary 3D objects into shadow-drawing compositional art. Given a 3D object, our system predicts scene parameters, including object pose and lighting, together with a partial line drawing, such that the cast shadow completes the drawing into a recognizable image. To this end, we optimize scene configurations to reveal meaningful shadows, employ shadow strokes to guide line drawing generation, and adopt automatic evaluation to enforce shadow-drawing coherence and visual quality. Experiments show that ShadowDraw produces compelling results across diverse inputs, from real-world scans and curated datasets to generative assets, and naturally extends to multi-object scenes, animations, and physical deployments. Our work provides a practical pipeline for creating shadow-drawing art and broadens the design space of computational visual art, bridging the gap between algorithmic design and artistic storytelling. Check out our project page https://red-fairy.github.io/ShadowDraw/ for more results and an end-to-end real-world demonstration of our pipeline!",
+        "url": "http://arxiv.org/abs/2512.05110v1",
+        "published_date": "2025-12-04T18:59:51+00:00",
+        "updated_date": "2025-12-04T18:59:51+00:00",
+        "categories": [
+            "cs.CV",
+            "cs.AI",
+            "cs.GR"
+        ],
+        "authors": [
+            "Rundong Luo",
+            "Noah Snavely",
+            "Wei-Chiu Ma"
+        ],
+        "ai_categories": []
+    },
+    {
+        "title": "NeuralRemaster: Phase-Preserving Diffusion for Structure-Aligned Generation",
+        "summary": "Standard diffusion corrupts data using Gaussian noise whose Fourier coefficients have random magnitudes and random phases. While effective for unconditional or text-to-image generation, corrupting phase components destroys spatial structure, making it ill-suited for tasks requiring geometric consistency, such as re-rendering, simulation enhancement, and image-to-image translation. We introduce Phase-Preserving Diffusion φ-PD, a model-agnostic reformulation of the diffusion process that preserves input phase while randomizing magnitude, enabling structure-aligned generation without architectural changes or additional parameters. We further propose Frequency-Selective Structured (FSS) noise, which provides continuous control over structural rigidity via a single frequency-cutoff parameter. φ-PD adds no inference-time cost and is compatible with any diffusion model for images or videos. Across photorealistic and stylized re-rendering, as well as sim-to-real enhancement for driving planners, φ-PD produces controllable, spatially aligned results. When applied to the CARLA simulator, φ-PD improves CARLA-to-Waymo planner performance by 50\\%. The method is complementary to existing conditioning approaches and broadly applicable to image-to-image and video-to-video generation. Videos, additional examples, and code are available on our \\href{https://yuzeng-at-tri.github.io/ppd-page/}{project page}.",
+        "url": "http://arxiv.org/abs/2512.05106v1",
+        "published_date": "2025-12-04T18:59:18+00:00",
+        "updated_date": "2025-12-04T18:59:18+00:00",
+        "categories": [
+            "cs.CV",
+            "cs.GR",
+            "cs.LG",
+            "cs.RO"
+        ],
+        "authors": [
+            "Yu Zeng",
+            "Charles Ochoa",
+            "Mingyuan Zhou",
+            "Vishal M. Patel",
+            "Vitor Guizilini",
+            "Rowan McAllister"
+        ],
+        "ai_categories": []
+    },
+    {
+        "title": "EvoIR: Towards All-in-One Image Restoration via Evolutionary Frequency Modulation",
+        "summary": "All-in-One Image Restoration (AiOIR) tasks often involve diverse degradation that require robust and versatile strategies. However, most existing approaches typically lack explicit frequency modeling and rely on fixed or heuristic optimization schedules, which limit the generalization across heterogeneous degradation. To address these limitations, we propose EvoIR, an AiOIR-specific framework that introduces evolutionary frequency modulation for dynamic and adaptive image restoration. Specifically, EvoIR employs the Frequency-Modulated Module (FMM) that decomposes features into high- and low-frequency branches in an explicit manner and adaptively modulates them to enhance both structural fidelity and fine-grained details. Central to EvoIR, an Evolutionary Optimization Strategy (EOS) iteratively adjusts frequency-aware objectives through a population-based evolutionary process, dynamically balancing structural accuracy and perceptual fidelity. Its evolutionary guidance further mitigates gradient conflicts across degradation and accelerates convergence. By synergizing FMM and EOS, EvoIR yields greater improvements than using either component alone, underscoring their complementary roles. Extensive experiments on multiple benchmarks demonstrate that EvoIR outperforms state-of-the-art AiOIR methods.",
+        "url": "http://arxiv.org/abs/2512.05104v1",
+        "published_date": "2025-12-04T18:59:10+00:00",
+        "updated_date": "2025-12-04T18:59:10+00:00",
+        "categories": [
+            "cs.CV"
+        ],
+        "authors": [
+            "Jiaqi Ma",
+            "Shengkai Hu",
+            "Jun Wan",
+            "Jiaxing Huang",
+            "Lefei Zhang",
+            "Salman Khan"
+        ],
+        "ai_categories": []
+    },
+    {
+        "title": "TV2TV: A Unified Framework for Interleaved Language and Video Generation",
+        "summary": "Video generation models are rapidly advancing, but can still struggle with complex video outputs that require significant semantic branching or repeated high-level reasoning about what should happen next. In this paper, we introduce a new class of omni video-text models that integrate ideas from recent LM reasoning advances to address this challenge. More specifically, we present TV2TV, a unified generative modeling framework which decomposes video generation into an interleaved text and video generation process. TV2TV jointly learns language modeling (next-token prediction) and video flow matching (next-frame prediction) using a Mixture-of-Transformers (MoT) architecture. At inference time, TV2TV decides when to alternate between generating text and video frames, allowing the model to \"think in words\" about subsequent content before ``acting in pixels'' to produce frames. This design offloads much of the responsibility for deciding what should happen next to the language modeling tower, enabling improved visual quality and prompt alignment of generated videos. It also enables fine-grained controllability, allowing users to modify the video generation trajectory through text interventions at any point in the process. In controlled experiments on video game data, TV2TV demonstrates substantial improvements in both visual quality and controllability. TV2TV also scales to natural videos, as we show by augmenting sports videos with interleaved natural language action descriptions using vision-language models (VLMs). Training TV2TV on this corpus yields strong visual quality and prompt alignment, showcasing the model's ability to reason about and generate complex real-world action sequences. Together, these results highlight TV2TV as a promising step toward video generation with open-ended textual reasoning and control.",
+        "url": "http://arxiv.org/abs/2512.05103v1",
+        "published_date": "2025-12-04T18:59:09+00:00",
+        "updated_date": "2025-12-04T18:59:09+00:00",
+        "categories": [
+            "cs.LG",
+            "cs.AI",
+            "cs.CV"
+        ],
+        "authors": [
+            "Xiaochuang Han",
+            "Youssef Emad",
+            "Melissa Hall",
+            "John Nguyen",
+            "Karthik Padthe",
+            "Liam Robbins",
+            "Amir Bar",
+            "Delong Chen",
+            "Michal Drozdzal",
+            "Maha Elbayad",
+            "Yushi Hu",
+            "Shang-Wen Li",
+            "Sreya Dutta Roy",
+            "Jakob Verbeek",
+            "XuDong Wang",
+            "Marjan Ghazvininejad",
+            "Luke Zettlemoyer",
+            "Emily Dinan"
+        ],
+        "ai_categories": []
+    },
+    {
+        "title": "SA-IQA: Redefining Image Quality Assessment for Spatial Aesthetics with Multi-Dimensional Rewards",
+        "summary": "In recent years, Image Quality Assessment (IQA) for AI-generated images (AIGI) has advanced rapidly; however, existing methods primarily target portraits and artistic images, lacking a systematic evaluation of interior scenes. We introduce Spatial Aesthetics, a paradigm that assesses the aesthetic quality of interior images along four dimensions: layout, harmony, lighting, and distortion. We construct SA-BENCH, the first benchmark for spatial aesthetics, comprising 18,000 images and 50,000 precise annotations. Employing SA-BENCH, we systematically evaluate current IQA methodologies and develop SA-IQA, through MLLM fine-tuning and a multidimensional fusion approach, as a comprehensive reward framework for assessing spatial aesthetics. We apply SA-IQA to two downstream tasks: (1) serving as a reward signal integrated with GRPO reinforcement learning to optimize the AIGC generation pipeline, and (2) Best-of-N selection to filter high-quality images and improve generation quality. Experiments indicate that SA-IQA significantly outperforms existing methods on SA-BENCH, setting a new standard for spatial aesthetics evaluation. Code and dataset will be open-sourced to advance research and applications in this domain.",
+        "url": "http://arxiv.org/abs/2512.05098v1",
+        "published_date": "2025-12-04T18:58:18+00:00",
+        "updated_date": "2025-12-04T18:58:18+00:00",
+        "categories": [
+            "cs.CV",
+            "cs.AI"
+        ],
+        "authors": [
+            "Yuan Gao",
+            "Jin Song"
+        ],
+        "ai_categories": []
+    },
+    {
+        "title": "From Generated Human Videos to Physically Plausible Robot Trajectories",
+        "summary": "Video generation models are rapidly improving in their ability to synthesize human actions in novel contexts, holding the potential to serve as high-level planners for contextual robot control. To realize this potential, a key research question remains open: how can a humanoid execute the human actions from generated videos in a zero-shot manner? This challenge arises because generated videos are often noisy and exhibit morphological distortions that make direct imitation difficult compared to real video. To address this, we introduce a two-stage pipeline. First, we lift video pixels into a 4D human representation and then retarget to the humanoid morphology. Second, we propose GenMimic-a physics-aware reinforcement learning policy conditioned on 3D keypoints, and trained with symmetry regularization and keypoint-weighted tracking rewards. As a result, GenMimic can mimic human actions from noisy, generated videos. We curate GenMimicBench, a synthetic human-motion dataset generated using two video generation models across a spectrum of actions and contexts, establishing a benchmark for assessing zero-shot generalization and policy robustness. Extensive experiments demonstrate improvements over strong baselines in simulation and confirm coherent, physically stable motion tracking on a Unitree G1 humanoid robot without fine-tuning. This work offers a promising path to realizing the potential of video generation models as high-level policies for robot control.",
+        "url": "http://arxiv.org/abs/2512.05094v1",
+        "published_date": "2025-12-04T18:56:03+00:00",
+        "updated_date": "2025-12-04T18:56:03+00:00",
+        "categories": [
+            "cs.RO",
+            "cs.CV"
+        ],
+        "authors": [
+            "James Ni",
+            "Zekai Wang",
+            "Wei Lin",
+            "Amir Bar",
+            "Yann LeCun",
+            "Trevor Darrell",
+            "Jitendra Malik",
+            "Roei Herzig"
+        ],
+        "ai_categories": []
+    },
+    {
+        "title": "Visual Reasoning Tracer: Object-Level Grounded Reasoning Benchmark",
+        "summary": "Recent advances in Multimodal Large Language Models (MLLMs) have significantly improved performance on tasks such as visual grounding and visual question answering. However, the reasoning processes of these models remain largely opaque; they typically output only final predictions without revealing the intermediate steps or fine-grained evidence (e.g., pixels, locations) that lead to the result. This contrasts with human intelligence, which naturally operates through a chain of visual reasoning. To address this limitation, we introduce the Visual Reasoning Tracer (VRT) task, which requires models to not only localize the target object but also explicitly predict the intermediate objects that form the reasoning path. To advance research in this area, we contribute: (1) VRT-Bench, a human-annotated benchmark for evaluating visual reasoning; (2) a new metric for assessing the quality of reasoning traces; and (3) VRT-80k, a large-scale dataset for reasoning model training. Our experiments reveal that while existing models often produce the correct final output, they struggle to ground their intermediate reasoning. In contrast, models trained on VRT-80k achieve substantial improvements in tracing the reasoning path.",
+        "url": "http://arxiv.org/abs/2512.05091v1",
+        "published_date": "2025-12-04T18:55:34+00:00",
+        "updated_date": "2025-12-04T18:55:34+00:00",
+        "categories": [
+            "cs.CV"
+        ],
+        "authors": [
+            "Haobo Yuan",
+            "Yueyi Sun",
+            "Yanwei Li",
+            "Tao Zhang",
+            "Xueqing Deng",
+            "Henghui Ding",
+            "Lu Qi",
+            "Anran Wang",
+            "Xiangtai Li",
+            "Ming-Hsuan Yang"
+        ],
+        "ai_categories": []
+    },
+    {
+        "title": "Deep Forcing: Training-Free Long Video Generation with Deep Sink and Participative Compression",
+        "summary": "Recent advances in autoregressive video diffusion have enabled real-time frame streaming, yet existing solutions still suffer from temporal repetition, drift, and motion deceleration. We find that naively applying StreamingLLM-style attention sinks to video diffusion leads to fidelity degradation and motion stagnation. To overcome this, we introduce Deep Forcing, which consists of two training-free mechanisms that address this without any fine-tuning. Specifically, 1) Deep Sink dedicates half of the sliding window to persistent sink tokens and re-aligns their temporal RoPE phase to the current timeline, stabilizing global context during long rollouts. 2) Participative Compression performs importance-aware KV cache pruning that preserves only tokens actively participating in recent attention while safely discarding redundant and degraded history, minimizing error accumulation under out-of-distribution length generation. Together, these components enable over 12x extrapolation (e.g. 5s-trained to 60s+ generation) with better imaging quality than LongLive, better aesthetic quality than RollingForcing, almost maintaining overall consistency, and substantial gains in dynamic degree, all while maintaining real-time generation. Our results demonstrate that training-free KV-cache management can match or exceed training-based approaches for autoregressively streaming long-video generation.",
+        "url": "http://arxiv.org/abs/2512.05081v1",
+        "published_date": "2025-12-04T18:46:44+00:00",
+        "updated_date": "2025-12-04T18:46:44+00:00",
+        "categories": [
+            "cs.CV"
+        ],
+        "authors": [
+            "Jung Yi",
+            "Wooseok Jang",
+            "Paul Hyunbin Cho",
+            "Jisu Nam",
+            "Heeji Yoon",
+            "Seungryong Kim"
+        ],
+        "ai_categories": []
+    },
+    {
+        "title": "Object Reconstruction under Occlusion with Generative Priors and Contact-induced Constraints",
+        "summary": "Object geometry is key information for robot manipulation. Yet, object reconstruction is a challenging task because cameras only capture partial observations of objects, especially when occlusion occurs. In this paper, we leverage two extra sources of information to reduce the ambiguity of vision signals. First, generative models learn priors of the shapes of commonly seen objects, allowing us to make reasonable guesses of the unseen part of geometry. Second, contact information, which can be obtained from videos and physical interactions, provides sparse constraints on the boundary of the geometry. We combine the two sources of information through contact-guided 3D generation. The guidance formulation is inspired by drag-based editing in generative models. Experiments on synthetic and real-world data show that our approach improves the reconstruction compared to pure 3D generation and contact-based optimization.",
+        "url": "http://arxiv.org/abs/2512.05079v1",
+        "published_date": "2025-12-04T18:45:14+00:00",
+        "updated_date": "2025-12-04T18:45:14+00:00",
+        "categories": [
+            "cs.CV",
+            "cs.RO"
+        ],
+        "authors": [
+            "Minghan Zhu",
+            "Zhiyi Wang",
+            "Qihang Sun",
+            "Maani Ghaffari",
+            "Michael Posa"
+        ],
+        "ai_categories": []
+    },
+    {
+        "title": "BulletTime: Decoupled Control of Time and Camera Pose for Video Generation",
+        "summary": "Emerging video diffusion models achieve high visual fidelity but fundamentally couple scene dynamics with camera motion, limiting their ability to provide precise spatial and temporal control. We introduce a 4D-controllable video diffusion framework that explicitly decouples scene dynamics from camera pose, enabling fine-grained manipulation of both scene dynamics and camera viewpoint. Our framework takes continuous world-time sequences and camera trajectories as conditioning inputs, injecting them into the video diffusion model through a 4D positional encoding in the attention layer and adaptive normalizations for feature modulation. To train this model, we curate a unique dataset in which temporal and camera variations are independently parameterized; this dataset will be made public. Experiments show that our model achieves robust real-world 4D control across diverse timing patterns and camera trajectories, while preserving high generation quality and outperforming prior work in controllability. See our website for video results: https://19reborn.github.io/Bullet4D/",
+        "url": "http://arxiv.org/abs/2512.05076v1",
+        "published_date": "2025-12-04T18:40:52+00:00",
+        "updated_date": "2025-12-04T18:40:52+00:00",
+        "categories": [
+            "cs.CV"
+        ],
+        "authors": [
+            "Yiming Wang",
+            "Qihang Zhang",
+            "Shengqu Cai",
+            "Tong Wu",
+            "Jan Ackermann",
+            "Zhengfei Kuang",
+            "Yang Zheng",
+            "Frano Rajič",
+            "Siyu Tang",
+            "Gordon Wetzstein"
+        ],
+        "ai_categories": []
+    },
+    {
+        "title": "4DLangVGGT: 4D Language-Visual Geometry Grounded Transformer",
+        "summary": "Constructing 4D language fields is crucial for embodied AI, augmented/virtual reality, and 4D scene understanding, as they provide enriched semantic representations of dynamic environments and enable open-vocabulary querying in complex scenarios. However, existing approaches to 4D semantic field construction primarily rely on scene-specific Gaussian splatting, which requires per-scene optimization, exhibits limited generalization, and is difficult to scale to real-world applications. To address these limitations, we propose 4DLangVGGT, the first Transformer-based feed-forward unified framework for 4D language grounding, that jointly integrates geometric perception and language alignment within a single architecture. 4DLangVGGT has two key components: the 4D Visual Geometry Transformer, StreamVGGT, which captures spatio-temporal geometric representations of dynamic scenes; and the Semantic Bridging Decoder (SBD), which projects geometry-aware features into a language-aligned semantic space, thereby enhancing semantic interpretability while preserving structural fidelity. Unlike prior methods that depend on costly per-scene optimization, 4DLangVGGT can be jointly trained across multiple dynamic scenes and directly applied during inference, achieving both deployment efficiency and strong generalization. This design significantly improves the practicality of large-scale deployment and establishes a new paradigm for open-vocabulary 4D scene understanding. Experiments on HyperNeRF and Neu3D datasets demonstrate that our approach not only generalizes effectively but also achieves state-of-the-art performance, achieving up to 2% gains under per-scene training and 1% improvements under multi-scene training. Our code released in https://github.com/hustvl/4DLangVGGT",
+        "url": "http://arxiv.org/abs/2512.05060v1",
+        "published_date": "2025-12-04T18:15:27+00:00",
+        "updated_date": "2025-12-04T18:15:27+00:00",
+        "categories": [
+            "cs.CV"
+        ],
+        "authors": [
+            "Xianfeng Wu",
+            "Yajing Bai",
+            "Minghan Li",
+            "Xianzu Wu",
+            "Xueqi Zhao",
+            "Zhongyuan Lai",
+            "Wenyu Liu",
+            "Xinggang Wang"
+        ],
+        "ai_categories": []
+    }
+]
