@@ -1,0 +1,215 @@
+[
+    {
+        "title": "EditThinker: Unlocking Iterative Reasoning for Any Image Editor",
+        "summary": "Instruction-based image editing has emerged as a prominent research area, which, benefiting from image generation foundation models, have achieved high aesthetic quality, making instruction-following capability the primary challenge. Existing approaches improve instruction adherence via supervised or reinforcement learning, yet single-turn success rates remain limited due to inherent stochasticity and a lack of deliberation. In this work, we propose a deliberative editing framework to 'think' while they edit, which simulates the human cognitive loop by iteratively executing a Think-while-Edit cycle: Critiquing results and Refining instructions , followed by Repeating the generation until satisfactory. Specifically, we train a single MLLM, EditThinker, to act as the reasoning engine of this framework, which jointly produce the critique score, reasoning process, and refined instructions. We employ reinforcement learning to align the EditThinker's thinking with its editing, thereby generating more targeted instruction improvements. Extensive experiments on four benchmarks demonstrate that our approach significantly improves the instruction-following capability of any image editing model by a large margin. We will release our data construction framework, datasets, and models to benefit the community.",
+        "url": "http://arxiv.org/abs/2512.05965v1",
+        "published_date": "2025-12-05T18:58:09+00:00",
+        "updated_date": "2025-12-05T18:58:09+00:00",
+        "categories": [
+            "cs.CV"
+        ],
+        "authors": [
+            "Hongyu Li",
+            "Manyuan Zhang",
+            "Dian Zheng",
+            "Ziyu Guo",
+            "Yimeng Jia",
+            "Kaituo Feng",
+            "Hao Yu",
+            "Yexin Liu",
+            "Yan Feng",
+            "Peng Pei",
+            "Xunliang Cai",
+            "Linjiang Huang",
+            "Hongsheng Li",
+            "Si Liu"
+        ],
+        "ai_categories": []
+    },
+    {
+        "title": "AQUA-Net: Adaptive Frequency Fusion and Illumination Aware Network for Underwater Image Enhancement",
+        "summary": "Underwater images often suffer from severe color distortion, low contrast, and a hazy appearance due to wavelength-dependent light absorption and scattering. Simultaneously, existing deep learning models exhibit high computational complexity, which limits their practical deployment for real-time underwater applications. To address these challenges, this paper presents a novel underwater image enhancement model, called Adaptive Frequency Fusion and Illumination Aware Network (AQUA-Net). It integrates a residual encoder decoder with dual auxiliary branches, which operate in the frequency and illumination domains. The frequency fusion encoder enriches spatial representations with frequency cues from the Fourier domain and preserves fine textures and structural details. Inspired by Retinex, the illumination-aware decoder performs adaptive exposure correction through a learned illumination map that separates reflectance from lighting effects. This joint spatial, frequency, and illumination design enables the model to restore color balance, visual contrast, and perceptual realism under diverse underwater conditions. Additionally, we present a high-resolution, real-world underwater video-derived dataset from the Mediterranean Sea, which captures challenging deep-sea conditions with realistic visual degradations to enable robust evaluation and development of deep learning models. Extensive experiments on multiple benchmark datasets show that AQUA-Net performs on par with SOTA in both qualitative and quantitative evaluations while using less number of parameters. Ablation studies further confirm that the frequency and illumination branches provide complementary contributions that improve visibility and color representation. Overall, the proposed model shows strong generalization capability and robustness, and it provides an effective solution for real-world underwater imaging applications.",
+        "url": "http://arxiv.org/abs/2512.05960v1",
+        "published_date": "2025-12-05T18:56:10+00:00",
+        "updated_date": "2025-12-05T18:56:10+00:00",
+        "categories": [
+            "cs.CV",
+            "cs.AI"
+        ],
+        "authors": [
+            "Munsif Ali",
+            "Najmul Hassan",
+            "Lucia Ventura",
+            "Davide Di Bari",
+            "Simonepietro Canese"
+        ],
+        "ai_categories": []
+    },
+    {
+        "title": "M4-RAG: A Massive-Scale Multilingual Multi-Cultural Multimodal RAG",
+        "summary": "Vision-language models (VLMs) have achieved strong performance in visual question answering (VQA), yet they remain constrained by static training data. Retrieval-Augmented Generation (RAG) mitigates this limitation by enabling access to up-to-date, culturally grounded, and multilingual information; however, multilingual multimodal RAG remains largely underexplored. We introduce M4-RAG, a massive-scale benchmark covering 42 languages and 56 regional dialects and registers, comprising over 80,000 culturally diverse image-question pairs for evaluating retrieval-augmented VQA across languages and modalities. To balance realism with reproducibility, we build a controlled retrieval environment containing millions of carefully curated multilingual documents relevant to the query domains, approximating real-world retrieval conditions while ensuring consistent experimentation. Our systematic evaluation reveals that although RAG consistently benefits smaller VLMs, it fails to scale to larger models and often even degrades their performance, exposing a critical mismatch between model size and current retrieval effectiveness. M4-RAG provides a foundation for advancing next-generation RAG systems capable of reasoning seamlessly across languages, modalities, and cultural contexts.",
+        "url": "http://arxiv.org/abs/2512.05959v1",
+        "published_date": "2025-12-05T18:55:58+00:00",
+        "updated_date": "2025-12-05T18:55:58+00:00",
+        "categories": [
+            "cs.CL",
+            "cs.AI",
+            "cs.CV"
+        ],
+        "authors": [
+            "David Anugraha",
+            "Patrick Amadeus Irawan",
+            "Anshul Singh",
+            "En-Shiun Annie Lee",
+            "Genta Indra Winata"
+        ],
+        "ai_categories": []
+    },
+    {
+        "title": "SIMPACT: Simulation-Enabled Action Planning using Vision-Language Models",
+        "summary": "Vision-Language Models (VLMs) exhibit remarkable common-sense and semantic reasoning capabilities. However, they lack a grounded understanding of physical dynamics. This limitation arises from training VLMs on static internet-scale visual-language data that contain no causal interactions or action-conditioned changes. Consequently, it remains challenging to leverage VLMs for fine-grained robotic manipulation tasks that require physical understanding, reasoning, and corresponding action planning. To overcome this, we present SIMPACT, a test-time, SIMulation-enabled ACTion Planning framework that equips VLMs with physical reasoning through simulation-in-the-loop world modeling, without requiring any additional training. From a single RGB-D observation, SIMPACT efficiently constructs physics simulations, enabling the VLM to propose informed actions, observe simulated rollouts, and iteratively refine its reasoning. By integrating language reasoning with physics prediction, our simulation-enabled VLM can understand contact dynamics and action outcomes in a physically grounded way. Our method demonstrates state-of-the-art performance on five challenging, real-world rigid-body and deformable manipulation tasks that require fine-grained physical reasoning, outperforming existing general-purpose robotic manipulation models. Our results demonstrate that embedding physics understanding via efficient simulation into VLM reasoning at test time offers a promising path towards generalizable embodied intelligence. Project webpage can be found at https://simpact-bot.github.io",
+        "url": "http://arxiv.org/abs/2512.05955v1",
+        "published_date": "2025-12-05T18:51:03+00:00",
+        "updated_date": "2025-12-05T18:51:03+00:00",
+        "categories": [
+            "cs.RO",
+            "cs.CV"
+        ],
+        "authors": [
+            "Haowen Liu",
+            "Shaoxiong Yao",
+            "Haonan Chen",
+            "Jiawei Gao",
+            "Jiayuan Mao",
+            "Jia-Bin Huang",
+            "Yilun Du"
+        ],
+        "ai_categories": []
+    },
+    {
+        "title": "Zoom in, Click out: Unlocking and Evaluating the Potential of Zooming for GUI Grounding",
+        "summary": "Grounding is a fundamental capability for building graphical user interface (GUI) agents. Although existing approaches rely on large-scale bounding box supervision, they still face various challenges, such as cross-platform generalization, complex layout analysis, and fine-grained element localization. In this paper, we investigate zoom as a strong yet underexplored prior for GUI grounding, and propose a training-free method, ZoomClick. By characterizing four key properties of zoom (i.e., pre-zoom, depth, shrink size, minimal crop size), we unlock its full capabilities for dynamic spatial focusing and adaptive context switching. Experiments demonstrate that our method significantly boosts the performance of both general vision-language and specialized GUI grounding models, achieving state-of-the-art results on several mainstream benchmarks; for example, UI-Venus-72B attains a 73.1% success rate on ScreenSpot-Pro. Furthermore, we present GUIZoom-Bench, a benchmark for evaluating model adaptability to zoom, aiming to inspire future research on improving zoom for further training and test-time scaling in GUI grounding tasks.",
+        "url": "http://arxiv.org/abs/2512.05941v1",
+        "published_date": "2025-12-05T18:39:12+00:00",
+        "updated_date": "2025-12-05T18:39:12+00:00",
+        "categories": [
+            "cs.CV",
+            "cs.AI",
+            "cs.CL"
+        ],
+        "authors": [
+            "Zhiyuan Jiang",
+            "Shenghao Xie",
+            "Wenyi Li",
+            "Wenqiang Zu",
+            "Peihang Li",
+            "Jiahao Qiu",
+            "Siqi Pei",
+            "Lei Ma",
+            "Tiejun Huang",
+            "Mengdi Wang",
+            "Shilong Liu"
+        ],
+        "ai_categories": []
+    },
+    {
+        "title": "Measuring the Effect of Background on Classification and Feature Importance in Deep Learning for AV Perception",
+        "summary": "Common approaches to explainable AI (XAI) for deep learning focus on analyzing the importance of input features on the classification task in a given model: saliency methods like SHAP and GradCAM are used to measure the impact of spatial regions of the input image on the classification result. Combined with ground truth information about the location of the object in the input image (e.g., a binary mask), it is determined whether object pixels had a high impact on the classification result, or whether the classification focused on background pixels. The former is considered to be a sign of a healthy classifier, whereas the latter is assumed to suggest overfitting on spurious correlations. A major challenge, however, is that these intuitive interpretations are difficult to test quantitatively, and hence the output of such explanations lacks an explanation itself. One particular reason is that correlations in real-world data are difficult to avoid, and whether they are spurious or legitimate is debatable. Synthetic data in turn can facilitate to actively enable or disable correlations where desired but often lack a sufficient quantification of realism and stochastic properties. [...] Therefore, we systematically generate six synthetic datasets for the task of traffic sign recognition, which differ only in their degree of camera variation and background correlation [...] to quantify the isolated influence of background correlation, different levels of camera variation, and considered traffic sign shapes on the classification performance, as well as background feature importance. [...] Results include a quantification of when and how much background features gain importance to support the classification task based on changes in the training domain [...].\n  Download: synset.de/datasets/synset-signset-ger/background-effect",
+        "url": "http://arxiv.org/abs/2512.05937v1",
+        "published_date": "2025-12-05T18:25:52+00:00",
+        "updated_date": "2025-12-05T18:25:52+00:00",
+        "categories": [
+            "cs.CV",
+            "cs.AI",
+            "cs.RO"
+        ],
+        "authors": [
+            "Anne Sielemann",
+            "Valentin Barner",
+            "Stefan Wolf",
+            "Masoud Roschani",
+            "Jens Ziehn",
+            "Juergen Beyerer"
+        ],
+        "ai_categories": []
+    },
+    {
+        "title": "Synset Signset Germany: a Synthetic Dataset for German Traffic Sign Recognition",
+        "summary": "In this paper, we present a synthesis pipeline and dataset for training / testing data in the task of traffic sign recognition that combines the advantages of data-driven and analytical modeling: GAN-based texture generation enables data-driven dirt and wear artifacts, rendering unique and realistic traffic sign surfaces, while the analytical scene modulation achieves physically correct lighting and allows detailed parameterization. In particular, the latter opens up applications in the context of explainable AI (XAI) and robustness tests due to the possibility of evaluating the sensitivity to parameter changes, which we demonstrate with experiments. Our resulting synthetic traffic sign recognition dataset Synset Signset Germany contains a total of 105500 images of 211 different German traffic sign classes, including newly published (2020) and thus comparatively rare traffic signs. In addition to a mask and a segmentation image, we also provide extensive metadata including the stochastically selected environment and imaging effect parameters for each image. We evaluate the degree of realism of Synset Signset Germany on the real-world German Traffic Sign Recognition Benchmark (GTSRB) and in comparison to CATERED, a state-of-the-art synthetic traffic sign recognition dataset.",
+        "url": "http://arxiv.org/abs/2512.05936v1",
+        "published_date": "2025-12-05T18:24:07+00:00",
+        "updated_date": "2025-12-05T18:24:07+00:00",
+        "categories": [
+            "cs.CV",
+            "cs.RO"
+        ],
+        "authors": [
+            "Anne Sielemann",
+            "Lena Loercher",
+            "Max-Lion Schumacher",
+            "Stefan Wolf",
+            "Masoud Roschani",
+            "Jens Ziehn"
+        ],
+        "ai_categories": []
+    },
+    {
+        "title": "Physically-Based Simulation of Automotive LiDAR",
+        "summary": "We present an analytic model for simulating automotive time-of-flight (ToF) LiDAR that includes blooming, echo pulse width, and ambient light, along with steps to determine model parameters systematically through optical laboratory measurements. The model uses physically based rendering (PBR) in the near-infrared domain. It assumes single-bounce reflections and retroreflections over rasterized rendered images from shading or ray tracing, including light emitted from the sensor as well as stray light from other, non-correlated sources such as sunlight. Beams from the sensor and sensitivity of the receiving diodes are modeled with flexible beam steering patterns and with non-vanishing diameter.\n  Different (all non-real time) computational approaches can be chosen based on system properties, computing capabilities, and desired output properties.\n  Model parameters include system-specific properties, namely the physical spread of the LiDAR beam, combined with the sensitivity of the receiving diode; the intensity of the emitted light; the conversion between the intensity of reflected light and the echo pulse width; and scenario parameters such as environment lighting, positioning, and surface properties of the target(s) in the relevant infrared domain. System-specific properties of the model are determined from laboratory measurements of the photometric luminance on different target surfaces aligned with a goniometer at 0.01° resolution, which marks the best available resolution for measuring the beam pattern.\n  The approach is calibrated for and tested on two automotive LiDAR systems, the Valeo Scala Gen. 2 and the Blickfeld Cube 1. Both systems differ notably in their properties and available interfaces, but the relevant model parameters could be extracted successfully.",
+        "url": "http://arxiv.org/abs/2512.05932v1",
+        "published_date": "2025-12-05T18:18:32+00:00",
+        "updated_date": "2025-12-05T18:18:32+00:00",
+        "categories": [
+            "cs.RO",
+            "cs.CV"
+        ],
+        "authors": [
+            "L. Dudzik",
+            "M. Roschani",
+            "A. Sielemann",
+            "K. Trampert",
+            "J. Ziehn",
+            "J. Beyerer",
+            "C. Neumann"
+        ],
+        "ai_categories": []
+    },
+    {
+        "title": "A Comparative Study on Synthetic Facial Data Generation Techniques for Face Recognition",
+        "summary": "Facial recognition has become a widely used method for authentication and identification, with applications for secure access and locating missing persons. Its success is largely attributed to deep learning, which leverages large datasets and effective loss functions to learn discriminative features. Despite these advances, facial recognition still faces challenges in explainability, demographic bias, privacy, and robustness to aging, pose variations, lighting changes, occlusions, and facial expressions. Privacy regulations have also led to the degradation of several datasets, raising legal, ethical, and privacy concerns. Synthetic facial data generation has been proposed as a promising solution. It mitigates privacy issues, enables experimentation with controlled facial attributes, alleviates demographic bias, and provides supplementary data to improve models trained on real data. This study compares the effectiveness of synthetic facial datasets generated using different techniques in facial recognition tasks. We evaluate accuracy, rank-1, rank-5, and the true positive rate at a false positive rate of 0.01% on eight leading datasets, offering a comparative analysis not extensively explored in the literature. Results demonstrate the ability of synthetic data to capture realistic variations while emphasizing the need for further research to close the performance gap with real data. Techniques such as diffusion models, GANs, and 3D models show substantial progress; however, challenges remain.",
+        "url": "http://arxiv.org/abs/2512.05928v1",
+        "published_date": "2025-12-05T18:11:29+00:00",
+        "updated_date": "2025-12-05T18:11:29+00:00",
+        "categories": [
+            "cs.CV"
+        ],
+        "authors": [
+            "Pedro Vidal",
+            "Bernardo Biesseck",
+            "Luiz E. L. Coelho",
+            "Roger Granada",
+            "David Menotti"
+        ],
+        "ai_categories": []
+    },
+    {
+        "title": "World Models That Know When They Don't Know: Controllable Video Generation with Calibrated Uncertainty",
+        "summary": "Recent advances in generative video models have led to significant breakthroughs in high-fidelity video synthesis, specifically in controllable video generation where the generated video is conditioned on text and action inputs, e.g., in instruction-guided video editing and world modeling in robotics. Despite these exceptional capabilities, controllable video models often hallucinate - generating future video frames that are misaligned with physical reality - which raises serious concerns in many tasks such as robot policy evaluation and planning. However, state-of-the-art video models lack the ability to assess and express their confidence, impeding hallucination mitigation. To rigorously address this challenge, we propose C3, an uncertainty quantification (UQ) method for training continuous-scale calibrated controllable video models for dense confidence estimation at the subpatch level, precisely localizing the uncertainty in each generated video frame. Our UQ method introduces three core innovations to empower video models to estimate their uncertainty. First, our method develops a novel framework that trains video models for correctness and calibration via strictly proper scoring rules. Second, we estimate the video model's uncertainty in latent space, avoiding training instability and prohibitive training costs associated with pixel-space approaches. Third, we map the dense latent-space uncertainty to interpretable pixel-level uncertainty in the RGB space for intuitive visualization, providing high-resolution uncertainty heatmaps that identify untrustworthy regions. Through extensive experiments on large-scale robot learning datasets (Bridge and DROID) and real-world evaluations, we demonstrate that our method not only provides calibrated uncertainty estimates within the training distribution, but also enables effective out-of-distribution detection.",
+        "url": "http://arxiv.org/abs/2512.05927v1",
+        "published_date": "2025-12-05T18:06:18+00:00",
+        "updated_date": "2025-12-05T18:06:18+00:00",
+        "categories": [
+            "cs.CV",
+            "cs.AI",
+            "cs.RO"
+        ],
+        "authors": [
+            "Zhiting Mei",
+            "Tenny Yin",
+            "Micah Baker",
+            "Ola Shorinwa",
+            "Anirudha Majumdar"
+        ],
+        "ai_categories": []
+    }
+]
